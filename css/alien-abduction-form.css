@@ -130,15 +130,6 @@ h1 {
 	border: 15px solid #704db9bc;
 }
 
-.location {
-    margin: 2rem auto;
-    background-color: #270462;
-    color: white;
-    padding: 1.5rem; /* Add some padding so the background is visible */
-    border-radius: 5px; /* Optional: matches your other elements */
-	width: 400px;
-}
-
 .indent {
 	margin-left: 2rem;
 }
@@ -178,3 +169,13 @@ footer {
     padding: 0;
     border: 15px solid #704db9bc;
 }
+
+.location {
+    margin: 2rem auto;
+    background-color: #270462;
+    color: white;
+    padding: 1.5rem; /* Add some padding so the background is visible */
+    border-radius: 5px; /* Optional: matches your other elements */
+	width: 400px;
+}
+
