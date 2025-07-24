@@ -131,7 +131,11 @@ h1 {
 }
 
 .location {
-	margin: 2rem auto;
+    margin: 2rem auto;
+    background-color: #270462;
+    color: white;
+    padding: 1rem; /* Add some padding so the background is visible */
+    border-radius: 5px; /* Optional: matches your other elements */
 }
 
 .indent {
@@ -165,11 +169,6 @@ footer {
     padding: 1rem 0;
 	width: 70%;
 	margin: 0 auto;
-}
-
-.location {
-	background-color: #270462;
-	color: white;
 }
 
 .frame {
