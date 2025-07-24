@@ -14,8 +14,7 @@
 	<div class="wrapper">
 		<section>
 			<h1 class="glow">Alien Abduction Order Form</h1>
-			<p class="indent">Fill out the form below to place an order for an alien abduction by one of our fine UFOs.
-			</p>
+			<p class="indent">Fill out the form below to place an order for an alien abduction by one of our fine UFOs.</p>
 			<form class="flex" action="https://e3vwdl4bpd.execute-api.us-west-2.amazonaws.com/default/API2SES "
 				method="post">
 				<div class="flex">
@@ -26,7 +25,7 @@
 							<legend>Your contact information</legend>
 							<!-- CONTACT INFO -->
 							<label for="name">Your name </label>
-							<input type="text" id="name" name="name">
+							<input type="text" id="name" name="name" autofocus>
 							<label for="phone">Phone number</label>
 							<input type="tel" id="phone" name="phone" placeholder="Don't forget the area code!">
 							<label for="email">Email</label>
@@ -82,15 +81,13 @@
 
 									<!-- REQUESTS -->
 									<label for="comments">Special requests:</label>
-									<textarea id="comments" name="comments" placeholder="Tell me everything"></textarea>
+									<textarea id="comments" name="comments" placeholder="Tell me everything">
+									</textarea>
 
 									<!-- SUBSCRIBE -->
 									<label>
 										<input type="checkbox" id="subscribe" name="subscribe" value="subscribe">Add me
-										to
-										your
-										email
-										list
+										to your email list
 									</label>
 
 									<!-- SUBMIT BUTTON -->
@@ -105,21 +102,23 @@
 		</section>
 	</div>
 	<footer>
-		<div class="location">
-			<h3>Our Location</h3>
-			<address>
-				Frontend Masters <br>
-				60 South 6th Street <br>
-				Suite 3625 <br>
-				Minneapolis, MN 55402
-			</address>
-		</div>
-		<div class="frame">
-			<iframe
-				src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2822.317956504547!2d-93.27339802346648!3d44.97785167107017!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x52b3329a6e23a267%3A0x42412ff47609ca09!2s60%20South%206th%20St%2C%20Minneapolis%2C%20MN%2055402!5e0!3m2!1sen!2sus!4v1750697408442!5m2!1sen!2sus"
-				width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
-				referrerpolicy="no-referrer-when-downgrade"></iframe>
-		</div>
+		<h3>Our Location</h3>
+		<div class="footer-flex">
+			<div class="frame">
+				<iframe
+					src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2822.317956504547!2d-93.27339802346648!3d44.97785167107017!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x52b3329a6e23a267%3A0x42412ff47609ca09!2s60%20South%206th%20St%2C%20Minneapolis%2C%20MN%2055402!5e0!3m2!1sen!2sus!4v1750697408442!5m2!1sen!2sus"
+					width="300" height="200" allowfullscreen="" loading="lazy"
+					referrerpolicy="no-referrer-when-downgrade"></iframe>
+			</div>
+			<div class="location">
+				<address>
+					Frontend Masters <br>
+					60 South 6th Street <br>
+					Suite 3625 <br>
+					Minneapolis, MN 55402
+				</address>
+			</div>
+
 		</div>
 	</footer>
 
