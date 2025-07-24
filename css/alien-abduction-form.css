@@ -136,6 +136,8 @@ h1 {
     color: white;
     padding: 1rem; /* Add some padding so the background is visible */
     border-radius: 5px; /* Optional: matches your other elements */
+	width: 400px;
+	min-height: 300px;
 }
 
 .indent {
