@@ -146,22 +146,6 @@ button:hover {
     cursor: pointer;
 }
 
-button[type="reset"] {
-    font-size: 0.9rem;
-    font-weight: bold;
-    margin: 2rem 0;
-    background-color: #ff6b6b; /* Different color to distinguish from submit */
-    color: #fff;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 10px;
-}
-
-button[type="reset"]:hover {
-    background-color: #ff5252;
-    cursor: pointer;
-}
-
 /* =========================
    Footer & Location
    ========================= */
