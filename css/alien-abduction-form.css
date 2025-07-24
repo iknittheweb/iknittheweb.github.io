@@ -134,10 +134,9 @@ h1 {
     margin: 2rem auto;
     background-color: #270462;
     color: white;
-    padding: 1rem; /* Add some padding so the background is visible */
+    padding: 1.5rem; /* Add some padding so the background is visible */
     border-radius: 5px; /* Optional: matches your other elements */
 	width: 400px;
-	min-height: 300px;
 }
 
 .indent {
