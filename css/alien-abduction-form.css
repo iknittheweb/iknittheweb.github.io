@@ -165,14 +165,12 @@ footer {
     padding: 1rem 0;
 	width: 70%;
 	margin: 0 auto;
+}
+
+.location {
 	background-color: #D5C6FF;
 }
-/*
-.location {
-    flex: 1;
-    margin: 0;
-}
-*/
+
 .frame {
    /* flex: 0 0 auto; */
     margin: 0;
