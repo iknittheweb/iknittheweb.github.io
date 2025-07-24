@@ -1,0 +1,153 @@
+:root {
+    --screen-bg: #000000;
+    --btn-bg: #d8d9db;
+    --btn-hover: #ebebeb;
+    --btn-active: #bbbcbe;
+    --fn-btn-bg: #df974c;
+    --fn-btn-hover: #dfb07e;
+    --fn-btn-active: #dd8d37;
+    --borders: #000000;
+    --text-color-1: #000000;
+    --text-color-2: #ffffff;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.wrapper-1,
+.wrapper-2 {
+    width: 400px;
+}
+
+/* =====================================
+    FOR MY TABLE VERSION
+====================================== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td {
+    padding: 0;
+    border: 2px solid var(--borders);
+}
+
+.btn,
+.fn-btn {
+    width: 100%;
+    height: 60px;
+    font-size: 18px;
+    cursor: pointer;
+    border: none;
+}
+
+.btn:hover {
+    background-color: #e0e0e0;
+}
+
+.btn {
+    background-color: var(--btn-bg);
+    color: var(--text-color-1);
+}
+
+.btn:hover {
+    background-color: var(--btn-hover);
+}
+
+.btn:active {
+    background-color: var(--btn-active);
+}
+
+.fn-btn {
+    background-color: var(--fn-btn-bg);
+    color: var(--text-color-2);
+}
+
+.fn-btn:hover {
+    background-color: var(--fn-btn-hover);
+}
+
+.fn-btn:active {
+    background-color: var(--fn-btn-active);
+}
+
+.calc-input {
+    width: 100%;
+    height: 60px;
+    font-size: 24px;
+    text-align: right;
+    padding: 0 10px;
+    border: none;
+    background-color: var(--screen-bg);
+    color: var(--text-color-2);
+}
+
+/* =====================================
+    FOR CLASS SOLUTION
+====================================== */
+.wrapper-2 {
+    background-color: var(--screen-bg);
+    color: var(--text-color-2);
+}
+
+.screen {
+        text-align: right;
+        font-family: 'Courier New', Courier, monospace;
+        padding: 20px 5px;
+        font-size: 40px;
+}
+
+.calc-button-row {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    margin-bottom: 0.5%;
+}
+
+.calc-button {
+    background-color: var(--btn-bg);
+    color: var(--text-color-1);
+    border: none;
+    font-size: 40px;
+    height: 100px;
+    flex-basis: 24.5%;
+}
+
+.calc-button:hover {
+    background-color: var(--btn-hover);
+}
+.calc-button:active {
+    background-color: var(--btn-active);
+}
+
+.double {
+    flex-basis: 49.7%;
+}
+
+.triple {
+    flex-basis: 74.8%;;
+}
+
+.calc-button:last-child {
+    background-color: var(--fn-btn-bg);
+    color: var(--text-color-2);
+}
+
+.calc-button:last-child:hover {
+    background-color: var(--fn-btn-hover);
+}
+.calc-button:last-child:active {
+    background-color: var(--fn-btn-active);
+}
