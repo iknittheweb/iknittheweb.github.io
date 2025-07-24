@@ -1,0 +1,431 @@
+/* =========================
+   Variables
+   ========================= */
+:root {
+    --primary-color: #440f48;
+    --primary-color-mid: #9C22A5;
+    --primary-color-light: #D049D9;
+    --secondary-color: #13480F;
+    --secondary-color-mid: #2BA522;
+    --secondary-color-light: #52D949;
+    --text-color-1: #333;
+    --text-color-2: #eaeaea;
+    --background-color: #1f1f1f;
+    --font-1: 'Georgia', serif;
+    --font-2: 'Verdana', sans-serif;
+}
+
+/* =========================
+   Typography
+   ========================= */
+h1, h2, h3 {
+    font-family: var(--font-1);
+    font-weight: bold;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+h1 {
+    display: block;
+    font-size: 2rem;
+    margin: 0;
+    padding-top: 0.5rem;
+}
+
+h2 {
+    display: block;
+    font-size: 1.25rem;
+    margin-top: 0;
+    margin-bottom: 0.83rem;
+    text-align: left;
+}
+
+h3 {
+    display: block;
+    font-size: 1.17rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+p, li {
+    font-family: var(--font-2);
+    font-weight: 300;
+    line-height: 1.5;
+    font-size: .9rem;
+}
+
+.heading-subheading,
+.subheading {
+    text-align: left;
+    font-family: var(--font-1);
+}
+
+.subheading {
+    display: block;
+    font-size: 1.25rem;
+    margin: 0;
+}
+
+/* =========================
+   Layout & Containers
+   ========================= */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main, h2, footer {
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+main {
+    padding: 1rem;
+    margin-bottom: 15rem;
+}
+
+main section {
+    text-align: left;
+}
+
+.bio > p {
+    font-size: 14px;
+}
+
+.profile {
+    float: left;
+    width: 35%;
+    text-align: center;
+    font-style: italic;
+    margin: 0.5em 1rem;
+    padding: 0.5em;
+}
+
+.profile > p {
+    width: 250px;
+    margin-inline: auto;
+    font-size: 0.8rem;
+    line-height: 1.2;
+    color: var(--primary-color);
+}
+
+.profile > p:first-of-type {
+    margin-top: 2.5rem;
+}
+
+/* =========================
+   Flex Utility Classes
+   ========================= */
+.flex-row-start,
+.header-center,
+.header-leftish {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0 0 0 10%;
+    text-align: left;
+    padding: 0;
+    background: none;
+    box-shadow: none;
+}
+
+.flex-row-center {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-row-end,
+.header-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 0 10% 0 0;
+    padding: 0;
+    background: none;
+    width: auto;
+}
+
+.flex-row-between {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+main.flex-container {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+/* =========================
+   Aside & Images
+   ========================= */
+.float-right {
+    float: right;
+}
+
+.img-knit {
+    width: 300px;
+    border: 1rem solid var(--primary-color);
+    margin-left: 1rem;
+}
+
+/* =========================
+   Profile Pic
+   ========================= */
+.profile-pic-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 220px;
+    height: 220px;
+    margin: 0 auto 2.5rem auto;
+}
+.profile-pic-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 220px;
+    height: 220px;
+    background: #440f48;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    z-index: 1;
+    border-radius: 0;
+}
+.profile-pic {
+    position: relative;
+    width: 220px;
+    height: 220px;
+    margin: 0;
+    z-index: 2;
+    background: transparent;
+    object-fit: cover;
+    border: 5px solid var(--primary-color);
+}
+
+/* =========================
+   Header & Navigation
+   ========================= */
+header,
+.header-flex {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    min-height: calc(3.5rem + 1rem); 
+    padding: 1.5rem 0;
+    margin-bottom: 2rem;
+    background-color: var(--primary-color);
+    color: var(--text-color-2);
+}
+
+.header-nav ul {
+    display: flex;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background-color: var(--primary-color);
+}
+
+.logo {
+    width: 120px;
+    height: 120px;
+    padding: 0;
+    margin-right: 12px;
+}
+
+.heading-subheading {
+    padding: 0;
+}
+
+.header-nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.header-nav li a {
+    display: block;
+    color: var(--text-color-2);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    background-color: var(--primary-color);
+    transition: background 0.2s, border 0.2s;
+}
+
+.header-nav li a:visited {
+    background-color: var(--primary-color);
+    color: var(--primary-color-light);
+}
+
+.header-nav li a:focus {
+    outline: 1px solid var(--background-color);
+    border: 1px solid var(--primary-color-light);
+}
+
+.header-nav li a:hover,
+.header-nav li a:active {
+    background-color: var(--background-color);
+    border: 1px solid var(--text-color-2);
+}
+
+/* =========================
+   Links
+   ========================= */
+a:focus {
+    border: 1px solid var(--secondary-color);
+}
+a:hover,
+a:active {
+    border: 1px solid var(--secondary-color);
+}
+
+/* =========================
+   Responsive Design
+   ========================= */
+@media (max-width: 900px) {
+    main.flex-container {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+    }
+    header,
+    .header-flex {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 0.25rem 0;
+    }
+    .header-center,
+    .header-leftish {
+        margin-bottom: 0.5rem;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        padding-bottom: 0.25rem;
+    }
+    .header-nav ul {
+        flex-direction: column;
+        gap: 0;
+    }
+    .logo {
+        width: 90px;
+        height: 90px;
+        margin-right: 8px;
+    }
+    .profile {
+        width: 90%;
+        float: none;
+        margin: 1rem auto;
+    }
+    .profile-pic-wrapper,
+    .profile-pic-bg {
+        width: 180px;
+        height: 180px;
+    }
+    .profile-pic {
+        width: 160px;
+        height: 160px;
+    }
+    .img-knit {
+        width: 200px;
+        border-width: 0.5rem;
+        margin-left: 0.5rem;
+    }
+    main,
+    h2,
+    footer {
+        max-width: 98%;
+        width: 95%;
+        margin-left: 1%;
+        margin-right: 1%;
+    }
+}
+
+@media (max-width: 600px) {
+    header,
+    .header-flex {
+        padding: 0.1rem 0;
+    }
+    .header-center,
+    .header-leftish {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        padding-top: 0.5rem;
+        padding-bottom: 0.15rem;
+    }
+    .logo {
+        width: 70px;
+        height: 70px;
+        margin: 0 0 0.25rem 0;
+        padding: 0;
+    }
+    .heading-subheading {
+        text-align: left;
+        width: 100%;
+    }
+    .header-nav {
+        width: 100%;
+        margin: 0;
+        padding-block: 0;
+    }
+    .header-nav ul {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .header-nav li a {
+        padding: 10px 0;
+        font-size: 1rem;
+    }
+    main {
+        width: 95%;
+        max-width: 98%;
+        margin: 0 auto 5rem;
+        padding: 0.5rem 0;
+    }
+    .profile {
+        width: 95%;
+        margin: 1rem 0;
+        float: none;
+        padding: 0.5rem 0;
+    }
+    .profile-pic-wrapper,
+    .profile-pic-bg {
+        width: 120px;
+        height: 120px;
+    }
+    .profile-pic {
+        width: 100px;
+        height: 100px;
+    }
+    .img-knit {
+        width: 120px;
+        border-width: 0.25rem;
+        margin-left: 0.25rem;
+    }
+    .bio > p,
+    .profile > p {
+        width: 95%;
+        font-size: 0.95rem;
+    }
+    main,
+    h2,
+    footer {
+        width: 95%;
+        max-width: 98%;
+        margin-left: 1%;
+        margin-right: 1%;
+    }
+}

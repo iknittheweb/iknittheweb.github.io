@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/img/favicon_io/favicon.ico">
+    <title>I Knit The Web!</title>
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/contact.css">
+</head>
+
+<body>
+    <header class="header-flex">
+        <div class="header-center flex-row-start">
+            <img class="logo" src="/img/logo.png" alt="">
+            <div class="heading-subheading">
+                <h1>Contact Me</h1>
+                <p class="subheading">Let's collaborate!</p>
+            </div>
+        </div>
+        <nav class="header-nav flex-row-end">
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/portfolio.html">Portfolio</a></li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <form action="https://e3vwdl4bpd.execute-api.us-west-2.amazonaws.com/default/API2SES " method="post">
+                <div class="img-container">
+                    <img src="/img/collaborate.jpg" alt="two people collaborating on a project"
+                        class="collaborate-img">
+                </div>
+                <div>
+                    <!-- CONTACT INFO -->
+                    <input type="hidden" name="send_to" value="iknittheweb@gmail.com">
+                    <fieldset>
+                        <legend>Your contact information</legend>
+                        <label for="name">Your name </label>
+                        <input type="text" id="name" name="name"
+                            placeholder="First, last, your cat, whatever you want to be called ;)">
+                        <label for="phone">Phone number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Don't forget the area or country code!">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="user@example.com">
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>What kind of information would you like?</legend>
+                        <textarea id="comments" name="comments" placeholder="Tell me everything"></textarea>
+                    </fieldset>
+                    <!-- SUBMIT BUTTON -->
+                    <input id="send_to" type="hidden" name="send_to" value="yourEmailHere">
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+        </section>
+    </main>
+    <script src="js/forms.js"></script>
+    <footer>
+        <p>&copy; 2025 I Knit The Web! All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
