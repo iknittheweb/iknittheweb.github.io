@@ -155,3 +155,23 @@ h1 {
 		text-shadow: 0 0 20px #fff, 0 0 30px #6f4db947, 0 0 40px #6f4db947, 0 0 50px #6f4db947, 0 0 60px #6f4db947, 0 0 70px #6f4db947, 0 0 80px #6f4db947;
 	}
 }
+footer {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-top: 2rem;
+    padding: 1rem 0;
+}
+
+.location {
+    flex: 1;
+    margin: 0;
+}
+
+.frame {
+    flex: 0 0 auto;
+    margin: 0;
+    padding: 0;
+    border: 15px solid #704db9bc;
+}
