@@ -100,6 +100,8 @@ td {
 .wrapper-2 {
     background-color: var(--screen-bg);
     color: var(--text-color-2);
+    margin: 0 auto;
+    padding: 20px;
 }
 
 .screen {
