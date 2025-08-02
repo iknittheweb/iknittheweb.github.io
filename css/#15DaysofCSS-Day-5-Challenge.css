@@ -1,0 +1,76 @@
+/* set the panel to have a width. This width could be set elsewhere, depending on desired effects */
+
+nav {
+  width: 25%;
+}
+
+/* turn off bullets, margin, padding */
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* big clickable areas, padding, colors, turn off underline */
+
+a {
+  display: block;
+  padding: 0.5rem;
+  background-color: #3867d6;
+  color: #d1d8e0;
+  text-decoration: none;
+}
+
+/* change the look on hover */
+
+a:hover {
+  background-color: #f7b731;
+  color: #3867d6;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =====================================================================
+default styling for the page / instructions - you don't need to touch this unless you really want to
+========================================================================= */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 1.2rem;
+  padding-bottom: 5.0em;
+}
+h1, h2, h3, h4, h5, h6 {
+  margin: 1.5em 0 1.0em;
+}
+ol li, ul li {
+  padding-bottom: 0.5em;
+}
+p {
+  line-height: 1.3em;
+  margin-top: 0;
+}
+.button {
+  background-color: #eb3b5a;
+  padding: 0.5rem 1rem;
+  border: 1px solid #eb3b5a;
+  border-radius: 30px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  margin: 1em 0 5rem;
+}
+.button:hover {
+  color: #eb3b5a;
+  background-color: white;
+}
