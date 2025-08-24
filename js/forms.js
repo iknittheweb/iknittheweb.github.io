@@ -75,3 +75,35 @@ function showPopup(message) {
     popup.remove();
   }, 3500);
 }
+
+// Add Clear Form button functionality
+function addClearFormButton() {
+  // Check if button already exists
+  if (document.getElementById('clear-form-btn')) return;
+  const btn = document.createElement('button');
+  btn.type = 'button';
+  btn.id = 'clear-form-btn';
+  btn.textContent = 'Clear Form';
+  btn.style.marginLeft = '1rem';
+  btn.style.background = '#eb3b5a';
+  btn.style.color = '#fff';
+  btn.style.border = 'none';
+  btn.style.borderRadius = '6px';
+  btn.style.padding = '0.5rem 1rem';
+  btn.style.fontWeight = 'bold';
+  btn.style.cursor = 'pointer';
+  btn.addEventListener('click', function() {
+    form.reset();
+    showPopup('Form cleared.');
+  });
+  // Insert after the submit button
+  const submitBtn = form.querySelector("button[type='submit']");
+  submitBtn.parentNode.insertBefore(btn, submitBtn.nextSibling);
+}
+
+// Run on DOMContentLoaded to ensure form is present
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', addClearFormButton);
+} else {
+  addClearFormButton();
+}
