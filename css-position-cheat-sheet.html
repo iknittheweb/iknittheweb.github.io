@@ -5,11 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CSS Positioning Cheat Sheet</title>
   <link rel="stylesheet" href="/css/html-css-cheatsheet-styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" rel="stylesheet">  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-  <main role="main" tabindex="-1">
-    <h1 id="cheat-sheet-title">CSS Positioning Cheat Sheet</h1>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <header class="header-flex">
+    <div class="header-center flex-row-start">
+      <img class="logo" src="/img/logo.png" alt="I Knit The Web logo: a ball of yarn with knitting needles forming a web">
+      <div class="heading-subheading">
+        <h1>CSS Positioning Cheat Sheet</h1>
+        <p class="subheading">A quick reference for CSS position properties</p>
+      </div>
+    </div>
+    <nav class="header-nav flex-row-end" aria-label="Main navigation">
+      <ul>
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/portfolio.html">Portfolio</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+        <li><a href="/css-position-cheat-sheet.html" aria-current="page">CSS Position Cheat Sheet</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main id="main-content" role="main" tabindex="-1">
     <table class="cheat-sheet" role="table" aria-labelledby="cheat-sheet-title">
       <caption id="cheat-sheet-caption">CSS Positioning Cheat Sheet</caption>
       <thead>

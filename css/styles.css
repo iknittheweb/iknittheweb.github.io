@@ -1,4 +1,31 @@
 /* =========================
+   Accessibility: Skip Link
+   ========================= */
+.skip-link {
+    position: absolute;
+    left: -999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    z-index: 1000;
+    background: var(--primary-color-light);
+    color: #000;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: left 0.2s;
+}
+.skip-link:focus, .skip-link:active {
+    left: 10px;
+    top: 10px;
+    width: auto;
+    height: auto;
+    outline: 3px solid var(--secondary-color-light);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+/* =========================
    Variables
    ========================= */
 :root {
@@ -284,12 +311,22 @@ header,
 /* =========================
    Links
    ========================= */
+
+/* =========================
+   Link Focus & Hover States
+   ========================= */
 a:focus {
-    border: 1px solid var(--secondary-color);
+    outline: 3px solid var(--secondary-color-light);
+    outline-offset: 2px;
+    border-radius: 2px;
+    background: var(--primary-color-light);
+    color: #000;
 }
 a:hover,
 a:active {
     border: 1px solid var(--secondary-color);
+    background: var(--primary-color-light);
+    color: #000;
 }
 
 /* =========================

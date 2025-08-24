@@ -1,3 +1,6 @@
+/* =========================
+   Base & Layout Styles
+   ========================= */
 body {
   font-family: Georgia, 'Times New Roman', serif;
   width: 80%;
@@ -5,6 +8,8 @@ body {
   margin: 0 auto;
   padding: 1rem;
   line-height: 1.6;
+  background: #faf8fa;
+  color: #222;
 }
 
 blockquote {
@@ -46,28 +51,60 @@ blockquote {
   text-align: right;
 }
 
+
+/* =========================
+   Button Styles
+   ========================= */
 .button {
   background-color: #eb3b5a;
   padding: 0.5rem 1rem;
   border: 1px solid #eb3b5a;
   border-radius: 30px;
-  color: white;
+  color: #fff;
   text-decoration: none;
   font-weight: bold;
   display: inline-block;
   margin-bottom: 5rem;
   transition: all 0.3s ease;
+  outline: none;
 }
 
-.button:hover {
+.button:hover,
+.button:focus {
   color: #eb3b5a;
-  background-color: white;
+  background-color: #fff;
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(235, 59, 90, 0.3);
+  outline: 2px solid #eb3b5a;
+  outline-offset: 2px;
 }
 
+
+/* =========================
+   Citation Styles
+   ========================= */
 .citation {
   text-align: right;
   font-style: italic;
   margin-top: 2rem;
+}
+
+/* =========================
+   Responsive Design
+   ========================= */
+@media (max-width: 600px) {
+  body {
+    width: 98%;
+    padding: 0.5rem;
+  }
+  .materials {
+    padding: 0.5rem;
+  }
+  blockquote {
+    padding: 0.5rem 1rem;
+  }
+  .button {
+    font-size: 1rem;
+    padding: 0.5rem 0.5rem;
+  }
 }

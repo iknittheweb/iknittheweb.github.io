@@ -1,4 +1,54 @@
 /* =========================
+   Accessibility: Focus Styles
+   ========================= */
+input:not([type="radio"]):not([type="checkbox"]):focus,
+textarea:focus,
+select:focus {
+    outline: 2px solid #D3FE3E;
+    outline-offset: 2px;
+    border-color: #50249d;
+    background: #fffbe6;
+}
+
+button:focus {
+    outline: 2px solid #D3FE3E;
+    outline-offset: 2px;
+    border-color: #50249d;
+    background: #fffbe6;
+}
+
+/* =========================
+   Responsive Design
+   ========================= */
+@media (max-width: 700px) {
+    .wrapper {
+        width: 98%;
+        padding: 1rem 0.25rem;
+    }
+    .flex {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    .flex-left, .flex-right {
+        flex-basis: 100%;
+        width: 100%;
+    }
+    input:not([type="radio"]):not([type="checkbox"]),
+    textarea,
+    select {
+        width: 100%;
+        min-width: 0;
+    }
+    .footer-flex {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .frame iframe {
+        width: 100% !important;
+        height: 180px !important;
+    }
+}
+/* =========================
    Box Model & Reset
    ========================= */
 html {

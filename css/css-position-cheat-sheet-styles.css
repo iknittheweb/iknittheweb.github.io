@@ -1,4 +1,37 @@
 /* =========================
+   Accessibility: Focus Styles
+   ========================= */
+th:focus,
+td:focus {
+  outline: 2px solid #ffe066;
+  outline-offset: 2px;
+  background: #2d0036;
+}
+
+/* =========================
+   Responsive Design
+   ========================= */
+@media (max-width: 700px) {
+  main {
+    width: 98%;
+    padding: 0.5rem;
+  }
+  table {
+    font-size: 0.95rem;
+    margin-block: 10px;
+  }
+  th, td {
+    padding: 8px;
+    font-size: 0.95rem;
+  }
+  h1 {
+    font-size: 1.2rem;
+  }
+  caption {
+    font-size: 1rem;
+  }
+}
+/* =========================
    Accessibility Styles
    ========================= */
 

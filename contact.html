@@ -12,26 +12,27 @@
 </head>
 
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <header class="header-flex">
         <div class="header-center flex-row-start">
-            <img class="logo" src="/img/logo.png" alt="">
+            <img class="logo" src="/img/logo.png" alt="I Knit The Web logo: a ball of yarn with knitting needles forming a web">
             <div class="heading-subheading">
                 <h1>Contact Me</h1>
                 <p class="subheading">Let's collaborate!</p>
             </div>
         </div>
-        <nav class="header-nav flex-row-end">
+        <nav class="header-nav flex-row-end" aria-label="Main navigation">
             <ul>
                 <li><a href="/index.html">Home</a></li>
                 <li><a href="/portfolio.html">Portfolio</a></li>
                 <li><a href="/about.html">About</a></li>
-                <li><a href="/contact.html">Contact</a></li>
+                <li><a href="/contact.html" aria-current="page">Contact</a></li>
             </ul>
         </nav>
     </header>
-    <main>
+    <main id="main-content">
         <section>
-            <form action="https://e3vwdl4bpd.execute-api.us-west-2.amazonaws.com/default/API2SES " method="post">
+            <form action="https://e3vwdl4bpd.execute-api.us-west-2.amazonaws.com/default/API2SES" method="post">
                 <div class="img-container">
                     <img src="/img/collaborate.jpg" alt="two people collaborating on a project"
                         class="collaborate-img">
@@ -42,20 +43,18 @@
                     <fieldset>
                         <legend>Your contact information</legend>
                         <label for="name">Your name </label>
-                        <input type="text" id="name" name="name"
-                            placeholder="First, last, your cat, whatever you want to be called ;)">
+                        <input type="text" id="name" name="name" placeholder="First, last, your cat, whatever you want to be called ;)" required>
                         <label for="phone">Phone number</label>
                         <input type="tel" id="phone" name="phone" placeholder="Don't forget the area or country code!">
                         <label for="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="user@example.com">
+                        <input type="email" id="email" name="email" placeholder="user@example.com" required>
                     </fieldset>
 
                     <fieldset>
                         <legend>What kind of information would you like?</legend>
-                        <textarea id="comments" name="comments" placeholder="Tell me everything"></textarea>
+                        <textarea id="comments" name="comments" placeholder="Tell me everything" required></textarea>
                     </fieldset>
                     <!-- SUBMIT BUTTON -->
-                    <input id="send_to" type="hidden" name="send_to" value="yourEmailHere">
                     <button type="submit">Submit</button>
                 </div>
             </form>

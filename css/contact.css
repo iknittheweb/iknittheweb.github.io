@@ -1,3 +1,49 @@
+/* =========================
+   Accessibility: Focus Styles
+   ========================= */
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    outline: 2px solid #52D949;
+    outline-offset: 2px;
+    border-color: #2BA522;
+    background: #fffbe6;
+}
+
+button[type="submit"]:focus {
+    outline: 2px solid #52D949;
+    outline-offset: 2px;
+    border-color: #2BA522;
+    background: #fffbe6;
+}
+
+/* =========================
+   Responsive Design
+   ========================= */
+@media (max-width: 700px) {
+    form {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 0.5rem;
+    }
+    .img-container {
+        margin-bottom: 1rem;
+        justify-content: center;
+    }
+    .img-container img {
+        max-width: 100%;
+        height: auto;
+        max-height: 200px;
+    }
+    input[type="text"],
+    input[type="tel"],
+    input[type="email"],
+    textarea {
+        width: 100%;
+        min-width: 0;
+    }
+}
 :root {
     --primary-color: #440f48;
     --text-color-2: #eaeaea;

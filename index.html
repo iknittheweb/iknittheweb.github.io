@@ -11,24 +11,25 @@
 </head>
 
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <header class="header-flex">
         <div class="header-center flex-row-start">
-            <img class="logo" src="/img/logo.png" alt="">
+            <img class="logo" src="/img/logo.png" alt="I Knit The Web logo: a ball of yarn with knitting needles forming a web">
             <div class="heading-subheading">
                 <h1>I Knit The Web!</h1>
                 <p class="subheading">Beautiful, simple, and effective web pages that save you money</p>
             </div>
         </div>
-        <nav class="header-nav flex-row-end">
+        <nav class="header-nav flex-row-end" aria-label="Main navigation">
             <ul>
-                <li><a href="/index.html">Home</a></li>
+                <li><a href="/index.html" aria-current="page">Home</a></li>
                 <li><a href="/portfolio.html">Portfolio</a></li>
                 <li><a href="/about.html">About</a></li>
                 <li><a href="/contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
-    <main class="flex-container">
+    <main id="main-content" class="flex-container">
         <aside class="float-right">
             <img src="/img/Woman_knitting_web_small.png" alt="woman knitting a web" class="img-knit">
         </aside>

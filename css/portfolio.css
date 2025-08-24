@@ -1,33 +1,15 @@
-* {
-  box-sizing: border-box;
-}
-
-
-/* Center website */
-.main {
-  max-width: 1000px;
-  margin: auto;
-}
 
 h1 {
   font-size: 50px;
   word-break: break-all;
 }
 
-.row {
-  margin: 8px -16px;
-}
 
-/* Add padding BETWEEN each column */
-.row,
-.row > .column {
-  padding: 8px;
-}
-
-/* Create four equal columns that floats next to each other */
-.column {
-  float: left;
-  width: 25%;
+/* =========================
+   Layout & Box Model
+   ========================= */
+* {
+  box-sizing: border-box;
 }
 
 /* Clear floats after rows */ 
@@ -37,13 +19,63 @@ h1 {
   clear: both;
 }
 
-/* Content */
-.content {
-  background-color: white;
-  padding: 10px;
+.row {
+  margin: 8px -16px;
 }
 
-/* Responsive layout - makes a two column-layout instead of four columns */
+/* =========================
+   Content Card Styles
+   ========================= */
+.content {
+  background-color: #fff;
+  color: #222;
+  padding: 16px 12px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  margin-bottom: 16px;
+  transition: box-shadow 0.2s;
+}
+
+.content:focus-within {
+  box-shadow: 0 0 0 3px #9C22A5, 0 2px 8px rgba(0,0,0,0.12);
+}
+
+/* Ensure images are responsive and have rounded corners */
+.content img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+/* Focus style for links inside content */
+.content a:focus {
+  outline: 2px solid #2BA522;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* =========================
+  Responsive Design
+  ========================= */
+@media screen and (max-width: 900px) {
+  .row {
+    margin: 4px -8px;
+  }
+  .content {
+    padding: 12px 6px;
+    margin-bottom: 10px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .row {
+    margin: 2px -4px;
+  }
+  .content {
+    padding: 8px 2px;
+    margin-bottom: 6px;
+  }
+}
 @media screen and (max-width: 900px) {
   .column {
     width: 50%;

@@ -1,3 +1,6 @@
+/* =====================================
+   Calculator Theme Variables
+   ===================================== */
 :root {
     --screen-bg: #000000;
     --btn-bg: #d8d9db;
@@ -15,9 +18,7 @@ html {
     box-sizing: border-box;
 }
 
-*,
-*:before,
-*:after {
+*, *:before, *:after {
     box-sizing: inherit;
 }
 
@@ -32,8 +33,8 @@ body {
 }
 
 /* =====================================
-    FOR MY TABLE VERSION
-====================================== */
+   Table Version Styles
+   ===================================== */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -44,6 +45,9 @@ td {
     border: 2px solid var(--borders);
 }
 
+/* =====================================
+   Calculator Button Styles
+   ===================================== */
 .btn,
 .fn-btn {
     width: 100%;
@@ -51,10 +55,15 @@ td {
     font-size: 18px;
     cursor: pointer;
     border: none;
+    border-radius: 4px;
+    transition: background 0.2s, color 0.2s, outline 0.2s;
 }
 
-.btn:hover {
+.btn:hover,
+.btn:focus {
     background-color: #e0e0e0;
+    outline: 2px solid #333;
+    outline-offset: 2px;
 }
 
 .btn {
@@ -62,8 +71,10 @@ td {
     color: var(--text-color-1);
 }
 
-.btn:hover {
+.btn:hover,
+.btn:focus {
     background-color: var(--btn-hover);
+    color: #000;
 }
 
 .btn:active {
@@ -75,14 +86,21 @@ td {
     color: var(--text-color-2);
 }
 
-.fn-btn:hover {
+.fn-btn:hover,
+.fn-btn:focus {
     background-color: var(--fn-btn-hover);
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+    color: #222;
 }
 
 .fn-btn:active {
     background-color: var(--fn-btn-active);
 }
 
+/* =====================================
+   Calculator Input Styles
+   ===================================== */
 .calc-input {
     width: 100%;
     height: 60px;
@@ -92,23 +110,26 @@ td {
     border: none;
     background-color: var(--screen-bg);
     color: var(--text-color-2);
+    border-radius: 4px;
 }
 
 /* =====================================
-    FOR CLASS SOLUTION
-====================================== */
+   Class Solution Styles
+   ===================================== */
 .wrapper-2 {
     background-color: var(--screen-bg);
     color: var(--text-color-2);
     margin: 0 auto;
     padding: 20px;
+    border-radius: 8px;
 }
 
 .screen {
-        text-align: right;
-        font-family: 'Courier New', Courier, monospace;
-        padding: 20px 5px;
-        font-size: 40px;
+    text-align: right;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 20px 5px;
+    font-size: 40px;
+    border-radius: 4px;
 }
 
 .calc-button-row {
@@ -125,11 +146,17 @@ td {
     font-size: 40px;
     height: 100px;
     flex-basis: 24.5%;
+    border-radius: 4px;
+    transition: background 0.2s, color 0.2s, outline 0.2s;
 }
 
-.calc-button:hover {
+.calc-button:hover,
+.calc-button:focus {
     background-color: var(--btn-hover);
+    outline: 2px solid #333;
+    outline-offset: 2px;
 }
+
 .calc-button:active {
     background-color: var(--btn-active);
 }
@@ -139,7 +166,7 @@ td {
 }
 
 .triple {
-    flex-basis: 74.8%;;
+    flex-basis: 74.8%;
 }
 
 .calc-button:last-child {
@@ -147,9 +174,34 @@ td {
     color: var(--text-color-2);
 }
 
-.calc-button:last-child:hover {
+.calc-button:last-child:hover,
+.calc-button:last-child:focus {
     background-color: var(--fn-btn-hover);
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+    color: #222;
 }
+
 .calc-button:last-child:active {
     background-color: var(--fn-btn-active);
+}
+
+/* =====================================
+   Responsive Design
+   ===================================== */
+@media (max-width: 500px) {
+    .wrapper-1,
+    .wrapper-2 {
+        width: 98%;
+        min-width: 0;
+        padding: 5px;
+    }
+    .screen {
+        font-size: 24px;
+        padding: 10px 2px;
+    }
+    .calc-button {
+        font-size: 24px;
+        height: 60px;
+    }
 }

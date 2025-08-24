@@ -7,89 +7,59 @@
     <link rel="stylesheet" href="/css/calculator.css">
 </head>
 
-<body>
-    <!-- MY SOLUTION TO CODING THE CALCULATOR LAYOUT -->
-     <!-- 
-    <div class="wrapper-1">
-        <section class="screen">
-        </section>
-
-        <section class="calc-buttons">
-            <table>
-                <tr>
-                    <td colspan="4">
-                        <input type="text" class="calc-input" placeholder="0" disabled>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2"><button class="btn">C</button></td>
-                    <td><button class="btn">&larr;</button></td>
-                    <td><button class="fn-btn">&divide;</button></td>
-                </tr>
-                <tr>
-                    <td><button class="btn">7</button></td>
-                    <td><button class="btn">8</button></td>
-                    <td><button class="btn">9</button></td>
-                    <td><button class="fn-btn">&times;</button></td>
-
-                </tr>
-                <tr>
-                    <td><button class="btn">4</button></td>
-                    <td><button class="btn">5</button></td>
-                    <td><button class="btn">6</button></td>
-                    <td><button class="fn-btn">&minus;</button></td>
-                </tr>
-                <tr>
-                    <td><button class="btn">1</button></td>
-                    <td><button class="btn">2</button></td>
-                    <td><button class="btn">3</button></td>
-                    <td><button class="fn-btn">&plus;</button></td>
-                </tr>
-                <tr>
-                    <td colspan="3"><button class="btn">0</button></td>
-                    <td><button class="fn-btn">&equals;</button></td>
-                </tr>
-            </table>
-
-        </section>
-    </div>
--->
-
-    <!-- CLASS SOLUTION TO CODING THE CALCULATOR LAYOUT -->
-    <div class="wrapper-2">
-
-        <section class="screen">0</section>
-
-        <section class="calc-buttons">
-            <div class="calc-button-row">
-                <button class="calc-button double">C</button>
-                <button class="calc-button">&larr;</button>
-                <button class="calc-button">&divide;</button>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="header-flex">
+        <div class="header-center flex-row-start">
+            <img class="logo" src="/img/logo.png" alt="I Knit The Web logo: a ball of yarn with knitting needles forming a web">
+            <div class="heading-subheading">
+                <h1>Calculator</h1>
+                <p class="subheading">A simple calculator built with HTML, CSS, and JavaScript</p>
             </div>
-            <div class="calc-button-row">
-                <button class="calc-button">7</button>
-                <button class="calc-button">8</button>
-                <button class="calc-button">9</button>
-                <button class="calc-button">&times;</button>
-            </div>
-            <div class="calc-button-row">
-                <button class="calc-button">4</button>
-                <button class="calc-button">5</button>
-                <button class="calc-button">6</button>
-                <button class="calc-button">&minus;</button>
-            </div>
-            <div class="calc-button-row">
-                <button class="calc-button">1</button>
-                <button class="calc-button">2</button>
-                <button class="calc-button">3</button>
-                <button class="calc-button">&plus;</button>
-            </div>
-            <div class="calc-button-row">
-                <button class="calc-button triple">0</button>
-                <button class="calc-button">&equals;</button>
-            </div>
-        </section>
-    </div>
+        </div>
+        <nav class="header-nav flex-row-end" aria-label="Main navigation">
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/portfolio.html">Portfolio</a></li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+                <li><a href="/calculator.html" aria-current="page">Calculator</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="main-content">
+        <div class="wrapper-2">
+            <section class="screen" role="status" aria-live="polite">0</section>
+            <section class="calc-buttons">
+                <div class="calc-button-row">
+                    <button class="calc-button double" aria-label="Clear">C</button>
+                    <button class="calc-button" aria-label="Backspace">&larr;</button>
+                    <button class="calc-button" aria-label="Divide">&divide;</button>
+                </div>
+                <div class="calc-button-row">
+                    <button class="calc-button" aria-label="7">7</button>
+                    <button class="calc-button" aria-label="8">8</button>
+                    <button class="calc-button" aria-label="9">9</button>
+                    <button class="calc-button" aria-label="Multiply">&times;</button>
+                </div>
+                <div class="calc-button-row">
+                    <button class="calc-button" aria-label="4">4</button>
+                    <button class="calc-button" aria-label="5">5</button>
+                    <button class="calc-button" aria-label="6">6</button>
+                    <button class="calc-button" aria-label="Subtract">&minus;</button>
+                </div>
+                <div class="calc-button-row">
+                    <button class="calc-button" aria-label="1">1</button>
+                    <button class="calc-button" aria-label="2">2</button>
+                    <button class="calc-button" aria-label="3">3</button>
+                    <button class="calc-button" aria-label="Add">&plus;</button>
+                </div>
+                <div class="calc-button-row">
+                    <button class="calc-button triple" aria-label="0">0</button>
+                    <button class="calc-button" aria-label="Equals">&equals;</button>
+                </div>
+            </section>
+        </div>
+    </main>
 </body>
 
 </html>

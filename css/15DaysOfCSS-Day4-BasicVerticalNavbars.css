@@ -33,20 +33,29 @@ p {
   background: rgba(255, 255, 255, 0.8);
   padding: 1.0em 2.0em 0;
 }
+
+/* =========================
+   Button Styles
+   ========================= */
 .button {
   background-color: #eb3b5a;
   padding: 0.5rem 1rem;
   border: 1px solid #eb3b5a;
   border-radius: 30px;
-  color: white;
+  color: #fff;
   text-decoration: none;
   font-weight: bold;
   display: inline-block;
   margin: 1em 0 5rem;
+  outline: none;
+  transition: background 0.2s, color 0.2s, outline 0.2s;
 }
-.button:hover {
+.button:hover,
+.button:focus {
   color: #eb3b5a;
-  background-color: white;
+  background-color: #fff;
+  outline: 2px solid #eb3b5a;
+  outline-offset: 2px;
 }
 
 /* 
@@ -66,6 +75,7 @@ Add your CSS here
   background-color:rgba(255, 255, 255, 0.669);
   background: linear-gradient(to bottom, #fff, #eb3b5a, #eb3b5a, #eb3b5a);
   background-size: 200% 200%;
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 2px #000000;
@@ -87,15 +97,43 @@ Add your CSS here
 .challenge-container nav ul li {
   margin: 0.5em 0;
 }
+
+/* =========================
+   Navbar Link Styles
+   ========================= */
 .challenge-container nav ul li a {
-  color: white;
+  color: #fff;
   text-decoration: none;
   padding: 0.5em;
   display: block;
-  border-bottom: 4px solid white;
+  border-bottom: 4px solid #fff;
   border-radius: 15px;
+  outline: none;
+  transition: background 0.2s, color 0.2s, outline 0.2s;
 }
-.challenge-container nav ul li a:hover {
+.challenge-container nav ul li a:hover,
+.challenge-container nav ul li a:focus {
   background-color: #666;
   border-bottom: 4px solid #eb3b5a;
+  color: #eb3b5a;
+  outline: 2px solid #eb3b5a;
+  outline-offset: 2px;
+}
+
+/* =========================
+   Responsive Design
+   ========================= */
+@media (max-width: 600px) {
+  body {
+    font-size: 1rem;
+    padding: 0.5em 0.5em 0;
+  }
+  .brand {
+    font-size: 2.5rem;
+    width: 98%;
+  }
+  .challenge-container nav {
+    width: 98%;
+    padding: 0.5em;
+  }
 }

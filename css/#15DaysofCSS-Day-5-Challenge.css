@@ -1,10 +1,9 @@
-/* set the panel to have a width. This width could be set elsewhere, depending on desired effects */
-
+/* =========================
+   Navbar Panel Styles
+   ========================= */
 nav {
   width: 25%;
 }
-
-/* turn off bullets, margin, padding */
 
 ul {
   list-style-type: none;
@@ -12,38 +11,66 @@ ul {
   margin: 0;
 }
 
-/* big clickable areas, padding, colors, turn off underline */
-
 a {
   display: block;
   padding: 0.5rem;
   background-color: #3867d6;
   color: #d1d8e0;
   text-decoration: none;
+  border-radius: 6px;
+  outline: none;
+  transition: background 0.2s, color 0.2s, outline 0.2s;
 }
 
-/* change the look on hover */
-
-a:hover {
+a:hover,
+a:focus {
   background-color: #f7b731;
   color: #3867d6;
+  outline: 2px solid #3867d6;
+  outline-offset: 2px;
 }
 
+/* =========================
+   Button Styles
+   ========================= */
+.button {
+  background-color: #eb3b5a;
+  padding: 0.5rem 1rem;
+  border: 1px solid #eb3b5a;
+  border-radius: 30px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  margin: 1em 0 5rem;
+  outline: none;
+  transition: background 0.2s, color 0.2s, outline 0.2s;
+}
+.button:hover,
+.button:focus {
+  color: #eb3b5a;
+  background-color: #fff;
+  outline: 2px solid #eb3b5a;
+  outline-offset: 2px;
+}
 
+/* =========================
+   Responsive Design
+   ========================= */
+@media (max-width: 600px) {
+  nav {
+    width: 98%;
+    margin: 0 auto;
+  }
+  .button {
+    font-size: 1rem;
+    padding: 0.5rem 0.5rem;
+  }
+}
 
-
-
-
-
-
-
-
-
-
-
-/* =====================================================================
-default styling for the page / instructions - you don't need to touch this unless you really want to
-========================================================================= */
+/* =========================
+   Default Page Styles (Optional)
+   ========================= */
 body {
   font-family: Arial, sans-serif;
   font-size: 1.2rem;
@@ -58,19 +85,4 @@ ol li, ul li {
 p {
   line-height: 1.3em;
   margin-top: 0;
-}
-.button {
-  background-color: #eb3b5a;
-  padding: 0.5rem 1rem;
-  border: 1px solid #eb3b5a;
-  border-radius: 30px;
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  display: inline-block;
-  margin: 1em 0 5rem;
-}
-.button:hover {
-  color: #eb3b5a;
-  background-color: white;
 }

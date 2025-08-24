@@ -11,29 +11,30 @@
 </head>
 
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <header class="header-flex">
         <div class="header-center flex-row-start">
-            <img class="logo" src="/img/logo.png" alt="">
+            <img class="logo" src="/img/logo.png" alt="I Knit The Web logo: a ball of yarn with knitting needles forming a web">
             <div class="heading-subheading">
                 <h1>About Me</h1>
                 <p class="subheading">Knitting the web, one site at a time</p>
             </div>
         </div>
-        <nav class="header-nav flex-row-end">
+        <nav class="header-nav flex-row-end" aria-label="Main navigation">
             <ul>
                 <li><a href="/index.html">Home</a></li>
                 <li><a href="/portfolio.html">Portfolio</a></li>
-                <li><a href="/about.html">About</a></li>
+                <li><a href="/about.html" aria-current="page">About</a></li>
                 <li><a href="/contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
-    <main>
+    <main id="main-content">
         <section>
             <aside class="profile">
                 <span class="profile-pic-wrapper">
                     <span class="profile-pic-bg"></span>
-                    <img class="profile-pic" src="/img/Profile.png" alt="">
+                    <img class="profile-pic" src="/img/Profile.png" alt="Profile picture: smiling person with glasses and short hair">
                 </span>
                 <p>I am an aspiring web developer on a mission to create mind-blowing digital experiences; I'm obsessed
                     with HTML, CSS, and a sprinkle of JavaScript magic. &#x1FA84; </p>
@@ -50,10 +51,10 @@
                 <p>I also earned the developer certification in Responsive Web Design at freecodecamp.org and have
                     completed the Frontend Masters Bootcamp.</p>
                 <p>When I'm not coding, you’ll find me<span style="font-size: 16px">&#x1f9f6;</span>knitting cozy
-                    creations or getting lost in a good book.<span style="font-size: 16px">&#128366;</spanp>
-                        <p>Feel free to check out my <a href="/portfolio.html">portfolio</a> and <a
-                                href="/contact.html">contact me</a> if you have any questions or would like to
-                            collaborate on a project! Let’s get together and turn ideas into reality!</p>
+                    creations or getting lost in a good book.<span style="font-size: 16px">&#128366;</span></p>
+                <p>Feel free to check out my <a href="/portfolio.html">portfolio</a> and <a
+                        href="/contact.html">contact me</a> if you have any questions or would like to
+                    collaborate on a project! Let’s get together and turn ideas into reality!</p>
             </section>
         </section>
     </main>
