@@ -88,6 +88,16 @@ if (clearBtn) {
   });
 }
 
+// Add event listener for Formspree clear form button
+const fsClearBtn = document.getElementById('fs-clear-form-btn');
+const fsForm = document.querySelector('form.fs-form');
+if (fsClearBtn && fsForm) {
+  fsClearBtn.addEventListener('click', function() {
+    fsForm.reset();
+    if (typeof showPopup === 'function') showPopup('Form cleared.');
+  });
+}
+
 // Run on DOMContentLoaded to ensure form is present
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', addClearFormButton);

@@ -33,27 +33,29 @@
     </header>
     <main id="main-content">
         <section>
-            <form action="https://formspree.io/f/xrbazawp" class="fs-form" target="_top" method="POST">
-                <div class="fs-field">
-                    <label class="fs-label" for="name">Name</label>
-                    <input class="fs-input" id="name" name="name" required />
+            <form action="https://formspree.io/f/xrbazawp" method="POST" class="fs-form" target="_top">
+                <div class="img-container">
+                    <img src="/img/collaborate.jpg" alt="two people collaborating on a project" class="collaborate-img">
                 </div>
-                <div class="fs-field">
-                    <label class="fs-label" for="email">Email Address</label>
-                    <input class="fs-input" id="email" name="email" required />
-                </div>
-                <div class="fs-field">
-                    <label class="fs-label" for="number">Phone Number</label>
-                    <input class="fs-input" id="number" name="number" />
-                </div>
-                <div class="fs-field">
-                    <label class="fs-label" for="message">Inquiry Message</label>
-                    <textarea class="fs-textarea" id="message" name="message" required></textarea>
-                </div>
-                <div class="fs-button-group">
-                    <button class="fs-button" type="submit">Submit</button>
+                <div>
+                    <fieldset>
+                        <legend>Your contact information</legend>
+                        <label for="fs-name">Your name </label>
+                        <input type="text" id="fs-name" name="name" placeholder="First, last, your cat, whatever you want to be called ;)" required>
+                        <label for="fs-phone">Phone number</label>
+                        <input type="tel" id="fs-phone" name="phone" placeholder="Don't forget the area or country code!">
+                        <label for="fs-email">Email</label>
+                        <input type="email" id="fs-email" name="email" placeholder="user@example.com" required>
+                    </fieldset>
+                    <fieldset>
+                        <legend>What kind of information would you like?</legend>
+                        <textarea id="fs-comments" name="message" placeholder="Tell me everything" required></textarea>
+                    </fieldset>
+                    <button type="button" id="fs-clear-form-btn" class="clear-form-btn" aria-label="Clear form">Clear</button>
+                    <button type="submit">Submit</button>
                 </div>
             </form>
+
         </section>
     </main>
     <script src="js/forms.js"></script>
