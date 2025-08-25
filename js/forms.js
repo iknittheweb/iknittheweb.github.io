@@ -70,14 +70,14 @@ function showPopup(message) {
   popup.style.boxShadow = '0 2px 8px rgba(0,0,0,0.2)';
   popup.style.fontSize = '1.2rem';
   popup.style.zIndex = '9999';
+  popup.style.width = '50%';
+  popup.style.maxWidth = '500px';
+  popup.style.textAlign = 'center';
   document.body.appendChild(popup);
   setTimeout(() => {
     popup.remove();
   }, 3500);
 }
-
-// Remove Clear Form button JS if present
-// (No clear form button will be added dynamically)
 
 // Add event listener for unobtrusive clear form button
 const clearBtn = document.getElementById('clear-form-btn');
