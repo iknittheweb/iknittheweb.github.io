@@ -98,6 +98,18 @@ if (fsClearBtn && fsForm) {
   });
 }
 
+// Add event listener for Formspree form submission to show popup and clear form
+if (fsForm) {
+  fsForm.addEventListener('submit', function(e) {
+    // Let the form submit normally, but show popup and clear after submit
+    // Use a short timeout to allow Formspree to process
+    setTimeout(function() {
+      showPopup('Your message has been submitted. You will receive a response as soon as possible.');
+      fsForm.reset();
+    }, 500);
+  });
+}
+
 // Run on DOMContentLoaded to ensure form is present
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', addClearFormButton);
