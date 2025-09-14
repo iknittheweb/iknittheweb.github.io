@@ -1,78 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="/img/favicon_io/favicon.ico">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="/img/favicon_io/favicon.ico" />
     <title>My Portfolio</title>
-    <link rel="stylesheet" href="/css/normalize.css">
-    <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="/css/portfolio.css">
-</head>
+    <link rel="stylesheet" href="/app/dist/style.css" />
+  </head>
 
-<body>
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-    <header class="header-flex">
-        <div class="header-center flex-row-start">
-            <img class="logo" src="/img/logo.png" alt="I Knit The Web logo: a ball of yarn with knitting needles forming a web">
-            <div class="heading-subheading">
-                <h1>My Portfolio</h1>
-                <p class="subheading">Examples of my favorite projects</p>
-            </div>
+  <body class="portfolio-page">
+    <a href="#main-content" class="portfolio-page__skip-link skip-link"
+      >Skip to main content</a
+    >
+    <header class="portfolio-page__header header-flex">
+      <div class="portfolio-page__header-center header-center flex-row-start">
+        <img
+          class="portfolio-page__logo logo"
+          src="/app/img/logo.png"
+          alt="I Knit The Web logo: a ball of yarn with knitting needles forming a web"
+        />
+        <div class="portfolio-page__heading-subheading heading-subheading">
+          <h1 class="portfolio-page__title">My Portfolio</h1>
+          <p class="portfolio-page__subtitle subheading">
+            Examples of my favorite projects
+          </p>
         </div>
-        <nav class="header-nav flex-row-end" aria-label="Main navigation">
-            <ul>
-                <li><a href="/index.html">Home</a></li>
-                <li><a href="/portfolio.html" aria-current="page">Portfolio</a></li>
-                <li><a href="/about.html">About</a></li>
-                <li><a href="/contact.html">Contact</a></li>
-            </ul>
-        </nav>
+      </div>
+      <nav
+        class="portfolio-page__nav header-nav flex-row-end"
+        aria-label="Main navigation"
+      >
+        <ul class="portfolio-page__nav-list">
+          <li class="portfolio-page__nav-item">
+            <a class="portfolio-page__nav-link" href="/index.html">Home</a>
+          </li>
+          <li class="portfolio-page__nav-item">
+            <a
+              class="portfolio-page__nav-link"
+              href="/portfolio.html"
+              aria-current="page"
+              >Portfolio</a
+            >
+          </li>
+          <li class="portfolio-page__nav-item">
+            <a class="portfolio-page__nav-link" href="/about.html">About</a>
+          </li>
+          <li class="portfolio-page__nav-item">
+            <a class="portfolio-page__nav-link" href="/contact.html">Contact</a>
+          </li>
+        </ul>
+      </nav>
     </header>
-    <main id="main-content" class="main">
-
-        <!-- Portfolio Gallery Grid -->
-        <div class="row">
-            <div class="column">
-                <div class="content">
-                    <a href="/alien-abduction-form.html">
-                        <img src="/img/Alien-abduction-form-thumb.jpg" alt="Thumbnail preview of Alien Abduction Order Form project" style="width:100%">
-                        <h3>Alien Abduction Order Form</h3>
-                    </a>
-                    <p>When you want an alien abduction, you want it your way. Fill out this form to get started.</p>
-                </div>
-            </div>
-            <div class="column">
-                <div class="content">
-                    <a href="/calculator.html">
-                        <img src="/img/Calculator-thumb.jpg" alt="Thumbnail preview of Calculator project" style="width:100%">
-                        <h3>Calculator</h3>
-                    </a>
-                    <p>A simple calculator built with HTML, CSS, and JavaScript.</p>
-                </div>
-            </div>
-            <div class="column">
-                <div class="content">
-                    <a href="/css-position-cheat-sheet.html">
-                        <img src="/img/css-position-cheat-sheet-thumb.png" alt="Thumbnail preview of CSS Position Cheat Sheet project" style="width:100%">
-                        <h3>CSS Position Cheat Sheet</h3>
-                    </a>
-                    <p>I created this cheat sheet as an assignment on <a href="https://www.codecademy.com/learn/paths/front-end-engineer-career-path" target="_blank" rel="noopener">Codecademy's Front-End Engineer Career Path</a>.</p>
-                </div>
-            </div>
-            <!-- Add more projects here as needed -->
+    <main id="main-content" class="portfolio-page__main main">
+      <!-- Portfolio Gallery Grid -->
+      <div class="portfolio-page__gallery row">
+        <div class="portfolio-page__column column">
+          <div class="portfolio-page__content content">
+            <a
+              class="portfolio-page__project-link"
+              href="/alien-abduction-form.html"
+            >
+              <img
+                class="portfolio-page__project-thumb"
+                src="/app/img/Alien-abduction-form-thumb.jpg"
+                alt="Thumbnail preview of Alien Abduction Order Form project"
+                style="width: 100%"
+              />
+              <h3 class="portfolio-page__project-title">
+                Alien Abduction Order Form
+              </h3>
+            </a>
+            <p class="portfolio-page__project-desc">
+              When you want an alien abduction, you want it your way. Fill out
+              this form to get started.
+            </p>
+          </div>
         </div>
+        <div class="portfolio-page__column column">
+          <div class="portfolio-page__content content">
+            <a class="portfolio-page__project-link" href="/calculator.html">
+              <img
+                class="portfolio-page__project-thumb"
+                src="/app/img/Calculator-thumb.jpg"
+                alt="Thumbnail preview of Calculator project"
+                style="width: 100%"
+              />
+              <h3 class="portfolio-page__project-title">Calculator</h3>
+            </a>
+            <p class="portfolio-page__project-desc">
+              A simple calculator built with HTML, CSS, and JavaScript.
+            </p>
+          </div>
+        </div>
+        <div class="portfolio-page__column column">
+          <div class="portfolio-page__content content">
+            <a
+              class="portfolio-page__project-link"
+              href="/css-position-cheat-sheet.html"
+            >
+              <img
+                class="portfolio-page__project-thumb"
+                src="/app/img/css-position-cheat-sheet-thumb.png"
+                alt="Thumbnail preview of CSS Position Cheat Sheet project"
+                style="width: 100%"
+              />
+              <h3 class="portfolio-page__project-title">
+                CSS Position Cheat Sheet
+              </h3>
+            </a>
+            <p class="portfolio-page__project-desc">
+              I created this cheat sheet as an assignment on
+              <a
+                class="portfolio-page__project-ext-link"
+                href="https://www.codecademy.com/learn/paths/front-end-engineer-career-path"
+                target="_blank"
+                rel="noopener"
+                >Codecademy's Front-End Engineer Career Path</a
+              >.
+            </p>
+          </div>
+        </div>
+        <!-- Add more projects here as needed -->
+      </div>
 
-    <!-- Add more content or projects as needed -->
+      <!-- Add more content or projects as needed -->
 
-        <!-- END MAIN -->
-
-
+      <!-- END MAIN -->
     </main>
-    <footer>
-        <p>&copy; 2025 I Knit The Web! All rights reserved.</p>
+    <footer class="portfolio-page__footer">
+      <p class="portfolio-page__copyright">
+        &copy; 2025 I Knit The Web! All rights reserved.
+      </p>
     </footer>
-</body>
-
+  </body>
 </html>

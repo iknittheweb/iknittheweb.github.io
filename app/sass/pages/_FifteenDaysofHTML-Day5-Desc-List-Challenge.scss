@@ -1,0 +1,119 @@
+@use '../../util/functions' as functions;
+/* =========================
+   Styles for 15 Days of HTML - Day 5
+   Description List Challenge
+   ========================= */
+
+/* =========================
+   Base & Layout Styles
+   ========================= */
+
+.desc-list-page {
+  font-family: Georgia, 'Times New Roman', serif;
+  width: 80%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: functions.rem(16);
+  line-height: 1.6;
+  background: var(--background-lightest-grey);
+  color: var(--text-dark);
+}
+
+.desc-list-page__blockquote {
+  margin: functions.rem(32) 0;
+  padding: functions.rem(16) functions.rem(32);
+  border-left: functions.rem(4) solid var(--accent-red);
+  background-color: var(--background-light-grey);
+  font-style: italic;
+}
+
+.desc-list-page__materials {
+  margin: functions.rem(32) 0;
+  padding: functions.rem(16);
+  background-color: var(--white);
+  border: 1px solid var(--border-light);
+  border-radius: functions.rem(8);
+}
+
+.desc-list-page__materials-term {
+  font-weight: bold;
+  color: var(--text-dark);
+  margin-top: functions.rem(8);
+}
+
+.desc-list-page__materials-term:first-child {
+  margin-top: 0;
+}
+
+.desc-list-page__materials-desc {
+  margin: 0 0 functions.rem(8) functions.rem(32);
+  color: var(--text-mid-grey);
+}
+
+.desc-list-page__materials-note {
+  margin-top: functions.rem(16);
+  padding-top: functions.rem(16);
+  border-top: 1px solid var(--border-light);
+  font-weight: bold;
+  text-align: right;
+}
+
+/* =========================
+   Button Styles
+   ========================= */
+
+.desc-list-page__button {
+  @extend %btn-base;
+  background-color: var(--accent-red);
+  padding: functions.rem(8) functions.rem(16);
+  border: 1px solid var(--accent-red);
+  border-radius: 30px;
+  color: var(--white);
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  margin-bottom: functions.rem(80);
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.desc-list-page__button:hover,
+.desc-list-page__button:focus {
+  color: var(--accent-red);
+  background-color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(235, 59, 90, 0.3);
+  outline: 2px solid var(--accent-red);
+  outline-offset: 2px;
+}
+
+/* =========================
+   Citation Styles
+   ========================= */
+
+.desc-list-page__citation {
+  text-align: right;
+  font-style: italic;
+  margin-top: functions.rem(32);
+}
+
+/* =========================
+   Responsive Design
+   ========================= */
+
+@media (max-width: 600px) {
+  .desc-list-page {
+    width: 98%;
+    padding: functions.rem(8);
+  }
+  .desc-list-page__materials {
+    padding: functions.rem(8);
+  }
+  .desc-list-page__blockquote {
+    padding: functions.rem(8) functions.rem(16);
+  }
+  .desc-list-page__button {
+    font-size: functions.rem(16);
+    padding: functions.rem(8) functions.rem(8);
+  }
+}

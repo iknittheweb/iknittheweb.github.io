@@ -1,0 +1,31 @@
+/* =========================
+	 Utility/Helper Classes
+	 ========================= */
+
+.container {
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.profile {
+  float: left;
+  width: 35%;
+  text-align: center;
+  font-style: italic;
+  margin: 0.5em 1rem;
+  padding: 0.5em;
+}
+
+.profile-desc {
+  width: 250px;
+  margin-inline: auto;
+  font-size: 0.8rem;
+  line-height: 1.2;
+  color: var(--color-primary);
+}
+
+.bio-text {
+  font-size: 14px;
+}
+// Utility/helper classes

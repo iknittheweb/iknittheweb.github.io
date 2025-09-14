@@ -1,0 +1,421 @@
+@use '../../util/functions' as functions;
+/* =========================
+   Styles for index.html
+   ========================= */
+
+/* =========================
+   Accessibility: Skip Link
+   ========================= */
+
+.home-page__skip-link {
+  @extend %visually-hidden;
+  z-index: 1000;
+  background: var(--primary-color-light);
+  color: var(--black);
+  padding: functions.rem(8) functions.rem(16);
+  border-radius: functions.rem(4);
+  font-size: functions.rem(16);
+  text-decoration: none;
+  transition: left 0.2s;
+  &:focus,
+  &:active {
+    @extend %visually-hidden-focus;
+    left: 10px;
+    top: 10px;
+    outline: 3px solid var(--secondary-color-light);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+}
+/* =========================
+   Variables
+   ========================= */
+:root {
+  --primary-color: var(--primary-color);
+  --primary-color-mid: var(--primary-color-mid);
+  --primary-color-light: var(--primary-color-light);
+  --secondary-color: var(--secondary-color);
+  --secondary-color-mid: var(--secondary-color-mid);
+  --secondary-color-light: var(--secondary-color-light);
+  --text-color-1: var(--text-dark);
+  --text-color-2: var(--text-color-2);
+  --background-color: var(--background-color);
+  --font-1: 'Georgia', serif;
+  --font-2: 'Verdana', sans-serif;
+}
+
+/* =========================
+   Typography
+   ========================= */
+h1,
+h2,
+h3 {
+  font-family: var(--font-1);
+  font-weight: bold;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+h1 {
+  display: block;
+  font-size: functions.rem(32);
+  margin: 0;
+  padding-top: functions.rem(8);
+}
+
+h2 {
+  display: block;
+  font-size: functions.rem(20);
+  margin-top: 0;
+  margin-bottom: functions.rem(13.28);
+  text-align: left;
+}
+
+h3 {
+  display: block;
+  font-size: functions.rem(18.72);
+  margin-top: functions.rem(16);
+  margin-bottom: functions.rem(16);
+}
+
+p,
+li {
+  font-family: var(--font-2);
+  font-weight: 300;
+  line-height: 1.5;
+  font-size: functions.rem(14.4);
+}
+
+.home-page__main {
+  padding: functions.rem(16);
+  margin-bottom: functions.rem(240);
+}
+
+.home-page__profile-desc:first-of-type {
+  margin-top: functions.rem(40);
+}
+
+/* =========================
+   Flex Utility Classes
+   ========================= */
+.flex-row-start,
+.header-center,
+.header-leftish {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0 0 0 10%;
+  text-align: left;
+  padding: 0;
+  background: none;
+  box-shadow: none;
+}
+
+.flex-row-center {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-row-end,
+.header-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 0 10% 0 0;
+  padding: 0;
+  background: none;
+  width: auto;
+}
+
+.flex-row-between {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+main.flex-container {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* =========================
+   Aside & Images
+   ========================= */
+.float-right {
+  float: right;
+}
+
+.img-knit {
+  width: 300px;
+  border: 1rem solid var(--primary-color);
+  margin-left: 1rem;
+}
+
+/* =========================
+   Profile Pic
+   ========================= */
+.profile-pic-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 220px;
+  height: 220px;
+  margin: 0 auto 2.5rem auto;
+}
+.profile-pic-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 220px;
+  height: 220px;
+  background: var(--primary-color);
+  transform: translate(-50%, -50%) rotate(-45deg);
+  z-index: 1;
+  border-radius: 0;
+}
+.profile-pic {
+  position: relative;
+  width: 220px;
+  height: 220px;
+  margin: 0;
+  z-index: 2;
+  background: transparent;
+  -o-object-fit: cover;
+  object-fit: cover;
+  border: 5px solid var(--primary-color);
+}
+
+/* =========================
+   Header & Navigation
+   ========================= */
+header,
+.header-flex {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  min-height: calc(3.5rem + 1rem);
+  padding: 1.5rem 0;
+  margin-bottom: 2rem;
+  background-color: var(--primary-color);
+  color: var(--text-color-2);
+}
+
+.header-nav ul {
+  display: flex;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background-color: var(--primary-color);
+}
+
+.logo {
+  width: 120px;
+  height: 120px;
+  padding: 0;
+  margin-right: 12px;
+}
+
+.heading-subheading {
+  padding: 0;
+}
+
+.header-nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.header-nav li a {
+  display: block;
+  color: var(--text-color-2);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  background-color: var(--primary-color);
+  transition: background 0.2s, border 0.2s;
+}
+
+.header-nav li a:visited {
+  background-color: var(--primary-color);
+  color: var(--primary-color-light);
+}
+
+.header-nav li a:focus {
+  outline: 1px solid var(--background-color);
+  border: 1px solid var(--primary-color-light);
+}
+
+.header-nav li a:hover,
+.header-nav li a:active {
+  background-color: var(--background-color);
+  border: 1px solid var(--text-color-2);
+}
+
+/* =========================
+   Links
+   ========================= */
+
+/* =========================
+   Link Focus & Hover States
+   ========================= */
+a:focus {
+  outline: 3px solid var(--secondary-color-light);
+  outline-offset: 2px;
+  border-radius: 2px;
+  background: var(--primary-color-light);
+  color: var(--black);
+}
+a:hover,
+a:active {
+  border: 1px solid var(--secondary-color);
+  background: var(--primary-color-light);
+  color: var(--black);
+}
+
+/* =========================
+   Responsive Design
+   ========================= */
+@media (max-width: 900px) {
+  main.flex-container {
+    flex-direction: column;
+    align-items: stretch;
+    gap: functions.rem(16);
+  }
+  header,
+  .header-flex {
+    flex-direction: column;
+    align-items: stretch;
+    padding: functions.rem(4) 0;
+  }
+  .header-center,
+  .header-leftish {
+    margin-bottom: functions.rem(8);
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    padding-bottom: functions.rem(4);
+  }
+  .header-nav ul {
+    flex-direction: column;
+    gap: 0;
+  }
+  .logo {
+    width: functions.rem(90);
+    height: functions.rem(90);
+    margin-right: functions.rem(8);
+  }
+  .profile {
+    width: 90%;
+    float: none;
+    margin: functions.rem(16) auto;
+  }
+  .profile-pic-wrapper,
+  .profile-pic-bg {
+    width: functions.rem(180);
+    height: functions.rem(180);
+  }
+  .profile-pic {
+    width: functions.rem(160);
+    height: functions.rem(160);
+  }
+  .img-knit {
+    width: functions.rem(200);
+    border-width: functions.rem(8);
+    margin-left: functions.rem(8);
+  }
+  main,
+  h2,
+  footer {
+    max-width: 98%;
+    width: 95%;
+    margin-left: 1%;
+    margin-right: 1%;
+  }
+}
+
+@media (max-width: 600px) {
+  header,
+  .header-flex {
+    padding: functions.rem(1.6) 0;
+  }
+  .header-center,
+  .header-leftish {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    padding-top: functions.rem(8);
+    padding-bottom: functions.rem(2.4);
+  }
+  .logo {
+    width: functions.rem(70);
+    height: functions.rem(70);
+    margin: 0 0 functions.rem(4) 0;
+    padding: 0;
+  }
+  .heading-subheading {
+    text-align: left;
+    width: 100%;
+  }
+  .header-nav {
+    width: 100%;
+    margin: 0;
+    padding-block: 0;
+  }
+  .header-nav ul {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .header-nav li a {
+    padding: functions.rem(10) 0;
+    font-size: functions.rem(16);
+  }
+  main {
+    width: 95%;
+    max-width: 98%;
+    margin: 0 auto functions.rem(80);
+    padding: functions.rem(8) 0;
+  }
+  .profile {
+    width: 95%;
+    margin: functions.rem(16) 0;
+    float: none;
+    padding: functions.rem(8) 0;
+  }
+  .profile-pic-wrapper,
+  .profile-pic-bg {
+    width: functions.rem(120);
+    height: functions.rem(120);
+  }
+  .profile-pic {
+    width: functions.rem(100);
+    height: functions.rem(100);
+  }
+  .img-knit {
+    width: functions.rem(120);
+    border-width: functions.rem(4);
+    margin-left: functions.rem(4);
+  }
+  .bio > p,
+  .profile > p {
+    width: 95%;
+    font-size: functions.rem(15.2);
+  }
+  main,
+  h2,
+  footer {
+    width: 95%;
+    max-width: 98%;
+    margin-left: 1%;
+    margin-right: 1%;
+  }
+}

@@ -1,0 +1,103 @@
+@use '../../util/functions' as functions;
+/* =========================
+  Styles for Portfolio Page
+  ========================= */
+
+.portfolio-page__title {
+  font-size: functions.rem(50);
+  word-break: break-all;
+}
+
+/* =========================
+   Layout & Box Model
+   ========================= */
+* {
+  box-sizing: border-box;
+}
+
+/* Clear floats after rows */
+
+.portfolio-page__gallery:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.portfolio-page__gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: functions.rem(24);
+  justify-content: center;
+  margin: functions.rem(8) 0;
+}
+
+/* =========================
+   Content Card Styles
+   ========================= */
+
+.portfolio-page__content {
+  @extend %card-base;
+  max-width: 350px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.portfolio-page__content:focus-within {
+  box-shadow: 0 0 0 functions.rem(3) var(--color-primary-mid),
+    0 functions.rem(2) functions.rem(8) rgba(0, 0, 0, 0.12);
+}
+
+/* Ensure images are responsive and have rounded corners */
+
+.portfolio-page__content img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: functions.rem(6);
+}
+
+/* Focus style for links inside content */
+
+.portfolio-page__content a:focus {
+  outline: 2px solid var(--color-secondary-mid);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* =========================
+  Responsive Design
+  ========================= */
+
+@media screen and (max-width: 900px) {
+  .portfolio-page__gallery {
+    margin: functions.rem(4) functions.rem(-8);
+  }
+  .portfolio-page__content {
+    padding: functions.rem(12) functions.rem(6);
+    margin-bottom: functions.rem(10);
+  }
+}
+@media screen and (max-width: 600px) {
+  .portfolio-page__gallery {
+    margin: functions.rem(2) functions.rem(-4);
+  }
+  .portfolio-page__content {
+    padding: functions.rem(8) functions.rem(2);
+    margin-bottom: functions.rem(6);
+  }
+}
+@media screen and (max-width: 900px) {
+  .portfolio-page__column {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .portfolio-page__column {
+    width: 100%;
+  }
+}

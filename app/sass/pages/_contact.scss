@@ -1,0 +1,185 @@
+@use '../../util/functions' as functions;
+/* =========================
+   Accessibility: Focus Styles
+   ========================= */
+
+.contact-page__input:focus,
+.contact-page__textarea:focus {
+  outline: 2px solid var(--color-secondary-light);
+  outline-offset: 2px;
+  border-color: var(--color-secondary-mid);
+  background: var(--color-yellow-light);
+}
+
+.contact-page__submit-btn:focus {
+  outline: 2px solid var(--color-secondary-light);
+  outline-offset: 2px;
+  border-color: var(--color-secondary-mid);
+  background: var(--color-yellow-light);
+}
+
+/* =========================
+   Responsive Design
+   ========================= */
+@media (max-width: 700px) {
+  .contact-page__form {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0.5rem;
+  }
+  .contact-page__img-container {
+    margin-bottom: 1rem;
+    justify-content: center;
+  }
+  .contact-page__collaborate-img {
+    max-width: 100%;
+    height: auto;
+    max-height: 200px;
+  }
+  .contact-page__input,
+  .contact-page__textarea {
+    width: 100%;
+    min-width: 0;
+  }
+}
+:root {
+  --primary-color: var(--primary-color);
+  --text-color-2: var(--text-color-2);
+}
+
+.contact-page__section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-page__form {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  background: var(--color-primary);
+  color: var(--color-text-light);
+  border: 3px solid var(--color-primary);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-page__form > .contact-page__collaborate-img {
+  width: auto;
+  height: 100%;
+  max-height: functions.rem(480);
+  -o-object-fit: cover;
+  object-fit: cover;
+  margin-right: functions.rem(16);
+  display: block;
+  border-radius: functions.rem(10);
+}
+
+.contact-page__img-container {
+  background: var(--color-primary);
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  align-items: stretch;
+  height: 100%;
+}
+
+.contact-page__img-container .contact-page__collaborate-img {
+  display: block;
+  height: 100%;
+  width: auto;
+  -o-object-fit: cover;
+  object-fit: cover;
+  border-radius: 10px;
+  margin: 0;
+  max-height: none;
+}
+
+.contact-page__form-fields {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact-page__input {
+  width: functions.rem(336);
+  border-radius: functions.rem(10);
+  padding: functions.rem(8);
+  margin-bottom: functions.rem(16);
+  border: 1px solid var(--color-gray-light);
+}
+
+.contact-page__textarea {
+  width: functions.rem(336);
+  height: functions.rem(96);
+  border-radius: functions.rem(10);
+  padding: functions.rem(8);
+  margin-bottom: functions.rem(16);
+  border: 1px solid var(--color-gray-light);
+}
+
+.contact-page__fieldset {
+  flex-direction: column;
+  border: 1px solid var(--text-color-2);
+  margin-bottom: functions.rem(16);
+  border-radius: functions.rem(10);
+  padding: functions.rem(16);
+  display: flex;
+  align-items: flex-start;
+}
+
+.contact-page__label {
+  font-weight: bold;
+}
+
+.contact-page__legend {
+  font-size: functions.rem(17.6);
+  font-weight: bold;
+}
+
+.contact-page__submit-btn {
+  background: var(--text-color-2);
+  color: var(--primary-color);
+  border: none;
+  border-radius: functions.rem(10);
+  padding: functions.rem(12) functions.rem(32);
+  font-size: functions.rem(19.2);
+  cursor: pointer;
+  margin-top: functions.rem(8);
+  transition: background 0.2s, color 0.2s;
+}
+
+.contact-page__submit-btn:hover {
+  background: var(--primary-color);
+  color: var(--text-color-2);
+  border: 2px solid var(--text-color-2);
+  font-weight: bold;
+  font-size: large;
+}
+
+/* =========================
+   Clear Form Button Styles
+   ========================= */
+.contact-page__clear-form-btn {
+  background: transparent;
+  color: var(--white);
+  border: 1px solid var(--white);
+  border-radius: functions.rem(8);
+  padding: functions.rem(4) functions.rem(12);
+  font-size: functions.rem(15.2);
+  margin-right: functions.rem(12);
+  margin-bottom: functions.rem(8);
+  cursor: pointer;
+  opacity: 0.7;
+  transition: background 0.2s, color 0.2s, opacity 0.2s;
+  align-self: flex-start;
+}
+.contact-page__clear-form-btn:hover,
+.contact-page__clear-form-btn:focus {
+  background: var(--white);
+  color: var(--primary-color);
+  opacity: 1;
+  outline: 2px solid var(--secondary-color-light);
+  outline-offset: 2px;
+}

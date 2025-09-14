@@ -1,63 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>#15 Days of CSS - Day 5 Challenge: Nested Lists</title>
+    <link rel="stylesheet" href="/app/dist/style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>#15 Days of CSS - Day 5 Challenge: Nested Lists</title>
-  <link rel="stylesheet" href="/css/#15DaysofCSS-Day-5-Challenge.css">
-</head>
-
-<body>
-
-  <a href="#main-content" class="skip-link">Skip to main content</a>
-  <header class="header-flex">
-    <div class="header-center flex-row-start">
-      <img class="logo" src="/img/logo.png" alt="I Knit The Web logo: a ball of yarn with knitting needles forming a web">
-      <div class="heading-subheading">
-        <h1>#15 Days of CSS - Day 5 Challenge</h1>
-        <p class="subheading">Nested List Accessibility & Styling</p>
+  <body class="day5-nested-list-challenge-page">
+    <a
+      href="#main-content"
+      class="day5-nested-list-challenge-page__skip-link skip-link"
+      >Skip to main content</a
+    >
+    <header class="day5-nested-list-challenge-page__header header-flex">
+      <div
+        class="day5-nested-list-challenge-page__header-center header-center flex-row-start"
+      >
+        <img
+          class="day5-nested-list-challenge-page__logo logo"
+          src="/app/img/logo.png"
+          alt="I Knit The Web logo: a ball of yarn with knitting needles forming a web"
+        />
+        <div
+          class="day5-nested-list-challenge-page__heading-subheading heading-subheading"
+        >
+          <h1 class="day5-nested-list-challenge-page__title">
+            #15 Days of CSS - Day 5 Challenge
+          </h1>
+          <p class="day5-nested-list-challenge-page__subtitle subheading">
+            Nested List Accessibility & Styling
+          </p>
+        </div>
       </div>
-    </div>
-    <nav class="header-nav flex-row-end" aria-label="Main navigation">
-      <ul>
-        <li><a href="/index.html">Home</a></li>
-        <li><a href="/portfolio.html">Portfolio</a></li>
-        <li><a href="/about.html">About</a></li>
-        <li><a href="/contact.html">Contact</a></li>
-        <li><a href="/#15DaysofCSS-Day-5-Challenge.html" aria-current="page">Day 5 Challenge</a></li>
-      </ul>
-    </nav>
-  </header>
-  <main id="main-content">
-    <h2>Sea Creature Classification</h2>
-    <nav aria-label="Sea creature classification">
-      <ul>
-        <li>Cephalopods
-          <ul>
-            <li>Octopus</li>
-            <li>Squid</li>
-            <li>Cuttlefish</li>
-          </ul>
-        </li>
-        <li>Gastropods
-          <ul>
-            <li>Snails</li>
-            <li>Slugs</li>
-          </ul>
-        </li>
-        <li>Bivalvia
-          <ul>
-            <li>Clams</li>
-            <li>Oysters</li>
-            <li>Mussels</li>
-            <li>Scallops</li>
-          </ul>
-        </li>
-      </ul>
-    </nav>
-  </main>
-
-</body>
-
+      <nav
+        class="day5-nested-list-challenge-page__nav header-nav flex-row-end"
+        aria-label="Main navigation"
+      >
+        <ul class="day5-nested-list-challenge-page__nav-list">
+          <li class="day5-nested-list-challenge-page__nav-item">
+            <a
+              class="day5-nested-list-challenge-page__nav-link"
+              href="/index.html"
+              >Home</a
+            >
+          </li>
+          <li class="day5-nested-list-challenge-page__nav-item">
+            <a
+              class="day5-nested-list-challenge-page__nav-link"
+              href="/portfolio.html"
+              >Portfolio</a
+            >
+          </li>
+          <li class="day5-nested-list-challenge-page__nav-item">
+            <a
+              class="day5-nested-list-challenge-page__nav-link"
+              href="/about.html"
+              >About</a
+            >
+          </li>
+          <li class="day5-nested-list-challenge-page__nav-item">
+            <a
+              class="day5-nested-list-challenge-page__nav-link"
+              href="/contact.html"
+              >Contact</a
+            >
+          </li>
+          <li class="day5-nested-list-challenge-page__nav-item">
+            <a
+              class="day5-nested-list-challenge-page__nav-link"
+              href="/#15DaysofCSS-Day-5-Challenge.html"
+              aria-current="page"
+              >Day 5 Challenge</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main id="main-content" class="day5-nested-list-challenge-page__main">
+      <h2 class="day5-nested-list-challenge-page__classification-title">
+        Sea Creature Classification
+      </h2>
+      <nav
+        class="day5-nested-list-challenge-page__classification-nav"
+        aria-label="Sea creature classification"
+      >
+        <ul class="day5-nested-list-challenge-page__classification-list">
+          <li class="day5-nested-list-challenge-page__classification-item">
+            Cephalopods
+            <ul class="day5-nested-list-challenge-page__sublist">
+              <li class="day5-nested-list-challenge-page__subitem">Octopus</li>
+              <li class="day5-nested-list-challenge-page__subitem">Squid</li>
+              <li class="day5-nested-list-challenge-page__subitem">
+                Cuttlefish
+              </li>
+            </ul>
+          </li>
+          <li class="day5-nested-list-challenge-page__classification-item">
+            Gastropods
+            <ul class="day5-nested-list-challenge-page__sublist">
+              <li class="day5-nested-list-challenge-page__subitem">Snails</li>
+              <li class="day5-nested-list-challenge-page__subitem">Slugs</li>
+            </ul>
+          </li>
+          <li class="day5-nested-list-challenge-page__classification-item">
+            Bivalvia
+            <ul class="day5-nested-list-challenge-page__sublist">
+              <li class="day5-nested-list-challenge-page__subitem">Clams</li>
+              <li class="day5-nested-list-challenge-page__subitem">Oysters</li>
+              <li class="day5-nested-list-challenge-page__subitem">Mussels</li>
+              <li class="day5-nested-list-challenge-page__subitem">Scallops</li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </main>
+  </body>
 </html>

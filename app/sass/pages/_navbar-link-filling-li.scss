@@ -1,0 +1,98 @@
+@use '../../util/functions' as functions;
+/* =========================
+   Styles for Navbar Links with Filling Effect
+   ========================= */
+
+/* =========================
+   Navbar Link Styles
+   ========================= */
+* {
+  box-sizing: border-box;
+}
+
+.navbar-demo-page__demo-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar-demo-page__demo-item {
+  background-color: darkslateblue;
+  margin: functions.rem(16);
+  width: functions.rem(120);
+  text-align: center;
+  border-radius: functions.rem(4);
+  transition: background 0.2s, color 0.2s;
+}
+
+.navbar-demo-page__demo-link {
+  padding: functions.rem(8) functions.rem(16);
+  text-decoration: none;
+  color: var(--white);
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: functions.rem(4);
+  outline: none;
+  transition: background 0.2s, color 0.2s, outline 0.2s;
+}
+
+.navbar-demo-page__demo-link:hover,
+.navbar-demo-page__demo-link:focus {
+  background: gold;
+  color: var(--text-dark);
+  outline: 2px solid var(--text-dark);
+  outline-offset: 2px;
+}
+
+/* =========================
+   Responsive Design
+   ========================= */
+
+@include functions.rem(600) {
+  .navbar-demo-page__demo-item {
+    width: 90%;
+    margin: functions.rem(8) auto;
+  }
+  .navbar-demo-page__demo-link {
+    font-size: functions.rem(17.6);
+    padding: functions.rem(12) functions.rem(8);
+  }
+}
+
+/* =========================
+   (Optional) Default Page Styles
+   ========================= */
+/*
+body {
+  font-family: Arial, sans-serif;
+  font-size: 1.2rem;
+  padding-bottom: 5em;
+}
+h1, h2, h3, h4, h5, h6 {
+  margin: 1.5em 0 1em;
+}
+ol li, ul li {
+  padding-bottom: 0.5em;
+}
+p {
+  line-height: 1.3em;
+  margin-top: 0;
+}
+.button {
+  @extend %btn-base;
+  background-color: var(--accent-red);
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--accent-red);
+  border-radius: 30px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  margin: 1em 0 5rem;
+}
+.button:hover {
+  color: var(--accent-red);
+  background-color: white;
+}
+*/

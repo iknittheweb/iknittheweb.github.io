@@ -1,0 +1,153 @@
+@use '../../util/functions' as functions;
+/* =========================
+   Styles for CSS Position Cheat Sheet
+   ========================= */
+
+/* =========================
+   Accessibility: Focus Styles
+   ========================= */
+
+.cheatsheet-page__col-header:focus,
+.cheatsheet-page__cell:focus {
+  outline: 2px solid var(--accent-yellow);
+  outline-offset: 2px;
+  background: var(--background-purple);
+}
+
+/* =========================
+   Responsive Design
+   ========================= */
+
+@include breakpoints.breakpoint-down('small') {
+  .cheatsheet-page__main {
+    width: 98%;
+    padding: functions.rem(8);
+  }
+  .cheatsheet-page__table {
+    font-size: functions.rem(15.2);
+    margin-block: functions.rem(10);
+  }
+  .cheatsheet-page__col-header,
+  .cheatsheet-page__cell {
+    padding: functions.rem(8);
+    font-size: functions.rem(15.2);
+  }
+  .cheatsheet-page__title {
+    font-size: functions.rem(19.2);
+  }
+  .cheatsheet-page__caption {
+    font-size: functions.rem(16);
+  }
+}
+/* =========================
+   Accessibility Styles
+   ========================= */
+
+.cheatsheet-page__main:focus {
+  outline: 3px solid var(--accent-yellow);
+  outline-offset: 4px;
+}
+
+.cheatsheet-page__table:focus {
+  outline: 3px solid var(--accent-pink);
+  outline-offset: 4px;
+}
+/* =========================
+   Base & Layout Styles
+   ========================= */
+
+* {
+  box-sizing: border-box;
+  font-family: 'Merriweather Sans', sans-serif;
+  font-size: functions.rem(16);
+  line-height: 1.6;
+}
+
+.cheatsheet-page {
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-dark-purple);
+  color: var(--white);
+}
+
+.cheatsheet-page__main {
+  width: 85%;
+  margin: 0 auto;
+  overflow-x: auto; /* Responsive table for small screens */
+}
+
+/* =========================
+   Table Structure & Layout
+   ========================= */
+
+.cheatsheet-page__table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-block: functions.rem(30);
+  border: 5px solid var(--accent-pink);
+  background-color: var(--background-purple);
+  color: var(--white);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+}
+
+.cheatsheet-page__caption {
+  margin-bottom: functions.rem(20);
+}
+
+/* =========================
+  Typography
+  ========================= */
+
+.cheatsheet-page__title {
+  color: var(--accent-yellow);
+  background: none;
+  font-size: 2rem;
+  text-shadow: 1px 1px 4px var(--black);
+  text-align: center;
+  margin: 0 auto 16px;
+  font-family: Merriweather, serif;
+}
+
+/* =========================
+   Table Header & Row Styles
+   ========================= */
+thead th {
+  background-color: var(--background-mid-purple);
+  color: var(--accent-yellow);
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+}
+
+/* NOTE: :has() selector is not supported in all browsers (e.g., Firefox). Consider using a class for cross-browser support. */
+tr.property-row {
+  border-top: 5px solid var(--accent-pink);
+}
+
+/* =========================
+   Table Cell Styles
+   ========================= */
+th,
+td {
+  border: 1px solid var(--accent-pink);
+  padding: 12px;
+  text-align: left;
+}
+
+tbody th {
+  background-color: var(--background-light-purple);
+  color: var(--accent-yellow);
+  font-weight: bold;
+}
+
+.code-property,
+.code-value {
+  font-weight: 900;
+  font-size: 1.1rem;
+  font-family: monospace;
+  background-color: var(--background-lightest-purple);
+}
+
+.code-property {
+  font-size: 1.3rem;
+  border-right: 5px solid var(--accent-pink);
+}

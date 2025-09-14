@@ -1,44 +1,82 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Navbar Link Filling li - CSS Demo</title>
+    <link rel="stylesheet" href="/app/dist/style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <title>Navbar Link Filling li - CSS Demo</title>
-  <link rel="stylesheet" href="/css/navbar-link-filling li.css">
-</head>
-
-<body>
-  <a href="#main-content" class="skip-link">Skip to main content</a>
-  <header class="header-flex">
-    <div class="header-center flex-row-start">
-      <img class="logo" src="/img/logo.png" alt="I Knit The Web logo: a ball of yarn with knitting needles forming a web">
-      <div class="heading-subheading">
-        <h1>Navbar Link Filling li</h1>
-        <p class="subheading">CSS Demo: Make the &lt;a&gt; fill the &lt;li&gt;</p>
+  <body class="navbar-demo-page">
+    <a href="#main-content" class="navbar-demo-page__skip-link skip-link"
+      >Skip to main content</a
+    >
+    <header class="navbar-demo-page__header header-flex">
+      <div class="navbar-demo-page__header-center header-center flex-row-start">
+        <img
+          class="navbar-demo-page__logo logo"
+          src="/app/img/logo.png"
+          alt="I Knit The Web logo: a ball of yarn with knitting needles forming a web"
+        />
+        <div class="navbar-demo-page__heading-subheading heading-subheading">
+          <h1 class="navbar-demo-page__title">Navbar Link Filling li</h1>
+          <p class="navbar-demo-page__subtitle subheading">
+            CSS Demo: Make the &lt;a&gt; fill the &lt;li&gt;
+          </p>
+        </div>
       </div>
-    </div>
-    <nav class="header-nav flex-row-end" aria-label="Main navigation">
-      <ul>
-        <li><a href="/index.html">Home</a></li>
-        <li><a href="/portfolio.html">Portfolio</a></li>
-        <li><a href="/about.html">About</a></li>
-        <li><a href="/contact.html">Contact</a></li>
-        <li><a href="/navbar-link-filling-li.html" aria-current="page">Navbar Link Filling li</a></li>
-      </ul>
-    </nav>
-  </header>
-  <main id="main-content">
-    <h2>Navigation Link Fill Demo</h2>
-    <nav aria-label="Demo navigation">
-      <ul>
-        <li><a href="#">Block</a></li>
-        <li><a href="#">Inline</a></li>
-        <li><a href="#">Inline-Block</a></li>
-        <li><a href="#">Flex</a></li>
-        <li><a href="#">Grid</a></li>
-      </ul>
-    </nav>
-  </main>
-</body>
-
+      <nav
+        class="navbar-demo-page__nav header-nav flex-row-end"
+        aria-label="Main navigation"
+      >
+        <ul class="navbar-demo-page__nav-list">
+          <li class="navbar-demo-page__nav-item">
+            <a class="navbar-demo-page__nav-link" href="/index.html">Home</a>
+          </li>
+          <li class="navbar-demo-page__nav-item">
+            <a class="navbar-demo-page__nav-link" href="/portfolio.html"
+              >Portfolio</a
+            >
+          </li>
+          <li class="navbar-demo-page__nav-item">
+            <a class="navbar-demo-page__nav-link" href="/about.html">About</a>
+          </li>
+          <li class="navbar-demo-page__nav-item">
+            <a class="navbar-demo-page__nav-link" href="/contact.html"
+              >Contact</a
+            >
+          </li>
+          <li class="navbar-demo-page__nav-item">
+            <a
+              class="navbar-demo-page__nav-link"
+              href="/navbar-link-filling-li.html"
+              aria-current="page"
+              >Navbar Link Filling li</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main id="main-content" class="navbar-demo-page__main">
+      <h2 class="navbar-demo-page__demo-title">Navigation Link Fill Demo</h2>
+      <nav class="navbar-demo-page__demo-nav" aria-label="Demo navigation">
+        <ul class="navbar-demo-page__demo-list">
+          <li class="navbar-demo-page__demo-item">
+            <a class="navbar-demo-page__demo-link" href="#">Block</a>
+          </li>
+          <li class="navbar-demo-page__demo-item">
+            <a class="navbar-demo-page__demo-link" href="#">Inline</a>
+          </li>
+          <li class="navbar-demo-page__demo-item">
+            <a class="navbar-demo-page__demo-link" href="#">Inline-Block</a>
+          </li>
+          <li class="navbar-demo-page__demo-item">
+            <a class="navbar-demo-page__demo-link" href="#">Flex</a>
+          </li>
+          <li class="navbar-demo-page__demo-item">
+            <a class="navbar-demo-page__demo-link" href="#">Grid</a>
+          </li>
+        </ul>
+      </nav>
+    </main>
+  </body>
 </html>

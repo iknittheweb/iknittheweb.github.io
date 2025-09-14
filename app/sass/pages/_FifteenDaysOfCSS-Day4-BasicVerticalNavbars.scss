@@ -1,0 +1,113 @@
+@use '../../util/functions' as functions;
+/* =========================
+  Styles for 15 Days of CSS - Day 4 Challenge
+  ========================= */
+
+/* Page styles */
+
+.vertical-navbar-page__html {
+  box-sizing: border-box;
+}
+.vertical-navbar-page__all,
+.vertical-navbar-page__all:before,
+.vertical-navbar-page__all:after {
+  box-sizing: inherit;
+}
+.vertical-navbar-page__html {
+  background: url(https://images.unsplash.com/photo-1560801619-01d71da0f70c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80)
+    no-repeat center center fixed;
+  background-size: cover;
+}
+.vertical-navbar-page {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 400;
+  margin: 0 0 functions.rem(80);
+  padding: 0;
+  padding: functions.rem(16) functions.rem(32) 0;
+  font-size: functions.rem(19.2);
+}
+.vertical-navbar-page__title,
+.vertical-navbar-page__subtitle,
+.vertical-navbar-page__heading {
+  margin: functions.rem(24) 0 functions.rem(8);
+}
+.vertical-navbar-page__list-item {
+  padding-bottom: functions.rem(8);
+}
+.vertical-navbar-page__paragraph {
+  line-height: functions.rem(20.8);
+  margin-top: 0;
+}
+.vertical-navbar-page__highlight {
+  background: rgba(255, 255, 255, 0.8);
+  padding: functions.rem(16) functions.rem(32) 0;
+}
+
+@use '../../components/button';
+
+/* 
+==================
+Add your CSS here
+==================
+*/
+
+.vertical-navbar-page__container {
+  background-color: rgba(255, 255, 255, 0.669);
+  padding: functions.rem(16);
+}
+
+.vertical-navbar-page__brand {
+  text-align: center;
+  font-size: functions.rem(80);
+  margin: 0 auto functions.rem(16);
+  background-color: rgba(255, 255, 255, 0.669);
+  background: linear-gradient(
+    to bottom,
+    var(--white),
+    var(--accent-red),
+    var(--accent-red),
+    var(--accent-red)
+  );
+  background-size: 200% 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: functions.rem(2) var(--black);
+  width: functions.rem(500);
+}
+
+.vertical-navbar-page__nav {
+  width: functions.rem(200);
+  margin: 0 auto;
+  background-color: var(--text-dark);
+  padding: functions.rem(16);
+  border-radius: functions.rem(10);
+}
+.vertical-navbar-page__nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.vertical-navbar-page__nav-item {
+  margin: functions.rem(8) 0;
+}
+
+@use '../../components/navbar';
+
+@use '../../components/brand';
+@use '../../layout/container';
+
+@include breakpoints.breakpoint-down('small') {
+  .vertical-navbar-page {
+    font-size: functions.rem(16);
+    padding: functions.rem(8) functions.rem(8) 0;
+  }
+  .vertical-navbar-page__brand {
+    font-size: functions.rem(40);
+    width: 98%;
+  }
+  .vertical-navbar-page__nav {
+    width: 98%;
+    padding: functions.rem(8);
+  }
+}

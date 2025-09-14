@@ -1,0 +1,11 @@
+// card styles
+
+%card-base {
+  background-color: var(--color-white);
+  color: var(--color-black);
+  padding: functions.rem(16) functions.rem(12);
+  border-radius: functions.rem(10);
+  box-shadow: 0 functions.rem(2) functions.rem(8) rgba(0, 0, 0, 0.08);
+  margin-bottom: functions.rem(16);
+  transition: box-shadow 0.2s;
+}

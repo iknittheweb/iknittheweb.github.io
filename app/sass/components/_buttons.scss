@@ -1,0 +1,10 @@
+// button styles
+
+%btn-base {
+  width: 100%;
+  cursor: pointer;
+  border: none;
+  border-radius: functions.rem(4);
+  transition: background functions.rem(0.2), color functions.rem(0.2),
+    outline functions.rem(0.2);
+}

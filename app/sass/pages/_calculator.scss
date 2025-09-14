@@ -1,0 +1,215 @@
+@use '../util/functions';
+/* =====================================
+  Styles for Calculator Project
+  ===================================== */
+
+/* =====================================
+   Calculator Theme Variables
+   ===================================== */
+:root {
+  --screen-bg: var(--black);
+  --btn-bg: var(--button-bg);
+  --btn-hover: var(--button-hover);
+  --btn-active: var(--button-active);
+  --fn-btn-bg: var(--function-btn-bg);
+  --fn-btn-hover: var(--function-btn-hover);
+  --fn-btn-active: var(--function-btn-active);
+  --borders: var(--black);
+  --text-color-1: var(--black);
+  --text-color-2: var(--white);
+}
+
+.calculator-page__html {
+  box-sizing: border-box;
+}
+
+.calculator-page__all,
+.calculator-page__all:before,
+.calculator-page__all:after {
+  box-sizing: inherit;
+}
+
+.calculator-page {
+  padding: 0;
+  margin: 0;
+}
+
+.calculator-page__wrapper-1,
+.calculator-page__wrapper-2 {
+  width: functions.rem(400);
+}
+
+/* =====================================
+   Table Version Styles
+   ===================================== */
+
+.calculator-page__table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.calculator-page__cell {
+  padding: 0;
+  border: 2px solid var(--borders);
+}
+
+/* =====================================
+   Calculator Button Styles
+   ===================================== */
+
+.calculator-page__btn,
+.calculator-page__fn-btn {
+  @extend %btn-base;
+  height: functions.rem(60);
+  font-size: functions.rem(18);
+}
+
+.calculator-page__btn:hover,
+.calculator-page__btn:focus {
+  background-color: var(--background-light-grey);
+  outline: 2px solid var(--text-dark);
+  outline-offset: 2px;
+}
+
+.calculator-page__btn {
+  background-color: var(--btn-bg);
+  color: var(--text-color-1);
+}
+
+.calculator-page__btn:hover,
+.calculator-page__btn:focus {
+  background-color: var(--btn-hover);
+  color: var(--black);
+}
+
+.calculator-page__btn:active {
+  background-color: var(--btn-active);
+}
+
+.calculator-page__fn-btn {
+  background-color: var(--fn-btn-bg);
+  color: var(--text-color-2);
+}
+
+.calculator-page__fn-btn:hover,
+.calculator-page__fn-btn:focus {
+  background-color: var(--fn-btn-hover);
+  outline: 2px solid var(--white);
+  outline-offset: 2px;
+  color: var(--text-dark);
+}
+
+.calculator-page__fn-btn:active {
+  background-color: var(--fn-btn-active);
+}
+
+/* =====================================
+   Calculator Input Styles
+   ===================================== */
+
+.calculator-page__input {
+  width: 100%;
+  height: functions.rem(60);
+  font-size: functions.rem(24);
+  text-align: right;
+  padding: 0 functions.rem(10);
+  border: none;
+  background-color: var(--screen-bg);
+  color: var(--text-color-2);
+  border-radius: functions.rem(4);
+}
+
+/* =====================================
+   Class Solution Styles
+   ===================================== */
+
+.calculator-page__wrapper-2 {
+  background-color: var(--screen-bg);
+  color: var(--text-color-2);
+  margin: 0 auto;
+  padding: functions.rem(20);
+  border-radius: functions.rem(8);
+}
+
+.calculator-page__screen {
+  text-align: right;
+  font-family: 'Courier New', Courier, monospace;
+  padding: functions.rem(20) functions.rem(5);
+  font-size: functions.rem(40);
+  border-radius: functions.rem(4);
+}
+
+.calculator-page__button-row {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  margin-bottom: 0.5%;
+}
+
+.calculator-page__button {
+  background-color: var(--btn-bg);
+  color: var(--text-color-1);
+  border: none;
+  font-size: functions.rem(40);
+  height: functions.rem(100);
+  flex-basis: 24.5%;
+  border-radius: functions.rem(4);
+  transition: background functions.rem(0.2), color functions.rem(0.2),
+    outline functions.rem(0.2);
+}
+
+.calc-button:hover,
+.calc-button:focus {
+  background-color: var(--btn-hover);
+  outline: 2px solid var(--text-dark);
+  outline-offset: 2px;
+}
+
+.calc-button:active {
+  background-color: var(--btn-active);
+}
+
+.double {
+  flex-basis: 49.7%;
+}
+
+.triple {
+  flex-basis: 74.8%;
+}
+
+.calc-button:last-child {
+  background-color: var(--fn-btn-bg);
+  color: var(--text-color-2);
+}
+
+.calc-button:last-child:hover,
+.calc-button:last-child:focus {
+  background-color: var(--fn-btn-hover);
+  outline: 2px solid var(--white);
+  outline-offset: 2px;
+  color: var(--text-dark);
+}
+
+.calc-button:last-child:active {
+  background-color: var(--fn-btn-active);
+}
+
+/* =====================================
+   Responsive Design
+   ===================================== */
+@media (max-width: 500px) {
+  .wrapper-1,
+  .wrapper-2 {
+    width: 98%;
+    min-width: 0;
+    padding: functions.rem(5);
+  }
+  .screen {
+    font-size: functions.rem(24);
+    padding: functions.rem(10) functions.rem(2);
+  }
+  .calc-button {
+    font-size: functions.rem(24);
+    height: functions.rem(60);
+  }
+}

@@ -1,0 +1,37 @@
+/* =========================
+   Navbar Component Styles
+   ========================= */
+
+.vertical-navbar-page__nav {
+  width: 200px;
+  margin: 0 auto;
+  background-color: var(--text-dark);
+  padding: 1em;
+  border-radius: 10px;
+}
+.vertical-navbar-page__nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.vertical-navbar-page__nav-item {
+  margin: 0.5em 0;
+}
+.vertical-navbar-page__nav-link {
+  color: var(--white);
+  text-decoration: none;
+  padding: 0.5em;
+  display: block;
+  border-bottom: 4px solid var(--white);
+  border-radius: 15px;
+  outline: none;
+  transition: background 0.2s, color 0.2s, outline 0.2s;
+}
+.vertical-navbar-page__nav-link:hover,
+.vertical-navbar-page__nav-link:focus {
+  background-color: var(--text-mid-grey);
+  border-bottom: 4px solid var(--accent-red);
+  color: var(--accent-red);
+  outline: 2px solid var(--accent-red);
+  outline-offset: 2px;
+}

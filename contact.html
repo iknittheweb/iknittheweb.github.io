@@ -1,67 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="/img/favicon_io/favicon.ico">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="/app/img/favicon_io/favicon.ico"
+    />
     <title>I Knit The Web!</title>
-    <link rel="stylesheet" href="/css/normalize.css">
-    <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="/css/contact.css">
-</head>
+    <link rel="stylesheet" href="/app/dist/style.css" />
+  </head>
 
-<body>
+  <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
-    <header class="header-flex">
-        <div class="header-center flex-row-start">
-            <img class="logo" src="/img/logo.png"
-                alt="I Knit The Web logo: a ball of yarn with knitting needles forming a web">
-            <div class="heading-subheading">
-                <h1>Contact Me</h1>
-                <p class="subheading">Let's collaborate!</p>
-            </div>
+    <header class="contact-page__header header-flex">
+      <div class="contact-page__header-center header-center flex-row-start">
+        <img
+          class="contact-page__logo logo"
+          src="/app/img/logo.png"
+          alt="I Knit The Web logo: a ball of yarn with knitting needles forming a web"
+        />
+        <div class="contact-page__heading-subheading heading-subheading">
+          <h1 class="contact-page__title">Contact Me</h1>
+          <p class="contact-page__subtitle subheading">Let's collaborate!</p>
         </div>
-        <nav class="header-nav flex-row-end" aria-label="Main navigation">
-            <ul>
-                <li><a href="/index.html">Home</a></li>
-                <li><a href="/portfolio.html">Portfolio</a></li>
-                <li><a href="/about.html">About</a></li>
-                <li><a href="/contact.html" aria-current="page">Contact</a></li>
-            </ul>
-        </nav>
+      </div>
+      <nav
+        class="contact-page__nav header-nav flex-row-end"
+        aria-label="Main navigation"
+      >
+        <ul class="contact-page__nav-list">
+          <li class="contact-page__nav-item">
+            <a class="contact-page__nav-link" href="/index.html">Home</a>
+          </li>
+          <li class="contact-page__nav-item">
+            <a class="contact-page__nav-link" href="/portfolio.html"
+              >Portfolio</a
+            >
+          </li>
+          <li class="contact-page__nav-item">
+            <a class="contact-page__nav-link" href="/about.html">About</a>
+          </li>
+          <li class="contact-page__nav-item">
+            <a
+              class="contact-page__nav-link"
+              href="/contact.html"
+              aria-current="page"
+              >Contact</a
+            >
+          </li>
+        </ul>
+      </nav>
     </header>
-    <main id="main-content">
-        <section>
-            <form action="https://formspree.io/f/xrbazawp" method="POST" class="fs-form" target="_top">
-                <div class="img-container">
-                    <img src="/img/collaborate.jpg" alt="two people collaborating on a project" class="collaborate-img">
-                </div>
-                <div>
-                    <fieldset>
-                        <legend>Your contact information</legend>
-                        <label for="fs-name">Your name </label>
-                        <input type="text" id="fs-name" name="name" placeholder="First, last, your cat, whatever you want to be called ;)" required>
-                        <label for="fs-phone">Phone number</label>
-                        <input type="tel" id="fs-phone" name="phone" placeholder="Don't forget the area or country code!">
-                        <label for="fs-email">Email</label>
-                        <input type="email" id="fs-email" name="email" placeholder="user@example.com" required>
-                    </fieldset>
-                    <fieldset>
-                        <legend>What kind of information would you like?</legend>
-                        <textarea id="fs-comments" name="message" placeholder="Tell me everything" required></textarea>
-                    </fieldset>
-                    <button type="button" id="fs-clear-form-btn" class="clear-form-btn" aria-label="Clear form">Clear</button>
-                    <button type="submit">Submit</button>
-                </div>
-            </form>
-
-        </section>
+    <main id="main-content" class="contact-page__main">
+      <section class="contact-page__section">
+        <form
+          action="https://formspree.io/f/xrbazawp"
+          method="POST"
+          class="contact-page__form fs-form"
+          target="_top"
+        >
+          <div class="contact-page__img-container img-container">
+            <img
+              src="/app/img/collaborate.jpg"
+              alt="two people collaborating on a project"
+              class="contact-page__collaborate-img collaborate-img"
+            />
+          </div>
+          <div class="contact-page__form-fields">
+            <fieldset class="contact-page__fieldset">
+              <legend class="contact-page__legend">
+                Your contact information
+              </legend>
+              <label class="contact-page__label" for="fs-name"
+                >Your name
+              </label>
+              <input
+                type="text"
+                id="fs-name"
+                name="name"
+                class="contact-page__input"
+                placeholder="First, last, your cat, whatever you want to be called ;)"
+                required
+              />
+              <label class="contact-page__label" for="fs-phone"
+                >Phone number</label
+              >
+              <input
+                type="tel"
+                id="fs-phone"
+                name="phone"
+                class="contact-page__input"
+                placeholder="Don't forget the area or country code!"
+              />
+              <label class="contact-page__label" for="fs-email">Email</label>
+              <input
+                type="email"
+                id="fs-email"
+                name="email"
+                class="contact-page__input"
+                placeholder="user@example.com"
+                required
+              />
+            </fieldset>
+            <fieldset class="contact-page__fieldset">
+              <legend class="contact-page__legend">
+                What kind of information would you like?
+              </legend>
+              <textarea
+                id="fs-comments"
+                name="message"
+                class="contact-page__textarea"
+                placeholder="Tell me everything"
+                required
+              ></textarea>
+            </fieldset>
+            <button
+              type="button"
+              id="fs-clear-form-btn"
+              class="contact-page__clear-form-btn clear-form-btn"
+              aria-label="Clear form"
+            >
+              Clear
+            </button>
+            <button type="submit" class="contact-page__submit-btn">
+              Submit
+            </button>
+          </div>
+        </form>
+      </section>
     </main>
-    <script src="js/forms.js"></script>
+    <script src="/app/js/forms.js"></script>
     <footer>
-        <p>&copy; 2025 I Knit The Web! All rights reserved.</p>
+      <p>&copy; 2025 I Knit The Web! All rights reserved.</p>
     </footer>
-</body>
-
+  </body>
 </html>

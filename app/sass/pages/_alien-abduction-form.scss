@@ -1,0 +1,324 @@
+@use '../../util/functions' as functions;
+
+/* =========================
+   Styles for Alien Abduction Form
+   ========================= */
+
+/* =========================
+   Accessibility: Focus Styles
+   ========================= */
+
+.alien-form-page__input:focus,
+.alien-form-page__textarea:focus,
+.alien-form-page__select:focus {
+  outline: 2px solid var(--accent-green);
+  outline-offset: 2px;
+  border-color: var(--accent-purple);
+  background: var(--background-light-yellow);
+}
+
+.alien-form-page__submit-btn:focus {
+  outline: 2px solid var(--accent-green);
+  outline-offset: 2px;
+  border-color: var(--accent-purple);
+  background: var(--background-light-yellow);
+}
+
+/* =========================
+   Responsive Design
+   ========================= */
+
+@media (max-width: functions.rem(700)) {
+  .alien-form-page__wrapper {
+    width: 98%;
+    padding: functions.rem(16) functions.rem(4);
+  }
+  .alien-form-page__flex {
+    flex-direction: column;
+    gap: functions.rem(8);
+  }
+  .alien-form-page__flex-left,
+  .alien-form-page__flex-right {
+    flex-basis: 100%;
+    width: 100%;
+  }
+  .alien-form-page__input,
+  .alien-form-page__textarea,
+  .alien-form-page__select {
+    width: 100%;
+    min-width: 0;
+  }
+  .alien-form-page__footer-flex {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .alien-form-page__frame iframe {
+    width: 100% !important;
+    height: 180px !important;
+  }
+}
+/* =========================
+   Box Model & Reset
+   ========================= */
+
+.alien-form-page__html {
+  box-sizing: border-box;
+}
+
+.alien-form-page__all,
+.alien-form-page__all:before,
+.alien-form-page__all:after {
+  box-sizing: inherit;
+}
+
+/* =========================
+   Typography & Text
+   ========================= */
+
+.alien-form-page {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url(../img/galaxy.jpg);
+}
+
+.alien-form-page__title,
+.alien-form-page__legend {
+  font-family: 'Orbitron', sans-serif;
+}
+
+.alien-form-page__title {
+  -webkit-text-stroke: 5px var(--accent-purple-dark);
+  -webkit-text-stroke: 2px var(--white);
+}
+
+.alien-form-page__subtitle {
+  margin-top: 0;
+}
+
+.alien-form-page__label {
+  display: block;
+  margin: functions.rem(8) 0;
+  padding-bottom: functions.rem(4.8);
+  font-weight: bold;
+}
+
+.alien-form-page__legend {
+  font-weight: bold;
+  font-size: functions.rem(19.2em);
+  margin-top: functions.rem(24);
+  margin-bottom: functions.rem(8);
+}
+
+.alien-form-page__desc,
+.alien-form-page__abtype-label {
+  margin: functions.rem(32) 0 0 0;
+}
+
+.alien-form-page__address {
+  margin: 0;
+  padding: 0;
+}
+
+/* =========================
+  Layout & Containers
+  ========================= */
+
+.alien-form-page__wrapper {
+  width: 85%;
+  margin: functions.rem(32) auto;
+  padding: functions.rem(48) 0;
+}
+
+section {
+  background-color: var(--background-light-purple);
+  padding: functions.rem(16);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  margin: functions.rem(16) auto;
+}
+
+/* =========================
+   Flexbox Layout
+   ========================= */
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: functions.rem(16);
+  justify-content: center;
+}
+
+.flex-left {
+  flex-basis: functions.rem(288);
+}
+
+.flex-right {
+  flex-basis: functions.rem(288);
+}
+
+/* =========================
+   Forms & Form Elements
+   ========================= */
+form {
+  gap: functions.rem(80);
+  padding: functions.rem(19.2);
+}
+
+fieldset {
+  border: 1px solid var(--black);
+  border-radius: 10px;
+  margin-bottom: functions.rem(32);
+}
+
+input:not([type='radio']):not([type='checkbox']) {
+  display: block;
+  margin-bottom: functions.rem(32);
+  width: functions.rem(320);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: functions.rem(14.4);
+  border-radius: functions.rem(10);
+  padding: 0 functions.rem(16);
+}
+textarea {
+  display: block;
+  margin-bottom: functions.rem(32);
+  width: functions.rem(320);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: functions.rem(14.4);
+  border-radius: functions.rem(10);
+  padding: functions.rem(16);
+  height: functions.rem(160);
+}
+select {
+  display: block;
+  margin-bottom: functions.rem(32);
+  width: functions.rem(320);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: functions.rem(14.4);
+  border-radius: functions.rem(10);
+  padding: 0 functions.rem(16);
+}
+
+textarea {
+  height: functions.rem(160);
+  padding: functions.rem(16);
+}
+
+select {
+  font-size: functions.rem(14.4);
+}
+
+button {
+  font-size: functions.rem(14.4);
+  font-weight: bold;
+  margin: functions.rem(32) 0;
+  background-color: var(--accent-green);
+  color: var(--black);
+  border: none;
+  padding: functions.rem(8) functions.rem(16);
+  border-radius: 10px;
+}
+
+button:hover {
+  background-color: var(--black);
+  color: var(--accent-green);
+  cursor: pointer;
+}
+
+/* =========================
+   Footer & Location
+   ========================= */
+footer {
+  background-color: var(--accent-purple);
+  color: white;
+  width: 50%;
+  max-width: functions.rem(550);
+  margin: 0 auto;
+}
+
+footer h3 {
+  text-decoration: underline;
+  padding: functions.rem(16) 0 0 functions.rem(16);
+  margin: 0;
+}
+
+.footer-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 0 auto;
+  padding-bottom: functions.rem(16);
+  border-radius: 10px;
+}
+
+.location {
+  flex: 1;
+  margin: 0;
+  padding: functions.rem(16);
+  border-radius: 10px;
+}
+
+/* =========================
+   Decorative Elements
+   ========================= */
+.frame {
+  margin: 0;
+  padding: 0;
+  border-top: functions.rem(15) solid var(--accent-purple);
+  border-left: functions.rem(15) solid var(--accent-purple);
+}
+
+p.indent {
+  margin: functions.rem(32) auto 0 auto; /* Keeps top margin, centers horizontally */
+  text-align: center; /* Also center the text itself */
+}
+
+.glow {
+  font-size: functions.rem(64);
+  color: var(--white);
+  text-align: center;
+  text-wrap: balance;
+  -webkit-animation: glow 2s ease-in-out infinite alternate;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+/* =========================
+   Animations
+   ========================= */
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 functions.rem(10) var(--white),
+      0 0 functions.rem(20) var(--white),
+      0 0 functions.rem(30) var(--accent-purple-dark),
+      0 0 functions.rem(40) #704db9bc, 0 0 functions.rem(50) #704db9bc,
+      0 0 functions.rem(60) #704db9bc, 0 0 functions.rem(70) #704db9bc;
+  }
+
+  to {
+    text-shadow: 0 0 functions.rem(20) #fff, 0 0 functions.rem(30) #6f4db947,
+      0 0 functions.rem(40) #6f4db947, 0 0 functions.rem(50) #6f4db947,
+      0 0 functions.rem(60) #6f4db947, 0 0 functions.rem(70) #6f4db947,
+      0 0 functions.rem(80) #6f4db947;
+  }
+}
+@keyframes glow {
+  from {
+    text-shadow: 0 0 functions.rem(10) #fff, 0 0 functions.rem(20) #fff,
+      0 0 functions.rem(30) #704db9bc, 0 0 functions.rem(40) #704db9bc,
+      0 0 functions.rem(50) #704db9bc, 0 0 functions.rem(60) #704db9bc,
+      0 0 functions.rem(70) #704db9bc;
+  }
+
+  to {
+    text-shadow: 0 0 functions.rem(20) #fff, 0 0 functions.rem(30) #6f4db947,
+      0 0 functions.rem(40) #6f4db947, 0 0 functions.rem(50) #6f4db947,
+      0 0 functions.rem(60) #6f4db947, 0 0 functions.rem(70) #6f4db947,
+      0 0 functions.rem(80) #6f4db947;
+  }
+}
+@keyframes glow {
+  from {
+    text-shadow: 0 0 functions.rem(80) #6f4db947;
+  }
+}

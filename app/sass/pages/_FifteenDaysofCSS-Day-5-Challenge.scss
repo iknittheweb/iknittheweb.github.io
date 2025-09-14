@@ -1,0 +1,100 @@
+@use '../../util/functions' as functions;
+/* =========================
+   Styles for 15 Days of CSS - Day 5 Challenge
+   ========================= */
+
+/* =========================
+  Navbar Panel Styles
+  ========================= */
+
+.css-day5-page__nav {
+  width: 25%;
+}
+
+.css-day5-page__list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.css-day5-page__link {
+  display: block;
+  padding: 0.5rem;
+  background-color: var(--accent-blue);
+  color: var(--text-light-grey);
+  text-decoration: none;
+  border-radius: 6px;
+  outline: none;
+  transition: background 0.2s, color 0.2s, outline 0.2s;
+}
+
+.css-day5-page__link:hover,
+.css-day5-page__link:focus {
+  background-color: var(--accent-yellow);
+  color: var(--accent-blue);
+  outline: 2px solid var(--accent-blue);
+  outline-offset: 2px;
+}
+
+/* =========================
+   Button Styles
+   ========================= */
+
+.css-day5-page__button {
+  @extend %btn-base;
+  background-color: var(--accent-red);
+  padding: functions.rem(8) functions.rem(16);
+  border: 1px solid var(--accent-red);
+  border-radius: 30px;
+  color: var(--white);
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  margin: functions.rem(16) 0 functions.rem(80);
+  outline: none;
+  transition: background 0.2s, color 0.2s, outline 0.2s;
+}
+.css-day5-page__button:hover,
+.css-day5-page__button:focus {
+  color: var(--accent-red);
+  background-color: var(--white);
+  outline: 2px solid var(--accent-red);
+  outline-offset: 2px;
+}
+
+/* =========================
+   Responsive Design
+   ========================= */
+
+@media (max-width: 600px) {
+  .css-day5-page__nav {
+    width: 98%;
+    margin: 0 auto;
+  }
+  .css-day5-page__button {
+    font-size: functions.rem(16);
+    padding: functions.rem(8) functions.rem(8);
+  }
+}
+
+/* =========================
+   Default Page Styles (Optional)
+   ========================= */
+
+.css-day5-page {
+  font-family: Arial, sans-serif;
+  font-size: functions.rem(19.2);
+  padding-bottom: functions.rem(80);
+}
+.css-day5-page__title,
+.css-day5-page__subtitle,
+.css-day5-page__heading {
+  margin: functions.rem(24) 0 functions.rem(16);
+}
+.css-day5-page__list-item {
+  padding-bottom: functions.rem(8);
+}
+.css-day5-page__paragraph {
+  line-height: functions.rem(20.8);
+  margin-top: 0;
+}
