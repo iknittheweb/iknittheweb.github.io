@@ -1,0 +1,580 @@
+<!doctype html>
+<html
+  lang="en"
+  class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="{{CSP_META}}" />
+    <title>Portfolio | I Knit The Web</title>
+
+    <!-- Preconnects for faster font and icon loading -->
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com" />
+    <link
+      rel="preconnect"
+      href="https://ka-p.fontawesome.com" />
+
+    <!-- Preload critical stylesheets -->
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap"
+      as="style" />
+    <link
+      rel="preload"
+      as="style"
+      href="/dist/css/portfolio.css" />
+
+    <!-- Main font and site stylesheets -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" />
+    <link
+      rel="stylesheet"
+      href="/dist/css/portfolio.css" />
+
+    <!-- FontAwesome CDN stylesheet for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+
+    <!-- Favicons and manifest -->
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="/dist/img/favicon_io/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/dist/img/favicon_io/apple-touch-icon.png" />
+    <link
+      rel="manifest"
+      href="/manifest.json" />
+    <link
+      rel="canonical"
+      href="/" />
+
+    <!-- SEO and social meta tags -->
+    <meta
+      name="description"
+      content="Explore a curated portfolio of web development projects, creative coding, and design work by I Knit The Web." />
+    <meta
+      name="keywords"
+      content="portfolio, web development, creative coding, design, accessibility, showcase, I Knit The Web" />
+    <meta
+      name="author"
+      content="I Knit the Web" />
+    <meta
+      name="robots"
+      content="index,follow" />
+    <meta
+      property="og:title"
+      content="Portfolio | I Knit The Web" />
+    <meta
+      property="og:description"
+      content="Discover web projects and creative work in the I Knit The Web portfolio. Modern code, accessibility, and playful design." />
+    <meta
+      property="og:image"
+      content="/dist/img/branding/logo.png" />
+    <meta
+      property="og:url"
+      content="/portfolio.html" />
+    <meta
+      property="og:type"
+      content="website" />
+    <meta
+      name="twitter:card"
+      content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Portfolio | I Knit The Web" />
+    <meta
+      name="twitter:description"
+      content="See the latest web projects and creative work by I Knit The Web. Portfolio, code samples, and design inspiration." />
+    <meta
+      name="twitter:image"
+      content="/dist/img/branding/logo.png" />
+
+    <!-- Fallback styles for no-JS environments -->
+    <noscript>
+      <style>
+        body {
+          visibility: visible;
+        }
+      </style>
+    </noscript>
+
+    <!-- Inline critical CSS for FOUC prevention -->
+    <style>
+      .no-js body {
+        visibility: hidden;
+      }
+      .css-loaded body {
+        visibility: visible;
+      }
+    </style>
+
+    <!-- Critical polyfill: FOUC fix script -->
+    <script src="/dist/js/fouc-fix.js"></script>
+
+    <!-- Third-party monitoring/analytics: Sentry -->
+    <script
+      src="https://browser.sentry-cdn.com/7.100.1/bundle.min.js"
+      crossorigin="anonymous"></script>
+
+    <!-- Structured data for SEO -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Portfolio | I Knit The Web",
+        "description": "Explore a curated portfolio of web development projects, creative coding, and design work by I Knit The Web.",
+        "url": "/portfolio.html"
+        "author": {
+          "@type": "Person",
+          "name": "Marta",
+          "url": "/",
+          "sameAs": ["https://github.com/iknittheweb"]
+        }
+      }
+    </script>
+
+    <!-- Third-party library: body-scroll-lock -->
+    <script src="https://cdn.jsdelivr.net/npm/body-scroll-lock@4.0.0-beta.0/lib/bodyScrollLock.min.js"></script>
+
+    <!-- Main app/module script -->
+    <script
+      type="module"
+      src="/dist/js/script.js"></script>
+  </head>
+
+  <body>
+    <div
+      id="page-data"
+      data-page-title="Portfolio | I Knit The Web"
+      data-page-subtitle="Showcase Of Web Projects And Creative Work | I Knit The Web"
+      data-nav-config="main,about,portfolio,contact"
+      data-breadcrumb-category="Portfolio"
+      data-breadcrumb-category-url="/category/portfolio"
+      style="display: none"></div>
+
+    <a
+      href="#portfolio_main-content"
+      class="skip-link"
+      >Skip to main content</a
+    >
+
+    <header
+      class="topnav"
+      aria-label="Site header">
+      <!-- HEADER_PLACEHOLDER -->
+    </header>
+
+    <main
+      id="portfolio_main-content"
+      class="portfolio-main"
+      tabindex="-1"
+      aria-label="Main content">
+      <section
+        class="hero"
+        aria-labelledby="main-content"
+        id="hero">
+        <img
+          src="/dist/img/pages/heading-banner-dark.svg"
+          alt=""
+          class="hero__banner"
+          width="1125"
+          height="375" />
+        <h1 class="portfolio-page__title">My Full Portfolio</h1>
+        <p class="portfolio-page__intro">
+          Welcome to my full portfolio showcasing the best web development
+          projects I've created! From practical applications to learning
+          challenges, each project represents a step in my journey of mastering
+          HTML, CSS, JavaScript, and modern web development practices.
+        </p>
+      </section>
+      <div class="wrapper">
+        <!-- Featured Projects Section -->
+        <section class="portfolio-section">
+          <h2 class="portfolio-section__heading">Featured Projects</h2>
+          <p class="portfolio-section__intro">
+            These are my most comprehensive projects showcasing practical
+            applications and real-world problem solving.
+          </p>
+          <div class="portfolio__row">
+            <article class="card">
+              <div class="card__header">
+                <a
+                  href="/alien-abduction-form.html"
+                  class="card__header-link">
+                  <h3 class="card__title">Alien Abduction Order Form</h3>
+                </a>
+              </div>
+              <div class="card__body">
+                <figure class="card__figure">
+                  <picture>
+                    <source
+                      srcset="/dist/img/cards/Alien-abduction-form-thumb.avif"
+                      type="image/avif" />
+                    <source
+                      srcset="/dist/img/cards/Alien-abduction-form-thumb.webp"
+                      type="image/webp" />
+                    <source
+                      srcset="/dist/img/cards/Alien-abduction-form-thumb.jpg"
+                      type="image/jpeg" />
+                    <img
+                      alt="Thumbnail preview of Alien Abduction Order Form project"
+                      src="/dist/img/cards/Alien-abduction-form-thumb.jpg"
+                      class="card__image"
+                      width="345"
+                      height="259" />
+                  </picture>
+                  <figcaption class="card__caption">
+                    <p>
+                      When you want an alien abduction, you want it your way.
+                      Fill out this form to get started.
+                    </p>
+                  </figcaption>
+                </figure>
+              </div>
+              <div class="card__footer">
+                <a
+                  href="/alien-abduction-form.html"
+                  class="card__button card__button--primary card__link">
+                  See more...
+                </a>
+              </div>
+            </article>
+            <article class="card">
+              <div class="card__header">
+                <a
+                  class="card__header-link"
+                  href="/calculator.html">
+                  <h3 class="card__title">Calculator</h3>
+                </a>
+              </div>
+              <div class="card__body">
+                <figure class="card__figure">
+                  <picture>
+                    <source
+                      srcset="/dist/img/cards/Calculator-thumb.avif"
+                      type="image/avif" />
+                    <source
+                      srcset="/dist/img/cards/Calculator-thumb.webp"
+                      type="image/webp" />
+                    <source
+                      srcset="/dist/img/cards/Calculator-thumb.jpg"
+                      type="image/jpeg" />
+                    <img
+                      alt="Thumbnail preview of Calculator project"
+                      src="/dist/img/cards/Calculator-thumb.jpg"
+                      class="card__image"
+                      width="356"
+                      height="268" />
+                  </picture>
+                  <figcaption class="card__caption">
+                    <p
+                      >A simple calculator built with HTML, CSS, and
+                      JavaScript.</p
+                    >
+                  </figcaption>
+                </figure>
+              </div>
+              <div class="card__footer">
+                <a
+                  class="card__button card__button--primary card__link"
+                  href="/calculator.html">
+                  See more...
+                </a>
+              </div>
+            </article>
+            <article class="card">
+              <div class="card__header">
+                <a
+                  class="card__header-link"
+                  href="/css-position-cheat-sheet.html">
+                  <h3 class="card__title">CSS Position Cheat Sheet</h3>
+                </a>
+              </div>
+              <div class="card__body">
+                <figure class="card__figure">
+                  <picture>
+                    <source
+                      srcset="
+                        /dist/img/cards/css-position-cheat-sheet-thumb.avif
+                      "
+                      type="image/avif" />
+                    <source
+                      srcset="
+                        /dist/img/cards/css-position-cheat-sheet-thumb.webp
+                      "
+                      type="image/webp" />
+                    <source
+                      srcset="
+                        /dist/img/cards/css-position-cheat-sheet-thumb.jpg
+                      "
+                      type="image/jpeg" />
+                    <img
+                      alt="Thumbnail preview of CSS Position Cheat Sheet project"
+                      src="/dist/img/cards/css-position-cheat-sheet-thumb.jpg"
+                      class="card__image"
+                      width="1868"
+                      height="1401" />
+                  </picture>
+                  <figcaption class="card__caption">
+                    <p>
+                      I created this cheat sheet as an assignment on
+                      <a
+                        href="https://www.codecademy.com/learn/paths/front-end-engineer-career-path"
+                        target="_blank"
+                        rel="noopener"
+                        >Codecademy's Front-End Engineer Career Path</a
+                      >.
+                    </p>
+                  </figcaption>
+                </figure>
+              </div>
+              <div class="card__footer">
+                <a
+                  class="card__button card__button--primary card__link"
+                  href="/css-position-cheat-sheet.html">
+                  See more...
+                </a>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <hr />
+
+        <!-- Learning Challenges Section -->
+        <section class="portfolio-section">
+          <h2 class="portfolio-section__heading">Learning Challenges</h2>
+          <p class="portfolio-section__intro">
+            Daily coding challenges that helped me develop specific skills and
+            explore different techniques in HTML and CSS.
+          </p>
+          <div class="portfolio__row">
+            <article class="card">
+              <div class="card__header">
+                <a
+                  class="card__header-link"
+                  href="/multi-level-navbar.html">
+                  <h3 class="card__title">Multi-Level Navbar</h3>
+                </a>
+              </div>
+              <div class="card__body">
+                <figure class="card__figure">
+                  <picture>
+                    <source
+                      srcset="/dist/img/cards/multi-level-navbar-thumb.avif"
+                      type="image/avif" />
+                    <source
+                      srcset="/dist/img/cards/multi-level-navbar-thumb.webp"
+                      type="image/webp" />
+                    <source
+                      srcset="/dist/img/cards/multi-level-navbar-thumb.jpg"
+                      type="image/jpeg" />
+                    <img
+                      alt="Thumbnail preview of Multi-Level Navbar Challenge project"
+                      src="/dist/img/cards/multi-level-navbar-thumb.jpg"
+                      class="card__image"
+                      width="400"
+                      height="300" />
+                  </picture>
+                  <figcaption class="card__caption">
+                    <p>
+                      CSS challenge focusing on advanced navigation menu styling
+                      techniques and creative layouts.
+                    </p>
+                  </figcaption>
+                </figure>
+              </div>
+              <div class="card__footer">
+                <a
+                  class="card__button card__button--primary card__link"
+                  href="/multi-level-navbar.html">
+                  See more...
+                </a>
+              </div>
+            </article>
+            <article class="card">
+              <div class="card__header">
+                <a
+                  class="card__header-link"
+                  href="/basic-vertical-navbar.html">
+                  <h3 class="card__title">Basic Vertical Navbar Styling</h3>
+                </a>
+              </div>
+              <div class="card__body">
+                <figure class="card__figure">
+                  <picture>
+                    <source
+                      srcset="/dist/img/cards/basic-vertical-navbar.avif"
+                      type="image/avif" />
+                    <source
+                      srcset="/dist/img/cards/basic-vertical-navbar.webp"
+                      type="image/webp" />
+                    <source
+                      srcset="/dist/img/cards/basic-vertical-navbar.jpg"
+                      type="image/jpeg" />
+                    <img
+                      alt="Thumbnail preview of 15 Days of CSS Day 4 Basic Vertical Navbars project"
+                      src="/dist/img/cards/basic-vertical-navbar.png"
+                      class="card__image"
+                      width="350"
+                      height="265" />
+                  </picture>
+                  <figcaption class="card__caption">
+                    <p
+                      >Exploring vertical navigation bar design and
+                      implementation with CSS.
+                      <i>from 15 Days of CSS, Day 4</i></p
+                    >
+                  </figcaption>
+                </figure>
+              </div>
+              <div class="card__footer">
+                <a
+                  class="card__button card__button--primary card__link"
+                  href="/basic-vertical-navbar.html">
+                  See more...
+                </a>
+              </div>
+            </article>
+            <article class="card">
+              <div class="card__header">
+                <a
+                  class="card__header-link"
+                  href="/desc-list-challenge.html">
+                  <h3 class="card__title"
+                    >15 Days of HTML<br />Day 5&mdash;Desc List</h3
+                  >
+                </a>
+              </div>
+              <div class="card__body">
+                <figure class="card__figure">
+                  <picture>
+                    <source
+                      srcset="/dist/img/pages/galaxy.webp"
+                      type="image/webp" />
+                    <source
+                      srcset="/dist/img/pages/galaxy.jpg"
+                      type="image/jpeg" />
+                    <img
+                      alt="Thumbnail preview of 15 Days of HTML Day 5 Description List Challenge project"
+                      src="/dist/img/pages/galaxy.jpg"
+                      class="card__image"
+                      width="400"
+                      height="300" />
+                  </picture>
+                  <figcaption class="card__caption">
+                    <p>
+                      HTML challenge focusing on semantic markup and description
+                      list structures.
+                    </p>
+                  </figcaption>
+                </figure>
+              </div>
+              <div class="card__footer">
+                <a
+                  class="card__button card__button--primary card__link"
+                  href="/desc-list-challenge.html">
+                  See more...
+                </a>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <hr />
+
+        <!-- Experiments Section -->
+        <section class="portfolio-section">
+          <h2 class="portfolio-section__heading">UI Experiments</h2>
+          <p class="portfolio-section__intro">
+            Focused experiments exploring specific UI patterns and interactive
+            elements.
+          </p>
+          <div class="portfolio__row">
+            <article class="card">
+              <div class="card__header">
+                <a
+                  class="card__header-link"
+                  href="/navbar-link-filling-li.html">
+                  <h3 class="card__title">Navbar Link Filling Li</h3>
+                </a>
+              </div>
+              <div class="card__body">
+                <figure class="card__figure">
+                  <picture>
+                    <source
+                      srcset="/dist/img/pages/galaxy.webp"
+                      type="image/webp" />
+                    <source
+                      srcset="/dist/img/pages/galaxy.jpg"
+                      type="image/jpeg" />
+                    <img
+                      alt="Thumbnail preview of Navbar Link Filling Li project"
+                      src="/dist/img/pages/galaxy.jpg"
+                      class="card__image"
+                      width="400"
+                      height="300" />
+                  </picture>
+                  <figcaption class="card__caption">
+                    <p>
+                      Navigation bar styling with full-width link areas for
+                      improved user experience.
+                    </p>
+                  </figcaption>
+                </figure>
+              </div>
+              <div class="card__footer">
+                <a
+                  class="card__button card__button--primary card__link"
+                  href="/navbar-link-filling-li.html">
+                  See more...
+                </a>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <hr />
+
+        <!-- Back to Home -->
+        <section class="portfolio-back wrapper">
+          <p class="portfolio-back__text">
+            Ready to work together?
+            <a
+              href="#contact"
+              class="portfolio-back__link"
+              >Let's connect</a
+            >! Or you can
+            <a
+              href="/"
+              class="portfolio-back__link"
+              >return to the homepage</a
+            >.
+          </p>
+        </section>
+      </div>
+    </main>
+    <footer
+      class="footer"
+      role="contentinfo"
+      aria-label="Site footer">
+      <!-- FOOTER_PLACEHOLDER -->
+    </footer>
+  </body>
+</html>
