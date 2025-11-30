@@ -1,0 +1,407 @@
+<!doctype html>
+<html
+  lang="en"
+  class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="{{CSP_META}}" />
+    <title>CSS Position Cheat Sheet | I Knit The Web</title>
+
+    <!-- Preconnects for faster font and icon loading -->
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com" />
+    <link
+      rel="preconnect"
+      href="https://ka-p.fontawesome.com" />
+
+    <!-- Preload critical stylesheets -->
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap"
+      as="style" />
+    <link
+      rel="preload"
+      as="style"
+      href="/dist/css/css-position-cheat-sheet.css" />
+
+    <!-- Main font and site stylesheets -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;700&display=swap"
+      rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="/dist/css/css-position-cheat-sheet.css" />
+
+    <!-- FontAwesome CDN stylesheet for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+
+    <!-- Favicons and manifest -->
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="/dist/img/favicon_io/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/dist/img/favicon_io/apple-touch-icon.png" />
+    <link
+      rel="manifest"
+      href="/manifest.json" />
+    <link
+      rel="canonical"
+      href="/" />
+
+    <!-- SEO and social meta tags -->
+    <meta
+      name="description"
+      content="Quick reference for CSS position properties: static, relative, absolute, fixed, and sticky. Visual examples and tips for web developers." />
+    <meta
+      name="keywords"
+      content="css, position, web development, static, relative, absolute, fixed, sticky, cheat sheet, reference, layout" />
+    <meta
+      name="author"
+      content="I Knit the Web" />
+    <meta
+      name="robots"
+      content="index,follow" />
+    <meta
+      property="og:title"
+      content="Css Position Cheat Sheet | I Knit The Web" />
+    <meta
+      property="og:description"
+      content="Quick reference for CSS position properties: static, relative, absolute, fixed, and sticky. Visual examples and tips for web developers." />
+    <meta
+      property="og:image"
+      content="/dist/img/branding/logo.png" />
+    <meta
+      property="og:url"
+      content="/css-position-cheat-sheet.html" />
+    <meta
+      property="og:type"
+      content="website" />
+    <meta
+      name="twitter:card"
+      content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Css Position Cheat Sheet | I Knit The Web" />
+    <meta
+      name="twitter:description"
+      content="Master CSS position properties with this visual cheat sheet. Fast reference for static, relative, absolute, fixed, and sticky." />
+    <meta
+      name="twitter:image"
+      content="/dist/img/branding/logo.png" />
+
+    <!-- Fallback styles for no-JS environments -->
+    <noscript>
+      <style>
+        body {
+          visibility: visible;
+        }
+      </style>
+    </noscript>
+    <!-- Inline critical CSS for FOUC prevention -->
+    <style>
+      .no-js body {
+        visibility: hidden;
+      }
+      .css-loaded body {
+        visibility: visible;
+      }
+    </style>
+    <!-- Critical polyfill: FOUC fix script -->
+    <script src="/dist/js/fouc-fix.js"></script>
+    <!-- Third-party monitoring/analytics: Sentry -->
+    <script
+      src="https://browser.sentry-cdn.com/7.100.1/bundle.min.js"
+      crossorigin="anonymous"></script>
+    <!-- Structured data for SEO -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "CSS Position Cheat Sheet | I Knit The Web",
+        "description": "Quick reference for CSS position properties: static, relative, absolute, fixed, and sticky. Visual examples and tips for web developers.",
+        "url": "/css-position-cheat-sheet.html"
+        "author": {
+          "@type": "Person",
+          "name": "Marta",
+          "url": "/",
+          "sameAs": ["https://github.com/iknittheweb"]
+        }
+      }
+    </script>
+
+    <!-- Third-party library: body-scroll-lock -->
+    <script src="https://cdn.jsdelivr.net/npm/body-scroll-lock@4.0.0-beta.0/lib/bodyScrollLock.min.js"></script>
+
+    <!-- Main app/module script -->
+    <script
+      type="module"
+      src="/dist/js/script.js"></script>
+  </head>
+
+  <body>
+    <div
+      id="page-data"
+      data-page-title="Css Position Cheat Sheet | I Knit The Web"
+      data-page-subtitle="Visual Guide To Css Position Properties | I Knit The Web"
+      data-nav-config="css-position-cheat-sheet"
+      data-breadcrumb-category="Reference"
+      data-breadcrumb-category-url="/reference/css-position-cheat-sheet"
+      style="display: none"></div>
+
+    <a
+      href="#css-position_main-content"
+      class="skip-link"
+      >Skip to main content</a
+    >
+
+    <header
+      class="topnav"
+      aria-label="Site header">
+      <!-- HEADER_PLACEHOLDER -->
+    </header>
+    <main
+      id="css-position_main-content"
+      role="main"
+      tabindex="-1">
+      <article>
+        <h1 id="cheat-sheet-title">CSS Positioning Cheat Sheet Challenge</h1>
+        <h2 id="cheat-sheet-subtitle"
+          >A
+          <a href="https://www.codecademy.com/career-journey/front-end-engineer"
+            >Codecademy Front End Engineer Career Path</a
+          >
+          Project</h2
+        >
+        <table
+          class="cheat-sheet-table"
+          role="table"
+          aria-labelledby="cheat-sheet-title">
+          <caption
+            id="cheat-sheet-caption"
+            class="cheat-sheet-table__caption">
+            CSS Positioning Cheat Sheet
+          </caption>
+          <thead class="cheat-sheet-table__head">
+            <tr
+              class="cheat-sheet-table__row"
+              role="row">
+              <th
+                class="cheat-sheet-table__header"
+                role="columnheader"
+                scope="col"
+                >Property</th
+              >
+              <th
+                class="cheat-sheet-table__header"
+                role="columnheader"
+                scope="col"
+                >Value</th
+              >
+              <th
+                class="cheat-sheet-table__header"
+                role="columnheader"
+                scope="col"
+                >Definition</th
+              >
+            </tr>
+          </thead>
+          <tbody class="cheat-sheet-table__body">
+            <tr
+              class="cheat-sheet-table__row cheat-sheet-table__row--property"
+              role="row">
+              <th
+                class="cheat-sheet-table__property"
+                rowspan="5"
+                scope="row"
+                role="rowheader"
+                >position</th
+              >
+              <td
+                class="cheat-sheet-table__value"
+                role="cell"
+                >static</td
+              >
+              <td
+                class="cheat-sheet-table__definition"
+                role="cell"
+                >Default value. Element is positioned according to the normal
+                flow of the document.</td
+              >
+            </tr>
+            <tr
+              class="cheat-sheet-table__row"
+              role="row">
+              <td
+                class="cheat-sheet-table__value"
+                role="cell"
+                >relative</td
+              >
+              <td
+                class="cheat-sheet-table__definition"
+                role="cell"
+                >Element is positioned relative to its normal position. Use top,
+                right, bottom, left to move it.</td
+              >
+            </tr>
+            <tr
+              class="cheat-sheet-table__row"
+              role="row">
+              <td
+                class="cheat-sheet-table__value"
+                role="cell"
+                >absolute</td
+              >
+              <td
+                class="cheat-sheet-table__definition"
+                role="cell"
+                >Element is positioned relative to its nearest positioned
+                ancestor (not static). Removed from normal flow.</td
+              >
+            </tr>
+            <tr
+              class="cheat-sheet-table__row"
+              role="row">
+              <td
+                class="cheat-sheet-table__value"
+                role="cell"
+                >fixed</td
+              >
+              <td
+                class="cheat-sheet-table__definition"
+                role="cell"
+                >Element is positioned relative to the browser window. Stays in
+                place when scrolling.</td
+              >
+            </tr>
+            <tr
+              class="cheat-sheet-table__row"
+              role="row">
+              <td
+                class="cheat-sheet-table__value"
+                role="cell"
+                >sticky</td
+              >
+              <td
+                class="cheat-sheet-table__definition"
+                role="cell"
+                >Element toggles between relative and fixed, depending on scroll
+                position.</td
+              >
+            </tr>
+            <tr
+              class="cheat-sheet-table__row cheat-sheet-table__row--property"
+              role="row">
+              <th
+                class="cheat-sheet-table__property"
+                rowspan="4"
+                scope="row"
+                role="rowheader"
+                >top, right, bottom, left</th
+              >
+              <td
+                class="cheat-sheet-table__value"
+                role="cell"
+                >&lt;length&gt; | &lt;percentage&gt; | auto</td
+              >
+              <td
+                class="cheat-sheet-table__definition"
+                role="cell"
+                >Offsets the element from the respective edge of its containing
+                block, when position is not static.</td
+              >
+            </tr>
+            <tr
+              class="cheat-sheet-table__row"
+              role="row">
+              <td
+                class="cheat-sheet-table__value"
+                role="cell"
+                >auto</td
+              >
+              <td
+                class="cheat-sheet-table__definition"
+                role="cell"
+                >Default. The browser calculates the position.</td
+              >
+            </tr>
+            <tr
+              class="cheat-sheet-table__row"
+              role="row">
+              <td
+                class="cheat-sheet-table__value"
+                role="cell"
+                >0, 10px, 5%, etc.</td
+              >
+              <td
+                class="cheat-sheet-table__definition"
+                role="cell"
+                >Specifies the offset distance from the edge.</td
+              >
+            </tr>
+            <tr
+              class="cheat-sheet-table__row"
+              role="row">
+              <td
+                class="cheat-sheet-table__value"
+                role="cell"
+                >inherit</td
+              >
+              <td
+                class="cheat-sheet-table__definition"
+                role="cell"
+                >Inherits the value from its parent element.</td
+              >
+            </tr>
+            <tr
+              class="cheat-sheet-table__row cheat-sheet-table__row--property"
+              role="row">
+              <th
+                class="cheat-sheet-table__property"
+                scope="row"
+                role="rowheader"
+                >z-index</th
+              >
+              <td
+                class="cheat-sheet-table__value"
+                role="cell"
+                >&lt;integer&gt;</td
+              >
+              <td
+                class="cheat-sheet-table__definition"
+                role="cell"
+                >Controls the stacking order of positioned elements (those with
+                position other than static).</td
+              >
+            </tr>
+          </tbody>
+        </table>
+      </article>
+    </main>
+
+    <footer
+      class="footer"
+      role="contentinfo"
+      aria-label="Site footer">
+      <!-- FOOTER_PLACEHOLDER -->
+    </footer>
+  </body>
+</html>

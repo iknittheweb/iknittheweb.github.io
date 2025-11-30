@@ -1,0 +1,248 @@
+<!doctype html>
+<html
+  lang="en"
+  class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="{{CSP_META}}" />
+    <title>Basic Vertical Navbar | I Knit The Web</title>
+
+    <!-- Preconnects for faster font and icon loading -->
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com" />
+    <link
+      rel="preconnect"
+      href="https://ka-p.fontawesome.com" />
+
+    <!-- Preload critical stylesheets -->
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap"
+      as="style" />
+    <link
+      rel="preload"
+      as="style"
+      href="/dist/css/basic-vertical-navbar.css" />
+
+    <!-- Main font and site stylesheets -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" />
+    <link
+      rel="stylesheet"
+      href="/dist/css/basic-vertical-navbar.css" />
+
+    <!-- FontAwesome CDN stylesheet for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+
+    <!-- Favicons and manifest -->
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="/dist/img/favicon_io/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/dist/img/favicon_io/apple-touch-icon.png" />
+    <link
+      rel="manifest"
+      href="/manifest.json" />
+    <link
+      rel="canonical"
+      href="/" />
+
+    <!-- SEO and social meta tags -->
+    <meta
+      name="description"
+      content="Quick reference and visual guide to creating vertical navigation bars with CSS. Includes code examples and best practices for modern layouts." />
+    <meta
+      name="keywords"
+      content="css, vertical navbar, navigation, web development, responsive design, layout, accessibility, code examples, tutorial" />
+    <meta
+      name="author"
+      content="I Knit the Web" />
+    <meta
+      name="robots"
+      content="index,follow" />
+    <meta
+      property="og:title"
+      content="Basic Vertical Navbars | I Knit The Web" />
+    <meta
+      property="og:description"
+      content="Learn how to build accessible, responsive vertical navbars with CSS. Step-by-step guide and code samples for web developers." />
+    <meta
+      property="og:image"
+      content="/dist/img/branding/logo.png" />
+    <meta
+      property="og:url"
+      content="/BASIC-VERTICAL-NAVBARS.html" />
+    <meta
+      property="og:type"
+      content="website" />
+    <meta
+      name="twitter:card"
+      content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Basic Vertical Navbars | I Knit The Web" />
+    <meta
+      name="twitter:description"
+      content="Master vertical navigation bars in CSS with this easy guide. Visual examples, code snippets, and best practices for modern web layouts." />
+    <meta
+      name="twitter:image"
+      content="/dist/img/branding/logo.png" />
+
+    <!-- Fallback styles for no-JS environments -->
+    <noscript>
+      <style>
+        body {
+          visibility: visible;
+        }
+      </style>
+    </noscript>
+
+    <!-- Inline critical CSS for FOUC prevention -->
+    <style>
+      .no-js body {
+        visibility: hidden;
+      }
+      .css-loaded body {
+        visibility: visible;
+      }
+    </style>
+
+    <!-- Critical polyfill: FOUC fix script -->
+    <script src="/dist/js/fouc-fix.js"></script>
+
+    <!-- Third-party monitoring/analytics: Sentry -->
+    <script
+      src="https://browser.sentry-cdn.com/7.100.1/bundle.min.js"
+      crossorigin="anonymous"></script>
+
+    <!-- Structured data for SEO -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Basic Vertical Navbars | I Knit The Web",
+        "description": "Quick reference and visual guide to creating vertical navigation bars with CSS. Includes code examples and best practices for modern layouts.",
+        "url": "/BASIC-VERTICAL-NAVBARS.html"
+        "author": {
+          "@type": "Person",
+          "name": "Marta",
+          "url": "/",
+          "sameAs": ["https://github.com/iknittheweb"]
+        }
+      }
+    </script>
+
+    <!-- Third-party library: body-scroll-lock -->
+    <script src="https://cdn.jsdelivr.net/npm/body-scroll-lock@4.0.0-beta.0/lib/bodyScrollLock.min.js"></script>
+
+    <!-- Main app/module script -->
+    <script
+      type="module"
+      src="/dist/js/script.js"></script>
+  </head>
+
+  <body>
+    <div
+      id="page-data"
+      data-page-title="Basic Vertical Navbars | I Knit The Web"
+      data-page-subtitle="Visual Guide To Css Vertical Navigation Bars | I Knit The Web"
+      data-nav-config="basic-vertical-navbars"
+      data-breadcrumb-category="Reference"
+      data-breadcrumb-category-url="/reference/basic-vertical-navbars"
+      style="display: none"></div>
+
+    <a
+      href="#basic_main-content"
+      class="skip-link"
+      >Skip to main content</a
+    >
+
+    <header
+      class="topnav"
+      aria-label="Site header">
+      <!-- HEADER_PLACEHOLDER -->
+    </header>
+
+    <main
+      id="basic_main-content"
+      role="main"
+      tabindex="-1"
+      aria-label="Main content">
+      <article class="vertical-navbar">
+        <h1>Basic Vertical Navbars Challenge</h1>
+        <h2
+          >A
+          <a href="https://jen4web.gumroad.com/l/30daysofhtml"
+            >15 Days of CSS</a
+          >
+          Project</h2
+        >
+        <h3 class="vertical-navbar__brand">Jen's Gelato</h3>
+        <nav
+          class="vertical-navbar__nav"
+          aria-label="Main navigation">
+          <ul class="vertical-navbar__list">
+            <li class="vertical-navbar__item"
+              ><a
+                class="vertical-navbar__link"
+                href="#"
+                >Home</a
+              ></li
+            >
+            <li class="vertical-navbar__item"
+              ><a
+                class="vertical-navbar__link"
+                href="#"
+                >About</a
+              ></li
+            >
+            <li class="vertical-navbar__item"
+              ><a
+                class="vertical-navbar__link"
+                href="#"
+                >Shop</a
+              ></li
+            >
+            <li class="vertical-navbar__item"
+              ><a
+                class="vertical-navbar__link"
+                href="#"
+                >Blog</a
+              ></li
+            >
+            <li class="vertical-navbar__item"
+              ><a
+                class="vertical-navbar__link"
+                href="#"
+                >Order</a
+              ></li
+            >
+          </ul>
+        </nav>
+      </article>
+    </main>
+    <footer
+      class="footer"
+      role="contentinfo"
+      aria-label="Site footer">
+      <!-- FOOTER_PLACEHOLDER -->
+    </footer>
+  </body>
+</html>

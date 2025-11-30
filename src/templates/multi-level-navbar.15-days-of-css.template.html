@@ -1,0 +1,329 @@
+<!doctype html>
+<html
+  lang="en"
+  class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="{{CSP_META}}" />
+    <title>Multi-level Vertical Navbars | I Knit The Web</title>
+
+    <!-- Preconnects for faster font and icon loading -->
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com" />
+    <link
+      rel="preconnect"
+      href="https://ka-p.fontawesome.com" />
+
+    <!-- Preload critical stylesheets -->
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap"
+      as="style" />
+    <link
+      rel="preload"
+      as="style"
+      href="/dist/css/multi-level-navbar.css" />
+
+    <!-- Main font and site stylesheets -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" />
+    <link
+      rel="stylesheet"
+      href="/dist/css/multi-level-navbar.css" />
+
+    <!-- FontAwesome CDN stylesheet for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+
+    <!-- Favicons and manifest -->
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="/dist/img/favicon_io/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/dist/img/favicon_io/apple-touch-icon.png" />
+    <link
+      rel="manifest"
+      href="/manifest.json" />
+    <link
+      rel="canonical"
+      href="/" />
+
+    <!-- SEO and social meta tags -->
+    <meta
+      name="description"
+      content="Learn how to build multi-level navigation menus with CSS. Includes code samples, accessibility tips, and responsive design strategies." />
+    <meta
+      name="keywords"
+      content="css, multi-level navbar, navigation, web development, responsive design, accessibility, code examples, tutorial" />
+    <meta
+      name="author"
+      content="I Knit the Web" />
+    <meta
+      name="robots"
+      content="index,follow" />
+    <meta
+      property="og:title"
+      content="Multi-level Navbar | I Knit The Web" />
+    <meta
+      property="og:description"
+      content="Step-by-step tutorial for multi-level navbars. Improve your site navigation with accessible, responsive menus." />
+    <meta
+      property="og:image"
+      content="/dist/img/branding/logo.png" />
+    <meta
+      property="og:url"
+      content="/multi-level-navbar.html" />
+    <meta
+      property="og:type"
+      content="website" />
+    <meta
+      name="twitter:card"
+      content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Multi-level Navbar | I Knit The Web" />
+    <meta
+      name="twitter:description"
+      content="Master multi-level navigation menus in CSS. Visual examples, code snippets, and best practices for modern web layouts." />
+    <meta
+      name="twitter:image"
+      content="/dist/img/branding/logo.png" />
+
+    <!-- Fallback styles for no-JS environments -->
+    <noscript>
+      <style>
+        body {
+          visibility: visible;
+        }
+      </style>
+    </noscript>
+
+    <!-- Inline critical CSS for FOUC prevention -->
+    <style>
+      .no-js body {
+        visibility: hidden;
+      }
+      .css-loaded body {
+        visibility: visible;
+      }
+    </style>
+
+    <!-- Critical polyfill: FOUC fix script -->
+    <script src="/dist/js/fouc-fix.js"></script>
+
+    <!-- Third-party monitoring/analytics: Sentry -->
+    <script
+      src="https://browser.sentry-cdn.com/7.100.1/bundle.min.js"
+      crossorigin="anonymous"></script>
+
+    <!-- Structured data for SEO -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Multi-Level Navbar | I Knit The Web",
+        "description": "Learn how to build multi-level navigation menus with CSS. Includes code samples, accessibility tips, and responsive design strategies.",
+        "url": "/multi-level-navbar.html"
+        "author": {
+          "@type": "Person",
+          "name": "Marta",
+          "url": "/",
+          "sameAs": ["https://github.com/iknittheweb"]
+        }
+      }
+    </script>
+
+    <!-- Third-party library: body-scroll-lock -->
+    <script src="https://cdn.jsdelivr.net/npm/body-scroll-lock@4.0.0-beta.0/lib/bodyScrollLock.min.js"></script>
+
+    <!-- Main app/module script -->
+    <script
+      type="module"
+      src="/dist/js/script.js"></script>
+  </head>
+
+  <body>
+    <div
+      id="page-data"
+      data-page-title="Multi-level Navbar | I Knit The Web"
+      data-page-subtitle="Visual Guide To Multi-level Navigation Menus | I Knit The Web"
+      data-nav-config="multi-level-navbar"
+      data-breadcrumb-category="Reference"
+      data-breadcrumb-category-url="/reference/multi-level-navbar"
+      style="display: none"></div>
+
+    <a
+      href="#multi-level-navbar_main-content"
+      class="skip-link"
+      >Skip to main content</a
+    >
+
+    <header
+      class="topnav"
+      aria-label="Site header">
+      <!-- HEADER_PLACEHOLDER -->
+    </header>
+
+    <main
+      id="multi-level-navbar_main-content"
+      class="multi-level-navbar"
+      role="main">
+      <h1>Multi-Level Navbar Challenge</h1>
+      <h2
+        >A
+        <a href="https://jen4web.gumroad.com/l/30daysofhtml">15 Days of CSS</a>
+        Project</h2
+      >
+      <article>
+        <h1 class="multi-level-navbar__title">Phyllum Mollusca</h1>
+        <nav
+          class="multi-level-navbar multi-level-nav"
+          aria-label="Multi-level navigation">
+          <ul
+            class="multi-level-navbar__list"
+            data-cy="multi-navbar-list">
+            <li class="multi-level-navbar__item multi-level-navbar__item--home">
+              <a
+                href="#"
+                class="multi-level-navbar__link"
+                data-cy="multi-navbar-home"
+                aria-haspopup="true"
+                aria-expanded="false"
+                aria-controls="multi-navbar-home-submenu"
+                >Home</a
+              >
+              <ul
+                class="multi-level-navbar__sublist"
+                id="multi-navbar-home-submenu"
+                role="menu"
+                aria-label="Home submenu">
+                <li class="multi-level-navbar__subitem"
+                  ><a
+                    href="#"
+                    class="multi-level-navbar__sublink"
+                    >Octopus</a
+                  ></li
+                >
+                <li class="multi-level-navbar__subitem"
+                  ><a
+                    href="#"
+                    class="multi-level-navbar__sublink"
+                    >Squid</a
+                  ></li
+                >
+                <li class="multi-level-navbar__subitem"
+                  ><a
+                    href="#"
+                    class="multi-level-navbar__sublink"
+                    >Cuttlefish</a
+                  ></li
+                >
+              </ul>
+            </li>
+            <li
+              class="multi-level-navbar__item multi-level-navbar__item--gastropods">
+              <a
+                href="#"
+                class="multi-level-navbar__link"
+                data-cy="multi-navbar-gastropods"
+                aria-haspopup="true"
+                aria-expanded="false"
+                aria-controls="multi-navbar-gastropods-submenu"
+                >Gastropods</a
+              >
+              <ul
+                class="multi-level-navbar__sublist"
+                id="multi-navbar-gastropods-submenu"
+                role="menu"
+                aria-label="Gastropods submenu">
+                <li class="multi-level-navbar__subitem"
+                  ><a
+                    href="#"
+                    class="multi-level-navbar__sublink"
+                    >Snails</a
+                  ></li
+                >
+                <li class="multi-level-navbar__subitem"
+                  ><a
+                    href="#"
+                    class="multi-level-navbar__sublink"
+                    >Slugs</a
+                  ></li
+                >
+              </ul>
+            </li>
+            <li
+              class="multi-level-navbar__item multi-level-navbar__item--bivalvia">
+              <a
+                href="#"
+                class="multi-level-navbar__link"
+                data-cy="multi-navbar-bivalvia"
+                aria-haspopup="true"
+                aria-expanded="false"
+                aria-controls="multi-navbar-bivalvia-submenu"
+                >Bivalvia</a
+              >
+              <ul
+                class="multi-level-navbar__sublist"
+                id="multi-navbar-bivalvia-submenu"
+                role="menu"
+                aria-label="Bivalvia submenu">
+                <li class="multi-level-navbar__subitem"
+                  ><a
+                    href="#"
+                    class="multi-level-navbar__sublink"
+                    >Clams</a
+                  ></li
+                >
+                <li class="multi-level-navbar__subitem"
+                  ><a
+                    href="#"
+                    class="multi-level-navbar__sublink"
+                    >Oysters</a
+                  ></li
+                >
+                <li class="multi-level-navbar__subitem"
+                  ><a
+                    href="#"
+                    class="multi-level-navbar__sublink"
+                    >Mussels</a
+                  ></li
+                >
+                <li class="multi-level-navbar__subitem"
+                  ><a
+                    href="#"
+                    class="multi-level-navbar__sublink"
+                    >Scallops</a
+                  ></li
+                >
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </article>
+    </main>
+
+    <footer
+      class="footer"
+      role="contentinfo"
+      aria-label="Site footer">
+      <!-- FOOTER_PLACEHOLDER -->
+    </footer>
+  </body>
+</html>
