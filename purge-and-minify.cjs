@@ -46,22 +46,26 @@ async function purgeAndReplace(file) {
       .filter((f) => f.startsWith(base + '.') && f.endsWith('.html'))
       .map((f) => path.join(__dirname, f));
   }
-  const purged = path.join(cssDir, `purged-${base}.css`);
-
   // Only purge if all matching HTML files exist
   const allExist = htmlFiles.every((f) => fs.existsSync(f));
   if (allExist) {
     const contentArgs = htmlFiles.map((f) => `--content "${f}"`).join(' ');
     execSync(
-      `npx purgecss --css "${file}" ${contentArgs} --safelist skills-chart__tab--active skills-chart__category--active --output "${purged}"`,
+      `npx purgecss --css "${file}" ${contentArgs} --safelist skills-chart__tab--active skills-chart__category--active --output "${cssDir}"`,
       { stdio: 'inherit' }
     );
-    fs.renameSync(purged, file);
-    // Minify after purging
-    const css = fs.readFileSync(file, 'utf8');
-    const minified = await postcss([cssnano]).process(css, { from: file });
-    const minFile = file.replace(/\.css$/, '.min.css');
-    fs.writeFileSync(minFile, minified.css);
+    // After purgecss, the output file will be in cssDir with the same basename as input
+    const purgedFile = path.join(cssDir, path.basename(file));
+    if (fs.existsSync(purgedFile)) {
+      fs.copyFileSync(purgedFile, file); // Overwrite original with purged
+      // Minify after purging
+      const css = fs.readFileSync(file, 'utf8');
+      const minified = await postcss([cssnano]).process(css, { from: file });
+      const minFile = file.replace(/\.css$/, '.min.css');
+      fs.writeFileSync(minFile, minified.css);
+    } else {
+      console.warn(`PurgeCSS did not produce expected output for ${file}.`);
+    }
   } else {
     console.warn(
       `Skipping ${file}: No matching HTML file(s) (${htmlFiles.join(', ')}) found.`
