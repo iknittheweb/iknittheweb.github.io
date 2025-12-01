@@ -505,7 +505,9 @@ a:active {
 
 .fonts-failed {
   --font-1: "Georgia", "Times New Roman", times, serif;
-  --font-2: -apple-system, blinkmacsystemfont, "Segoe UI", roboto, oxygen, ubuntu, cantarell, sans-serif;
+  --font-2:
+    -apple-system, blinkmacsystemfont, "Segoe UI", roboto, oxygen, ubuntu,
+    cantarell, sans-serif;
   --alien-font-family: "Courier New", courier, monospace;
 }
 
@@ -598,6 +600,14 @@ p.p--large {
 
 .topnav {
   font-family: var(--font-1);
+}
+
+.page-heading {
+  font-size: 2.625rem;
+}
+
+.page-subheading {
+  font-size: 2.25rem;
 }
 
 .sr-only {
