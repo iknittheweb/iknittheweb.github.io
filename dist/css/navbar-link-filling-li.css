@@ -633,6 +633,31 @@ textarea:focus-visible {
   transition: outline-color 0.2s, box-shadow 0.2s;
 }
 
+@media (forced-colors: active) {
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible {
+    outline: 2px solid Highlight;
+    outline-offset: 2px;
+    box-shadow: none;
+    background: Window !important;
+    color: WindowText !important;
+    border-color: Highlight !important;
+  }
+  a,
+  button,
+  input,
+  select,
+  textarea {
+    border-width: 2px !important;
+    border-style: solid !important;
+    border-color: ButtonText !important;
+    background: Window !important;
+    color: WindowText !important;
+  }
+}
 .back-to-top-link {
   display: flex;
   align-items: center;
@@ -1667,6 +1692,7 @@ textarea:focus-visible {
   width: 100%;
   display: -webkit-box;
   -webkit-line-clamp: 2;
+  line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
