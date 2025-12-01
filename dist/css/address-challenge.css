@@ -610,6 +610,11 @@ p.p--large {
   font-size: 2.25rem;
 }
 
+.page-heading,
+.page-subheading {
+  text-align: center;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -3535,8 +3540,22 @@ input[type=button]:hover {
   padding-block: 0;
 }
 
+.page-wrapper {
+  width: 90%;
+  max-width: 56.25rem;
+}
+
+#address_main-content {
+  width: 90%;
+  max-width: 50rem;
+}
+
 .address-challenge__address {
   margin-block: 1rem;
+}
+
+.address__heading {
+  font-size: 2rem;
 }
 
 /*# sourceMappingURL=address-challenge.css.map */

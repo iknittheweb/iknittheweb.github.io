@@ -610,6 +610,11 @@ p.p--large {
   font-size: 2.25rem;
 }
 
+.page-heading,
+.page-subheading {
+  text-align: center;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -3533,6 +3538,11 @@ input[type=button]:hover {
 
 .breadcrumbs .wrapper {
   padding-block: 0;
+}
+
+.page-wrapper {
+  width: 90%;
+  max-width: 56.25rem;
 }
 
 #css-position_main-content article {
