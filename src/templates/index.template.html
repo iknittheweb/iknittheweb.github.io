@@ -153,16 +153,16 @@
       data-breadcrumb-category="Portfolio"
       data-breadcrumb-category-url="/category/portfolio"
       style="display: none"></div>
-    <a
-      href="#main-content"
-      class="skip-link"
-      aria-label="Skip to main content">
-      Skip to main content
-    </a>
     <header
       id="topNav"
       class="topnav"
       aria-label="Site header">
+      <a
+        href="#main-content"
+        class="skip-link"
+        aria-label="Skip to main content">
+        Skip to main content
+      </a>
       <h1 class="visually-hidden">I Knit The Web Header</h1>
       <!-- Global ARIA live region for notifications/status -->
       <div
@@ -257,13 +257,12 @@
     <main
       class="home-page"
       id="home_main-content"
-      aria-label="Main content"
+      aria-labelledby="home-hero-title"
       role="main"
       tabindex="-1">
-      <h1 class="home_title visually-hidden">I Knit The Web</h1>
+      <h1 id="home-hero-title" class="home_title visually-hidden">I Knit The Web</h1>
       <section
         class="hero"
-        aria-labelledby="home_main-content"
         id="hero">
         <img
           src="/dist/img/pages/heading-banner-dark.svg"
@@ -271,7 +270,9 @@
           class="hero__banner"
           width="1125"
           height="375" />
-        <h2 class="hero__subtitle"
+        <h2
+          class="hero__subtitle"
+          id="home-hero-title"
           >Handcrafted Websites for Small Budgets and Big Dreams</h2
         >
         <p class="hero__intro"
@@ -383,25 +384,22 @@
                     >Level 1 Certifications in
                     <a
                       href="/dist/img/certificates/CCA-Certificate-HTML-Level-1.jpg"
-                      target="_blank"
-                      rel="noopener"
-                      class="link__cert"
-                      >HTML</a
-                    >,
+                        target="_blank"
+                        rel="noopener"
+                        class="link__cert"
+                        >HTML<span class="sr-only"> (opens in a new window)</span></a>,
                     <a
                       href="/dist/img/certificates/CCA-Certificate-CSS-Level-1.jpg"
-                      target="_blank"
-                      rel="noopener"
-                      class="link__cert"
-                      >CSS</a
-                    >, and
+                        target="_blank"
+                        rel="noopener"
+                        class="link__cert"
+                        >CSS<span class="sr-only"> (opens in a new window)</span></a>, and
                     <a
                       href="/dist/img/certificates/CCA-Certificate-Javascript-Level-1.jpg"
-                      target="_blank"
-                      rel="noopener"
-                      class="link__cert"
-                      >JavaScript</a
-                    ></span
+                        target="_blank"
+                        rel="noopener"
+                        class="link__cert"
+                        >JavaScript<span class="sr-only"> (opens in a new window)</span></a></span
                   >
                 </div>
                 <div class="source">Cambridge Certification Authority</div>
@@ -418,36 +416,32 @@
                   <span
                     ><a
                       href="/dist/img/certificates/Sololearn-HTML-Course.jpg"
-                      target="_blank"
-                      rel="noopener"
-                      class="link__cert"
-                      >HTML</a
-                    >,
+                        target="_blank"
+                        rel="noopener"
+                        class="link__cert"
+                        >HTML<span class="sr-only"> (opens in a new window)</span></a>,
                     <a
                       href="/dist/img/certificates/Sololearn-CSS-Course.jpg"
-                      target="_blank"
-                      rel="noopener"
-                      class="link__cert"
-                      >CSS</a
-                    >, and
+                        target="_blank"
+                        rel="noopener"
+                        class="link__cert"
+                        >CSS<span class="sr-only"> (opens in a new window)</span></a>, and
                     <a
                       href="/dist/img/certificates/Sololearn-Web-Development-course.jpg"
-                      target="_blank"
-                      rel="noopener"
-                      class="link__cert"
-                      >Web Development Fundamentals</a
-                    >
+                        target="_blank"
+                        rel="noopener"
+                        class="link__cert"
+                        >Web Development Fundamentals<span class="sr-only"> (opens in a new window)</span></a>
                     Courses</span
                   >
                 </div>
                 <div class="source">
                   <a
                     href="https://www.sololearn.com/"
-                    target="_blank"
-                    rel="noopener"
-                    class="link__site"
-                    >SoloLearn</a
-                  >
+                      target="_blank"
+                      rel="noopener"
+                      class="link__site"
+                      >SoloLearn<span class="sr-only"> (opens in a new window)</span></a>
                 </div>
               </li>
               <li>
@@ -462,22 +456,20 @@
                   <span
                     ><a
                       href="/dist/img/certificates/Kevin-Powell-Certificate-Conquering-Responsive-Layouts.jpg"
-                      target="_blank"
-                      rel="noopener"
-                      class="link__cert"
-                      >Conquering Responsive Layouts</a
-                    >
+                        target="_blank"
+                        rel="noopener"
+                        class="link__cert"
+                        >Conquering Responsive Layouts<span class="sr-only"> (opens in a new window)</span></a>
                     Course
                   </span>
                 </div>
                 <div class="source">
                   <a
                     href="https://courses.kevinpowell.co/conquering-responsive-layouts"
-                    target="_blank"
-                    rel="noopener"
-                    class="link__site"
-                    >Kevin Powell</a
-                  >
+                      target="_blank"
+                      rel="noopener"
+                      class="link__site"
+                      >Kevin Powell<span class="sr-only"> (opens in a new window)</span></a>
                 </div>
               </li>
               <li>
@@ -492,22 +484,20 @@
                   <span>
                     <a
                       href="/dist/img/certificates/freeCodeCamp-Responsive-Web-Design-Certificate.png"
-                      target="_blank"
-                      rel="noopener"
-                      class="link__cert"
-                      >Responsive Web Design</a
-                    >
+                        target="_blank"
+                        rel="noopener"
+                        class="link__cert"
+                        >Responsive Web Design<span class="sr-only"> (opens in a new window)</span></a>
                     Developer Certification
                   </span>
                 </div>
                 <div class="source">
                   <a
                     href="https://www.freecodecamp.org/"
-                    target="_blank"
-                    rel="noopener"
-                    class="link__site"
-                    >freeCodeCamp</a
-                  >
+                      target="_blank"
+                      rel="noopener"
+                      class="link__site"
+                      >freeCodeCamp<span class="sr-only"> (opens in a new window)</span></a>
                 </div>
               </li>
               <li>
@@ -518,35 +508,32 @@
                   <span>
                     <a
                       href="/dist/img/certificates/Frontend-Masters-Certificate-HTML-Forms.jpg"
-                      target="_blank"
-                      rel="noopener"
-                      class="link__cert"
-                      >HTML Forms</a
-                    >,
+                        target="_blank"
+                        rel="noopener"
+                        class="link__cert"
+                        >HTML Forms<span class="sr-only"> (opens in a new window)</span></a>,
                     <a
                       href="/dist/img/certificates/Frontend-Masters-Certificate-Website-Embeds-GitHub-Pages.jpg"
-                      target="_blank"
-                      rel="noopener"
-                      class="link__cert"
-                      >Website Embeds &amp; GitHub Pages</a
-                    >, and
+                        target="_blank"
+                        rel="noopener"
+                        class="link__cert"
+                        >Website Embeds &amp; GitHub Pages<span class="sr-only"> (opens in a new window)</span></a>, and
                     <a
                       href="/dist/img/certificates/Frontend-Masters-Certificate-Calculator-Project-HTML-CSS.jpg"
-                      target="_blank"
-                      rel="noopener"
-                      class="link__cert"
-                      >Calculator Project</a
-                    >
+                        target="_blank"
+                        rel="noopener"
+                        class="link__cert"
+                        >Calculator Project<span class="sr-only"> (opens in a new window)</span></a>
                     Certifications
                   </span>
                 </div>
                 <div class="source">
                   <a
                     href="https://frontendmasters.com/bootcamp/"
-                    target="_blank"
-                    rel="noopener"
-                    class="link__site"
-                    >Frontend Masters Bootcamp</a
+                      target="_blank"
+                      rel="noopener"
+                      class="link__site"
+                      >Frontend Masters Bootcamp<span class="sr-only"> (opens in a new window)</span></a>
                   >
                 </div>
               </li>
@@ -1625,9 +1612,8 @@
       </section>
     </main>
     <footer
-      class="footer"
-      role="contentinfo"
-      aria-label="Site footer">
+      aria-label="Site footer"
+      class="footer">
       <div class="footer__content wrapper">
         <div class="footer__sections">
           <!-- About Section -->

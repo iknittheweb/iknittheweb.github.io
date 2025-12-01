@@ -168,33 +168,28 @@
       data-breadcrumb-category-url="/category/portfolio"
       style="display: none"></div>
 
-    <a
-      href="#portfolio_main-content"
-      class="skip-link"
-      >Skip to main content</a
-    >
-
-    <header>
-      <!-- HEADER_PLACEHOLDER -->
-    </header>
+    <!-- HEADER_PLACEHOLDER -->
 
     <main
       class="portfolio-page"
       id="portfolio_main-content"
-      aria-label="Main content"
+      aria-labelledby="portfolio-hero-title"
       role="main"
       tabindex="-1">
       <section
         class="hero"
-        aria-labelledby="portfolio_main-content"
         id="hero">
         <img
           src="/dist/img/pages/heading-banner-dark.svg"
-          alt=""
+          alt="Portfolio site title banner"
           class="hero__banner"
           width="1125"
           height="375" />
-        <h1 class="portfolio-page__title">My Full Portfolio</h1>
+        <h1
+          class="portfolio-page__title"
+          id="portfolio-hero-title"
+          >My Full Portfolio</h1
+        >
         <p class="portfolio-page__intro">
           Welcome to my full portfolio showcasing the best web development
           projects I've created! From practical applications to learning
@@ -337,7 +332,8 @@
                         href="https://www.codecademy.com/learn/paths/front-end-engineer-career-path"
                         target="_blank"
                         rel="noopener"
-                        >Codecademy's Front-End Engineer Career Path</a
+                        >Codecademy's Front-End Engineer Career Path
+                        <span class="sr-only"> (opens in a new window)</span></a
                       >.
                     </p>
                   </figcaption>
@@ -569,8 +565,7 @@
         </section>
       </div>
     </main>
-    <footer>
-      <!-- FOOTER_PLACEHOLDER -->
-    </footer>
+
+    <!-- FOOTER_PLACEHOLDER -->
   </body>
 </html>
