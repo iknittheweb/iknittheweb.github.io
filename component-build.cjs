@@ -85,7 +85,9 @@ fs.readdirSync(srcDir).forEach((file) => {
       );
     }
 
-    const outFile = path.join(outDir, file.replace('.template.html', '.html'));
+    const distDir = path.join(__dirname, 'dist');
+    if (!fs.existsSync(distDir)) fs.mkdirSync(distDir, { recursive: true });
+    const outFile = path.join(distDir, file.replace('.template.html', '.html'));
     fs.writeFileSync(outFile, html);
     console.log(`Generated: ${outFile}`);
   }
