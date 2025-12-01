@@ -276,389 +276,393 @@
       aria-labelledby="portfolio-hero-title"
       role="main"
       tabindex="-1">
-      <div class="page-wrapper">
-        <h1
-          class="portfolio-page__title"
-          id="portfolio-hero-title"
-          >My Full Portfolio</h1
-        >
-        <section
-          class="hero"
-          id="hero">
-          <img
-            src="/dist/img/pages/heading-banner-dark.svg"
-            alt="Portfolio site title banner"
-            class="hero__banner"
-            width="1125"
-            height="375" />
-          <p class="portfolio-page__intro">
-            Welcome to my full portfolio showcasing the best web development
-            projects I've created! From practical applications to learning
-            challenges, each project represents a step in my journey of mastering
-            HTML, CSS, JavaScript, and modern web development practices.
+      <h1
+        class="portfolio-page__title"
+        id="portfolio-hero-title"
+        >My Full Portfolio</h1
+      >
+      <section
+        class="hero"
+        id="hero">
+        <img
+          src="/dist/img/pages/heading-banner-dark.svg"
+          alt="Portfolio site title banner"
+          class="hero__banner"
+          width="1125"
+          height="375" />
+        <p class="portfolio-page__intro">
+          Welcome to my full portfolio showcasing the best web development
+          projects I've created! From practical applications to learning
+          challenges, each project represents a step in my journey of mastering
+          HTML, CSS, JavaScript, and modern web development practices.
+        </p>
+      </section>
+      <div class="wrapper">
+        <!-- Featured Projects Section -->
+        <section class="portfolio-section">
+          <h2 class="portfolio-section__heading">Featured Projects</h2>
+          <p class="portfolio-section__intro">
+            These are my most comprehensive projects showcasing practical
+            applications and real-world problem solving.
+          </p>
+          <div class="portfolio__row">
+            <article class="card">
+              <div class="card__header">
+                <a
+                  href="/alien-abduction-form.html"
+                  class="card__header-link">
+                  <h3 class="card__title">Alien Abduction Order Form</h3>
+                </a>
+              </div>
+              <div class="card__body">
+                <figure class="card__figure">
+                  <picture>
+                    <source
+                      srcset="/dist/img/cards/Alien-abduction-form-thumb.avif"
+                      type="image/avif" />
+                    <source
+                      srcset="/dist/img/cards/Alien-abduction-form-thumb.webp"
+                      type="image/webp" />
+                    <source
+                      srcset="/dist/img/cards/Alien-abduction-form-thumb.jpg"
+                      type="image/jpeg" />
+                    <img
+                      alt="Thumbnail preview of Alien Abduction Order Form project"
+                      src="/dist/img/cards/Alien-abduction-form-thumb.jpg"
+                      class="card__image"
+                      width="345"
+                      height="259" />
+                  </picture>
+                  <figcaption class="card__caption">
+                    <p>
+                      When you want an alien abduction, you want it your way.
+                      Fill out this form to get started.
+                    </p>
+                  </figcaption>
+                </figure>
+              </div>
+              <div class="card__footer">
+                <a
+                  href="/alien-abduction-form.html"
+                  class="card__button card__button--primary card__link">
+                  See more...
+                </a>
+              </div>
+            </article>
+            <article class="card">
+              <div class="card__header">
+                <a
+                  class="card__header-link"
+                  href="/calculator.html">
+                  <h3 class="card__title">Calculator</h3>
+                </a>
+              </div>
+              <div class="card__body">
+                <figure class="card__figure">
+                  <picture>
+                    <source
+                      srcset="/dist/img/cards/Calculator-thumb.avif"
+                      type="image/avif" />
+                    <source
+                      srcset="/dist/img/cards/Calculator-thumb.webp"
+                      type="image/webp" />
+                    <source
+                      srcset="/dist/img/cards/Calculator-thumb.jpg"
+                      type="image/jpeg" />
+                    <img
+                      alt="Thumbnail preview of Calculator project"
+                      src="/dist/img/cards/Calculator-thumb.jpg"
+                      class="card__image"
+                      width="356"
+                      height="268" />
+                  </picture>
+                  <figcaption class="card__caption">
+                    <p
+                      >A simple calculator built with HTML, CSS, and
+                      JavaScript.</p
+                    >
+                  </figcaption>
+                </figure>
+              </div>
+              <div class="card__footer">
+                <a
+                  class="card__button card__button--primary card__link"
+                  href="/calculator.html">
+                  See more...
+                </a>
+              </div>
+            </article>
+            <article class="card">
+              <div class="card__header">
+                <a
+                  class="card__header-link"
+                  href="/css-position-cheat-sheet.html">
+                  <h3 class="card__title">CSS Position Cheat Sheet</h3>
+                </a>
+              </div>
+              <div class="card__body">
+                <figure class="card__figure">
+                  <picture>
+                    <source
+                      srcset="
+                        /dist/img/cards/css-position-cheat-sheet-thumb.avif
+                      "
+                      type="image/avif" />
+                    <source
+                      srcset="
+                        /dist/img/cards/css-position-cheat-sheet-thumb.webp
+                      "
+                      type="image/webp" />
+                    <source
+                      srcset="
+                        /dist/img/cards/css-position-cheat-sheet-thumb.jpg
+                      "
+                      type="image/jpeg" />
+                    <img
+                      alt="Thumbnail preview of CSS Position Cheat Sheet project"
+                      src="/dist/img/cards/css-position-cheat-sheet-thumb.jpg"
+                      class="card__image"
+                      width="1868"
+                      height="1401" />
+                  </picture>
+                  <figcaption class="card__caption">
+                    <p>
+                      I created this cheat sheet as an assignment on
+                      <a
+                        href="https://www.codecademy.com/learn/paths/front-end-engineer-career-path"
+                        target="_blank"
+                        rel="noopener"
+                        >Codecademy's Front-End Engineer Career Path
+                        <span class="sr-only"> (opens in a new window)</span></a
+                      >.
+                    </p>
+                  </figcaption>
+                </figure>
+              </div>
+              <div class="card__footer">
+                <a
+                  class="card__button card__button--primary card__link"
+                  href="/css-position-cheat-sheet.html">
+                  See more...
+                </a>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <hr />
+
+        <!-- Learning Challenges Section -->
+        <section class="portfolio-section">
+          <h2 class="portfolio-section__heading">Learning Challenges</h2>
+          <p class="portfolio-section__intro">
+            Daily coding challenges that helped me develop specific skills and
+            explore different techniques in HTML and CSS.
+          </p>
+          <div class="portfolio__row">
+            <article class="card">
+              <div class="card__header">
+                <a
+                  class="card__header-link"
+                  href="/multi-level-navbar.html">
+                  <h3 class="card__title">Multi-Level Navbar</h3>
+                </a>
+              </div>
+              <div class="card__body">
+                <figure class="card__figure">
+                  <picture>
+                    <source
+                      srcset="/dist/img/cards/multi-level-navbar-thumb.avif"
+                      type="image/avif" />
+                    <source
+                      srcset="/dist/img/cards/multi-level-navbar-thumb.webp"
+                      type="image/webp" />
+                    <source
+                      srcset="/dist/img/cards/multi-level-navbar-thumb.jpg"
+                      type="image/jpeg" />
+                    <img
+                      alt="Thumbnail preview of Multi-Level Navbar Challenge project"
+                      src="/dist/img/cards/multi-level-navbar-thumb.jpg"
+                      class="card__image"
+                      width="400"
+                      height="300" />
+                  </picture>
+                  <figcaption class="card__caption">
+                    <p>
+                      CSS challenge focusing on advanced navigation menu styling
+                      techniques and creative layouts.
+                    </p>
+                  </figcaption>
+                </figure>
+              </div>
+              <div class="card__footer">
+                <a
+                  class="card__button card__button--primary card__link"
+                  href="/multi-level-navbar.html">
+                  See more...
+                </a>
+              </div>
+            </article>
+            <article class="card">
+              <div class="card__header">
+                <a
+                  class="card__header-link"
+                  href="/basic-vertical-navbar.html">
+                  <h3 class="card__title">Basic Vertical Navbar Styling</h3>
+                </a>
+              </div>
+              <div class="card__body">
+                <figure class="card__figure">
+                  <picture>
+                    <source
+                      srcset="/dist/img/cards/basic-vertical-navbar.avif"
+                      type="image/avif" />
+                    <source
+                      srcset="/dist/img/cards/basic-vertical-navbar.webp"
+                      type="image/webp" />
+                    <source
+                      srcset="/dist/img/cards/basic-vertical-navbar.jpg"
+                      type="image/jpeg" />
+                    <img
+                      alt="Thumbnail preview of 15 Days of CSS Day 4 Basic Vertical Navbars project"
+                      src="/dist/img/cards/basic-vertical-navbar.png"
+                      class="card__image"
+                      width="350"
+                      height="265" />
+                  </picture>
+                  <figcaption class="card__caption">
+                    <p
+                      >Exploring vertical navigation bar design and
+                      implementation with CSS.
+                      <i>from 15 Days of CSS, Day 4</i></p
+                    >
+                  </figcaption>
+                </figure>
+              </div>
+              <div class="card__footer">
+                <a
+                  class="card__button card__button--primary card__link"
+                  href="/basic-vertical-navbar.html">
+                  See more...
+                </a>
+              </div>
+            </article>
+            <article class="card">
+              <div class="card__header">
+                <a
+                  class="card__header-link"
+                  href="desc-list-challenge.30-days-of-html.html">
+                  <h3 class="card__title"
+                    >15 Days of HTML<br />Day 5&mdash;Desc List</h3
+                  >
+                </a>
+              </div>
+              <div class="card__body">
+                <figure class="card__figure">
+                  <picture>
+                    <source
+                      srcset="/dist/img/pages/galaxy.webp"
+                      type="image/webp" />
+                    <source
+                      srcset="/dist/img/pages/galaxy.jpg"
+                      type="image/jpeg" />
+                    <img
+                      alt="Thumbnail preview of 15 Days of HTML Day 5 Description List Challenge project"
+                      src="/dist/img/pages/galaxy.jpg"
+                      class="card__image"
+                      width="400"
+                      height="300" />
+                  </picture>
+                  <figcaption class="card__caption">
+                    <p>
+                      HTML challenge focusing on semantic markup and description
+                      list structures.
+                    </p>
+                  </figcaption>
+                </figure>
+              </div>
+              <div class="card__footer">
+                <a
+                  class="card__button card__button--primary card__link"
+                  href="/desc-list-challenge.html">
+                  See more...
+                </a>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <hr />
+
+        <!-- Experiments Section -->
+        <section class="portfolio-section">
+          <h2 class="portfolio-section__heading">UI Experiments</h2>
+          <p class="portfolio-section__intro">
+            Focused experiments exploring specific UI patterns and interactive
+            elements.
+          </p>
+          <div class="portfolio__row">
+            <article class="card">
+              <div class="card__header">
+                <a
+                  class="card__header-link"
+                  href="/navbar-link-filling-li.html">
+                  <h3 class="card__title">Navbar Link Filling Li</h3>
+                </a>
+              </div>
+              <div class="card__body">
+                <figure class="card__figure">
+                  <picture>
+                    <source
+                      srcset="/dist/img/pages/galaxy.webp"
+                      type="image/webp" />
+                    <source
+                      srcset="/dist/img/pages/galaxy.jpg"
+                      type="image/jpeg" />
+                    <img
+                      alt="Thumbnail preview of Navbar Link Filling Li project"
+                      src="/dist/img/pages/galaxy.jpg"
+                      class="card__image"
+                      width="400"
+                      height="300" />
+                  </picture>
+                  <figcaption class="card__caption">
+                    <p>
+                      Navigation bar styling with full-width link areas for
+                      improved user experience.
+                    </p>
+                  </figcaption>
+                </figure>
+              </div>
+              <div class="card__footer">
+                <a
+                  class="card__button card__button--primary card__link"
+                  href="/navbar-link-filling-li.html">
+                  See more...
+                </a>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <hr />
+
+        <!-- Back to Home -->
+        <section class="portfolio-back wrapper">
+          <p class="portfolio-back__text">
+            Ready to work together?
+            <a
+              href="#contact"
+              class="portfolio-back__link"
+              >Let's connect</a
+            >! Or you can
+            <a
+              href="/"
+              class="portfolio-back__link"
+              >return to the homepage</a
+            >.
           </p>
         </section>
-        <div class="wrapper">
-          <!-- Featured Projects Section -->
-          <section class="portfolio-section">
-            <h2 class="portfolio-section__heading">Featured Projects</h2>
-            <p class="portfolio-section__intro">
-              These are my most comprehensive projects showcasing practical
-              applications and real-world problem solving.
-            </p>
-            <div class="portfolio__row">
-              <article class="card">
-                <div class="card__header">
-                  <a
-                    href="/alien-abduction-form.html"
-                    class="card__header-link">
-                    <h3 class="card__title">Alien Abduction Order Form</h3>
-                  </a>
-                </div>
-                <div class="card__body">
-                  <figure class="card__figure">
-                    <picture>
-                      <source
-                        srcset="/dist/img/cards/Alien-abduction-form-thumb.avif"
-                        type="image/avif" />
-                      <source
-                        srcset="/dist/img/cards/Alien-abduction-form-thumb.webp"
-                        type="image/webp" />
-                      <source
-                        srcset="/dist/img/cards/Alien-abduction-form-thumb.jpg"
-                        type="image/jpeg" />
-                      <img
-                        alt="Thumbnail preview of Alien Abduction Order Form project"
-                        src="/dist/img/cards/Alien-abduction-form-thumb.jpg"
-                        class="card__image"
-                        width="345"
-                        height="259" />
-                    </picture>
-                    <figcaption class="card__caption">
-                      <p>
-                        When you want an alien abduction, you want it your way.
-                        Fill out this form to get started.
-                      </p>
-                    </figcaption>
-                  </figure>
-                </div>
-                <div class="card__footer">
-                  <a
-                    href="/alien-abduction-form.html"
-                    class="card__button card__button--primary card__link">
-                    See more...
-                  </a>
-                </div>
-              </article>
-              <article class="card">
-                <div class="card__header">
-                  <a
-                    class="card__header-link"
-                    href="/calculator.html">
-                    <h3 class="card__title">Calculator</h3>
-                  </a>
-                </div>
-                <div class="card__body">
-                  <figure class="card__figure">
-                    <picture>
-                      <source
-                        srcset="/dist/img/cards/Calculator-thumb.avif"
-                        type="image/avif" />
-                      <source
-                        srcset="/dist/img/cards/Calculator-thumb.webp"
-                        type="image/webp" />
-                      <source
-                        srcset="/dist/img/cards/Calculator-thumb.jpg"
-                        type="image/jpeg" />
-                      <img
-                        alt="Thumbnail preview of Calculator project"
-                        src="/dist/img/cards/Calculator-thumb.jpg"
-                        class="card__image"
-                        width="356"
-                        height="268" />
-                    </picture>
-                    <figcaption class="card__caption">
-                      <p
-                        >A simple calculator built with HTML, CSS, and
-                        JavaScript.</p
-                      >
-                    </figcaption>
-                  </figure>
-                </div>
-                <div class="card__footer">
-                  <a
-                    class="card__button card__button--primary card__link"
-                    href="/calculator.html">
-                    See more...
-                  </a>
-                </div>
-              </article>
-              <article class="card">
-                <div class="card__header">
-                  <a
-                    class="card__header-link"
-                    href="/css-position-cheat-sheet.html">
-                    <h3 class="card__title">CSS Position Cheat Sheet</h3>
-                  </a>
-                </div>
-                <div class="card__body">
-                  <figure class="card__figure">
-                    <picture>
-                      <source
-                        srcset="
-                          /dist/img/cards/css-position-cheat-sheet-thumb.avif
-                        "
-                        type="image/avif" />
-                      <source
-                        srcset="
-                          /dist/img/cards/css-position-cheat-sheet-thumb.webp
-                        "
-                        type="image/webp" />
-                      <source
-                        srcset="
-                          /dist/img/cards/css-position-cheat-sheet-thumb.jpg
-                        "
-                        type="image/jpeg" />
-                      <img
-                        alt="Thumbnail preview of CSS Position Cheat Sheet project"
-                        src="/dist/img/cards/css-position-cheat-sheet-thumb.jpg"
-                        class="card__image"
-                        width="1868"
-                        height="1401" />
-                    </picture>
-                    <figcaption class="card__caption">
-                      <p>
-                        I created this cheat sheet as an assignment on
-                        <a
-                          href="https://www.codecademy.com/learn/paths/front-end-engineer-career-path"
-                          target="_blank"
-                          rel="noopener"
-                          >Codecademy's Front-End Engineer Career Path
-                          <span class="sr-only"> (opens in a new window)</span></a
-                        >.
-                      </p>
-                    </figcaption>
-                  </figure>
-                </div>
-                <div class="card__footer">
-                  <a
-                    class="card__button card__button--primary card__link"
-                    href="/css-position-cheat-sheet.html">
-                    See more...
-                  </a>
-                </div>
-              </article>
-            </div>
-          </section>
-          <hr />
-          <!-- Learning Challenges Section -->
-          <section class="portfolio-section">
-            <h2 class="portfolio-section__heading">Learning Challenges</h2>
-            <p class="portfolio-section__intro">
-              Daily coding challenges that helped me develop specific skills and
-              explore different techniques in HTML and CSS.
-            </p>
-            <div class="portfolio__row">
-              <article class="card">
-                <div class="card__header">
-                  <a
-                    class="card__header-link"
-                    href="/multi-level-navbar.html">
-                    <h3 class="card__title">Multi-Level Navbar</h3>
-                  </a>
-                </div>
-                <div class="card__body">
-                  <figure class="card__figure">
-                    <picture>
-                      <source
-                        srcset="/dist/img/cards/multi-level-navbar-thumb.avif"
-                        type="image/avif" />
-                      <source
-                        srcset="/dist/img/cards/multi-level-navbar-thumb.webp"
-                        type="image/webp" />
-                      <source
-                        srcset="/dist/img/cards/multi-level-navbar-thumb.jpg"
-                        type="image/jpeg" />
-                      <img
-                        alt="Thumbnail preview of Multi-Level Navbar Challenge project"
-                        src="/dist/img/cards/multi-level-navbar-thumb.jpg"
-                        class="card__image"
-                        width="400"
-                        height="300" />
-                    </picture>
-                    <figcaption class="card__caption">
-                      <p>
-                        CSS challenge focusing on advanced navigation menu styling
-                        techniques and creative layouts.
-                      </p>
-                    </figcaption>
-                  </figure>
-                </div>
-                <div class="card__footer">
-                  <a
-                    class="card__button card__button--primary card__link"
-                    href="/multi-level-navbar.html">
-                    See more...
-                  </a>
-                </div>
-              </article>
-              <article class="card">
-                <div class="card__header">
-                  <a
-                    class="card__header-link"
-                    href="/basic-vertical-navbar.html">
-                    <h3 class="card__title">Basic Vertical Navbar Styling</h3>
-                  </a>
-                </div>
-                <div class="card__body">
-                  <figure class="card__figure">
-                    <picture>
-                      <source
-                        srcset="/dist/img/cards/basic-vertical-navbar.avif"
-                        type="image/avif" />
-                      <source
-                        srcset="/dist/img/cards/basic-vertical-navbar.webp"
-                        type="image/webp" />
-                      <source
-                        srcset="/dist/img/cards/basic-vertical-navbar.jpg"
-                        type="image/jpeg" />
-                      <img
-                        alt="Thumbnail preview of 15 Days of CSS Day 4 Basic Vertical Navbars project"
-                        src="/dist/img/cards/basic-vertical-navbar.png"
-                        class="card__image"
-                        width="350"
-                        height="265" />
-                    </picture>
-                    <figcaption class="card__caption">
-                      <p
-                        >Exploring vertical navigation bar design and
-                        implementation with CSS.
-                        <i>from 15 Days of CSS, Day 4</i></p
-                      >
-                    </figcaption>
-                  </figure>
-                </div>
-                <div class="card__footer">
-                  <a
-                    class="card__button card__button--primary card__link"
-                    href="/basic-vertical-navbar.html">
-                    See more...
-                  </a>
-                </div>
-              </article>
-              <article class="card">
-                <div class="card__header">
-                  <a
-                    class="card__header-link"
-                    href="desc-list-challenge.30-days-of-html.html">
-                    <h3 class="card__title"
-                      >15 Days of HTML<br />Day 5&mdash;Desc List</h3
-                    >
-                  </a>
-                </div>
-                <div class="card__body">
-                  <figure class="card__figure">
-                    <picture>
-                      <source
-                        srcset="/dist/img/pages/galaxy.webp"
-                        type="image/webp" />
-                      <source
-                        srcset="/dist/img/pages/galaxy.jpg"
-                        type="image/jpeg" />
-                      <img
-                        alt="Thumbnail preview of 15 Days of HTML Day 5 Description List Challenge project"
-                        src="/dist/img/pages/galaxy.jpg"
-                        class="card__image"
-                        width="400"
-                        height="300" />
-                    </picture>
-                    <figcaption class="card__caption">
-                      <p>
-                        HTML challenge focusing on semantic markup and description
-                        list structures.
-                      </p>
-                    </figcaption>
-                  </figure>
-                </div>
-                <div class="card__footer">
-                  <a
-                    class="card__button card__button--primary card__link"
-                    href="/desc-list-challenge.html">
-                    See more...
-                  </a>
-                </div>
-              </article>
-            </div>
-          </section>
-          <hr />
-          <!-- Experiments Section -->
-          <section class="portfolio-section">
-            <h2 class="portfolio-section__heading">UI Experiments</h2>
-            <p class="portfolio-section__intro">
-              Focused experiments exploring specific UI patterns and interactive
-              elements.
-            </p>
-            <div class="portfolio__row">
-              <article class="card">
-                <div class="card__header">
-                  <a
-                    class="card__header-link"
-                    href="/navbar-link-filling-li.html">
-                    <h3 class="card__title">Navbar Link Filling Li</h3>
-                  </a>
-                </div>
-                <div class="card__body">
-                  <figure class="card__figure">
-                    <picture>
-                      <source
-                        srcset="/dist/img/pages/galaxy.webp"
-                        type="image/webp" />
-                      <source
-                        srcset="/dist/img/pages/galaxy.jpg"
-                        type="image/jpeg" />
-                      <img
-                        alt="Thumbnail preview of Navbar Link Filling Li project"
-                        src="/dist/img/pages/galaxy.jpg"
-                        class="card__image"
-                        width="400"
-                        height="300" />
-                    </picture>
-                    <figcaption class="card__caption">
-                      <p>
-                        Navigation bar styling with full-width link areas for
-                        improved user experience.
-                      </p>
-                    </figcaption>
-                  </figure>
-                </div>
-                <div class="card__footer">
-                  <a
-                    class="card__button card__button--primary card__link"
-                    href="/navbar-link-filling-li.html">
-                    See more...
-                  </a>
-                </div>
-              </article>
-            </div>
-          </section>
-          <hr />
-          <!-- Back to Home -->
-          <section class="portfolio-back wrapper">
-            <p class="portfolio-back__text">
-              Ready to work together?
-              <a
-                href="#contact"
-                class="portfolio-back__link"
-                >Let's connect</a
-              >! Or you can
-              <a
-                href="/"
-                class="portfolio-back__link"
-                >return to the homepage</a
-              >.
-            </p>
-          </section>
-        </div>
       </div>
     </main>
 
