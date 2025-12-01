@@ -183,166 +183,168 @@
       aria-labelledby="alien-title"
       role="main"
       tabindex="-1">
-      <article class="wrapper alien-form-page__wrapper">
-        <div class="alien-form-page__hero">
-          <h1
-            class="page-heading"
-            id="alien-title"
-            >Sign Up for an Alien Abduction!</h1
-          >
-          <h2 class="page-subheading"
-            >A
-            <a
-              href="https://frontendmasters.com/bootcamp/"
-              target="_blank"
-              title="Opens in a new window"
-              >Frontend Masters Bootcamp
-              <span class="sr-only"> (opens in a new window)</span></a
+      <div class="page-wrapper">
+        <article class="wrapper alien-form-page__wrapper">
+          <div class="alien-form-page__hero">
+            <h1
+              class="page-heading"
+              id="alien-title"
+              >Sign Up for an Alien Abduction!</h1
             >
-            Project
-          </h2>
-          <p
-            >Ready for a close encounter? Fill out the form below to book your
-            abduction experience.</p
-          >
-        </div>
-        <form
-          class="flex"
-          action="https://e3vwdl4bpd.execute-api.us-west-2.amazonaws.com/default/API2SES"
-          method="post">
-          <div class="flex">
-            <!-- CONTACT INFO -->
-            <div class="flex-left">
-              <input
-                type="hidden"
-                name="send_to"
-                value="idlehands1969@gmail.com" />
-              <fieldset>
-                <legend>Your contact information</legend>
-                <label for="name">Your name </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  autofocus
-                  required />
-                <label for="phone">Phone number</label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  placeholder="Don't forget the area code!" />
-                <label for="email">Email</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required />
-              </fieldset>
-            </div>
-            <!-- ABDUCTION INFO -->
-            <div class="flex-right">
-              <fieldset class="detailStuff">
-                <legend>About your abduction </legend>
-                <div class="abtype flex">
-                  <div class="flex-left">
-                    <label for="date">Requested date</label>
-                    <input
-                      type="date"
-                      id="date"
-                      name="date"
-                      required />
-                    <label for="qty"
-                      >How many people would you like abducted?</label
-                    >
-                    <input
-                      type="number"
-                      id="qty"
-                      name="qty"
-                      min="1"
-                      max="10"
-                      required />
-                    <p>What type of UFO do you prefer?</p>
-                    <label>
-                      <input
-                        type="radio"
-                        name="ufotype"
-                        value="classic"
-                        checked />
-                      Classic oval UFO
-                    </label>
-                    <label>
-                      <input
-                        type="radio"
-                        name="ufotype"
-                        value="starwars" />
-                      Star Wars-style Imperial cruiser
-                    </label>
-                    <label>
-                      <input
-                        type="radio"
-                        name="ufotype"
-                        value="galactica" />
-                      Battlestar Galactica-style Viper
-                    </label>
-                    <label>
-                      <input
-                        type="radio"
-                        name="ufotype"
-                        value="startrek" />
-                      Borg-style cube
-                    </label>
-                    <label>
-                      <input
-                        type="radio"
-                        name="ufotype"
-                        value="any" />
-                      Whatever is in the neighborhood
-                    </label>
-                  </div>
-                  <div class="flex-left">
-                    <label for="abtype"
-                      >What type of abduction experience do you want?</label
-                    >
-                    <select
-                      id="abtype"
-                      name="abtype"
-                      required>
-                      <option
-                        value=""
-                        selected
-                        disabled
-                        >Select one...</option
-                      >
-                      <option value="tour">Tour of the solar system</option>
-                      <option value="dinner"
-                        >Alien dinner and discussion</option
-                      >
-                      <option value="dance">Alien dance lessons</option>
-                      <option value="whales">Whale watching</option>
-                    </select>
-                    <label for="comments">Special requests:</label>
-                    <textarea
-                      id="comments"
-                      name="comments"
-                      placeholder="Tell me everything"></textarea>
-                    <label>
-                      <input
-                        type="checkbox"
-                        id="subscribe"
-                        name="subscribe"
-                        value="subscribe" />Add me to your email list
-                    </label>
-                    <button type="submit"
-                      >Order your abduction experience!</button
-                    >
-                  </div>
-                </div>
-              </fieldset>
-            </div>
+            <h2 class="page-subheading"
+              >A
+              <a
+                href="https://frontendmasters.com/bootcamp/"
+                target="_blank"
+                title="Opens in a new window"
+                >Frontend Masters Bootcamp
+                <span class="sr-only"> (opens in a new window)</span></a
+              >
+              Project
+            </h2>
+            <p
+              >Ready for a close encounter? Fill out the form below to book your
+              abduction experience.</p
+            >
           </div>
-        </form>
-      </article>
+          <form
+            class="flex"
+            action="https://e3vwdl4bpd.execute-api.us-west-2.amazonaws.com/default/API2SES"
+            method="post">
+            <div class="flex">
+              <!-- CONTACT INFO -->
+              <div class="flex-left">
+                <input
+                  type="hidden"
+                  name="send_to"
+                  value="idlehands1969@gmail.com" />
+                <fieldset>
+                  <legend>Your contact information</legend>
+                  <label for="name">Your name </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    autofocus
+                    required />
+                  <label for="phone">Phone number</label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="Don't forget the area code!" />
+                  <label for="email">Email</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required />
+                </fieldset>
+              </div>
+              <!-- ABDUCTION INFO -->
+              <div class="flex-right">
+                <fieldset class="detailStuff">
+                  <legend>About your abduction </legend>
+                  <div class="abtype flex">
+                    <div class="flex-left">
+                      <label for="date">Requested date</label>
+                      <input
+                        type="date"
+                        id="date"
+                        name="date"
+                        required />
+                      <label for="qty"
+                        >How many people would you like abducted?</label
+                      >
+                      <input
+                        type="number"
+                        id="qty"
+                        name="qty"
+                        min="1"
+                        max="10"
+                        required />
+                      <p>What type of UFO do you prefer?</p>
+                      <label>
+                        <input
+                          type="radio"
+                          name="ufotype"
+                          value="classic"
+                          checked />
+                        Classic oval UFO
+                      </label>
+                      <label>
+                        <input
+                          type="radio"
+                          name="ufotype"
+                          value="starwars" />
+                        Star Wars-style Imperial cruiser
+                      </label>
+                      <label>
+                        <input
+                          type="radio"
+                          name="ufotype"
+                          value="galactica" />
+                        Battlestar Galactica-style Viper
+                      </label>
+                      <label>
+                        <input
+                          type="radio"
+                          name="ufotype"
+                          value="startrek" />
+                        Borg-style cube
+                      </label>
+                      <label>
+                        <input
+                          type="radio"
+                          name="ufotype"
+                          value="any" />
+                        Whatever is in the neighborhood
+                      </label>
+                    </div>
+                    <div class="flex-left">
+                      <label for="abtype"
+                        >What type of abduction experience do you want?</label
+                      >
+                      <select
+                        id="abtype"
+                        name="abtype"
+                        required>
+                        <option
+                          value=""
+                          selected
+                          disabled
+                          >Select one...</option
+                        >
+                        <option value="tour">Tour of the solar system</option>
+                        <option value="dinner"
+                          >Alien dinner and discussion</option
+                        >
+                        <option value="dance">Alien dance lessons</option>
+                        <option value="whales">Whale watching</option>
+                      </select>
+                      <label for="comments">Special requests:</label>
+                      <textarea
+                        id="comments"
+                        name="comments"
+                        placeholder="Tell me everything"></textarea>
+                      <label>
+                        <input
+                          type="checkbox"
+                          id="subscribe"
+                          name="subscribe"
+                          value="subscribe" />Add me to your email list
+                      </label>
+                      <button type="submit"
+                        >Order your abduction experience!</button
+                      >
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+            </div>
+          </form>
+        </article>
+      </div>
     </main>
     <!-- FOOTER_PLACEHOLDER -->
   </body>
