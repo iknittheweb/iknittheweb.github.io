@@ -31,7 +31,7 @@
     <link
       rel="preload"
       as="style"
-      href="/dist/css/portfolio.css" />
+      href="/css/portfolio.css" />
 
     <!-- Main font and site stylesheets -->
     <link
@@ -39,7 +39,7 @@
       href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" />
     <link
       rel="stylesheet"
-      href="/dist/css/portfolio.css" />
+      href="/css/portfolio.css" />
 
     <!-- FontAwesome CDN stylesheet for icons -->
     <link
@@ -52,11 +52,11 @@
     <link
       rel="icon"
       type="image/x-icon"
-      href="/dist/img/favicon_io/favicon.ico" />
+      href="/img/favicon_io/favicon.ico" />
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="/dist/img/favicon_io/apple-touch-icon.png" />
+      href="/img/favicon_io/apple-touch-icon.png" />
     <link
       rel="manifest"
       href="/manifest.json" />
@@ -85,7 +85,7 @@
       content="Discover web projects and creative work in the I Knit The Web portfolio. Modern code, accessibility, and playful design." />
     <meta
       property="og:image"
-      content="/dist/img/branding/logo.png" />
+      content="/img/branding/logo.png" />
     <meta
       property="og:url"
       content="/portfolio.html" />
@@ -103,7 +103,7 @@
       content="See the latest web projects and creative work by I Knit The Web. Portfolio, code samples, and design inspiration." />
     <meta
       name="twitter:image"
-      content="/dist/img/branding/logo.png" />
+      content="/img/branding/logo.png" />
 
     <!-- Fallback styles for no-JS environments -->
     <noscript>
@@ -125,7 +125,7 @@
     </style>
 
     <!-- Critical polyfill: FOUC fix script -->
-    <script src="/dist/js/fouc-fix.js"></script>
+    <script src="/js/fouc-fix.js"></script>
 
     <!-- Third-party monitoring/analytics: Sentry -->
     <script
@@ -155,7 +155,7 @@
     <!-- Main app/module script -->
     <script
       type="module"
-      src="/dist/js/script.js"></script>
+      src="/js/script.js"></script>
   </head>
 
   <body>
@@ -186,7 +186,7 @@
           class="hero"
           id="hero">
           <img
-            src="/dist/img/pages/heading-banner-dark.svg"
+            src="/img/pages/heading-banner-dark.svg"
             alt="Portfolio site title banner"
             class="hero__banner"
             width="1125"
@@ -194,8 +194,9 @@
           <p class="portfolio-page__intro">
             Welcome to my full portfolio showcasing the best web development
             projects I've created! From practical applications to learning
-            challenges, each project represents a step in my journey of mastering
-            HTML, CSS, JavaScript, and modern web development practices.
+            challenges, each project represents a step in my journey of
+            mastering HTML, CSS, JavaScript, and modern web development
+            practices.
           </p>
         </section>
         <div class="wrapper">
@@ -219,17 +220,17 @@
                   <figure class="card__figure">
                     <picture>
                       <source
-                        srcset="/dist/img/cards/Alien-abduction-form-thumb.avif"
+                        srcset="/img/cards/Alien-abduction-form-thumb.avif"
                         type="image/avif" />
                       <source
-                        srcset="/dist/img/cards/Alien-abduction-form-thumb.webp"
+                        srcset="/img/cards/Alien-abduction-form-thumb.webp"
                         type="image/webp" />
                       <source
-                        srcset="/dist/img/cards/Alien-abduction-form-thumb.jpg"
+                        srcset="/img/cards/Alien-abduction-form-thumb.jpg"
                         type="image/jpeg" />
                       <img
                         alt="Thumbnail preview of Alien Abduction Order Form project"
-                        src="/dist/img/cards/Alien-abduction-form-thumb.jpg"
+                        src="/img/cards/Alien-abduction-form-thumb.jpg"
                         class="card__image"
                         width="345"
                         height="259" />
@@ -262,17 +263,17 @@
                   <figure class="card__figure">
                     <picture>
                       <source
-                        srcset="/dist/img/cards/Calculator-thumb.avif"
+                        srcset="/img/cards/Calculator-thumb.avif"
                         type="image/avif" />
                       <source
-                        srcset="/dist/img/cards/Calculator-thumb.webp"
+                        srcset="/img/cards/Calculator-thumb.webp"
                         type="image/webp" />
                       <source
-                        srcset="/dist/img/cards/Calculator-thumb.jpg"
+                        srcset="/img/cards/Calculator-thumb.jpg"
                         type="image/jpeg" />
                       <img
                         alt="Thumbnail preview of Calculator project"
-                        src="/dist/img/cards/Calculator-thumb.jpg"
+                        src="/img/cards/Calculator-thumb.jpg"
                         class="card__image"
                         width="356"
                         height="268" />
@@ -305,23 +306,17 @@
                   <figure class="card__figure">
                     <picture>
                       <source
-                        srcset="
-                          /dist/img/cards/css-position-cheat-sheet-thumb.avif
-                        "
+                        srcset="/img/cards/css-position-cheat-sheet-thumb.avif"
                         type="image/avif" />
                       <source
-                        srcset="
-                          /dist/img/cards/css-position-cheat-sheet-thumb.webp
-                        "
+                        srcset="/img/cards/css-position-cheat-sheet-thumb.webp"
                         type="image/webp" />
                       <source
-                        srcset="
-                          /dist/img/cards/css-position-cheat-sheet-thumb.jpg
-                        "
+                        srcset="/img/cards/css-position-cheat-sheet-thumb.jpg"
                         type="image/jpeg" />
                       <img
                         alt="Thumbnail preview of CSS Position Cheat Sheet project"
-                        src="/dist/img/cards/css-position-cheat-sheet-thumb.jpg"
+                        src="/img/cards/css-position-cheat-sheet-thumb.jpg"
                         class="card__image"
                         width="1868"
                         height="1401" />
@@ -334,7 +329,9 @@
                           target="_blank"
                           rel="noopener"
                           >Codecademy's Front-End Engineer Career Path
-                          <span class="sr-only"> (opens in a new window)</span></a
+                          <span class="sr-only">
+                            (opens in a new window)</span
+                          ></a
                         >.
                       </p>
                     </figcaption>
@@ -371,25 +368,25 @@
                   <figure class="card__figure">
                     <picture>
                       <source
-                        srcset="/dist/img/cards/multi-level-navbar-thumb.avif"
+                        srcset="/img/cards/multi-level-navbar-thumb.avif"
                         type="image/avif" />
                       <source
-                        srcset="/dist/img/cards/multi-level-navbar-thumb.webp"
+                        srcset="/img/cards/multi-level-navbar-thumb.webp"
                         type="image/webp" />
                       <source
-                        srcset="/dist/img/cards/multi-level-navbar-thumb.jpg"
+                        srcset="/img/cards/multi-level-navbar-thumb.jpg"
                         type="image/jpeg" />
                       <img
                         alt="Thumbnail preview of Multi-Level Navbar Challenge project"
-                        src="/dist/img/cards/multi-level-navbar-thumb.jpg"
+                        src="/img/cards/multi-level-navbar-thumb.jpg"
                         class="card__image"
                         width="400"
                         height="300" />
                     </picture>
                     <figcaption class="card__caption">
                       <p>
-                        CSS challenge focusing on advanced navigation menu styling
-                        techniques and creative layouts.
+                        CSS challenge focusing on advanced navigation menu
+                        styling techniques and creative layouts.
                       </p>
                     </figcaption>
                   </figure>
@@ -414,17 +411,17 @@
                   <figure class="card__figure">
                     <picture>
                       <source
-                        srcset="/dist/img/cards/basic-vertical-navbar.avif"
+                        srcset="/img/cards/basic-vertical-navbar.avif"
                         type="image/avif" />
                       <source
-                        srcset="/dist/img/cards/basic-vertical-navbar.webp"
+                        srcset="/img/cards/basic-vertical-navbar.webp"
                         type="image/webp" />
                       <source
-                        srcset="/dist/img/cards/basic-vertical-navbar.jpg"
+                        srcset="/img/cards/basic-vertical-navbar.jpg"
                         type="image/jpeg" />
                       <img
                         alt="Thumbnail preview of 15 Days of CSS Day 4 Basic Vertical Navbars project"
-                        src="/dist/img/cards/basic-vertical-navbar.png"
+                        src="/img/cards/basic-vertical-navbar.png"
                         class="card__image"
                         width="350"
                         height="265" />
@@ -460,22 +457,22 @@
                   <figure class="card__figure">
                     <picture>
                       <source
-                        srcset="/dist/img/pages/galaxy.webp"
+                        srcset="/img/pages/galaxy.webp"
                         type="image/webp" />
                       <source
-                        srcset="/dist/img/pages/galaxy.jpg"
+                        srcset="/img/pages/galaxy.jpg"
                         type="image/jpeg" />
                       <img
                         alt="Thumbnail preview of 15 Days of HTML Day 5 Description List Challenge project"
-                        src="/dist/img/pages/galaxy.jpg"
+                        src="/img/pages/galaxy.jpg"
                         class="card__image"
                         width="400"
                         height="300" />
                     </picture>
                     <figcaption class="card__caption">
                       <p>
-                        HTML challenge focusing on semantic markup and description
-                        list structures.
+                        HTML challenge focusing on semantic markup and
+                        description list structures.
                       </p>
                     </figcaption>
                   </figure>
@@ -511,14 +508,14 @@
                   <figure class="card__figure">
                     <picture>
                       <source
-                        srcset="/dist/img/pages/galaxy.webp"
+                        srcset="/img/pages/galaxy.webp"
                         type="image/webp" />
                       <source
-                        srcset="/dist/img/pages/galaxy.jpg"
+                        srcset="/img/pages/galaxy.jpg"
                         type="image/jpeg" />
                       <img
                         alt="Thumbnail preview of Navbar Link Filling Li project"
-                        src="/dist/img/pages/galaxy.jpg"
+                        src="/img/pages/galaxy.jpg"
                         class="card__image"
                         width="400"
                         height="300" />
