@@ -31,7 +31,7 @@
     <link
       rel="preload"
       as="style"
-      href="/css/desc-list-challenge.css" />
+      href="/css/" />
 
     <!-- Main font and site stylesheets -->
     <link
@@ -39,7 +39,7 @@
       href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" />
     <link
       rel="stylesheet"
-      href="/css/desc-list-challenge.css" />
+      href="/css/" />
 
     <!-- FontAwesome CDN stylesheet for icons -->
     <link
@@ -62,7 +62,7 @@
       href="/manifest.json" />
     <link
       rel="canonical"
-      href="/" />
+      href="/desc-list-challenge.30-days-of-html.html" />
 
     <!-- SEO and social meta tags -->
     <meta
@@ -70,13 +70,10 @@
       content="Learn how to use HTML description lists for semantic markup. Includes code examples, accessibility tips, and practical use cases." />
     <meta
       name="keywords"
-      content="html, description list, dl, dt, dd, semantic markup, accessibility, web development, tutorial" />
+      content="html, description list, dl, dt, dd, semantic markup, accessibility, web development, tutorial, I Knit The Web" />
     <meta
       name="author"
-      content="I Knit the Web" />
-    <meta
-      name="robots"
-      content="index,follow" />
+      content="" />
     <meta
       property="og:title"
       content="Description List Challenge | I Knit The Web" />
@@ -88,7 +85,7 @@
       content="/img/branding/logo.png" />
     <meta
       property="og:url"
-      content="/src/templates/desc-list-challenge.30-days-of-html.template.html" />
+      content="/desc-list-challenge.30-days-of-html.html" />
     <meta
       property="og:type"
       content="website" />
@@ -97,13 +94,18 @@
       content="summary_large_image" />
     <meta
       name="twitter:title"
-      content="Fifteen Days Of Html - Day 5: Description List Challenge | I Knit The Web" />
+      content="Description List Challenge | I Knit The Web" />
     <meta
       name="twitter:description"
       content="Master HTML description lists with this practical guide. Code samples, accessibility tips, and real-world examples." />
     <meta
       name="twitter:image"
       content="/img/branding/logo.png" />
+
+    <!-- Structured data for SEO -->
+    <script type="application/ld+json">
+      {&quot;@context&quot;:&quot;https://schema.org&quot;,&quot;@type&quot;:&quot;WebPage&quot;,&quot;name&quot;:&quot;Description List Challenge | I Knit The Web&quot;,&quot;description&quot;:&quot;Learn how to use HTML description lists for semantic markup. Includes code examples, accessibility tips, and practical use cases.&quot;,&quot;url&quot;:&quot;/desc-list-challenge.30-days-of-html.html&quot;,&quot;author&quot;:{&quot;@type&quot;:&quot;Person&quot;,&quot;name&quot;:&quot;I Knit The Web&quot;,&quot;url&quot;:&quot;/&quot;,&quot;sameAs&quot;:[&quot;https://github.com/iknittheweb&quot;]}}
+    </script>
 
     <!-- Fallback styles for no-JS environments -->
     <noscript>
@@ -132,23 +134,6 @@
       src="https://browser.sentry-cdn.com/7.100.1/bundle.min.js"
       crossorigin="anonymous"></script>
 
-    <!-- Structured data for SEO -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Fifteen Days of HTML - Day 5: Description List Challenge | I Knit The Web",
-        "description": "Learn how to use HTML description lists for semantic markup. Includes code examples, accessibility tips, and practical use cases.",
-        "url": "/src/templates/desc-list-challenge.30-days-of-html.template.html"
-        "author": {
-          "@type": "Person",
-          "name": "Marta",
-          "url": "/",
-          "sameAs": ["https://github.com/iknittheweb"]
-        }
-      }
-    </script>
-
     <!-- Third-party library: body-scroll-lock -->
     <script src="https://cdn.jsdelivr.net/npm/body-scroll-lock@4.0.0-beta.0/lib/bodyScrollLock.min.js"></script>
 
@@ -161,14 +146,114 @@
   <body>
     <div
       id="page-data"
-      data-page-title="Fifteen Days Of Html - Day 5: Description List Challenge | I Knit The Web"
-      data-page-subtitle="Visual Guide To Html Description Lists | I Knit The Web"
+      data-page-title="Description List Challenge | I Knit The Web"
+      data-page-subtitle="Visual Guide To HTML Description Lists | I Knit The Web"
       data-nav-config="fifteendaysofhtml-day5-desc-list-challenge"
       data-breadcrumb-category="Reference"
       data-breadcrumb-category-url="/reference/desc-list-challenge"
       style="display: none"></div>
 
-    <!-- HEADER_PLACEHOLDER -->
+    <header
+      id="topNav"
+      class="topnav"
+      aria-label="Site header">
+      <a
+        href="#main-content"
+        class="skip-link"
+        aria-label="Skip to main content">
+        Skip to main content
+      </a>
+      <h1 class="visually-hidden">I Knit The Web Header</h1>
+      <!-- Global ARIA live region for notifications/status -->
+      <div
+        id="global-status"
+        aria-live="polite"
+        class="sr-only"
+        tabindex="-1"></div>
+      <div class="wrapper topnav__wrapper">
+        <a
+          href="/"
+          class="topnav__homelink hover-fade">
+          <!-- JS toggles .logo--hidden on this element to hide logo when menu is open -->
+          <picture>
+            <source
+              srcset="/dist/img/branding/logo.avif"
+              type="image/avif" />
+            <source
+              srcset="/dist/img/branding/logo.webp"
+              type="image/webp" />
+            <img
+              src="/dist/img/branding/logo.png"
+              alt="I Knit The Web Homepage"
+              class="topnav__logo"
+              width="250"
+              height="250" />
+          </picture>
+        </a>
+        <nav
+          class="topnav__nav"
+          aria-label="Main navigation"
+          data-cy="main-nav"
+          aria-hidden="false">
+          <span
+            id="nav-label"
+            hidden
+            >Navigation</span
+          >
+          <div class="topnav__toggle">
+            <button
+              id="btnOpen"
+              class="topnav__open"
+              aria-controls="menuTopNav"
+              aria-expanded="false">
+              <span class="fa-solid fa-bars"></span>
+            </button>
+            <button
+              id="btnClose"
+              class="topnav__close"
+              aria-controls="menuTopNav"
+              aria-expanded="true">
+              <span class="fa-solid fa-xmark"></span>
+            </button>
+          </div>
+          <div
+            id="menuTopNav"
+            class="topnav__menu">
+            <ul class="topnav__links">
+              <li class="topnav__item">
+                <a
+                  class="topnav__link"
+                  href="/"
+                  >Home</a
+                >
+              </li>
+              <li class="topnav__item">
+                <a
+                  class="topnav__link"
+                  href="#about"
+                  >About</a
+                >
+              </li>
+              <li class="topnav__item">
+                <a
+                  class="topnav__link"
+                  href="#portfolio"
+                  data-cy="nav-"
+                  >Portfolio</a
+                >
+              </li>
+              <li class="topnav__item">
+                <a
+                  class="topnav__link"
+                  href="#contact"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
 
     <main
       class="desc-list-challenge"
@@ -278,6 +363,89 @@
         </article>
       </div>
     </main>
-    <!-- FOOTER_PLACEHOLDER -->
+    <footer
+      aria-label="Site footer"
+      class="footer">
+      <div class="footer__content wrapper">
+        <div class="footer__sections">
+          <!-- About Section -->
+          <div class="footer__section footer__about">
+            <h2 class="footer__heading"> I Knit The Web </h2>
+            <p class="footer__description">
+              Crafting handmade websites with care, creativity, and code.
+              Bringing your digital dreams to life, one thread at a time.
+            </p>
+          </div>
+          <!-- Quick Links Section -->
+          <div class="footer__section footer__links">
+            <h3 class="footer__heading"> Quick Links </h3>
+            <nav class="footer__nav">
+              <ul class="footer__nav-list">
+                <li>
+                  <a
+                    href="#main-content"
+                    class="footer__nav-link">
+                    Home
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#about"
+                    class="footer__nav-link">
+                    About
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#portfolio"
+                    class="footer__nav-link">
+                    Portfolio
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#contact"
+                    class="footer__nav-link">
+                    Contact
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <!-- Contact Section -->
+          <div class="footer__section footer__contact">
+            <h3 class="footer__heading"> Let's Connect </h3>
+            <p class="footer__contact-text">
+              Ready to start your project? I'd love to hear about your ideas and
+              help bring them to life.
+            </p>
+            <a
+              href="#contact"
+              class="footer__cta-link">
+              Get In Touch
+            </a>
+          </div>
+        </div>
+        <!-- Bottom Bar -->
+        <div class="footer__bottom">
+          <div class="footer__bottom-content">
+            <p class="footer__copyright">
+              &copy; 2025 I Knit The Web. All rights reserved.
+            </p>
+            <p class="footer__tagline"> Handcrafted with 💜 and lots of ☕ </p>
+          </div>
+        </div>
+        <a
+          href="#topNav"
+          class="back-to-top-link"
+          aria-label="Back to top">
+          <span
+            class="fa-solid fa-arrow-up"
+            aria-hidden="true">
+          </span>
+          <span class="visually-hidden"> Back to top </span>
+        </a>
+      </div>
+    </footer>
   </body>
 </html>
