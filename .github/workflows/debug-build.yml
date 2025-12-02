@@ -23,14 +23,13 @@ jobs:
         run: rm -rf dist || true
 
       - name: Run build:gh (no secrets)
-        # This assumes you have a script named "build:gh" in package.json
         run: npm run build:gh
         shell: bash
 
       - name: List dist files
         run: |
           echo "=== dist files ==="
-          ls -la dist || find . -maxdepth 2 -type f -name '*.html' -print
+          if [ -d dist ]; then ls -la dist; else find . -maxdepth 2 -type f -name '*.html' -print; fi
 
       - name: Show first 200 lines of up to 5 built HTML files
         run: |
