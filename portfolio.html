@@ -31,7 +31,7 @@
     <link
       rel="preload"
       as="style"
-      href="/css/portfolio.css" />
+      href="/css//css/portfolio.css" />
 
     <!-- Main font and site stylesheets -->
     <link
@@ -39,7 +39,7 @@
       href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" />
     <link
       rel="stylesheet"
-      href="/css/portfolio.css" />
+      href="/css//css/portfolio.css" />
 
     <!-- FontAwesome CDN stylesheet for icons -->
     <link
@@ -62,27 +62,24 @@
       href="/manifest.json" />
     <link
       rel="canonical"
-      href="/" />
+      href="/portfolio.html" />
 
     <!-- SEO and social meta tags -->
     <meta
       name="description"
-      content="Explore a curated portfolio of web development projects, creative coding, and design work by I Knit The Web." />
+      content="Showcase of web development projects by I Knit The Web—accessible, creative, and modern." />
     <meta
       name="keywords"
-      content="portfolio, web development, creative coding, design, accessibility, showcase, I Knit The Web" />
+      content="PORTFOLIO, web development, tutorial, accessibility" />
     <meta
       name="author"
-      content="I Knit the Web" />
-    <meta
-      name="robots"
-      content="index,follow" />
+      content="I Knit The Web" />
     <meta
       property="og:title"
       content="Portfolio | I Knit The Web" />
     <meta
       property="og:description"
-      content="Discover web projects and creative work in the I Knit The Web portfolio. Modern code, accessibility, and playful design." />
+      content="Explore the portfolio of accessible, creative web projects by I Knit The Web." />
     <meta
       property="og:image"
       content="/img/branding/logo.png" />
@@ -100,7 +97,7 @@
       content="Portfolio | I Knit The Web" />
     <meta
       name="twitter:description"
-      content="See the latest web projects and creative work by I Knit The Web. Portfolio, code samples, and design inspiration." />
+      content="Portfolio of accessible, creative web development projects by I Knit The Web." />
     <meta
       name="twitter:image"
       content="/img/branding/logo.png" />
@@ -134,19 +131,7 @@
 
     <!-- Structured data for SEO -->
     <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Portfolio | I Knit The Web",
-        "description": "Explore a curated portfolio of web development projects, creative coding, and design work by I Knit The Web.",
-        "url": "/portfolio.html"
-        "author": {
-          "@type": "Person",
-          "name": "Marta",
-          "url": "/",
-          "sameAs": ["https://github.com/iknittheweb"]
-        }
-      }
+      {"@context":"https://schema.org","@type":"WebPage","name":"PORTFOLIO | I Knit The Web","description":"Auto-generated section for PORTFOLIO. Customize this description for your page.","url":"/portfolio.html"}
     </script>
 
     <!-- Third-party library: body-scroll-lock -->
@@ -162,13 +147,113 @@
     <div
       id="page-data"
       data-page-title="Portfolio | I Knit The Web"
-      data-page-subtitle="Showcase Of Web Projects And Creative Work | I Knit The Web"
-      data-nav-config="main,about,portfolio,contact"
-      data-breadcrumb-category="Portfolio"
-      data-breadcrumb-category-url="/category/portfolio"
+      data-page-subtitle="Visual Guide To Portfolio | I Knit The Web"
+      data-nav-config="portfolio"
+      data-breadcrumb-category="Tools"
+      data-breadcrumb-category-url="/portfolio"
       style="display: none"></div>
 
-    <!-- HEADER_PLACEHOLDER -->
+    <header
+      id="topNav"
+      class="topnav"
+      aria-label="Site header">
+      <a
+        href="#main-content"
+        class="skip-link"
+        aria-label="Skip to main content">
+        Skip to main content
+      </a>
+      <h1 class="visually-hidden">I Knit The Web Header</h1>
+      <!-- Global ARIA live region for notifications/status -->
+      <div
+        id="global-status"
+        aria-live="polite"
+        class="sr-only"
+        tabindex="-1"></div>
+      <div class="wrapper topnav__wrapper">
+        <a
+          href="/"
+          class="topnav__homelink hover-fade">
+          <!-- JS toggles .logo--hidden on this element to hide logo when menu is open -->
+          <picture>
+            <source
+              srcset="/dist/img/branding/logo.avif"
+              type="image/avif" />
+            <source
+              srcset="/dist/img/branding/logo.webp"
+              type="image/webp" />
+            <img
+              src="/dist/img/branding/logo.png"
+              alt="I Knit The Web Homepage"
+              class="topnav__logo"
+              width="250"
+              height="250" />
+          </picture>
+        </a>
+        <nav
+          class="topnav__nav"
+          aria-label="Main navigation"
+          data-cy="main-nav"
+          aria-hidden="false">
+          <span
+            id="nav-label"
+            hidden
+            >Navigation</span
+          >
+          <div class="topnav__toggle">
+            <button
+              id="btnOpen"
+              class="topnav__open"
+              aria-controls="menuTopNav"
+              aria-expanded="false">
+              <span class="fa-solid fa-bars"></span>
+            </button>
+            <button
+              id="btnClose"
+              class="topnav__close"
+              aria-controls="menuTopNav"
+              aria-expanded="true">
+              <span class="fa-solid fa-xmark"></span>
+            </button>
+          </div>
+          <div
+            id="menuTopNav"
+            class="topnav__menu">
+            <ul class="topnav__links">
+              <li class="topnav__item">
+                <a
+                  class="topnav__link"
+                  href="/"
+                  >Home</a
+                >
+              </li>
+              <li class="topnav__item">
+                <a
+                  class="topnav__link"
+                  href="#about"
+                  >About</a
+                >
+              </li>
+              <li class="topnav__item">
+                <a
+                  class="topnav__link"
+                  href="#portfolio"
+                  data-cy="nav-"
+                  >Portfolio</a
+                >
+              </li>
+              <li class="topnav__item">
+                <a
+                  class="topnav__link"
+                  href="#contact"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
 
     <main
       class="portfolio-page"
@@ -559,6 +644,89 @@
       </div>
     </main>
 
-    <!-- FOOTER_PLACEHOLDER -->
+    <footer
+      aria-label="Site footer"
+      class="footer">
+      <div class="footer__content wrapper">
+        <div class="footer__sections">
+          <!-- About Section -->
+          <div class="footer__section footer__about">
+            <h2 class="footer__heading"> I Knit The Web </h2>
+            <p class="footer__description">
+              Crafting handmade websites with care, creativity, and code.
+              Bringing your digital dreams to life, one thread at a time.
+            </p>
+          </div>
+          <!-- Quick Links Section -->
+          <div class="footer__section footer__links">
+            <h3 class="footer__heading"> Quick Links </h3>
+            <nav class="footer__nav">
+              <ul class="footer__nav-list">
+                <li>
+                  <a
+                    href="#main-content"
+                    class="footer__nav-link">
+                    Home
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#about"
+                    class="footer__nav-link">
+                    About
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#portfolio"
+                    class="footer__nav-link">
+                    Portfolio
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#contact"
+                    class="footer__nav-link">
+                    Contact
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <!-- Contact Section -->
+          <div class="footer__section footer__contact">
+            <h3 class="footer__heading"> Let's Connect </h3>
+            <p class="footer__contact-text">
+              Ready to start your project? I'd love to hear about your ideas and
+              help bring them to life.
+            </p>
+            <a
+              href="#contact"
+              class="footer__cta-link">
+              Get In Touch
+            </a>
+          </div>
+        </div>
+        <!-- Bottom Bar -->
+        <div class="footer__bottom">
+          <div class="footer__bottom-content">
+            <p class="footer__copyright">
+              &copy; 2025 I Knit The Web. All rights reserved.
+            </p>
+            <p class="footer__tagline"> Handcrafted with 💜 and lots of ☕ </p>
+          </div>
+        </div>
+        <a
+          href="#topNav"
+          class="back-to-top-link"
+          aria-label="Back to top">
+          <span
+            class="fa-solid fa-arrow-up"
+            aria-hidden="true">
+          </span>
+          <span class="visually-hidden"> Back to top </span>
+        </a>
+      </div>
+    </footer>
   </body>
 </html>
