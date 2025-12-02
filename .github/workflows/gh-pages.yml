@@ -10,17 +10,39 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
+
       - name: Install dependencies
         run: npm ci
+
+      - name: Create .env.root from repository secrets
+        # Replace the keys/secret names below with the variables your build expects.
+        # Add corresponding repository secrets under Settings → Secrets and variables → Actions.
+        run: |
+          cat > .env.root <<'EOF'
+          # Example keys — replace these with your actual env var names
+          API_URL=${{ secrets.API_URL }}
+          PUBLIC_TITLE=${{ secrets.PUBLIC_TITLE }}
+          OTHER_KEY=${{ secrets.OTHER_KEY }}
+          EOF
+        shell: bash
+
       - name: Clean dist folder
         run: rm -rf dist
+
       - name: Run build:gh script
         shell: pwsh
         run: npm run build:gh
+
+      - name: Ensure .nojekyll (prevents Jekyll from processing files on Pages)
+        run: |
+          mkdir -p dist
+          touch dist/.nojekyll
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
