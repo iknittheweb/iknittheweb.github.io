@@ -30,7 +30,7 @@ function sectionTemplate(pageKey) {
     .replace(/\b(\w)/g, (m) => m.toUpperCase());
   const pageFile = pageKey.toLowerCase().replace(/-/g, '.');
   const htmlFile = pageFile + '.html';
-  const cssFile = '/dist/css/' + pageFile + '.css';
+  const cssFile = pageFile + '.css';
   const category = pageKey.includes('HOME')
     ? 'Portfolio'
     : pageKey.includes('CHALLENGE')
