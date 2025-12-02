@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 // ------------------------------------------------------------
 // COMPONENT-BUILD SCRIPT: Generates HTML pages from templates
 // ------------------------------------------------------------
@@ -92,3 +91,31 @@ fs.readdirSync(srcDir).forEach((file) => {
     console.log(`Generated: ${outFile}`);
   }
 });
+// Copy JavaScript files to dist/js
+const jsSrcDir = path.join(__dirname, 'src', 'js');
+const jsDistDir = path.join(__dirname, 'dist', 'js');
+if (!fs.existsSync(jsDistDir)) fs.mkdirSync(jsDistDir, { recursive: true });
+fs.readdirSync(jsSrcDir).forEach((file) => {
+  if (file.endsWith('.js')) {
+    fs.copyFileSync(path.join(jsSrcDir, file), path.join(jsDistDir, file));
+    console.log(`Copied JS: ${file} to dist/js/`);
+  }
+});
+
+// Copy image files to dist/img
+const imgSrcDir = path.join(__dirname, 'src', 'img');
+const imgDistDir = path.join(__dirname, 'dist', 'img');
+function copyDirRecursive(src, dest) {
+  if (!fs.existsSync(dest)) fs.mkdirSync(dest, { recursive: true });
+  fs.readdirSync(src).forEach((item) => {
+    const srcPath = path.join(src, item);
+    const destPath = path.join(dest, item);
+    if (fs.statSync(srcPath).isDirectory()) {
+      copyDirRecursive(srcPath, destPath);
+    } else {
+      fs.copyFileSync(srcPath, destPath);
+      console.log(`Copied IMG: ${srcPath} to ${destPath}`);
+    }
+  });
+}
+copyDirRecursive(imgSrcDir, imgDistDir);
