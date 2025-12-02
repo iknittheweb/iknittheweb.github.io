@@ -1,0 +1,254 @@
+<!doctype html>
+<html
+  lang="en"
+  class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="{{CSP_META}}" />
+    <title>{{SEMANTIC_NAVBAR_MARKUP_TITLE}}</title>
+
+    <!-- Preconnects for faster font and icon loading -->
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com" />
+    <link
+      rel="preconnect"
+      href="https://ka-p.fontawesome.com" />
+
+    <!-- Preload critical stylesheets -->
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap"
+      as="style" />
+    <link
+      rel="preload"
+      as="style"
+      href="{{SEMANTIC_NAVBAR_MARKUP_CSS_FILE}}" />
+
+    <!-- Main font and site stylesheets -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" />
+    <link
+      rel="stylesheet"
+      href="{{SEMANTIC_NAVBAR_MARKUP_CSS_FILE}}" />
+
+    <!-- FontAwesome CDN stylesheet for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+
+    <!-- Favicons and manifest -->
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="{{FAVICON_URL}}" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="{{APPLE_TOUCH_ICON_URL}}" />
+    <link
+      rel="manifest"
+      href="{{MANIFEST_URL}}" />
+    <link
+      rel="canonical"
+      href="{{SEMANTIC_NAVBAR_MARKUP_CANONICAL_URL}}" />
+
+    <!-- SEO and social meta tags -->
+    <meta
+      name="description"
+      content="{{SEMANTIC_NAVBAR_MARKUP_DESCRIPTION}}" />
+    <meta
+      name="keywords"
+      content="{{SEMANTIC_NAVBAR_MARKUP_KEYWORDS}}" />
+    <meta
+      name="author"
+      content="I Knit the Web" />
+    <meta
+      property="og:title"
+      content="{{SEMANTIC_NAVBAR_MARKUP_OG_TITLE}}" />
+    <meta
+      property="og:description"
+      content="{{SEMANTIC_NAVBAR_MARKUP_OG_DESCRIPTION}}" />
+    <meta
+      property="og:image"
+      content="{{SEMANTIC_NAVBAR_MARKUP_OG_IMAGE}}" />
+    <meta
+      property="og:url"
+      content="{{SEMANTIC_NAVBAR_MARKUP_OG_URL}}" />
+    <meta
+      property="og:type"
+      content="website" />
+    <meta
+      name="twitter:card"
+      content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="{{SEMANTIC_NAVBAR_MARKUP_TWITTER_TITLE}}" />
+    <meta
+      name="twitter:description"
+      content="{{SEMANTIC_NAVBAR_MARKUP_TWITTER_DESCRIPTION}}" />
+    <meta
+      name="twitter:image"
+      content="{{SEMANTIC_NAVBAR_MARKUP_TWITTER_IMAGE}}" />
+
+    <!-- Fallback styles for no-JS environments -->
+    <noscript>
+      <style>
+        body {
+          visibility: visible;
+        }
+      </style>
+    </noscript>
+
+    <!-- Inline critical CSS for FOUC prevention -->
+    <style>
+      .no-js body {
+        visibility: hidden;
+      }
+      .css-loaded body {
+        visibility: visible;
+      }
+    </style>
+
+    <!-- Critical polyfill: FOUC fix script -->
+    <script src="/js/fouc-fix.js"></script>
+
+    <!-- Third-party monitoring/analytics: Sentry -->
+    <script
+      src="https://browser.sentry-cdn.com/7.100.1/bundle.min.js"
+      crossorigin="anonymous"></script>
+
+    <!-- Structured data for SEO -->
+    <script type="application/ld+json">
+      {{SEMANTIC_NAVBAR_MARKUP_SCHEMA_JSON}}
+    </script>
+
+    <!-- Third-party library: body-scroll-lock -->
+    <script src="https://cdn.jsdelivr.net/npm/body-scroll-lock@4.0.0-beta.0/lib/bodyScrollLock.min.js"></script>
+
+    <!-- Main app/module script -->
+    <script
+      type="module"
+      src="/js/script.js"></script>
+  </head>
+
+  <body>
+    <div
+      id="page-data"
+      data-page-title="{{SEMANTIC_NAVBAR_MARKUP_DATA_PAGE_TITLE}}"
+      data-page-subtitle="{{SEMANTIC_NAVBAR_MARKUP_DATA_PAGE_SUBTITLE}}"
+      data-nav-config="{{SEMANTIC_NAVBAR_MARKUP_NAV_CONFIG}}"
+      data-breadcrumb-category="{{SEMANTIC_NAVBAR_MARKUP_BREADCRUMB_CATEGORY}}"
+      data-breadcrumb-category-url="{{SEMANTIC_NAVBAR_MARKUP_BREADCRUMB_CATEGORY_URL}}"
+      style="display: none"></div>
+
+    <!-- HEADER_PLACEHOLDER -->
+
+    <main
+      class="semantic-navbar-page"
+      id="semantic_main-content"
+      aria-labelledby="semantic-navbar-title"
+      role="main"
+      tabindex="-1">
+      <div class="page-wrapper">
+        <h1
+          class="page-heading"
+          id="semantic-navbar-title"
+          >Semantic Navbar Markup Challenge</h1
+        >
+        <h2 class="page-subheading"
+          >A
+          <a href="https://jen4web.gumroad.com/l/30daysofhtml"
+            >15 Days of CSS</a
+          >
+          Project</h2
+        >
+        <article class="semantic-navbar">
+          <h2 class="semantic-navbar__title">
+            <a
+              class="semantic-navbar__title-link"
+              href="https://informatics.indiana.edu/index.html"
+              target="_blank"
+              title="Opens in a new window"
+              >IU Luddy School of Informatics, Computing, and Engineering
+              Department of Informatics
+              <span class="sr-only"> (opens in a new window)</span></a
+            >
+          </h2>
+          <nav class="semantic-navbar__nav">
+            <ul class="semantic-navbar__list">
+              <li class="semantic-navbar__item">
+                <a
+                  class="semantic-navbar__link"
+                  href="https://informatics.indiana.edu/about/index.html">
+                  About
+                </a>
+              </li>
+              <li class="semantic-navbar__item">
+                <a
+                  class="semantic-navbar__link"
+                  href="https://informatics.indiana.edu/apply/index.html">
+                  How to Apply
+                </a>
+              </li>
+              <li class="semantic-navbar__item">
+                <a
+                  class="semantic-navbar__link"
+                  href="https://informatics.indiana.edu/programs/index.html">
+                  Programs
+                </a>
+              </li>
+              <li class="semantic-navbar__item">
+                <a
+                  class="semantic-navbar__link"
+                  href="https://informatics.indiana.edu/courses/index.html">
+                  Courses
+                </a>
+              </li>
+              <li class="semantic-navbar__item">
+                <a
+                  class="semantic-navbar__link"
+                  href="https://informatics.indiana.edu/career-prep/index.html">
+                  Career Prep
+                </a>
+              </li>
+              <li class="semantic-navbar__item">
+                <a
+                  class="semantic-navbar__link"
+                  href="https://informatics.indiana.edu/research/index.html">
+                  Research
+                </a>
+              </li>
+              <li class="semantic-navbar__item">
+                <a
+                  class="semantic-navbar__link"
+                  href="https://informatics.indiana.edu/faculty-directory/index.html">
+                  Faculty Directory
+                </a>
+              </li>
+              <li class="semantic-navbar__item">
+                <a
+                  class="semantic-navbar__link"
+                  href="https://informatics.indiana.edu/contact/index.html">
+                  Contact
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </article>
+      </div>
+    </main>
+    <!-- FOOTER_PLACEHOLDER -->
+  </body>
+</html>
