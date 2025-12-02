@@ -31,7 +31,7 @@
     <link
       rel="preload"
       as="style"
-      href="/css/multi-level-navbar.css" />
+      href="/css/{{MULTI-LEVEL-NAVBAR_CSS_FILE}}" />
 
     <!-- Main font and site stylesheets -->
     <link
@@ -39,7 +39,7 @@
       href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" />
     <link
       rel="stylesheet"
-      href="/css/multi-level-navbar.css" />
+      href="/css/{{MULTI-LEVEL-NAVBAR_CSS_FILE}}" />
 
     <!-- FontAwesome CDN stylesheet for icons -->
     <link
@@ -62,33 +62,30 @@
       href="/manifest.json" />
     <link
       rel="canonical"
-      href="/" />
+      href="{{MULTI-LEVEL-NAVBAR_CANONICAL_URL}}" />
 
     <!-- SEO and social meta tags -->
     <meta
       name="description"
-      content="Learn how to build multi-level navigation menus with CSS. Includes code samples, accessibility tips, and responsive design strategies." />
+      content="{{MULTI-LEVEL-NAVBAR_DESCRIPTION}}" />
     <meta
       name="keywords"
-      content="css, multi-level navbar, navigation, web development, responsive design, accessibility, code examples, tutorial" />
+      content="{{MULTI-LEVEL-NAVBAR_KEYWORDS}}" />
     <meta
       name="author"
-      content="I Knit the Web" />
-    <meta
-      name="robots"
-      content="index,follow" />
+      content="{{SITE_AUTHOR}}" />
     <meta
       property="og:title"
-      content="Multi-level Navbar | I Knit The Web" />
+      content="{{MULTI-LEVEL-NAVBAR_OG_TITLE}}" />
     <meta
       property="og:description"
-      content="Step-by-step tutorial for multi-level navbars. Improve your site navigation with accessible, responsive menus." />
+      content="{{MULTI-LEVEL-NAVBAR_OG_DESCRIPTION}}" />
     <meta
       property="og:image"
-      content="/img/branding/logo.png" />
+      content="{{MULTI-LEVEL-NAVBAR_OG_IMAGE}}" />
     <meta
       property="og:url"
-      content="/multi-level-navbar.html" />
+      content="{{MULTI-LEVEL-NAVBAR_OG_URL}}" />
     <meta
       property="og:type"
       content="website" />
@@ -97,13 +94,18 @@
       content="summary_large_image" />
     <meta
       name="twitter:title"
-      content="Multi-level Navbar | I Knit The Web" />
+      content="{{MULTI-LEVEL-NAVBAR_TWITTER_TITLE}}" />
     <meta
       name="twitter:description"
-      content="Master multi-level navigation menus in CSS. Visual examples, code snippets, and best practices for modern web layouts." />
+      content="{{MULTI-LEVEL-NAVBAR_TWITTER_DESCRIPTION}}" />
     <meta
       name="twitter:image"
-      content="/img/branding/logo.png" />
+      content="{{MULTI-LEVEL-NAVBAR_TWITTER_IMAGE}}" />
+
+    <!-- Structured data for SEO -->
+    <script type="application/ld+json">
+      {{MULTI-LEVEL-NAVBAR_SCHEMA_JSON}}
+    </script>
 
     <!-- Fallback styles for no-JS environments -->
     <noscript>
@@ -132,23 +134,6 @@
       src="https://browser.sentry-cdn.com/7.100.1/bundle.min.js"
       crossorigin="anonymous"></script>
 
-    <!-- Structured data for SEO -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Multi-Level Navbar | I Knit The Web",
-        "description": "Learn how to build multi-level navigation menus with CSS. Includes code samples, accessibility tips, and responsive design strategies.",
-        "url": "/multi-level-navbar.html"
-        "author": {
-          "@type": "Person",
-          "name": "Marta",
-          "url": "/",
-          "sameAs": ["https://github.com/iknittheweb"]
-        }
-      }
-    </script>
-
     <!-- Third-party library: body-scroll-lock -->
     <script src="https://cdn.jsdelivr.net/npm/body-scroll-lock@4.0.0-beta.0/lib/bodyScrollLock.min.js"></script>
 
@@ -161,8 +146,8 @@
   <body>
     <div
       id="page-data"
-      data-page-title="Multi-level Navbar | I Knit The Web"
-      data-page-subtitle="Visual Guide To Multi-level Navigation Menus | I Knit The Web"
+      data-page-title="{{MULTI-LEVEL-NAVBAR_TITLE}}"
+      data-page-subtitle="{{MULTI-LEVEL-NAVBAR_SUBTITLE}}"
       data-nav-config="multi-level-navbar"
       data-breadcrumb-category="Reference"
       data-breadcrumb-category-url="/reference/multi-level-navbar"

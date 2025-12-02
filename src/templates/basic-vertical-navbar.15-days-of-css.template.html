@@ -31,7 +31,7 @@
     <link
       rel="preload"
       as="style"
-      href="/css/basic-vertical-navbar.css" />
+      href="/css/{{BASIC-VERTICAL-NAVBAR_CSS_FILE}}" />
 
     <!-- Main font and site stylesheets -->
     <link
@@ -39,7 +39,7 @@
       href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" />
     <link
       rel="stylesheet"
-      href="/css/basic-vertical-navbar.css" />
+      href="/css/{{BASIC-VERTICAL-NAVBAR_CSS_FILE}}" />
 
     <!-- FontAwesome CDN stylesheet for icons -->
     <link
@@ -62,33 +62,30 @@
       href="/manifest.json" />
     <link
       rel="canonical"
-      href="/" />
+      href="{{BASIC-VERTICAL-NAVBAR_CANONICAL_URL}}" />
 
     <!-- SEO and social meta tags -->
     <meta
       name="description"
-      content="Quick reference and visual guide to creating vertical navigation bars with CSS. Includes code examples and best practices for modern layouts." />
+      content="{{BASIC-VERTICAL-NAVBAR_DESCRIPTION}}" />
     <meta
       name="keywords"
-      content="css, vertical navbar, navigation, web development, responsive design, layout, accessibility, code examples, tutorial" />
+      content="{{BASIC-VERTICAL-NAVBAR_KEYWORDS}}" />
     <meta
       name="author"
-      content="I Knit the Web" />
-    <meta
-      name="robots"
-      content="index,follow" />
+      content="{{SITE_AUTHOR}}" />
     <meta
       property="og:title"
-      content="Basic Vertical Navbars | I Knit The Web" />
+      content="{{BASIC-VERTICAL-NAVBAR_OG_TITLE}}" />
     <meta
       property="og:description"
-      content="Learn how to build accessible, responsive vertical navbars with CSS. Step-by-step guide and code samples for web developers." />
+      content="{{BASIC-VERTICAL-NAVBAR_OG_DESCRIPTION}}" />
     <meta
       property="og:image"
-      content="/img/branding/logo.png" />
+      content="{{BASIC-VERTICAL-NAVBAR_OG_IMAGE}}" />
     <meta
       property="og:url"
-      content="/BASIC-VERTICAL-NAVBARS.html" />
+      content="{{BASIC-VERTICAL-NAVBAR_OG_URL}}" />
     <meta
       property="og:type"
       content="website" />
@@ -97,13 +94,18 @@
       content="summary_large_image" />
     <meta
       name="twitter:title"
-      content="Basic Vertical Navbars | I Knit The Web" />
+      content="{{BASIC-VERTICAL-NAVBAR_TWITTER_TITLE}}" />
     <meta
       name="twitter:description"
-      content="Master vertical navigation bars in CSS with this easy guide. Visual examples, code snippets, and best practices for modern web layouts." />
+      content="{{BASIC-VERTICAL-NAVBAR_TWITTER_DESCRIPTION}}" />
     <meta
       name="twitter:image"
-      content="/img/branding/logo.png" />
+      content="{{BASIC-VERTICAL-NAVBAR_TWITTER_IMAGE}}" />
+
+    <!-- Structured data for SEO -->
+    <script type="application/ld+json">
+      {{BASIC-VERTICAL-NAVBAR_SCHEMA_JSON}}
+    </script>
 
     <!-- Fallback styles for no-JS environments -->
     <noscript>
@@ -132,23 +134,6 @@
       src="https://browser.sentry-cdn.com/7.100.1/bundle.min.js"
       crossorigin="anonymous"></script>
 
-    <!-- Structured data for SEO -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Basic Vertical Navbars | I Knit The Web",
-        "description": "Quick reference and visual guide to creating vertical navigation bars with CSS. Includes code examples and best practices for modern layouts.",
-        "url": "/BASIC-VERTICAL-NAVBARS.html"
-        "author": {
-          "@type": "Person",
-          "name": "Marta",
-          "url": "/",
-          "sameAs": ["https://github.com/iknittheweb"]
-        }
-      }
-    </script>
-
     <!-- Third-party library: body-scroll-lock -->
     <script src="https://cdn.jsdelivr.net/npm/body-scroll-lock@4.0.0-beta.0/lib/bodyScrollLock.min.js"></script>
 
@@ -161,8 +146,8 @@
   <body>
     <div
       id="page-data"
-      data-page-title="Basic Vertical Navbars | I Knit The Web"
-      data-page-subtitle="Visual Guide To Css Vertical Navigation Bars | I Knit The Web"
+      data-page-title="{{BASIC-VERTICAL-NAVBAR_TITLE}}"
+      data-page-subtitle="{{BASIC-VERTICAL-NAVBAR_SUBTITLE}}"
       data-nav-config="basic-vertical-navbars"
       data-breadcrumb-category="Reference"
       data-breadcrumb-category-url="/reference/basic-vertical-navbars"

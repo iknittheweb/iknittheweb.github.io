@@ -10,7 +10,7 @@
     <meta
       http-equiv="Content-Security-Policy"
       content="{{CSP_META}}" />
-    <title>Alien Abduction Form | I Knit The Web</title>
+    <title>{{ALIEN-ABDUCTION-FORM_TITLE}}</title>
 
     <!-- Preconnects for faster font and icon loading -->
     <link
@@ -35,7 +35,7 @@
     <link
       rel="preload"
       as="style"
-      href="/css/alien-abduction-form.css" />
+      href="/css/{{ALIEN-ABDUCTION-FORM_CSS_FILE}}" />
 
     <!-- Main font and site stylesheets -->
     <link
@@ -46,7 +46,7 @@
       href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" />
     <link
       rel="stylesheet"
-      href="/css/alien-abduction-form.css" />
+      href="/css/{{ALIEN-ABDUCTION-FORM_CSS_FILE}}" />
 
     <!-- FontAwesome CDN stylesheet for icons -->
     <link
@@ -69,33 +69,31 @@
       href="/manifest.json" />
     <link
       rel="canonical"
-      href="/" />
+      href="{{ALIEN-ABDUCTION-FORM_OG_URL}}" />
 
     <!-- SEO and social meta tags -->
     <meta
       name="description"
-      content="Ready for a close encounter? Fill out the Alien Abduction Form and sign up for an out-of-this-world experience—no probing required!" />
+      content="{{ALIEN-ABDUCTION-FORM_DESCRIPTION}}" />
     <meta
       name="keywords"
-      content="alien abduction, signup form, extraterrestrial, UFO, fun web project, creative coding, I Knit The Web, space adventure, interactive form, web development" />
+      content="{{ALIEN-ABDUCTION-FORM_KEYWORDS}}" />
     <meta
       name="author"
-      content="I Knit the Web" />
-    <meta
-      name="robots"
-      content="index,follow" />
+      content="I Knit The Web" />
+    <!-- robots tag intentionally omitted for best-practice control via environment only -->
     <meta
       property="og:title"
-      content="Alien Abduction Form | I Knit The Web" />
+      content="{{ALIEN-ABDUCTION-FORM_OG_TITLE}}" />
     <meta
       property="og:description"
-      content="Sign up for your alien adventure! Fill out the form for a fun, interactive experience—no probing required. Join the intergalactic fun at I Knit The Web." />
+      content="{{ALIEN-ABDUCTION-FORM_OG_DESCRIPTION}}" />
     <meta
       property="og:image"
-      content="/img/branding/logo.png" />
+      content="{{ALIEN-ABDUCTION-FORM_OG_IMAGE}}" />
     <meta
       property="og:url"
-      content="/alien-abduction-form.html" />
+      content="{{ALIEN-ABDUCTION-FORM_OG_URL}}" />
     <meta
       property="og:type"
       content="website" />
@@ -104,13 +102,13 @@
       content="summary_large_image" />
     <meta
       name="twitter:title"
-      content="Alien Abduction Form | I Knit The Web" />
+      content="{{ALIEN-ABDUCTION-FORM_TWITTER_TITLE}}" />
     <meta
       name="twitter:description"
-      content="Want to be abducted by aliens? Complete the form and join the intergalactic fun at I Knit The Web!" />
+      content="{{ALIEN-ABDUCTION-FORM_TWITTER_DESCRIPTION}}" />
     <meta
       name="twitter:image"
-      content="/img/branding/logo.png" />
+      content="{{ALIEN-ABDUCTION-FORM_TWITTER_IMAGE}}" />
 
     <!-- Fallback styles for no-JS environments -->
     <noscript>
@@ -141,19 +139,7 @@
 
     <!-- Structured data for SEO -->
     <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Alien Abduction Form | I Knit The Web",
-        "url": "/alien-abduction-form.html",
-        "description": "Ready for a close encounter? Fill out the Alien Abduction Form and sign up for an out-of-this-world experience—no probing required!",
-        "author": {
-          "@type": "Person",
-          "name": "Marta",
-          "url": "/",
-          "sameAs": ["https://github.com/iknittheweb"]
-        }
-      }
+      {{{ALIEN-ABDUCTION-FORM_SCHEMA_JSON}}}
     </script>
 
     <!-- Third-party library: body-scroll-lock -->
@@ -168,11 +154,12 @@
   <body>
     <div
       id="page-data"
-      data-page-title="Alien Abduction Form | I Knit The Web"
-      data-page-subtitle="Sign Up For Your Alien Adventure! | I Knit The Web"
-      data-nav-config="main,about,portfolio,contact,alien-abduction-form"
-      data-breadcrumb-category="Fun Forms"
-      data-breadcrumb-category-url="/category/fun-forms"
+      data-page-title="{{ALIEN-ABDUCTION-FORM_DATA_PAGE_TITLE}}"
+      data-page-subtitle="{{ALIEN-ABDUCTION-FORM_DATA_PAGE_SUBTITLE}}"
+      data-nav-config="{{ALIEN-ABDUCTION-FORM_NAV_CONFIG}}"
+      data-breadcrumb-category="{{ALIEN-ABDUCTION-FORM_BREADCRUMB_CATEGORY}}"
+      data-breadcrumb-category-url="{{ALIEN-ABDUCTION-FORM_BREADCRUMB_CATEGORY_URL}}"
+      data-page-name="{{ALIEN-ABDUCTION-FORM_PAGE_NAME}}"
       style="display: none"></div>
 
     <!-- HEADER_PLACEHOLDER -->
