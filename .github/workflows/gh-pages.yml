@@ -4,9 +4,15 @@ on:
   push:
     branches: [main]
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -19,16 +25,44 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Create .env.root from ENV_ROOT secret
-        # Use a single secret named ENV_ROOT that contains the full .env.root contents.
-        run: |
-          printf '%s\n' "${{ secrets.ENV_ROOT }}" > .env.root
+      - name: CI fallback - make helper script executable if needed
+        # harmless if the file is already executable
+        run: chmod +x ./purge-and-minify.sh || true
         shell: bash
+
+      - name: Create .env.root from ENV_ROOT_B64 secret (safe base64)
+        # This is the recommended, robust option:
+        # 1) Locally create a base64 secret: base64 .env.root (or use PowerShell Convert for Windows)
+        # 2) Add that base64 string as the repository secret ENV_ROOT_B64
+        # The workflow will decode it into .env.root on the runner and set restrictive perms.
+        run: |
+          if [ -z "${{ secrets.ENV_ROOT_B64 }}" ]; then
+            echo "ERROR: ENV_ROOT_B64 secret is not set. Create the secret or switch to the per-key method."
+            exit 1
+          fi
+          echo "${{ secrets.ENV_ROOT_B64 }}" | base64 --decode > .env.root
+          chmod 600 .env.root
+        shell: bash
+
+      # Alternative: if you prefer a single plaintext secret (not base64), uncomment and use the here-doc variant instead.
+      # - name: Create .env.root from ENV_ROOT secret (safe here-doc)
+      #   run: |
+      #     if [ -z "${{ secrets.ENV_ROOT }}" ]; then
+      #       echo "ERROR: ENV_ROOT secret not set. Create the secret or use ENV_ROOT_B64."
+      #       exit 1
+      #     fi
+      #     # using a quoted here-doc prevents the shell from executing lines inside the secret
+      #     cat > .env.root <<'EOF'
+      # ${ { secrets.ENV_ROOT } }
+      # EOF
+      #   shell: bash
 
       - name: Clean dist folder
         run: rm -rf dist
+        shell: bash
 
       - name: Run build:gh script
+        # your build:gh script runs under PowerShell in your repo; keep using pwsh if it depends on that
         shell: pwsh
         run: npm run build:gh
 
@@ -36,6 +70,7 @@ jobs:
         run: |
           mkdir -p dist
           touch dist/.nojekyll
+        shell: bash
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
