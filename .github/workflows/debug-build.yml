@@ -1,4 +1,4 @@
-name: Debug: Build and upload artifact (no secrets)
+name: "Debug: Build and upload artifact (no secrets)"
 
 on:
   workflow_dispatch:
