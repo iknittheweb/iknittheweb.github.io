@@ -33,6 +33,16 @@ jobs:
       - name: Install Dart Sass (CLI)
         run: npm install -g sass
 
+      - name: Create .env.root from repository secrets (if needed)
+        if: ${{ secrets.API_URL != '' || secrets.PUBLIC_TITLE != '' || secrets.OTHER_KEY != '' }}
+        run: |
+          cat > .env.root <<'EOF'
+          API_URL=${{ secrets.API_URL }}
+          PUBLIC_TITLE=${{ secrets.PUBLIC_TITLE }}
+          OTHER_KEY=${{ secrets.OTHER_KEY }}
+          EOF
+        shell: bash
+
       - name: Build CSS for deploy (no source map)
         run: |
           mkdir -p $(dirname "${{ env.OUTPUT_CSS }}")
