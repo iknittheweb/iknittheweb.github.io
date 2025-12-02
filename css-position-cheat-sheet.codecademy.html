@@ -31,7 +31,7 @@
     <link
       rel="preload"
       as="style"
-      href="/dist/css/css-position-cheat-sheet.css" />
+      href="/css/css-position-cheat-sheet.css" />
 
     <!-- Main font and site stylesheets -->
     <link
@@ -42,7 +42,7 @@
       rel="stylesheet" />
     <link
       rel="stylesheet"
-      href="/dist/css/css-position-cheat-sheet.css" />
+      href="/css/css-position-cheat-sheet.css" />
 
     <!-- FontAwesome CDN stylesheet for icons -->
     <link
@@ -55,11 +55,11 @@
     <link
       rel="icon"
       type="image/x-icon"
-      href="/dist/img/favicon_io/favicon.ico" />
+      href="/img/favicon_io/favicon.ico" />
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="/dist/img/favicon_io/apple-touch-icon.png" />
+      href="/img/favicon_io/apple-touch-icon.png" />
     <link
       rel="manifest"
       href="/manifest.json" />
@@ -88,7 +88,7 @@
       content="Quick reference for CSS position properties: static, relative, absolute, fixed, and sticky. Visual examples and tips for web developers." />
     <meta
       property="og:image"
-      content="/dist/img/branding/logo.png" />
+      content="/img/branding/logo.png" />
     <meta
       property="og:url"
       content="/css-position-cheat-sheet.html" />
@@ -106,7 +106,7 @@
       content="Master CSS position properties with this visual cheat sheet. Fast reference for static, relative, absolute, fixed, and sticky." />
     <meta
       name="twitter:image"
-      content="/dist/img/branding/logo.png" />
+      content="/img/branding/logo.png" />
 
     <!-- Fallback styles for no-JS environments -->
     <noscript>
@@ -126,7 +126,7 @@
       }
     </style>
     <!-- Critical polyfill: FOUC fix script -->
-    <script src="/dist/js/fouc-fix.js"></script>
+    <script src="/js/fouc-fix.js"></script>
     <!-- Third-party monitoring/analytics: Sentry -->
     <script
       src="https://browser.sentry-cdn.com/7.100.1/bundle.min.js"
@@ -154,7 +154,7 @@
     <!-- Main app/module script -->
     <script
       type="module"
-      src="/dist/js/script.js"></script>
+      src="/js/script.js"></script>
   </head>
 
   <body>
@@ -167,107 +167,7 @@
       data-breadcrumb-category-url="/reference/css-position-cheat-sheet"
       style="display: none"></div>
 
-    <header
-      id="topNav"
-      class="topnav"
-      aria-label="Site header">
-      <a
-        href="#main-content"
-        class="skip-link"
-        aria-label="Skip to main content">
-        Skip to main content
-      </a>
-      <h1 class="visually-hidden">I Knit The Web Header</h1>
-      <!-- Global ARIA live region for notifications/status -->
-      <div
-        id="global-status"
-        aria-live="polite"
-        class="sr-only"
-        tabindex="-1"></div>
-      <div class="wrapper topnav__wrapper">
-        <a
-          href="/"
-          class="topnav__homelink hover-fade">
-          <!-- JS toggles .logo--hidden on this element to hide logo when menu is open -->
-          <picture>
-            <source
-              srcset="/dist/img/branding/logo.avif"
-              type="image/avif" />
-            <source
-              srcset="/dist/img/branding/logo.webp"
-              type="image/webp" />
-            <img
-              src="/dist/img/branding/logo.png"
-              alt="I Knit The Web Homepage"
-              class="topnav__logo"
-              width="250"
-              height="250" />
-          </picture>
-        </a>
-        <nav
-          class="topnav__nav"
-          aria-label="Main navigation"
-          data-cy="main-nav"
-          aria-hidden="false">
-          <span
-            id="nav-label"
-            hidden
-            >Navigation</span
-          >
-          <div class="topnav__toggle">
-            <button
-              id="btnOpen"
-              class="topnav__open"
-              aria-controls="menuTopNav"
-              aria-expanded="false">
-              <span class="fa-solid fa-bars"></span>
-            </button>
-            <button
-              id="btnClose"
-              class="topnav__close"
-              aria-controls="menuTopNav"
-              aria-expanded="true">
-              <span class="fa-solid fa-xmark"></span>
-            </button>
-          </div>
-          <div
-            id="menuTopNav"
-            class="topnav__menu">
-            <ul class="topnav__links">
-              <li class="topnav__item">
-                <a
-                  class="topnav__link"
-                  href="/"
-                  >Home</a
-                >
-              </li>
-              <li class="topnav__item">
-                <a
-                  class="topnav__link"
-                  href="#about"
-                  >About</a
-                >
-              </li>
-              <li class="topnav__item">
-                <a
-                  class="topnav__link"
-                  href="#portfolio"
-                  data-cy="nav-"
-                  >Portfolio</a
-                >
-              </li>
-              <li class="topnav__item">
-                <a
-                  class="topnav__link"
-                  href="#contact"
-                  >Contact</a
-                >
-              </li>
-            </ul>
-          </div>
-        </nav>
-      </div>
-    </header>
+    <!-- HEADER_PLACEHOLDER -->
     <main
       class="css-position-cheat-sheet-page"
       id="css-position_main-content"
@@ -361,8 +261,8 @@
                 <td
                   class="cheat-sheet-table__definition"
                   role="cell"
-                  >Element is positioned relative to its normal position. Use top,
-                  right, bottom, left to move it.</td
+                  >Element is positioned relative to its normal position. Use
+                  top, right, bottom, left to move it.</td
                 >
               </tr>
               <tr
@@ -391,8 +291,8 @@
                 <td
                   class="cheat-sheet-table__definition"
                   role="cell"
-                  >Element is positioned relative to the browser window. Stays in
-                  place when scrolling.</td
+                  >Element is positioned relative to the browser window. Stays
+                  in place when scrolling.</td
                 >
               </tr>
               <tr
@@ -406,8 +306,8 @@
                 <td
                   class="cheat-sheet-table__definition"
                   role="cell"
-                  >Element toggles between relative and fixed, depending on scroll
-                  position.</td
+                  >Element toggles between relative and fixed, depending on
+                  scroll position.</td
                 >
               </tr>
               <tr
@@ -428,8 +328,8 @@
                 <td
                   class="cheat-sheet-table__definition"
                   role="cell"
-                  >Offsets the element from the respective edge of its containing
-                  block, when position is not static.</td
+                  >Offsets the element from the respective edge of its
+                  containing block, when position is not static.</td
                 >
               </tr>
               <tr
@@ -491,8 +391,8 @@
                 <td
                   class="cheat-sheet-table__definition"
                   role="cell"
-                  >Controls the stacking order of positioned elements (those with
-                  position other than static).</td
+                  >Controls the stacking order of positioned elements (those
+                  with position other than static).</td
                 >
               </tr>
             </tbody>
@@ -501,89 +401,6 @@
       </div>
     </main>
 
-    <footer
-      aria-label="Site footer"
-      class="footer">
-      <div class="footer__content wrapper">
-        <div class="footer__sections">
-          <!-- About Section -->
-          <div class="footer__section footer__about">
-            <h2 class="footer__heading"> I Knit The Web </h2>
-            <p class="footer__description">
-              Crafting handmade websites with care, creativity, and code.
-              Bringing your digital dreams to life, one thread at a time.
-            </p>
-          </div>
-          <!-- Quick Links Section -->
-          <div class="footer__section footer__links">
-            <h3 class="footer__heading"> Quick Links </h3>
-            <nav class="footer__nav">
-              <ul class="footer__nav-list">
-                <li>
-                  <a
-                    href="#main-content"
-                    class="footer__nav-link">
-                    Home
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#about"
-                    class="footer__nav-link">
-                    About
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#portfolio"
-                    class="footer__nav-link">
-                    Portfolio
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#contact"
-                    class="footer__nav-link">
-                    Contact
-                  </a>
-                </li>
-              </ul>
-            </nav>
-          </div>
-          <!-- Contact Section -->
-          <div class="footer__section footer__contact">
-            <h3 class="footer__heading"> Let's Connect </h3>
-            <p class="footer__contact-text">
-              Ready to start your project? I'd love to hear about your ideas and
-              help bring them to life.
-            </p>
-            <a
-              href="#contact"
-              class="footer__cta-link">
-              Get In Touch
-            </a>
-          </div>
-        </div>
-        <!-- Bottom Bar -->
-        <div class="footer__bottom">
-          <div class="footer__bottom-content">
-            <p class="footer__copyright">
-              &copy; 2025 I Knit The Web. All rights reserved.
-            </p>
-            <p class="footer__tagline"> Handcrafted with 💜 and lots of ☕ </p>
-          </div>
-        </div>
-        <a
-          href="#topNav"
-          class="back-to-top-link"
-          aria-label="Back to top">
-          <span
-            class="fa-solid fa-arrow-up"
-            aria-hidden="true">
-          </span>
-          <span class="visually-hidden"> Back to top </span>
-        </a>
-      </div>
-    </footer>
+    <!-- FOOTER_PLACEHOLDER -->
   </body>
 </html>
