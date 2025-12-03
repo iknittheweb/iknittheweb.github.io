@@ -1,8 +1,8 @@
-name: "Build and Deploy Pages (artifact-based, robust)"
+name: 'Build and Deploy Pages (artifact-based, robust)'
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -18,45 +18,43 @@ jobs:
       artifact_url: ${{ steps.resolve_artifact.outputs.artifact_url }}
       run_id: ${{ steps.set_run_id.outputs.run_id }}
     steps:
-      - name: "Checkout"
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: "Setup Node.js"
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
 
-      - name: "Install dependencies"
+      - name: Install dependencies
         run: |
           npm ci
         shell: bash
 
-      - name: "Build site"
+      - name: Build site
         run: |
           npm run build:gh
         shell: bash
 
-      - name: "Ensure .nojekyll"
+      - name: Ensure .nojekyll
         run: |
           mkdir -p dist
           touch dist/.nojekyll
         shell: bash
 
-      - name: "Upload Pages artifact (v3)"
+      - name: Upload Pages artifact
         id: upload-artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
 
-      - name: "Set run id (job output)"
+      - name: Set run id
         id: set_run_id
-        env:
-          RUN_ID: ${{ github.run_id }}
         run: |
-          echo "run_id=$RUN_ID" >> $GITHUB_OUTPUT
+          echo "run_id=${GITHUB_RUN_ID:-${{ github.run_id }}}" >> $GITHUB_OUTPUT
         shell: bash
 
-      - name: "Resolve uploaded pages artifact via Actions API"
+      - name: Resolve uploaded pages artifact via Actions API
         id: resolve_artifact
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -64,19 +62,11 @@ jobs:
           RUN_ID: ${{ github.run_id }}
         run: |
           API_URL="https://api.github.com/repos/$REPO/actions/runs/$RUN_ID/artifacts"
-          echo "Querying $API_URL"
           resp=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" "$API_URL")
-          echo "raw response (truncated):"
-          echo "$resp" | head -c 2000
-
-          # locate the artifact named github-pages (or similar) using jq
           ART_ID=$(echo "$resp" | jq -r '.artifacts[] | select(.name=="github-pages" or .name=="github-pages.zip" or .name=="pages") | .id' | head -n1 || true)
           ART_URL=$(echo "$resp" | jq -r '.artifacts[] | select(.name=="github-pages" or .name=="github-pages.zip" or .name=="pages") | .archive_download_url' | head -n1 || true)
-
           echo "artifact_id=$ART_ID" >> $GITHUB_OUTPUT
           echo "artifact_url=$ART_URL" >> $GITHUB_OUTPUT
-          echo "Found artifact_id=$ART_ID"
-          echo "Found artifact_url=$ART_URL"
         shell: bash
 
   deploy:
@@ -87,14 +77,14 @@ jobs:
       pages: write
       id-token: write
     steps:
-      - name: "Debug: show received outputs"
+      - name: Show received outputs
         run: |
-          echo "needs.build.outputs.artifact_id = ${{ needs.build.outputs.artifact_id }}"
-          echo "needs.build.outputs.artifact_url = ${{ needs.build.outputs.artifact_url }}"
-          echo "needs.build.outputs.run_id = ${{ needs.build.outputs.run_id }}"
+          echo "artifact_id=${{ needs.build.outputs.artifact_id }}"
+          echo "artifact_url=${{ needs.build.outputs.artifact_url }}"
+          echo "run_id=${{ needs.build.outputs.run_id }}"
         shell: bash
 
-      - name: "Wait for artifact to become available (poll, follow redirects)"
+      - name: Wait for artifact (follow redirects)
         env:
           ART_ID: ${{ needs.build.outputs.artifact_id }}
           ART_URL: ${{ needs.build.outputs.artifact_url }}
@@ -107,24 +97,18 @@ jobs:
           elif [ -n "$ART_URL" ]; then
             CHECK_URL="$ART_URL"
           else
-            CHECK_URL="https://github.com/$REPO/actions/runs/$RUN_ID/artifacts/"
+            CHECK_URL="https://api.github.com/repos/$REPO/actions/runs/$RUN_ID/artifacts"
           fi
-
-          echo "Checking artifact URL (will follow redirects): $CHECK_URL"
           attempts=20
           for i in $(seq 1 $attempts); do
-            # follow redirects (-L) and include auth header so we reach the final signed storage URL
             status=$(curl -s -o /dev/null -w "%{http_code}" -H "Authorization: Bearer $GITHUB_TOKEN" -L "$CHECK_URL")
             echo "Attempt $i: HTTP $status"
-            if [ "$status" -eq 200 ]; then
-              echo "Artifact is available."
-              exit 0
-            fi
+            if [ "$status" -eq 200 ]; then exit 0; fi
             sleep 3
           done
-          echo "Timed out waiting for artifact to become available at $CHECK_URL"
+          echo "Timed out waiting for artifact: $CHECK_URL"
           exit 1
         shell: bash
 
-      - name: "Deploy to GitHub Pages"
+      - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v1
