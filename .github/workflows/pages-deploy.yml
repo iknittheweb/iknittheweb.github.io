@@ -33,7 +33,6 @@ jobs:
         shell: bash
 
       - name: Create .env.root from ENV_ROOT_B64 secret (optional, safe)
-        # If you prefer per-key secrets instead, replace this step with a here-doc per-key version.
         run: |
           if [ -n "${{ secrets.ENV_ROOT_B64 }}" ]; then
             echo "${{ secrets.ENV_ROOT_B64 }}" | base64 --decode > .env.root
@@ -45,7 +44,6 @@ jobs:
         shell: bash
 
       - name: Build site
-        # Use bash so your shell scripts run the same as locally; if build:gh uses pwsh, change to pwsh
         run: npm run build:gh
         shell: bash
 
@@ -56,7 +54,8 @@ jobs:
         shell: bash
 
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v1
+        # updated to v2 to avoid pulling deprecated upload-artifact v3
+        uses: actions/upload-pages-artifact@v2
         with:
           path: ./dist
 
