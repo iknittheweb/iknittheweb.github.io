@@ -1,0 +1,61 @@
+name: Build and Deploy Pages (direct publish, single-job)
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm ci
+        shell: bash
+
+      - name: Build site
+        run: npm run build:gh
+        shell: bash
+
+      - name: Show dist contents (debug)
+        run: |
+          echo "dist exists?"; test -d dist && echo "yes" || echo "no"
+          echo "Listing dist (first 200 lines):"
+          ls -la dist || true
+          echo "disk usage:"
+          du -sh dist || true
+          file_count=$(find dist -type f 2>/dev/null | wc -l)
+          echo "file_count=$file_count"
+          if [ "$file_count" -eq 0 ]; then
+            echo "ERROR: dist is empty — build probably failed. Aborting."
+            exit 2
+          fi
+        shell: bash
+
+      - name: Ensure .nojekyll
+        run: |
+          mkdir -p dist
+          touch dist/.nojekyll
+        shell: bash
+
+      - name: Publish to gh-pages (direct from ./dist)
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          # optional: set user/email to make commits identifiable
+          # committer_name: github-actions
+          # committer_email: actions@github.com
