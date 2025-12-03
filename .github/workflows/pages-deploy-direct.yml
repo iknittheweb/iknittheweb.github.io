@@ -63,13 +63,8 @@ jobs:
           mkdir -p dist
           if [ ! -f dist/index.html ]; then
             echo "WARNING: dist/index.html is missing — creating a temporary placeholder so Pages will serve something."
-            cat > dist/index.html <<'HTML'
-            <!doctype html>
-            <meta charset="utf-8">
-            <title>Temporary deploy placeholder</title>
-            <h1>Temporary deploy placeholder</h1>
-            <p>The CI build did not produce index.html. This is a temporary placeholder — fix the build and remove this step.</p>
-            HTML
+            # Use printf to write the file (heredoc can break in indented YAML blocks)
+            printf '%s\n' '<!doctype html>' '<meta charset="utf-8">' '<title>Temporary deploy placeholder</title>' '<h1>Temporary deploy placeholder</h1>' '<p>The CI build did not produce index.html. This is a temporary placeholder — fix the build and remove this step.</p>' > dist/index.html
           else
             echo "dist/index.html already present"
           fi
