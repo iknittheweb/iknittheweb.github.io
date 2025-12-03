@@ -54,7 +54,7 @@ jobs:
           echo "run_id=${GITHUB_RUN_ID:-${{ github.run_id }}}" >> $GITHUB_OUTPUT
         shell: bash
 
-      - name: 'Resolve uploaded pages artifact via Actions API'
+      - name: "Resolve uploaded pages artifact via Actions API"
         id: resolve_artifact
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -62,13 +62,42 @@ jobs:
           RUN_ID: ${{ github.run_id }}
         run: |
           API_URL="https://api.github.com/repos/$REPO/actions/runs/$RUN_ID/artifacts"
-          resp=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" "$API_URL")
-          ART_ID=$(echo "$resp" | jq -r '.artifacts[] | select(.name=="github-pages" or .name=="github-pages.zip" or .name=="pages") | .id' | head -n1 || true)
-          ART_URL=$(echo "$resp" | jq -r '.artifacts[] | select(.name=="github-pages" or .name=="github-pages.zip" or .name=="pages") | .archive_download_url' | head -n1 || true)
-          echo "artifact_id=$ART_ID" >> $GITHUB_OUTPUT
-          echo "artifact_url=$ART_URL" >> $GITHUB_OUTPUT
-          echo "Found artifact_id=$ART_ID"
-          echo "Found artifact_url=$ART_URL"
+          attempts=20
+          sleep_seconds=3
+          ART_ID=""
+          ART_URL=""
+      
+          for i in $(seq 1 $attempts); do
+            echo "Querying artifacts (attempt $i/$attempts): $API_URL"
+            resp=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" "$API_URL")
+      
+            # Try to extract artifact id / archive URL (jq preinstalled on ubuntu runners)
+            ART_ID=$(echo "$resp" | jq -r '.artifacts[] | select(.name=="github-pages" or .name=="github-pages.zip" or .name=="pages") | .id' | head -n1 || true)
+            ART_URL=$(echo "$resp" | jq -r '.artifacts[] | select(.name=="github-pages" or .name=="github-pages.zip" or .name=="pages") | .archive_download_url' | head -n1 || true)
+      
+            if [ -n "$ART_ID" ] && [ "$ART_ID" != "null" ]; then
+              echo "Found artifact on attempt $i: id=$ART_ID"
+              echo "artifact_id=$ART_ID" >> $GITHUB_OUTPUT
+              echo "artifact_url=$ART_URL" >> $GITHUB_OUTPUT
+              echo "Found artifact_url=$ART_URL"
+              exit 0
+            fi
+      
+            # On the first failure print some debug so we can inspect what's returned
+            if [ "$i" -eq 1 ]; then
+              echo "Raw API response (first attempt):"
+              echo "$resp" | sed -n '1,200p'
+              echo "--- end of raw response ---"
+            fi
+      
+            echo "Artifact not present yet, sleeping $sleep_seconds seconds..."
+            sleep $sleep_seconds
+          done
+      
+          echo "Timed out waiting for artifact to appear in the Actions API after $attempts attempts"
+          echo "last raw response:"
+          echo "$resp" | sed -n '1,400p'
+          exit 1
         shell: bash
 
   deploy:
