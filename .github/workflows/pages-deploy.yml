@@ -2,7 +2,7 @@ name: Build and Deploy Pages (artifact-based)
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -54,7 +54,8 @@ jobs:
         shell: bash
 
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v2
+        # bumped to v3 to avoid pulling actions/upload-artifact@v3 transitively
+        uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
 
