@@ -2,9 +2,10 @@ name: Build and Deploy Pages (artifact-based)
 
 on:
   push:
-    branches: [main]
+    branches: [ main ]
   workflow_dispatch:
 
+# Top-level permissions; include id-token: write so actions can request OIDC tokens
 permissions:
   contents: read
   pages: write
@@ -54,7 +55,6 @@ jobs:
         shell: bash
 
       - name: Upload Pages artifact
-        # bumped to v3 to avoid pulling actions/upload-artifact@v3 transitively
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
@@ -62,8 +62,10 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
+    # Ensure deploy job has id-token: write so the deploy action can request an OIDC token
     permissions:
       pages: write
+      id-token: write
     steps:
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v1
