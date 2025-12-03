@@ -1,0 +1,80 @@
+name: Build and Deploy Pages (single-job, diagnostic)
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm ci
+        shell: bash
+
+      - name: Ensure helper scripts executable
+        run: |
+          chmod +x ./purge-and-minify.sh || true
+          chmod +x ./scripts/format-html.sh || true
+        shell: bash
+
+      - name: Create .env.root from ENV_ROOT_B64 secret (optional)
+        run: |
+          if [ -n "${{ secrets.ENV_ROOT_B64 }}" ]; then
+            echo "${{ secrets.ENV_ROOT_B64 }}" | base64 --decode > .env.root
+            chmod 600 .env.root
+            echo "Wrote .env.root"
+          else
+            echo "ENV_ROOT_B64 not set"
+          fi
+        shell: bash
+
+      - name: Build site
+        run: npm run build:gh
+        shell: bash
+
+      - name: Show dist contents (debug)
+        run: |
+          echo "dist exists?"; test -d dist && echo "yes" || echo "no"
+          echo "Listing dist:"
+          ls -la dist || true
+          echo "disk usage:"
+          du -sh dist || true
+        shell: bash
+
+      - name: Ensure .nojekyll
+        run: |
+          mkdir -p dist
+          touch dist/.nojekyll
+        shell: bash
+
+      - name: Upload Pages artifact
+        id: upload-artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist
+
+      - name: Show upload outputs (debug)
+        run: |
+          echo "upload step outputs (raw):"
+          echo "artifact-id = ${{ steps.upload-artifact.outputs['artifact-id'] }}"
+          echo "artifact-url = ${{ steps.upload-artifact.outputs['artifact-url'] }}"
+          echo "artifact-digest = ${{ steps.upload-artifact.outputs['artifact-digest'] }}"
+        shell: bash
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v1
