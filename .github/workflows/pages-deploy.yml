@@ -5,7 +5,6 @@ on:
     branches: [ main ]
   workflow_dispatch:
 
-# Top-level permissions; include id-token: write so actions can request OIDC tokens
 permissions:
   contents: read
   pages: write
@@ -14,6 +13,9 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    outputs:
+      artifact-id: ${{ steps.set-outputs.outputs.artifact_id }}
+      run-id: ${{ steps.set-outputs.outputs.run_id }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -55,17 +57,43 @@ jobs:
         shell: bash
 
       - name: Upload Pages artifact
+        id: upload-artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
 
+      - name: Set job outputs (artifact id + run id)
+        id: set-outputs
+        run: |
+          echo "artifact_id=${{ steps.upload-artifact.outputs.artifact-id }}" >> $GITHUB_OUTPUT
+          echo "run_id=${{ github.run_id }}" >> $GITHUB_OUTPUT
+        shell: bash
+
   deploy:
     needs: build
     runs-on: ubuntu-latest
-    # Ensure deploy job has id-token: write so the deploy action can request an OIDC token
     permissions:
+      contents: read
       pages: write
       id-token: write
     steps:
+      - name: Wait for artifact to become available (poll)
+        run: |
+          ART_URL="https://github.com/${{ github.repository }}/actions/runs/${{ needs.build.outputs.run-id }}/artifacts/${{ needs.build.outputs.artifact-id }}"
+          echo "Checking artifact URL: $ART_URL"
+          attempts=10
+          for i in $(seq 1 $attempts); do
+            status=$(curl -s -o /dev/null -w "%{http_code}" "$ART_URL")
+            echo "Attempt $i: HTTP $status"
+            if [ "$status" -eq 200 ]; then
+              echo "Artifact is available."
+              exit 0
+            fi
+            sleep 3
+          done
+          echo "Timed out waiting for artifact to become available at $ART_URL"
+          exit 1
+        shell: bash
+
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v1
