@@ -26,23 +26,6 @@ jobs:
         run: npm ci
         shell: bash
 
-      - name: Ensure helper scripts executable
-        run: |
-          chmod +x ./purge-and-minify.sh || true
-          chmod +x ./scripts/format-html.sh || true
-        shell: bash
-
-      - name: Create .env.root from ENV_ROOT_B64 secret (optional)
-        run: |
-          if [ -n "${{ secrets.ENV_ROOT_B64 }}" ]; then
-            echo "${{ secrets.ENV_ROOT_B64 }}" | base64 --decode > .env.root
-            chmod 600 .env.root
-            echo "Wrote .env.root"
-          else
-            echo "ENV_ROOT_B64 not set"
-          fi
-        shell: bash
-
       - name: Build site
         run: npm run build:gh
         shell: bash
@@ -50,10 +33,16 @@ jobs:
       - name: Show dist contents (debug)
         run: |
           echo "dist exists?"; test -d dist && echo "yes" || echo "no"
-          echo "Listing dist:"
+          echo "Listing dist (first 200 lines):"
           ls -la dist || true
           echo "disk usage:"
           du -sh dist || true
+          file_count=$(find dist -type f 2>/dev/null | wc -l)
+          echo "file_count=$file_count"
+          if [ "$file_count" -eq 0 ]; then
+            echo "ERROR: dist is empty — build probably failed. Aborting."
+            exit 2
+          fi
         shell: bash
 
       - name: Ensure .nojekyll
@@ -70,7 +59,6 @@ jobs:
 
       - name: Show upload outputs (debug)
         run: |
-          echo "upload step outputs (raw):"
           echo "artifact-id = ${{ steps.upload-artifact.outputs['artifact-id'] }}"
           echo "artifact-url = ${{ steps.upload-artifact.outputs['artifact-url'] }}"
           echo "artifact-digest = ${{ steps.upload-artifact.outputs['artifact-digest'] }}"
