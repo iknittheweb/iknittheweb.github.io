@@ -18,43 +18,43 @@ jobs:
       artifact_url: ${{ steps.resolve_artifact.outputs.artifact_url }}
       run_id: ${{ steps.set_run_id.outputs.run_id }}
     steps:
-      - name: Checkout
+      - name: 'Checkout'
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
+      - name: 'Setup Node.js'
         uses: actions/setup-node@v4
         with:
           node-version: '20'
 
-      - name: Install dependencies
+      - name: 'Install dependencies'
         run: |
           npm ci
         shell: bash
 
-      - name: Build site
+      - name: 'Build site'
         run: |
           npm run build:gh
         shell: bash
 
-      - name: Ensure .nojekyll
+      - name: 'Ensure .nojekyll'
         run: |
           mkdir -p dist
           touch dist/.nojekyll
         shell: bash
 
-      - name: Upload Pages artifact
+      - name: 'Upload Pages artifact (v3)'
         id: upload-artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
 
-      - name: Set run id
+      - name: 'Set run id (job output)'
         id: set_run_id
         run: |
           echo "run_id=${GITHUB_RUN_ID:-${{ github.run_id }}}" >> $GITHUB_OUTPUT
         shell: bash
 
-      - name: Resolve uploaded pages artifact via Actions API
+      - name: 'Resolve uploaded pages artifact via Actions API'
         id: resolve_artifact
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -67,6 +67,8 @@ jobs:
           ART_URL=$(echo "$resp" | jq -r '.artifacts[] | select(.name=="github-pages" or .name=="github-pages.zip" or .name=="pages") | .archive_download_url' | head -n1 || true)
           echo "artifact_id=$ART_ID" >> $GITHUB_OUTPUT
           echo "artifact_url=$ART_URL" >> $GITHUB_OUTPUT
+          echo "Found artifact_id=$ART_ID"
+          echo "Found artifact_url=$ART_URL"
         shell: bash
 
   deploy:
@@ -77,14 +79,14 @@ jobs:
       pages: write
       id-token: write
     steps:
-      - name: Show received outputs
+      - name: 'Show received outputs'
         run: |
           echo "artifact_id=${{ needs.build.outputs.artifact_id }}"
           echo "artifact_url=${{ needs.build.outputs.artifact_url }}"
           echo "run_id=${{ needs.build.outputs.run_id }}"
         shell: bash
 
-      - name: Wait for artifact (follow redirects)
+      - name: 'Wait for artifact (poll artifact_url first, follow redirects)'
         env:
           ART_ID: ${{ needs.build.outputs.artifact_id }}
           ART_URL: ${{ needs.build.outputs.artifact_url }}
@@ -92,23 +94,50 @@ jobs:
           REPO: ${{ github.repository }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          if [ -n "$ART_ID" ]; then
-            CHECK_URL="https://github.com/$REPO/actions/runs/$RUN_ID/artifacts/$ART_ID"
-          elif [ -n "$ART_URL" ]; then
+          # give the backend a small moment (helps transient indexing)
+          sleep 3
+
+          # Prefer the API archive_download_url (ART_URL) — it's more reliable for automated downloads.
+          if [ -n "$ART_URL" ]; then
             CHECK_URL="$ART_URL"
+            echo "Polling artifact archive URL: $CHECK_URL"
+          elif [ -n "$ART_ID" ]; then
+            CHECK_URL="https://github.com/$REPO/actions/runs/$RUN_ID/artifacts/$ART_ID"
+            echo "Polling run-based artifact URL: $CHECK_URL"
           else
             CHECK_URL="https://api.github.com/repos/$REPO/actions/runs/$RUN_ID/artifacts"
+            echo "Polling artifacts list API: $CHECK_URL"
           fi
-          attempts=20
+
+          attempts=30
+          sleep_seconds=5
+          status=000
+
           for i in $(seq 1 $attempts); do
-            status=$(curl -s -o /dev/null -w "%{http_code}" -H "Authorization: Bearer $GITHUB_TOKEN" -L "$CHECK_URL")
+            # Use -I -L to follow redirects and see final status; include Authorization
+            status=$(curl -s -I -L -H "Authorization: Bearer $GITHUB_TOKEN" "$CHECK_URL" -o /dev/null -w "%{http_code}" || echo "000")
             echo "Attempt $i: HTTP $status"
-            if [ "$status" -eq 200 ]; then exit 0; fi
-            sleep 3
+            if [ "$status" -eq 200 ]; then
+              echo "Artifact reachable (200)."
+              break
+            fi
+
+            # On the first failing attempt, produce a verbose trace (helpful for debugging)
+            if [ "$i" -eq 1 ]; then
+              echo "Verbose trace (first attempt):"
+              curl -v -L -H "Authorization: Bearer $GITHUB_TOKEN" "$CHECK_URL" || true
+              echo "--- end verbose trace ---"
+            fi
+
+            echo "Sleeping $sleep_seconds seconds before retry..."
+            sleep $sleep_seconds
           done
-          echo "Timed out waiting for artifact: $CHECK_URL"
-          exit 1
+
+          if [ "$status" -ne 200 ]; then
+            echo "Timed out waiting for artifact to become available at $CHECK_URL (last status: $status)"
+            exit 1
+          fi
         shell: bash
 
-      - name: Deploy to GitHub Pages
+      - name: 'Deploy to GitHub Pages'
         uses: actions/deploy-pages@v1
