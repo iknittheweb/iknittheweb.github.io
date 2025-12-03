@@ -14,28 +14,29 @@ jobs:
   build:
     runs-on: ubuntu-latest
     outputs:
-      artifact-id: ${{ steps.set-outputs.outputs.artifact_id }}
-      run-id: ${{ steps.set-outputs.outputs.run_id }}
+      artifact_id: ${{ steps.set-outputs.outputs.artifact_id }}
+      artifact_url: ${{ steps.set-outputs.outputs.artifact_url }}
+      run_id: ${{ steps.set-outputs.outputs.run_id }}
     steps:
-      - name: Checkout
+      - name: "Checkout"
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
+      - name: "Setup Node.js"
         uses: actions/setup-node@v4
         with:
           node-version: '20'
 
-      - name: Install dependencies
+      - name: "Install dependencies"
         run: npm ci
         shell: bash
 
-      - name: CI fallback - make helper scripts executable
+      - name: "CI fallback - make helper scripts executable"
         run: |
           chmod +x ./purge-and-minify.sh || true
           chmod +x ./scripts/format-html.sh || true
         shell: bash
 
-      - name: Create .env.root from ENV_ROOT_B64 secret (optional, safe)
+      - name: "Create .env.root from ENV_ROOT_B64 secret (optional, safe)"
         run: |
           if [ -n "${{ secrets.ENV_ROOT_B64 }}" ]; then
             echo "${{ secrets.ENV_ROOT_B64 }}" | base64 --decode > .env.root
@@ -46,27 +47,38 @@ jobs:
           fi
         shell: bash
 
-      - name: Build site
+      - name: "Build site"
         run: npm run build:gh
         shell: bash
 
-      - name: Ensure .nojekyll
+      - name: "Ensure .nojekyll"
         run: |
           mkdir -p dist
           touch dist/.nojekyll
         shell: bash
 
-      - name: Upload Pages artifact
+      - name: "Upload Pages artifact"
         id: upload-artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
 
-      - name: Set job outputs (artifact id + run id)
+      - name: "Set job outputs (artifact_id, artifact_url, run_id) and debug"
         id: set-outputs
         run: |
-          echo "artifact_id=${{ steps.upload-artifact.outputs.artifact-id }}" >> $GITHUB_OUTPUT
-          echo "run_id=${{ github.run_id }}" >> $GITHUB_OUTPUT
+          # Read upload step outputs (bracket syntax is safe)
+          ART_ID="${{ steps.upload-artifact.outputs['artifact-id'] }}"
+          ART_URL="${{ steps.upload-artifact.outputs['artifact-url'] }}"
+          RUN_ID="${{ github.run_id }}"
+
+          echo "debug: upload step artifact-id=[$ART_ID]"
+          echo "debug: upload step artifact-url=[$ART_URL]"
+          echo "debug: github.run_id=[$RUN_ID]"
+
+          # Export as job outputs (use underscores to avoid YAML/expr warnings)
+          echo "artifact_id=$ART_ID" >> $GITHUB_OUTPUT
+          echo "artifact_url=$ART_URL" >> $GITHUB_OUTPUT
+          echo "run_id=$RUN_ID" >> $GITHUB_OUTPUT
         shell: bash
 
   deploy:
@@ -77,13 +89,31 @@ jobs:
       pages: write
       id-token: write
     steps:
-      - name: Wait for artifact to become available (poll)
+      - name: "Debug: show received outputs"
         run: |
-          ART_URL="https://github.com/${{ github.repository }}/actions/runs/${{ needs.build.outputs.run-id }}/artifacts/${{ needs.build.outputs.artifact-id }}"
-          echo "Checking artifact URL: $ART_URL"
+          echo "needs.build.outputs.artifact_id = ${{ needs.build.outputs.artifact_id }}"
+          echo "needs.build.outputs.artifact_url = ${{ needs.build.outputs.artifact_url }}"
+          echo "needs.build.outputs.run_id = ${{ needs.build.outputs.run_id }}"
+
+      - name: "Wait for artifact to become available (poll)"
+        run: |
+          ART_ID="${{ needs.build.outputs.artifact_id }}"
+          ART_URL="${{ needs.build.outputs.artifact_url }}"
+          RUN_ID="${{ needs.build.outputs.run_id }}"
+          REPO="${{ github.repository }}"
+
+          if [ -n "$ART_ID" ]; then
+            CHECK_URL="https://github.com/$REPO/actions/runs/$RUN_ID/artifacts/$ART_ID"
+          elif [ -n "$ART_URL" ]; then
+            CHECK_URL="$ART_URL"
+          else
+            CHECK_URL="https://github.com/$REPO/actions/runs/$RUN_ID/artifacts/"
+          fi
+
+          echo "Checking artifact URL: $CHECK_URL"
           attempts=10
           for i in $(seq 1 $attempts); do
-            status=$(curl -s -o /dev/null -w "%{http_code}" "$ART_URL")
+            status=$(curl -s -o /dev/null -w "%{http_code}" "$CHECK_URL")
             echo "Attempt $i: HTTP $status"
             if [ "$status" -eq 200 ]; then
               echo "Artifact is available."
@@ -91,9 +121,9 @@ jobs:
             fi
             sleep 3
           done
-          echo "Timed out waiting for artifact to become available at $ART_URL"
+          echo "Timed out waiting for artifact to become available at $CHECK_URL"
           exit 1
         shell: bash
 
-      - name: Deploy to GitHub Pages
+      - name: "Deploy to GitHub Pages"
         uses: actions/deploy-pages@v1
