@@ -26,8 +26,15 @@ jobs:
         run: npm ci
         shell: bash
 
-      - name: Build site
-        run: npm run build:gh
+      - name: Build site (try build:gh then fallback to build)
+        run: |
+          # Try the gh-specific build first (matches local workflow you used earlier)
+          if npm run build:gh --silent; then
+            echo "npm run build:gh completed"
+          else
+            echo "npm run build:gh failed; trying npm run build"
+            npm run build
+          fi
         shell: bash
 
       - name: Show dist contents (debug)
@@ -51,11 +58,25 @@ jobs:
           touch dist/.nojekyll
         shell: bash
 
+      - name: Ensure index.html exists in dist (temporary fallback)
+        run: |
+          mkdir -p dist
+          if [ ! -f dist/index.html ]; then
+            echo "WARNING: dist/index.html is missing — creating a temporary placeholder so Pages will serve something."
+            cat > dist/index.html <<'HTML'
+            <!doctype html>
+            <meta charset="utf-8">
+            <title>Temporary deploy placeholder</title>
+            <h1>Temporary deploy placeholder</h1>
+            <p>The CI build did not produce index.html. This is a temporary placeholder — fix the build and remove this step.</p>
+            HTML
+          else
+            echo "dist/index.html already present"
+          fi
+        shell: bash
+
       - name: Publish to gh-pages (direct from ./dist)
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
-          # optional: set user/email to make commits identifiable
-          # committer_name: github-actions
-          # committer_email: actions@github.com
