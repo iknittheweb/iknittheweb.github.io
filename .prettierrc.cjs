@@ -11,7 +11,7 @@
 // ------------------------------------------------------------
 // Prettier configuration with explanatory comments
 module.exports = {
-  printWidth: 80, // Maximum line length before wrapping
+  printWidth: 1000, // Maximum line length before wrapping
   tabWidth: 2, // Number of spaces per indentation level
   semi: true, // Add semicolons at the ends of statements
   singleQuote: true, // Use single quotes instead of double quotes
@@ -19,8 +19,8 @@ module.exports = {
   endOfLine: 'lf', // Use line feed (\n) for line endings
   bracketSpacing: true, // Print spaces between brackets in object literals
   htmlWhitespaceSensitivity: 'strict', // How to handle whitespace in HTML
-  singleAttributePerLine: true, // Put each HTML attribute on its own line
+  singleAttributePerLine: false, // Put each HTML attribute on its own line
   bracketSameLine: true, // Put the > of a multi-line HTML element at the end of the last line
   arrowParens: 'always', // Always include parentheses around arrow function parameters
-  proseWrap: 'always', // Wrap markdown text as needed
+  proseWrap: 'never', // Wrap markdown text as needed
 };
