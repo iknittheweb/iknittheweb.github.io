@@ -35,12 +35,11 @@
 
     <!-- Preload critical stylesheets -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" as="style" />
-    <link rel="preload" as="style" href="/css/{{DESC-LIST-CHALLENGE_CSS_FILE}}" />
+    <link rel="preload" as="style" href="/dist/css/{{DESC_LIST_CHALLENGE_30_DAYS_OF_HTML_CSS_FILE}}" />
 
     <!-- Main font and site stylesheets -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" />
-    <link rel="stylesheet" href="/css/{{DESC-LIST-CHALLENGE_CSS_FILE}}" />
-
+    <link rel="stylesheet" href="/dist/css/{{DESC_LIST_CHALLENGE_30_DAYS_OF_HTML_CSS_FILE}}" />
     <!-- FontAwesome CDN stylesheet for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
@@ -48,26 +47,24 @@
     <link rel="icon" type="image/x-icon" href="{{ASSET_URL}}/favicon_io/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="{{ASSET_URL}}/favicon_io/apple-touch-icon.png" />
     <link rel="manifest" href="/manifest.json" />
-    <link rel="canonical" href="{{DESC-LIST-CHALLENGE_CANONICAL_URL}}" />
+    <link rel="canonical" href="{{DESC_LIST_CHALLENGE_30_DAYS_OF_HTML_CANONICAL_URL}}" />
 
     <!-- SEO and social meta tags (grouped for clarity) -->
-    <meta name="description" content="{{DESC-LIST-CHALLENGE_DESCRIPTION}}" />
-    <meta name="keywords" content="{{DESC-LIST-CHALLENGE_KEYWORDS}}" />
+    <meta name="description" content="{{DESC_LIST_CHALLENGE_30_DAYS_OF_HTML_DESCRIPTION}}" />
+    <meta name="keywords" content="{{DESC_LIST_CHALLENGE_30_DAYS_OF_HTML_KEYWORDS}}" />
     <meta name="author" content="{{SITE_AUTHOR}}" />
-    <meta property="og:title" content="{{DESC-LIST-CHALLENGE_OG_TITLE}}" />
-    <meta property="og:description" content="{{DESC-LIST-CHALLENGE_OG_DESCRIPTION}}" />
-    <meta property="og:image" content="{{DESC-LIST-CHALLENGE_OG_IMAGE}}" />
-    <meta property="og:url" content="{{DESC-LIST-CHALLENGE_OG_URL}}" />
+    <meta property="og:title" content="{{DESC_LIST_CHALLENGE_30_DAYS_OF_HTML_OG_TITLE}}" />
+    <meta property="og:description" content="{{DESC_LIST_CHALLENGE_30_DAYS_OF_HTML_OG_DESCRIPTION}}" />
+    <meta property="og:image" content="{{DESC_LIST_CHALLENGE_30_DAYS_OF_HTML_OG_IMAGE}}" />
+    <meta property="og:url" content="{{DESC_LIST_CHALLENGE_30_DAYS_OF_HTML_OG_URL}}" />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="{{DESC-LIST-CHALLENGE_TWITTER_TITLE}}" />
-    <meta name="twitter:description" content="{{DESC-LIST-CHALLENGE_TWITTER_DESCRIPTION}}" />
-    <meta name="twitter:image" content="{{DESC-LIST-CHALLENGE_TWITTER_IMAGE}}" />
+    <meta name="twitter:title" content="{{DESC_LIST_CHALLENGE_30_DAYS_OF_HTML_TWITTER_TITLE}}" />
+    <meta name="twitter:description" content="{{DESC_LIST_CHALLENGE_30_DAYS_OF_HTML_TWITTER_DESCRIPTION}}" />
+    <meta name="twitter:image" content="{{DESC_LIST_CHALLENGE_30_DAYS_OF_HTML_TWITTER_IMAGE}}" />
 
     <!-- Structured data for SEO -->
-    <script type="application/ld+json">
-      {{DESC-LIST-CHALLENGE_SCHEMA_JSON}}
-    </script>
+    <script src="src/js/schema-json.js" defer></script>
 
     <!-- Third-party monitoring/analytics: Sentry -->
     <script src="https://browser.sentry-cdn.com/7.100.1/bundle.min.js" crossorigin="anonymous"></script>
@@ -80,7 +77,7 @@
   </head>
 
   <body>
-    <div id="page-data" data-page-title="{{DESC-LIST-CHALLENGE_TITLE}}" data-page-subtitle="{{DESC-LIST-CHALLENGE_SUBTITLE}}" data-nav-config="fifteendaysofhtml-day5-desc-list-challenge" data-breadcrumb-category="Reference" data-breadcrumb-category-url="/reference/desc-list-challenge" style="display: none"></div>
+    <div id="page-data" data-page-title="{{DESC_LIST_CHALLENGE_TITLE}}" data-page-subtitle="{{DESC_LIST_CHALLENGE_SUBTITLE}}" data-nav-config="fifteendaysofhtml-day5-desc-list-challenge" data-breadcrumb-category="Reference" data-breadcrumb-category-url="/reference/desc-list-challenge" style="display: none"></div>
 
     <!-- HEADER_PLACEHOLDER -->
 

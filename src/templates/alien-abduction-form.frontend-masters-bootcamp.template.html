@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="Content-Security-Policy" content="{{CSP_META}}" />
-    <title>{{ALIEN-ABDUCTION-FORM-FRONTEND-MASTERS-BOOTCAMP_TITLE}}</title>
+    <title>Frontend Masters Bootcamp Challenge: Forms, Web Fonts, and More | I Knit The Web</title>
 
     <!-- Fallback styles for no-JS environments -->
     <noscript>
@@ -36,12 +36,12 @@
     <!-- Preload critical stylesheets -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" as="style" />
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" as="style" />
-    <link rel="preload" as="style" href="/css/{{ALIEN-ABDUCTION-FORM-FRONTEND-MASTERS-BOOTCAMP_CSS_FILE}}" />
+    <link rel="preload" as="style" href="/dist/css/{{ALIEN_ABDUCTION_FORM_FRONTEND_MASTERS_BOOTCAMP_CSS_FILE}}" />
 
     <!-- Main font and site stylesheets -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" />
-    <link rel="stylesheet" href="/css/{{ALIEN-ABDUCTION-FORM-FRONTEND-MASTERS-BOOTCAMP_CSS_FILE}}" />
+    <link rel="stylesheet" href="/dist/css/{{ALIEN_ABDUCTION_FORM_FRONTEND_MASTERS_BOOTCAMP_CSS_FILE}}" />
 
     <!-- FontAwesome CDN stylesheet for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -50,30 +50,28 @@
     <link rel="icon" type="image/x-icon" href="{{ASSET_URL}}/favicon_io/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="{{ASSET_URL}}/favicon_io/apple-touch-icon.png" />
     <link rel="manifest" href="/manifest.json" />
-    <link rel="canonical" href="{{ALIEN-ABDUCTION-FORM-FRONTEND-MASTERS-BOOTCAMP_OG_URL}}" />
+    <link rel="canonical" href="{{ALIEN_ABDUCTION_FORM_FRONTEND_MASTERS_BOOTCAMP_CANONICAL_URL}}" />
 
     <!-- SEO and social meta tags (grouped for clarity) -->
-    <meta name="description" content="{{ALIEN-ABDUCTION-FORM-FRONTEND-MASTERS-BOOTCAMP_DESCRIPTION}}" />
-    <meta name="keywords" content="{{ALIEN-ABDUCTION-FORM-FRONTEND-MASTERS-BOOTCAMP_KEYWORDS}}" />
+    <meta name="description" content="{{ALIEN_ABDUCTION_FORM_FRONTEND_MASTERS_BOOTCAMP_DESCRIPTION}}" />
+    <meta name="keywords" content="{{ALIEN_ABDUCTION_FORM_FRONTEND_MASTERS_BOOTCAMP_KEYWORDS}}" />
     <meta name="author" content="I Knit The Web" />
     <!-- robots tag intentionally omitted for best-practice control via environment only -->
-    <meta property="og:title" content="{{ALIEN-ABDUCTION-FORM-FRONTEND-MASTERS-BOOTCAMP_OG_TITLE}}" />
-    <meta property="og:description" content="{{ALIEN-ABDUCTION-FORM-FRONTEND-MASTERS-BOOTCAMP_OG_DESCRIPTION}}" />
-    <meta property="og:image" content="{{ALIEN-ABDUCTION-FORM-FRONTEND-MASTERS-BOOTCAMP_OG_IMAGE}}" />
-    <meta property="og:url" content="{{ALIEN-ABDUCTION-FORM-FRONTEND-MASTERS-BOOTCAMP_OG_URL}}" />
+    <meta property="og:title" content="{{ALIEN_ABDUCTION_FORM_FRONTEND_MASTERS_BOOTCAMP_OG_TITLE}}" />
+    <meta property="og:description" content="{{ALIEN_ABDUCTION_FORM_FRONTEND_MASTERS_BOOTCAMP_OG_DESCRIPTION}}" />
+    <meta property="og:image" content="{{ALIEN_ABDUCTION_FORM_FRONTEND_MASTERS_BOOTCAMP_OG_IMAGE}}" />
+    <meta property="og:url" content="{{ALIEN_ABDUCTION_FORM_FRONTEND_MASTERS_BOOTCAMP_OG_URL}}" />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="{{ALIEN-ABDUCTION-FORM-FRONTEND-MASTERS-BOOTCAMP_TWITTER_TITLE}}" />
-    <meta name="twitter:description" content="{{ALIEN-ABDUCTION-FORM-FRONTEND-MASTERS-BOOTCAMP_TWITTER_DESCRIPTION}}" />
-    <meta name="twitter:image" content="{{ALIEN-ABDUCTION-FORM-FRONTEND-MASTERS-BOOTCAMP_TWITTER_IMAGE}}" />
+    <meta name="twitter:title" content="{{ALIEN_ABDUCTION_FORM_FRONTEND_MASTERS_BOOTCAMP_TWITTER_TITLE}}" />
+    <meta name="twitter:description" content="{{ALIEN_ABDUCTION_FORM_FRONTEND_MASTERS_BOOTCAMP_TWITTER_DESCRIPTION}}" />
+    <meta name="twitter:image" content="{{ALIEN_ABDUCTION_FORM_FRONTEND_MASTERS_BOOTCAMP_TWITTER_IMAGE}}" />
 
     <!-- Third-party monitoring/analytics: Sentry -->
     <script src="https://browser.sentry-cdn.com/7.100.1/bundle.min.js" crossorigin="anonymous"></script>
 
     <!-- Structured data for SEO -->
-    <script type="application/ld+json">
-      {{{ALIEN-ABDUCTION-FORM-FRONTEND-MASTERS-BOOTCAMP_SCHEMA_JSON}}}
-    </script>
+    <script src="src/js/schema-json.js" defer></script>
 
     <!-- Third-party library: body-scroll-lock -->
     <script src="https://cdn.jsdelivr.net/npm/body-scroll-lock@4.0.0-beta.0/lib/bodyScrollLock.min.js"></script>
@@ -83,7 +81,7 @@
   </head>
 
   <body>
-    <div id="page-data" data-page-title="{{ALIEN-ABDUCTION-FORM-FRONTEND-MASTERS-BOOTCAMP_TITLE}}" data-page-subtitle="{{ALIEN-ABDUCTION-FORM-FRONTEND-MASTERS-BOOTCAMP_SUBTITLE}}" data-nav-config="{{ALIEN-ABDUCTION-FORM-FRONTEND-MASTERS-BOOTCAMP_NAV_CONFIG}}" data-breadcrumb-category="{{ALIEN-ABDUCTION-FORM-FRONTEND-MASTERS-BOOTCAMP_BREADCRUMB_CATEGORY}}" data-breadcrumb-category-url="{{ALIEN-ABDUCTION-FORM-FRONTEND-MASTERS-BOOTCAMP_BREADCRUMB_CATEGORY_URL}}" data-page-name="{{ALIEN-ABDUCTION-FORM-FRONTEND-MASTERS-BOOTCAMP_PAGE_NAME}}" style="display: none"></div>
+    <div id="page-data" data-page-title="{{ALIEN_ABDUCTION_FORM_FRONTEND_MASTERS_BOOTCAMP_DATA_PAGE_TITLE}}" data-nav-config="{{ALIEN_ABDUCTION_FORM_FRONTEND_MASTERS_BOOTCAMP_DATA_NAV_CONFIG}}" data-breadcrumb-category="{{ALIEN_ABDUCTION_FORM_FRONTEND_MASTERS_BOOTCAMP_DATA_BREADCRUMB_CATEGORY}}" data-breadcrumb-category-url="{{ALIEN_ABDUCTION_FORM_FRONTEND_MASTERS_BOOTCAMP_DATA_BREADCRUMB_CATEGORY_URL}}" style="display: none"></div>
 
     <!-- HEADER_PLACEHOLDER -->
 

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="Content-Security-Policy" content="{{CSP_META}}" />
-    <title>Basic Vertical Navbar | I Knit The Web</title>
+    <title>#15DaysOfCSS Day 1 Challenge: Semantic Markup of Navbars | I Knit The Web</title>
 
     <!-- Fallback styles for no-JS environments -->
     <noscript>
@@ -35,11 +35,11 @@
 
     <!-- Preload critical stylesheets -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" as="style" />
-    <link rel="preload" as="style" href="/css/{{BASIC-VERTICAL-NAVBAR_CSS_FILE}}" />
+    <link rel="preload" as="style" href="/dist/css/{{BASIC_VERTICAL_NAVBAR_15_DAYS_OF_CSS_CSS_FILE}}" />
 
     <!-- Main font and site stylesheets -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" />
-    <link rel="stylesheet" href="/css/{{BASIC-VERTICAL-NAVBAR_CSS_FILE}}" />
+    <link rel="stylesheet" href="/dist/css/{{BASIC_VERTICAL_NAVBAR_15_DAYS_OF_CSS_CSS_FILE}}" />
 
     <!-- FontAwesome CDN stylesheet for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -48,24 +48,28 @@
     <link rel="icon" type="image/x-icon" href="{{ASSET_URL}}/favicon_io/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="{{ASSET_URL}}/favicon_io/apple-touch-icon.png" />
     <link rel="manifest" href="/manifest.json" />
-    <link rel="canonical" href="{{BASIC-VERTICAL-NAVBAR_CANONICAL_URL}}" />
+    <link rel="canonical" href="{{BASIC_VERTICAL_NAVBAR_15_DAYS_OF_CSS_CANONICAL_URL}}" />
 
     <!-- SEO and social meta tags (grouped for clarity) -->
-    <meta name="description" content="{{BASIC-VERTICAL-NAVBAR_DESCRIPTION}}" />
-    <meta name="keywords" content="{{BASIC-VERTICAL-NAVBAR_KEYWORDS}}" />
-    <meta name="author" content="{{SITE_AUTHOR}}" />
-    <meta property="og:title" content="{{BASIC-VERTICAL-NAVBAR_OG_TITLE}}" />
-    <meta property="og:description" content="{{BASIC-VERTICAL-NAVBAR_OG_DESCRIPTION}}" />
-    <meta property="og:image" content="{{BASIC-VERTICAL-NAVBAR_OG_IMAGE}}" />
-    <meta property="og:url" content="{{BASIC-VERTICAL-NAVBAR_OG_URL}}" />
+    <meta name="description" content="{{BASIC_VERTICAL_NAVBAR_15_DAYS_OF_CSS_DESCRIPTION}}" />
+    <meta name="keywords" content="{{BASIC_VERTICAL_NAVBAR_15_DAYS_OF_CSS_KEYWORDS}}" />
+    <meta name="author" content="I Knit the Web" />
+    <meta name="robots" content="{{ROBOTS}}" />
+    <meta property="og:title" content="{{BASIC_VERTICAL_NAVBAR_15_DAYS_OF_CSS_OG_TITLE}}" />
+    <meta property="og:description" content="{{BASIC_VERTICAL_NAVBAR_15_DAYS_OF_CSS_OG_DESCRIPTION}}" />
+    <meta property="og:image" content="{{BASIC_VERTICAL_NAVBAR_15_DAYS_OF_CSS_OG_IMAGE}}" />
+    <meta property="og:url" content="{{BASIC_VERTICAL_NAVBAR_15_DAYS_OF_CSS_OG_URL}}" />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="{{BASIC-VERTICAL-NAVBAR_TWITTER_TITLE}}" />
-    <meta name="twitter:description" content="{{BASIC-VERTICAL-NAVBAR_TWITTER_DESCRIPTION}}" />
-    <meta name="twitter:image" content="{{BASIC-VERTICAL-NAVBAR_TWITTER_IMAGE}}" />
+    <meta name="twitter:title" content="{{BASIC_VERTICAL_NAVBAR_15_DAYS_OF_CSS_TWITTER_TITLE}}" />
+    <meta name="twitter:description" content="{{BASIC_VERTICAL_NAVBAR_15_DAYS_OF_CSS_TWITTER_DESCRIPTION}}" />
+    <meta name="twitter:image" content="{{BASIC_VERTICAL_NAVBAR_15_DAYS_OF_CSS_TWITTER_IMAGE}}" />
 
     <!-- Third-party monitoring/analytics: Sentry -->
     <script src="https://browser.sentry-cdn.com/7.100.1/bundle.min.js" crossorigin="anonymous"></script>
+
+    <!-- Structured data for SEO -->
+    <script src="src/js/schema-json.js" defer></script>
 
     <!-- Third-party library: body-scroll-lock -->
     <script src="https://cdn.jsdelivr.net/npm/body-scroll-lock@4.0.0-beta.0/lib/bodyScrollLock.min.js"></script>
@@ -75,7 +79,7 @@
   </head>
 
   <body>
-    <div id="page-data" data-page-title="{{BASIC-VERTICAL-NAVBAR_TITLE}}" data-page-subtitle="{{BASIC-VERTICAL-NAVBAR_SUBTITLE}}" data-nav-config="basic-vertical-navbars" data-breadcrumb-category="Reference" data-breadcrumb-category-url="/reference/basic-vertical-navbars" style="display: none"></div>
+    <div id="page-data" data-page-title="{{BASIC_VERTICAL_NAVBAR_15_DAYS_OF_CSS_DATA_PAGE_TITLE}}" data-nav-config="{{BASIC_VERTICAL_NAVBAR_15_DAYS_OF_CSS_DATA_NAV_CONFIG}}" data-breadcrumb-category="{{BASIC_VERTICAL_NAVBAR_15_DAYS_OF_CSS_DATA_BREADCRUMB_CATEGORY}}" data-breadcrumb-category-url="{{BASIC_VERTICAL_NAVBAR_15_DAYS_OF_CSS_DATA_BREADCRUMB_CATEGORY_URL}}" style="display: none"></div>
 
     <!-- HEADER_PLACEHOLDER -->
 

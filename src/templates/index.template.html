@@ -26,7 +26,7 @@
     </style>
 
     <!-- Critical polyfill: FOUC fix script -->
-    <script src="src/js/fouc-fix.js"></script>
+    <script src="src/js/fouc-fix.js" defer></script>
 
     <!-- Preconnects for faster font and icon loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -48,13 +48,13 @@
     <link rel="icon" type="image/x-icon" href="{{ASSET_URL}}/favicon_io/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="{{ASSET_URL}}/favicon_io/apple-touch-icon.png" />
     <link rel="manifest" href="/manifest.json" />
-    <link rel="canonical" href="/" />
+    <link rel="canonical" href="{{HOME_CANONICAL_URL}}" />
 
     <!-- SEO and social meta tags (grouped for clarity) -->
     <meta name="description" content="{{HOME_DESCRIPTION}}" />
     <meta name="keywords" content="{{HOME_KEYWORDS}}" />
     <meta name="author" content="I Knit the Web" />
-    <meta name="robots" content="{{HOME_ROBOTS}}" />
+    <meta name="robots" content="{{ROBOTS}}" />
     <meta property="og:title" content="{{HOME_OG_TITLE}}" />
     <meta property="og:description" content="{{HOME_OG_DESCRIPTION}}" />
     <meta property="og:image" content="{{HOME_OG_IMAGE}}" />
@@ -65,74 +65,93 @@
     <meta name="twitter:description" content="{{HOME_TWITTER_DESCRIPTION}}" />
     <meta name="twitter:image" content="{{HOME_TWITTER_IMAGE}}" />
 
-    <!-- Third-party monitoring/analytics scripts (grouped) -->
-    <script src="https://browser.sentry-cdn.com/7.100.1/bundle.min.js" crossorigin="anonymous"></script>
+    <!-- Third-party monitoring/analytics: Sentry -->
+    <script src="https://browser.sentry-cdn.com/7.100.1/bundle.min.js" crossorigin="anonymous" defer></script>
 
     <!-- Structured data for SEO -->
-    <script type="application/ld+json">
-      {{HOME_SCHEMA_JSON}}
-    </script>
+    <script src="src/js/schema-json.js" defer></script>
 
     <!-- Third-party library: body-scroll-lock -->
-    <script src="https://cdn.jsdelivr.net/npm/body-scroll-lock@4.0.0-beta.0/lib/bodyScrollLock.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/body-scroll-lock@4.0.0-beta.0/lib/bodyScrollLock.min.js" defer></script>
 
     <!-- Main app/module script -->
     <script type="module" src="src/js/script.js"></script>
   </head>
   <body>
-    <div id="page-data" data-page-title="{{HOME_DATA_PAGE_TITLE}}" data-page-subtitle="{{HOME_DATA_PAGE_SUBTITLE}}" data-nav-config="{{HOME_NAV_CONFIG}}" data-breadcrumb-category="{{HOME_BREADCRUMB_CATEGORY}}" data-breadcrumb-category-url="{{HOME_BREADCRUMB_CATEGORY_URL}}" style="display: none"></div>
+    <div id="page-data" data-page-title="{{HOME_DATA_PAGE_TITLE}}" data-nav-config="{{HOME_DATA_NAV_CONFIG}}" data-breadcrumb-category="{{HOME_DATA_BREADCRUMB_CATEGORY}}" data-breadcrumb-category-url="{{HOME_DATA_BREADCRUMB_CATEGORY_URL}}" style="display: none"></div>
+
     <header id="topNav" class="topnav" aria-label="Site header">
-      <a href="#main-content" class="skip-link" aria-label="Skip to main content"> Skip to main content </a>
-      <h1 class="visually-hidden">I Knit The Web Header</h1>
-      <!-- Global ARIA live region for notifications/status -->
-      <div id="global-status" aria-live="polite" class="sr-only" tabindex="-1"></div>
-      <div class="wrapper topnav__wrapper">
-        <a href="/" class="topnav__homelink hover-fade">
+      <div class="topnav__toprow">
+        <a href="#main-content" class="skip-link" aria-label="Skip to main content"> Skip to main content </a>
+        <!-- Global ARIA live region for notifications/status -->
+        <div id="global-status" aria-live="polite" class="sr-only" tabindex="-1"></div>
+        <div class="wrapper topnav__wrapper">
+          <div class="topnav__menugroup">
+            <nav class="topnav__nav" aria-label="Main navigation" data-cy="main-nav" aria-hidden="false">
+              <span id="nav-label" hidden>Navigation</span>
+              <div class="topnav__toggle">
+                <button id="btnOpen" class="topnav__open" aria-controls="menuTopNav" aria-expanded="false">
+                  <span class="fa-solid fa-bars"></span>
+                </button>
+                <button id="btnClose" class="topnav__close" aria-controls="menuTopNav" aria-expanded="true">
+                  <span class="fa-solid fa-xmark"></span>
+                </button>
+              </div>
+              <div id="menuTopNav" class="topnav__menu" inert="">
+                <ul class="topnav__links">
+                  <li class="topnav__item topnav__homelink--mobile">
+                    <a href="/" class="topnav__homelink hover-fade">
+                      <picture>
+                        <source srcset="{{ASSET_URL}}/branding/logo.avif" type="image/avif" />
+                        <source srcset="{{ASSET_URL}}/branding/logo.webp" type="image/webp" />
+                        <img src="{{ASSET_URL}}/branding/logo.png" alt="I Knit The Web Homepage" class="topnav__logo" width="250" height="250" />
+                      </picture>
+                    </a>
+                  </li>
+                  <li class="topnav__item">
+                    <a class="topnav__link" href="#about">About</a>
+                  </li>
+                  <li class="topnav__item">
+                    <a class="topnav__link" href="#portfolio" data-cy="nav-">Portfolio</a>
+                  </li>
+                  <li class="topnav__item">
+                    <a class="topnav__link" href="#contact">Contact</a>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+      <div class="topnav__title-group">
+        <a href="/" class="topnav__homelink topnav__homelink--desktop hover-fade">
           <!-- JS toggles .logo--hidden on this element to hide logo when menu is open -->
-          <picture>
-            <source srcset="{{ASSET_URL}}/branding/logo.avif" type="image/avif" />
-            <source srcset="{{ASSET_URL}}/branding/logo.webp" type="image/webp" />
-            <img src="{{ASSET_URL}}/branding/logo.png" alt="I Knit The Web Homepage" class="topnav__logo" width="250" height="250" />
-          </picture>
+          <h1 class="topnav__logo-heading">
+            <picture>
+              <source srcset="/dist/img/branding/logo.avif" type="image/avif" />
+              <source srcset="/dist/img/branding/logo.webp" type="image/webp" />
+              <img src="/dist/img/branding/logo.png" alt="I Knit The Web" class="topnav__logo" width="250" height="250" style="width: 12rem; height: 12rem" />
+            </picture>
+            <span class="visually-hidden">I Knit the Web</span>
+          </h1>
         </a>
-        <nav class="topnav__nav" aria-label="Main navigation" data-cy="main-nav" aria-hidden="false">
-          <span id="nav-label" hidden>Navigation</span>
-          <div class="topnav__toggle">
-            <button id="btnOpen" class="topnav__open" aria-controls="menuTopNav" aria-expanded="false">
-              <span class="fa-solid fa-bars"></span>
-            </button>
-            <button id="btnClose" class="topnav__close" aria-controls="menuTopNav" aria-expanded="true">
-              <span class="fa-solid fa-xmark"></span>
-            </button>
-          </div>
-          <div id="menuTopNav" class="topnav__menu">
-            <ul class="topnav__links">
-              <li class="topnav__item">
-                <a class="topnav__link" href="/">Home</a>
-              </li>
-              <li class="topnav__item">
-                <a class="topnav__link" href="#about">About</a>
-              </li>
-              <li class="topnav__item">
-                <a class="topnav__link" href="#portfolio" data-cy="nav-">Portfolio</a>
-              </li>
-              <li class="topnav__item">
-                <a class="topnav__link" href="#contact">Contact</a>
-              </li>
-            </ul>
-          </div>
-        </nav>
+        <h2 class="topnav__subtitle">
+          Handcrafted Websites<br />
+          <span class="topnav__subtitle--small">for Small Budgets and Big Dreams</span>
+        </h2>
       </div>
     </header>
+
     <main class="home-page" id="home_main-content" aria-labelledby="home-hero-title" role="main" tabindex="-1">
       <h1 id="home-hero-title" class="page-heading home_title visually-hidden">I Knit The Web</h1>
-      <h2 class="hero__subtitle">Handcrafted Websites for Small Budgets and Big Dreams</h2>
       <section class="hero" id="hero">
         <img src="{{ASSET_URL}}/pages/heading-banner-dark.svg" alt="I Knit The Web site title banner" class="hero__banner" width="1125" height="375" />
-        <p class="hero__intro"
-          >Time to turn your digital dreams into reality?<br />
-          I'll help you knit them into the perfect website!</p
-        >
+        <a href="#contact" class="hero__intro-link">
+          <p class="hero__intro">
+            Time to turn your digital dreams into reality?<br />
+            I'll help you knit them into the perfect website!
+          </p>
+        </a>
       </section>
       <section id="about" class="about section-padding">
         <h2>About Me</h2>
@@ -154,7 +173,7 @@
           </aside>
           <section class="about__bio">
             <h3 class="home__subheading about__heading">Meet Your Developer</h3>
-            <p>Hi, I’m Marta! Collaboration is the key to building great websites; when we combine your ideas with my development skills, we can create something truly effective and unique.</p>
+            <p>Collaboration is the key to building great websites; when we combine your ideas with my development skills, we can create something truly effective and unique.</p>
             <p>I work with HTML, CSS, JavaScript, and SCSS/Sass, using frameworks and design techniques that make your site responsive, fast, and enjoyable to use. My approach focuses on both creativity and usability.</p>
             <p>When I'm not coding, you'll probably find me <span class="nowrap">🧶 crafting 🧵</span> or diving into a great book. 📖 </p>
             <p
@@ -167,21 +186,21 @@
         </div>
         <section class="bonafides">
           <div class="dropdown">
-            <div class="dropdown__title-group" role="button" tabindex="0" aria-expanded="false" aria-controls="dropdown-content" aria-describedby="dropdown-title dropdown-subtitle" id="dropdown-title-group" data-cy="dropdown-trigger">
+            <div class="dropdown__title-group" role="button" tabindex="0" aria-expanded="false" aria-controls="dropdown-content" aria-describedby="dropdown-title dropdown-subtitle" id="dropdown-title-group" data-cy="dropdown-trigger" data-open="false">
               <span class="fa-solid fa-hand-point-up dropdown__icon" aria-hidden="true"></span>
               <div class="dropdown__text-content">
                 <p class="dropdown__title" id="dropdown-title"> My Secret Stash of Code Power-Ups!</p>
                 <p class="dropdown__subtitle" id="dropdown-subtitle" role="note" aria-label="This section contains certificates, courses and achievements">a.k.a. My Certificates, Courses & Achievements</p>
               </div>
             </div>
-            <ul class="dropdown__content" id="dropdown-content" role="menu" aria-labelledby="dropdown-title-group" data-cy="dropdown-content" aria-hidden="true">
+            <ul class="dropdown__content" id="dropdown-content" role="menu" aria-labelledby="dropdown-title-group" data-cy="dropdown-content" aria-hidden="true" data-open="false">
               <li>
                 <div class="achievement">
                   <span class="fa-solid fa-scroll achievement-icon" aria-hidden="true"></span>
                   <span
-                    >Level 1 Certifications in <a href="{{ASSET_URL}}{{ASSET_URL}}/certificates/CCA-Certificate-HTML-Level-1.jpg" target="_blank" rel="noopener" class="link__cert">HTML<span class="sr-only"> (opens in a new window)</span></a
-                    >, <a href="{{ASSET_URL}}{{ASSET_URL}}/certificates/CCA-Certificate-CSS-Level-1.jpg" target="_blank" rel="noopener" class="link__cert">CSS<span class="sr-only"> (opens in a new window)</span></a
-                    >, and <a href="{{ASSET_URL}}{{ASSET_URL}}/certificates/CCA-Certificate-Javascript-Level-1.jpg" target="_blank" rel="noopener" class="link__cert">JavaScript<span class="sr-only"> (opens in a new window)</span></a></span
+                    >Level 1 Certifications in <a href="{{ASSET_URL}}/certificates/CCA-Certificate-HTML-Level-1.jpg" target="_blank" rel="noopener" class="link__cert">HTML<span class="sr-only"> (opens in a new window)</span></a
+                    >, <a href="{{ASSET_URL}}/certificates/CCA-Certificate-CSS-Level-1.jpg" target="_blank" rel="noopener" class="link__cert">CSS<span class="sr-only"> (opens in a new window)</span></a
+                    >, and <a href="{{ASSET_URL}}/certificates/CCA-Certificate-Javascript-Level-1.jpg" target="_blank" rel="noopener" class="link__cert">JavaScript<span class="sr-only"> (opens in a new window)</span></a></span
                   >
                 </div>
                 <div class="source">Cambridge Certification Authority</div>
@@ -249,23 +268,17 @@
               <p class="skills-chart__subtitle">Explore my technical proficiency levels and learning journey</p>
             </div>
             <div class="skills-chart__dropdowns">
-              <div class="skills-chart__dropdown">
-                <div class="skills-chart__tab" role="button" tabindex="0" aria-expanded="false" aria-controls="core-tech" aria-label="Toggle Core Technologies skills section" id="tab-core">
-                  <span class="fa-solid fa-hand-point-up skills-chart__icon" aria-hidden="true"></span>
-                  <span class="skills-chart__tab-text">Core Technologies</span>
-                </div>
+              <div class="skills-chart__tab" role="button" tabindex="0" aria-expanded="false" aria-controls="core-tech" aria-label="Toggle Core Technologies skills section" id="tab-core" data-active="false">
+                <span class="fa-solid fa-hand-point-up skills-chart__icon" aria-hidden="true"></span>
+                <span class="skills-chart__tab-text">Core Technologies</span>
               </div>
-              <div class="skills-chart__dropdown">
-                <div class="skills-chart__tab" role="button" tabindex="0" aria-expanded="false" aria-controls="tools" aria-label="Toggle Tools & Workflow skills section" id="tab-tools">
-                  <span class="fa-solid fa-hand-point-up skills-chart__icon" aria-hidden="true"></span>
-                  <span class="skills-chart__tab-text">Tools & Workflow</span>
-                </div>
+              <div class="skills-chart__tab" role="button" tabindex="0" aria-expanded="false" aria-controls="tools" aria-label="Toggle Tools & Workflow skills section" id="tab-tools" data-active="false">
+                <span class="fa-solid fa-hand-point-up skills-chart__icon" aria-hidden="true"></span>
+                <span class="skills-chart__tab-text">Tools & Workflow</span>
               </div>
-              <div class="skills-chart__dropdown">
-                <div class="skills-chart__tab" role="button" tabindex="0" aria-expanded="false" aria-controls="learning" aria-label="Toggle Learning Journey skills section" id="tab-learning">
-                  <span class="fa-solid fa-hand-point-up skills-chart__icon" aria-hidden="true"></span>
-                  <span class="skills-chart__tab-text">Learning Journey</span>
-                </div>
+              <div class="skills-chart__tab" role="button" tabindex="0" aria-expanded="false" aria-controls="learning" aria-label="Toggle Learning Journey skills section" id="tab-learning" data-active="false">
+                <span class="fa-solid fa-hand-point-up skills-chart__icon" aria-hidden="true"></span>
+                <span class="skills-chart__tab-text">Learning Journey</span>
               </div>
             </div>
             <div class="skills-chart__content">
@@ -320,10 +333,7 @@
                     </div>
                     <p class="skills-chart__skill-description">ES6+, DOM manipulation, form validation, async/await, component architecture</p>
                   </div>
-                  <h4 class="skills-chart__group-title"
-                    ><span class="fa-solid fa-palette skills-chart__group-icon" aria-hidden="true"></span>
-                    Design & UX
-                  </h4>
+                  <h4 class="skills-chart__group-title"><span class="fa-solid fa-palette skills-chart__group-icon" aria-hidden="true"></span> Design & UX</h4>
                   <div class="skills-chart__skills-list">
                     <div class="skills-chart__skill">
                       <div class="skills-chart__skill-header">
@@ -401,10 +411,7 @@
                   </div>
                 </div>
                 <div class="skills-chart__skill-group">
-                  <h4 class="skills-chart__group-title">
-                    <i class="fa-solid fa-clipboard-check skills-chart__group-icon" aria-hidden="true"> </i>
-                    Quality & Testing
-                  </h4>
+                  <h4 class="skills-chart__group-title"><span class="fa-solid fa-clipboard-check skills-chart__group-icon" aria-hidden="true"></span> Quality & testing</h4>
                   <div class="skills-chart__skills-list">
                     <div class="skills-chart__skill">
                       <div class="skills-chart__skill-header">
@@ -879,6 +886,7 @@
         </a>
       </section>
     </main>
+
     <footer aria-label="Site footer" class="footer">
       <div class="footer__content wrapper">
         <div class="footer__sections">

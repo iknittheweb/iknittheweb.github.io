@@ -35,12 +35,11 @@
 
     <!-- Preload critical stylesheets -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" as="style" />
-    <link rel="preload" as="style" href="/css/{{MULTI-LEVEL-NAVBAR_CSS_FILE}}" />
+    <link rel="preload" as="style" href="/dist/css/{{MULTI_LEVEL_NAVBAR_15_DAYS_OF_CSS_CSS_FILE}}" />
 
     <!-- Main font and site stylesheets -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" />
-    <link rel="stylesheet" href="/css/{{MULTI-LEVEL-NAVBAR_CSS_FILE}}" />
-
+    <link rel="stylesheet" href="/dist/css/{{MULTI_LEVEL_NAVBAR_15_DAYS_OF_CSS_CSS_FILE}}" />
     <!-- FontAwesome CDN stylesheet for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
@@ -48,29 +47,27 @@
     <link rel="icon" type="image/x-icon" href="{{ASSET_URL}}/favicon_io/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="{{ASSET_URL}}/favicon_io/apple-touch-icon.png" />
     <link rel="manifest" href="/manifest.json" />
-    <link rel="canonical" href="{{MULTI-LEVEL-NAVBAR_CANONICAL_URL}}" />
+    <link rel="canonical" href="{{MULTI_LEVEL_NAVBAR_15_DAYS_OF_CSS_CANONICAL_URL}}" />
 
     <!-- SEO and social meta tags -->
-    <meta name="description" content="{{MULTI-LEVEL-NAVBAR_DESCRIPTION}}" />
-    <meta name="keywords" content="{{MULTI-LEVEL-NAVBAR_KEYWORDS}}" />
+    <meta name="description" content="{{MULTI_LEVEL_NAVBAR_15_DAYS_OF_CSS_DESCRIPTION}}" />
+    <meta name="keywords" content="{{MULTI_LEVEL_NAVBAR_15_DAYS_OF_CSS_KEYWORDS}}" />
     <meta name="author" content="{{SITE_AUTHOR}}" />
-    <meta property="og:title" content="{{MULTI-LEVEL-NAVBAR_OG_TITLE}}" />
-    <meta property="og:description" content="{{MULTI-LEVEL-NAVBAR_OG_DESCRIPTION}}" />
-    <meta property="og:image" content="{{MULTI-LEVEL-NAVBAR_OG_IMAGE}}" />
-    <meta property="og:url" content="{{MULTI-LEVEL-NAVBAR_OG_URL}}" />
+    <meta property="og:title" content="{{MULTI_LEVEL_NAVBAR_15_DAYS_OF_CSS_OG_TITLE}}" />
+    <meta property="og:description" content="{{MULTI_LEVEL_NAVBAR_15_DAYS_OF_CSS_OG_DESCRIPTION}}" />
+    <meta property="og:image" content="{{MULTI_LEVEL_NAVBAR_15_DAYS_OF_CSS_OG_IMAGE}}" />
+    <meta property="og:url" content="{{MULTI_LEVEL_NAVBAR_15_DAYS_OF_CSS_OG_URL}}" />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="{{MULTI-LEVEL-NAVBAR_TWITTER_TITLE}}" />
-    <meta name="twitter:description" content="{{MULTI-LEVEL-NAVBAR_TWITTER_DESCRIPTION}}" />
-    <meta name="twitter:image" content="{{MULTI-LEVEL-NAVBAR_TWITTER_IMAGE}}" />
+    <meta name="twitter:title" content="{{MULTI_LEVEL_NAVBAR_15_DAYS_OF_CSS_TWITTER_TITLE}}" />
+    <meta name="twitter:description" content="{{MULTI_LEVEL_NAVBAR_15_DAYS_OF_CSS_TWITTER_DESCRIPTION}}" />
+    <meta name="twitter:image" content="{{MULTI_LEVEL_NAVBAR_15_DAYS_OF_CSS_TWITTER_IMAGE}}" />
 
     <!-- Third-party monitoring/analytics: Sentry -->
     <script src="https://browser.sentry-cdn.com/7.100.1/bundle.min.js" crossorigin="anonymous"></script>
 
     <!-- Structured data for SEO -->
-    <script type="application/ld+json">
-      {{MULTI-LEVEL-NAVBAR_SCHEMA_JSON}}
-    </script>
+    <script src="src/js/schema-json.js" defer></script>
 
     <!-- Third-party library: body-scroll-lock -->
     <script src="https://cdn.jsdelivr.net/npm/body-scroll-lock@4.0.0-beta.0/lib/bodyScrollLock.min.js"></script>

@@ -35,12 +35,11 @@
 
     <!-- Preload critical stylesheets -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" as="style" />
-    <link rel="preload" as="style" href="/css/{{NAVBAR-LINK-FILLING-LI_CSS_FILE}}" />
+    <link rel="preload" as="style" href="/dist/css/{{NAVBAR_LINK_FILLING_LI_CSS_FILE}}" />
 
     <!-- Main font and site stylesheets -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" />
-    <link rel="stylesheet" href="/css/{{NAVBAR-LINK-FILLING-LI_CSS_FILE}}" />
-
+    <link rel="stylesheet" href="/dist/css/{{NAVBAR_LINK_FILLING_LI_CSS_FILE}}" />
     <!-- FontAwesome CDN stylesheet for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
@@ -48,42 +47,28 @@
     <link rel="icon" type="image/x-icon" href="{{ASSET_URL}}/favicon_io/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="{{ASSET_URL}}/favicon_io/apple-touch-icon.png" />
     <link rel="manifest" href="/manifest.json" />
-    <link rel="canonical" href="/navbar-link-filling-li.html" />
+    <link rel="canonical" href="{{NAVBAR_LINK_FILLING_LI_CANONICAL_URL}}" />
 
     <!-- SEO and social meta tags (grouped for clarity) -->
-    <meta name="description" content="Learn how to create animated link filling effects for navigation bars using CSS. Includes code samples and accessibility tips." />
-    <meta name="keywords" content="css, navbar, link filling, animation, web development, accessibility, code examples, tutorial" />
+    <meta name="description" content="{{NAVBAR_LINK_FILLING_LI_DESCRIPTION}}" />
+    <meta name="keywords" content="{{NAVBAR_LINK_FILLING_LI_KEYWORDS}}" />
     <meta name="author" content="I Knit the Web" />
     <meta name="robots" content="index,follow" />
-    <meta property="og:title" content="Navbar Link Filling | I Knit The Web" />
-    <meta property="og:description" content="Step-by-step tutorial for animated navbar link filling. Enhance your navigation with modern CSS effects." />
-    <meta property="og:image" content="/img/branding/logo.png" />
-    <meta property="og:url" content="/navbar-link-filling-li.html" />
+    <meta property="og:title" content="{{NAVBAR_LINK_FILLING_LI_OG_TITLE}}" />
+    <meta property="og:description" content="{{NAVBAR_LINK_FILLING_LI_OG_DESCRIPTION}}" />
+    <meta property="og:image" content="{{NAVBAR_LINK_FILLING_LI_OG_IMAGE}}" />
+    <meta property="og:url" content="{{NAVBAR_LINK_FILLING_LI_OG_URL}}" />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Navbar Link Filling | I Knit The Web" />
-    <meta name="twitter:description" content="Master animated navbar link filling in CSS. Visual examples, code snippets, and best practices for modern web layouts." />
-    <meta name="twitter:image" content="/img/branding/logo.png" />
+    <meta name="twitter:title" content="{{NAVBAR_LINK_FILLING_LI_TWITTER_TITLE}}" />
+    <meta name="twitter:description" content="{{NAVBAR_LINK_FILLING_LI_TWITTER_DESCRIPTION}}" />
+    <meta name="twitter:image" content="{{NAVBAR_LINK_FILLING_LI_TWITTER_IMAGE}}" />
 
     <!-- Third-party monitoring/analytics: Sentry -->
     <script src="https://browser.sentry-cdn.com/7.100.1/bundle.min.js" crossorigin="anonymous"></script>
 
     <!-- Structured data for SEO -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Navbar Link Filling | I Knit The Web",
-        "description": "Learn how to create animated link filling effects for navigation bars using CSS. Includes code samples and accessibility tips.",
-        "url": "/navbar-link-filling-li.html",
-        "author": {
-          "@type": "Person",
-          "name": "Marta",
-          "url": "/",
-          "sameAs": ["https://github.com/iknittheweb"]
-        }
-      }
-    </script>
+    <script src="src/js/schema-json.js" defer></script>
 
     <!-- Third-party library: body-scroll-lock -->
     <script src="https://cdn.jsdelivr.net/npm/body-scroll-lock@4.0.0-beta.0/lib/bodyScrollLock.min.js"></script>

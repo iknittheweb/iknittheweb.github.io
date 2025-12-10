@@ -13,11 +13,11 @@
 
     <!-- Preload critical stylesheets -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" as="style" />
-    <link rel="preload" as="style" href="/css/{{PORTFOLIO_CSS_FILE}}" />
+    <link rel="preload" as="style" href="/dist/css/{{PORTFOLIO_CSS_FILE}}" />
 
     <!-- Main font and site stylesheets -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" />
-    <link rel="stylesheet" href="/css/{{PORTFOLIO_CSS_FILE}}" />
+    <link rel="stylesheet" href="/dist/css/{{PORTFOLIO_CSS_FILE}}" />
 
     <!-- FontAwesome CDN stylesheet for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -68,9 +68,7 @@
     <script src="https://browser.sentry-cdn.com/7.100.1/bundle.min.js" crossorigin="anonymous"></script>
 
     <!-- Structured data for SEO -->
-    <script type="application/ld+json">
-      {{{PORTFOLIO_SCHEMA_JSON}}}
-    </script>
+    <script src="src/js/schema-json.js" defer></script>
 
     <!-- Third-party library: body-scroll-lock -->
     <script src="https://cdn.jsdelivr.net/npm/body-scroll-lock@4.0.0-beta.0/lib/bodyScrollLock.min.js"></script>
@@ -80,7 +78,7 @@
   </head>
 
   <body>
-    <div id="page-data" data-page-title="{{PORTFOLIO_TITLE}}" data-page-subtitle="{{PORTFOLIO_SUBTITLE}}" data-nav-config="{{PORTFOLIO_NAV_CONFIG}}" data-breadcrumb-category="{{PORTFOLIO_BREADCRUMB_CATEGORY}}" data-breadcrumb-category-url="{{PORTFOLIO_BREADCRUMB_CATEGORY_URL}}" style="display: none"></div>
+    <div id="page-data" data-page-title="{{PORTFOLIO_DATA_PAGE_TITLE}}" data-page-subtitle="{{PORTFOLIO_DATA_PAGE_SUBTITLE}}" data-nav-config="{{PORTFOLIO_NAV_CONFIG}}" data-breadcrumb-category="{{PORTFOLIO_BREADCRUMB_CATEGORY}}" data-breadcrumb-category-url="{{PORTFOLIO_BREADCRUMB_CATEGORY_URL}}" style="display: none"></div>
 
     <!-- HEADER_PLACEHOLDER -->
 
