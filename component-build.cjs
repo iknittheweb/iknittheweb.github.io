@@ -1,12 +1,23 @@
-// ------------------------------------------------------------
-// COMPONENT-BUILD SCRIPT: Generates HTML pages from templates
-// ------------------------------------------------------------
-// This script processes all .template.html files in src/templates/
-// and outputs .html files to the project root.
-// It injects the header and footer from index.html and replaces
-// environment variable placeholders (e.g., {{BASE_URL}}, {{ASSET_URL}}, etc).
-// ------------------------------------------------------------
+// =====================================================================
+// Component Build Script (Beginner-Friendly)
+// =====================================================================
+// Purpose: Generates HTML pages from templates, injects shared components, and copies assets for deployment.
+// Features:
+//   - Processes all .template.html files in src/templates/
+//   - Injects header and footer from index.html
+//   - Replaces environment variable placeholders (e.g., {{BASE_URL}}, {{ASSET_URL}})
+//   - Copies JS and image assets to dist/
+// Usage:
+//   - Run with npm scripts for local, alternate, or production builds
+// Key Concepts:
+//   - Template processing
+//   - Component injection
+//   - Asset management
+// =====================================================================
 
+// =============================================================
+// STEP 0: Import required Node.js modules and register helpers
+// =============================================================
 const fs = require('fs');
 const path = require('path');
 const Handlebars = require('handlebars');
@@ -15,8 +26,9 @@ Handlebars.registerHelper('eq', function (a, b) {
   return a === b;
 });
 
-// Determine which .env file to use, matching build.cjs logic
-
+// =============================================================
+// STEP 1: Determine which .env file to use (matches build.cjs logic)
+// -------------------------------------------------------------
 const mode = process.argv[2] ? process.argv[2].toLowerCase() : '';
 let dotenvPath = '.env';
 if (process.env.DOTENV_CONFIG_PATH) {
@@ -32,6 +44,10 @@ console.log(`[component-build.cjs] Using dotenv path: ${dotenvPath}`);
 require('dotenv').config({ path: dotenvPath });
 console.log(`[component-build.cjs] BASE_URL: ${process.env.BASE_URL}`);
 
+// =============================================================
+// STEP 2: Process all .template.html files in src/templates/
+// -------------------------------------------------------------
+// This step compiles templates, injects header/footer, and replaces env placeholders.
 const srcDir = path.join(__dirname, 'src', 'templates');
 const outDir = __dirname;
 const indexTemplatePath = path.join(srcDir, 'index.template.html');
@@ -62,14 +78,8 @@ fs.readdirSync(srcDir).forEach((file) => {
     let html = template(context);
 
     // Remove template warning and workflow comments from the output
-    html = html.replace(
-      /<!--\s*IMPORTANT: This is a TEMPLATE file![\s\S]*?DO NOT edit the generated \*\.html file directly[\s\S]*?-->/g,
-      ''
-    );
-    html = html.replace(
-      /<!--\s*-{2,}\s*BEGINNER-FRIENDLY EXPLANATORY COMMENTS[\s\S]*?-{2,}\s*-->/g,
-      ''
-    );
+    html = html.replace(/<!--\s*IMPORTANT: This is a TEMPLATE file![\s\S]*?DO NOT edit the generated \*\.html file directly[\s\S]*?-->/g, '');
+    html = html.replace(/<!--\s*-{2,}\s*BEGINNER-FRIENDLY EXPLANATORY COMMENTS[\s\S]*?-{2,}\s*-->/g, '');
 
     // Inject header and footer
     html = html.replace(/<!--\s*HEADER_PLACEHOLDER\s*-->/i, header);
@@ -78,10 +88,7 @@ fs.readdirSync(srcDir).forEach((file) => {
     // Warn if unreplaced placeholders remain
     const unreplaced = html.match(/{{[A-Z0-9_]+}}/g);
     if (unreplaced && unreplaced.length > 0) {
-      console.warn(
-        `⚠️ Unreplaced placeholders found in ${file.replace('.template.html', '.html')}:`,
-        unreplaced
-      );
+      console.warn(`⚠️ Unreplaced placeholders found in ${file.replace('.template.html', '.html')}:`, unreplaced);
     }
 
     const distDir = path.join(__dirname, 'dist');
@@ -91,7 +98,10 @@ fs.readdirSync(srcDir).forEach((file) => {
     console.log(`Generated: ${outFile}`);
   }
 });
-// Copy JavaScript files to dist/js
+// =============================================================
+// STEP 3: Copy JavaScript files to dist/js
+// -------------------------------------------------------------
+// This step copies all JS files from src/js to dist/js for deployment.
 const jsSrcDir = path.join(__dirname, 'src', 'js');
 const jsDistDir = path.join(__dirname, 'dist', 'js');
 if (!fs.existsSync(jsDistDir)) fs.mkdirSync(jsDistDir, { recursive: true });
@@ -102,7 +112,10 @@ fs.readdirSync(jsSrcDir).forEach((file) => {
   }
 });
 
-// Copy image files to dist/img
+// =============================================================
+// STEP 4: Copy image files to dist/img
+// -------------------------------------------------------------
+// This step copies all image files from src/img to dist/img for deployment.
 const imgSrcDir = path.join(__dirname, 'src', 'img');
 const imgDistDir = path.join(__dirname, 'dist', 'img');
 function copyDirRecursive(src, dest) {

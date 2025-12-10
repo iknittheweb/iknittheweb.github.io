@@ -1,14 +1,19 @@
-// ------------------------------------------------------------
-// BEGINNER-FRIENDLY EXPLANATORY COMMENTS
-// ------------------------------------------------------------
-// This file configures lint-staged, a tool that runs code checks (linters) only on files that are staged for commit.
-// It helps catch errors before you save changes to your repository.
-//
-// Key concepts:
-// - Linting: Checks code for errors and style issues
-// - Staged files: Files you've marked for commit in git
-// - Automation: Runs checks automatically before each commit
-// ------------------------------------------------------------
+// =====================================================================
+// lint-staged.config.cjs (Beginner-Friendly)
+// =====================================================================
+// Purpose: Configure lint-staged to run code linters only on files staged for commit.
+// Why: Prevent errors and enforce code style before changes are committed to git.
+// Usage: Automatically used by lint-staged during git commit (no need to import).
+// Key Concepts:
+//   - Linting: Checks code for errors and style issues
+//   - Staged files: Files you've marked for commit in git
+//   - Automation: Runs checks automatically before each commit
+// =====================================================================
+
+// -------------------------------------------------------------
+// 1. Define linting rules for staged files
+// -------------------------------------------------------------
+// For every CSS or SCSS file staged for commit, run stylelint to check for errors and style issues.
 module.exports = {
   '*.{css,scss}': 'stylelint',
 };
