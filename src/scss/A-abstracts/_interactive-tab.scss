@@ -1,0 +1,52 @@
+// Shared interactive tab/dropdown styles for hover, focus, active/inactive
+// Usage: @include interactive-tab-styles;
+
+@mixin interactive-tab-styles {
+  background: var(--secondary-bg);
+  color: var(--light-text);
+  font-weight: 500;
+  opacity: 0.7;
+  outline: none;
+  border-radius: 0;
+  animation: none;
+
+  &[data-active='true'] {
+    background: var(--light-bg);
+    color: var(--secondary-text);
+    font-weight: 600;
+    opacity: 1;
+    outline: 3px solid var(--secondary-text);
+    outline-offset: 3px;
+    border-radius: 0.25rem;
+    animation: fade-in-up 0.4s ease-out;
+    @media (prefers-reduced-motion: reduce) {
+      animation: none;
+    }
+  }
+
+  &[data-active='false'] {
+    background: var(--secondary-bg);
+    color: var(--light-text);
+    font-weight: 500;
+    opacity: 0.7;
+    outline: none;
+    border-radius: 0;
+    animation: none;
+  }
+
+  &:not([data-active='true']):hover {
+    background: var(--light-bg);
+    color: var(--secondary-text);
+    opacity: 1;
+  }
+  &:not([data-active='true']):focus {
+    background: var(--light-bg);
+    color: var(--secondary-text);
+    opacity: 1;
+    box-shadow: 0 0 0 2px var(--primary-bg-light);
+  }
+  &:not([data-active='true']):focus-visible {
+    outline: 2px solid var(--secondary-text);
+    outline-offset: 2px;
+  }
+}

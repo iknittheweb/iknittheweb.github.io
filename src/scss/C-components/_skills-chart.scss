@@ -1,45 +1,15 @@
-/* =================================================================
- * 🎯 INTERACTIVE SKILLS CHART COMPONENT
- * =================================================================
- * EASY REMOVAL: Search for "skills-chart" to find all related code
- * Delete this file and remove import from _index.scss to remove completely
- * ================================================================= */
-
 @use '../A-abstracts/functions' as f;
 @use '../A-abstracts/mixins' as m;
+@use '../A-abstracts/interactive-tab' as interactiveTab;
 
 .skills-chart {
-  // 🎯 COMPONENT IDENTIFIER: skills-chart (for easy removal)
-  width: 100%;
-  background: var(--light-bg);
-  border: 1px solid var(--light-border);
-  border-radius: f.rem(8);
-  box-shadow: 0 2px 8px rgb(0 0 0 / 8%);
-  overflow: hidden;
-  transition: all 0.3s ease;
-
-  &:hover {
-    box-shadow: 0 4px 16px rgb(0 0 0 / 12%);
-  }
-
   &__header {
-    background: linear-gradient(
-      135deg,
-      var(--primary-bg) 0%,
-      var(--secondary-bg) 100%
-    );
+    background: linear-gradient(135deg, var(--primary-bg) 0%, var(--secondary-bg) 100%);
+    color: var(--light-text);
+    border-radius: f.rem(8) f.rem(8) 0 0;
     padding-block: f.rem(16);
     text-align: center;
-    border-bottom: 1px solid var(--light-border);
-    border-radius: f.rem(8) f.rem(8) 0 0;
-  }
-
-  &__title {
-    font-size: f.rem(18);
-    color: var(--light-text); // #e1dede on dark background - good contrast
-    margin-bottom: f.rem(6);
-    font-weight: 600;
-    letter-spacing: 0.3px;
+    border: 1px solid var(--light-border);
   }
 
   &__subtitle {
@@ -87,7 +57,7 @@
     }
   }
   // When dropdown is open, rotate hand to point up (original position)
-  &__tab--active &__icon {
+  &__tab[data-active='true'] &__icon {
     transform: rotate(0deg);
   }
 
@@ -97,15 +67,10 @@
   }
 
   &__tab {
-    background: var(--secondary-bg);
-    border: none;
+    border: 1px solid var(--light-border);
     padding: f.rem(12) f.rem(16);
     font-family: inherit;
     font-size: f.rem(15);
-    font-weight: 500;
-    color: var(--light-text);
-    opacity: 0.7;
-    cursor: pointer;
     transition: all 0.3s ease;
     white-space: nowrap;
     text-align: left;
@@ -113,79 +78,44 @@
     align-items: center;
     justify-content: flex-start;
     width: 100%;
-
+    cursor: pointer;
+    color: var(--light-text);
+    border-radius: 0;
+    position: relative;
+    z-index: 1;
+    box-shadow: none;
+    // Unified header gradient split across tabs
+    background: linear-gradient(135deg, var(--primary-bg) 0%, var(--secondary-bg) 100%);
+    background-size: 300% 100%;
+    background-repeat: no-repeat;
+    &:nth-child(1) {
+      background-position: left;
+      border-bottom-left-radius: f.rem(8);
+    }
+    &:nth-child(2) {
+      background-position: center;
+    }
+    &:nth-child(3) {
+      background-position: right;
+      border-bottom-right-radius: f.rem(8);
+    }
     &:hover {
-      background: var(--light-bg);
-      color: var(--secondary-text);
-      opacity: 1;
-
-      // ...existing code...
+      background-color: var(--light-bg);
     }
-
+    // Show box-shadow only on hover/focus or when open
+    &:hover,
     &:focus {
-      outline: none;
-      background: var(--light-bg);
+      box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
+    }
+    &[data-active='true'] {
+      background: transparent;
       color: var(--secondary-text);
-      opacity: 1;
-      box-shadow: 0 0 0 2px var(--primary-bg-light);
-
-      // ...existing code...
+      z-index: 2;
+      box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
     }
-
-    &:focus-visible {
-      outline: 2px solid var(--secondary-text);
-      outline-offset: 2px;
-    }
-
-    &--active {
-      background: var(--light-bg);
-      color: var(--secondary-text);
-      font-weight: 600;
-      opacity: 1;
-
-      // ...existing code...
-
-      &:focus-visible {
-        outline: 3px solid var(--secondary-text);
-        outline-offset: 3px;
-        border-radius: f.rem(4);
-      }
-
-      // High contrast focus for better accessibility
-      // @media (prefers-contrast: high) {
-      //   &:focus-visible {
-      //     outline: 4px solid #000;
-      //     outline-offset: 2px;
-      //   }
-      // }
-
-      // Ensure interactive state is clear
-      &[aria-expanded='true'] {
-        background: rgb(255 255 255 / 70%);
-
-        // ...existing code...
-      }
-    }
-  }
-
-  &__content {
-    background: var(--light-bg);
-  }
-
-  &__category {
-    display: none;
-    padding: f.rem(16) f.rem(20);
-    border-top: 1px solid var(--light-border);
-    min-height: f.rem(150);
-
-    &--active {
-      display: block;
-      animation: fade-in-up 0.4s ease-out;
-
-      // Respect user's motion preferences
-      @media (prefers-reduced-motion: reduce) {
-        animation: none;
-      }
+    &[data-active='false'] {
+      color: var(--light-text);
+      box-shadow: none;
     }
   }
 
@@ -236,11 +166,7 @@
       left: 0;
       width: 3px;
       height: 100%;
-      background: linear-gradient(
-        180deg,
-        var(--primary-bg-light),
-        var(--secondary-bg-light)
-      );
+      background: linear-gradient(180deg, var(--primary-bg-light), var(--secondary-bg-light));
       opacity: 0;
       transition: opacity 0.3s ease;
     }
@@ -317,11 +243,7 @@
 
   &__progress-fill {
     height: 100%;
-    background: linear-gradient(
-      90deg,
-      var(--secondary-bg-light),
-      var(--primary-bg-light)
-    );
+    background: linear-gradient(90deg, var(--secondary-bg-light), var(--primary-bg-light));
     border-radius: f.rem(3);
     transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
     width: 0;
@@ -340,12 +262,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(
-        90deg,
-        transparent,
-        rgb(255 255 255 / 30%),
-        transparent
-      );
+      background: linear-gradient(90deg, transparent, rgb(255 255 255 / 30%), transparent);
       animation: shimmer 2s infinite;
       opacity: 0;
 
@@ -390,11 +307,7 @@
       top: f.rem(8);
       bottom: f.rem(8);
       width: 2px;
-      background: linear-gradient(
-        180deg,
-        var(--primary-bg-mid),
-        var(--secondary-bg-mid)
-      );
+      background: linear-gradient(180deg, var(--primary-bg-mid), var(--secondary-bg-mid));
     }
   }
 
@@ -441,6 +354,14 @@
     font-size: f.rem(14);
     color: var(--secondary-text);
     line-height: 1.4;
+  }
+}
+
+// Ensure categories are hidden by default and only shown when active
+.skills-chart__category {
+  display: none !important;
+  &[data-active='true'] {
+    display: block !important;
   }
 }
 
@@ -504,4 +425,14 @@
       transform: translateY(0);
     }
   }
+}
+.skills-chart__tab:focus {
+  & ~ .skills-chart {
+    box-shadow: 0 0 0 2px var(--primary-bg-mid);
+  }
+}
+
+// Alternatively, if .skills-chart__tab is a child of .skills-chart, use the parent selector:
+.skills-chart:has(.skills-chart__tab:focus) {
+  box-shadow: 0 0 0 2px var(--primary-bg-mid);
 }

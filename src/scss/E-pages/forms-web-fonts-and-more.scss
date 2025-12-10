@@ -1,0 +1,33 @@
+//* ------------------------------------------------------------
+//& FORMS-WEB-FONTS-AND-MORE-FRONTEND-MASTERS-BOOTCAMP PARTIAL
+//* Entry-point SCSS for Forms, Web Fonts, and More Frontend Masters Bootcamp Page
+//*
+//* Place all styles specific to the forms, web fonts, and more page layout and appearance here.
+//* Use page-level selectors (e.g., .forms-web-fonts-and-more, .forms-web-fonts-and-more__section, etc.).
+//* Do NOT put global resets or reusable component styles here.
+//* Only styles unique to the new page belong in this file.
+//* ------------------------------------------------------------
+@use '../A-abstracts/functions' as f;
+@use '../A-abstracts' as a;
+@use '../B-base' as b;
+@use '../C-components' as c;
+@use '../D-layout' as l;
+@use '../F-themes' as t;
+@use '../G-vendors' as v;
+
+// Add page-specific styles below. Use page-level selectors
+.forms-web-fonts-and-more__main {
+  width: 100%;
+  max-width: a.rem(900);
+  margin: 0 auto;
+}
+
+.project-summary__title {
+  font-size: f.rem(36);
+}
+
+.project-embed__iframe {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
