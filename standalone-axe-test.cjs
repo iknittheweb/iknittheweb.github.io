@@ -1,13 +1,35 @@
+// =====================================================================
+// Standalone Axe Accessibility Test Script (Beginner-Friendly)
+// =====================================================================
+// Purpose: Run axe-core accessibility checks on a static HTML file using jsdom.
+// Usage: Run with: node standalone-axe-test.cjs
+// Key Concepts:
+//   - jsdom: Simulates a browser environment in Node.js
+//   - axe-core: Automated accessibility testing tool
+//   - Reporting accessibility violations in the console
+// =====================================================================
+
+// -------------------------------------------------------------
+// 1. Import required modules
+// -------------------------------------------------------------
 const fs = require('fs');
 const { JSDOM } = require('jsdom');
 
+// -------------------------------------------------------------
+// 2. Load the HTML file to test
+// -------------------------------------------------------------
 const html = fs.readFileSync('dist/pages/minimal-accessibility-test.html', 'utf8');
 const dom = new JSDOM(html, { runScripts: 'dangerously', resources: 'usable' });
 
-// Inject axe-core into the jsdom window
+// -------------------------------------------------------------
+// 3. Inject axe-core into the jsdom window
+// -------------------------------------------------------------
 const axeSource = fs.readFileSync(require.resolve('axe-core/axe.min.js'), 'utf8');
 dom.window.eval(axeSource);
 
+// -------------------------------------------------------------
+// 4. Run axe-core accessibility checks after DOM loads
+// -------------------------------------------------------------
 dom.window.addEventListener('load', () => {
   dom.window.axe
     .run(dom.window.document)
