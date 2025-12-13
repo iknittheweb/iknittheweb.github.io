@@ -1,3 +1,80 @@
+beforeEach(() => {
+  document.body.innerHTML = `
+    <div id="skills-chart">
+      <button class="skills-chart__tab skills-chart__tab--active"><span class="skills-chart__tab-text">Tab 1</span></button>
+      <button class="skills-chart__tab"><span class="skills-chart__tab-text">Tab 2</span></button>
+      <div class="skills-chart__category skills-chart__category--active">
+        <div class="skills-chart__progress-bar">
+          <div class="skills-chart__progress-fill" data-level="80"></div>
+        </div>
+      </div>
+      <div class="skills-chart__category">
+        <div class="skills-chart__progress-bar">
+          <div class="skills-chart__progress-fill" data-level="60"></div>
+        </div>
+      </div>
+    </div>
+  `;
+  // Ensure the first tab and first category are active
+  const firstTab = document.querySelector('.skills-chart__tab');
+  const firstCategory = document.querySelector('.skills-chart__category');
+  firstTab.classList.add('skills-chart__tab--active');
+  firstCategory.classList.add('skills-chart__category--active');
+  // Always require the source file, not the built file
+  jest.resetModules();
+  require('../src/js/skillsChart.js');
+  if (window.initSkillsChart) window.initSkillsChart();
+});
+it('should toggle tabs and update ARIA attributes', () => {
+  const skillsChart = document.getElementById('skills-chart');
+  window.initSkillsChart && window.initSkillsChart();
+  const tabs = skillsChart.querySelectorAll('.skills-chart__tab');
+  const categories = skillsChart.querySelectorAll('.skills-chart__category');
+  // Initial state
+  expect(tabs[0].classList.contains('skills-chart__tab--active')).toBe(true);
+  expect(tabs[0].getAttribute('aria-selected')).toBe('true');
+  expect(tabs[0].getAttribute('tabindex')).toBe('0');
+  expect(categories[0].classList.contains('skills-chart__category--active')).toBe(true);
+  expect(tabs[1].classList.contains('skills-chart__tab--active')).toBe(false);
+  tabs[1].click();
+  // Re-query after click
+  const tabsAfter = skillsChart.querySelectorAll('.skills-chart__tab');
+  const categoriesAfter = skillsChart.querySelectorAll('.skills-chart__category');
+  expect(tabsAfter[1].classList.contains('skills-chart__tab--active')).toBe(true);
+  expect(tabsAfter[1].getAttribute('aria-selected')).toBe('true');
+  expect(tabsAfter[1].getAttribute('tabindex')).toBe('0');
+  expect(categoriesAfter[1].classList.contains('skills-chart__category--active')).toBe(true);
+  expect(tabsAfter[0].classList.contains('skills-chart__tab--active')).toBe(false);
+  expect(categoriesAfter[0].classList.contains('skills-chart__category--active')).toBe(false);
+});
+it('should handle arrow key navigation between tabs', () => {
+  const skillsChart = document.getElementById('skills-chart');
+  window.initSkillsChart && window.initSkillsChart();
+  let tabs = skillsChart.querySelectorAll('.skills-chart__tab');
+  // ArrowRight from Tab 1 to Tab 2
+  tabs[0].focus();
+  tabs[0].dispatchEvent(new KeyboardEvent('keydown', { key: 'ArrowRight', bubbles: true }));
+  tabs = skillsChart.querySelectorAll('.skills-chart__tab');
+  expect(tabs[1].classList.contains('skills-chart__tab--active')).toBe(true);
+  // ArrowLeft from Tab 2 to Tab 1
+  tabs[1].focus();
+  tabs[1].dispatchEvent(new KeyboardEvent('keydown', { key: 'ArrowLeft', bubbles: true }));
+  tabs = skillsChart.querySelectorAll('.skills-chart__tab');
+  expect(tabs[0].classList.contains('skills-chart__tab--active')).toBe(true);
+});
+it('should set correct progressbar ARIA attributes', () => {
+  const skillsChart = document.getElementById('skills-chart');
+  window.initSkillsChart && window.initSkillsChart();
+  // All progress bars should always have ARIA attributes
+  const progressBars = skillsChart.querySelectorAll('.skills-chart__progress-bar');
+  progressBars.forEach((bar) => {
+    expect(bar.getAttribute('role')).toBe('progressbar');
+    expect(bar.getAttribute('aria-valuemin')).toBe('0');
+    expect(bar.getAttribute('aria-valuemax')).toBe('100');
+    const fill = bar.querySelector('.skills-chart__progress-fill');
+    expect(bar.getAttribute('aria-valuenow')).toBe(fill.getAttribute('data-level'));
+  });
+});
 // Jest unit tests for skillsChart.js
 // Add tests for tab navigation, ARIA, and progressbar attributes
 
@@ -5,7 +82,6 @@
  * @jest-environment jsdom
  */
 describe('skillsChart.js', () => {
-  let skillsChart, tabs, categories, progressBars;
   beforeEach(() => {
     document.body.innerHTML = `
       <div id="skills-chart">
@@ -26,13 +102,13 @@ describe('skillsChart.js', () => {
     // Re-require the module to re-run its setup
     jest.resetModules();
     require('../src/js/skillsChart.js');
-    skillsChart = document.getElementById('skills-chart');
-    tabs = skillsChart.querySelectorAll('.skills-chart__tab');
-    categories = skillsChart.querySelectorAll('.skills-chart__category');
-    progressBars = skillsChart.querySelectorAll('.skills-chart__progress-bar');
+    if (window.initSkillsChart) window.initSkillsChart();
   });
 
   test('should set ARIA roles and attributes on init', () => {
+    const skillsChart = document.getElementById('skills-chart');
+    const tabs = skillsChart.querySelectorAll('.skills-chart__tab');
+    const categories = skillsChart.querySelectorAll('.skills-chart__category');
     expect(skillsChart.getAttribute('role')).toBe('tablist');
     tabs.forEach((tab, i) => {
       expect(tab.getAttribute('role')).toBe('tab');
@@ -48,34 +124,46 @@ describe('skillsChart.js', () => {
   });
 
   test('should toggle tabs and update ARIA attributes', () => {
+    const skillsChart = document.getElementById('skills-chart');
+    const tabs = skillsChart.querySelectorAll('.skills-chart__tab');
+    const categories = skillsChart.querySelectorAll('.skills-chart__category');
     // Tab 2 should not be active
     expect(tabs[1].classList.contains('skills-chart__tab--active')).toBe(false);
     tabs[1].click();
-    expect(tabs[1].classList.contains('skills-chart__tab--active')).toBe(true);
-    expect(tabs[1].getAttribute('aria-selected')).toBe('true');
-    expect(tabs[1].getAttribute('tabindex')).toBe('0');
-    expect(categories[1].classList.contains('skills-chart__category--active')).toBe(true);
-    expect(categories[1].getAttribute('aria-hidden')).toBe('false');
+    // Re-query after click
+    const tabsAfter = skillsChart.querySelectorAll('.skills-chart__tab');
+    const categoriesAfter = skillsChart.querySelectorAll('.skills-chart__category');
+    expect(tabsAfter[1].classList.contains('skills-chart__tab--active')).toBe(true);
+    expect(tabsAfter[1].getAttribute('aria-selected')).toBe('true');
+    expect(tabsAfter[1].getAttribute('tabindex')).toBe('0');
+    expect(categoriesAfter[1].classList.contains('skills-chart__category--active')).toBe(true);
+    expect(categoriesAfter[1].getAttribute('aria-hidden')).toBe('false');
     // Tab 1 should be inactive
-    expect(tabs[0].classList.contains('skills-chart__tab--active')).toBe(false);
-    expect(tabs[0].getAttribute('aria-selected')).toBe('false');
-    expect(tabs[0].getAttribute('tabindex')).toBe('-1');
-    expect(categories[0].classList.contains('skills-chart__category--active')).toBe(false);
-    expect(categories[0].getAttribute('aria-hidden')).toBe('true');
+    expect(tabsAfter[0].classList.contains('skills-chart__tab--active')).toBe(false);
+    expect(tabsAfter[0].getAttribute('aria-selected')).toBe('false');
+    expect(tabsAfter[0].getAttribute('tabindex')).toBe('-1');
+    expect(categoriesAfter[0].classList.contains('skills-chart__category--active')).toBe(false);
+    expect(categoriesAfter[0].getAttribute('aria-hidden')).toBe('true');
   });
 
   test('should handle arrow key navigation between tabs', () => {
+    const skillsChart = document.getElementById('skills-chart');
+    let tabs = skillsChart.querySelectorAll('.skills-chart__tab');
     // ArrowRight from Tab 1 to Tab 2
     tabs[0].dispatchEvent(new KeyboardEvent('keydown', { key: 'ArrowRight' }));
+    tabs = skillsChart.querySelectorAll('.skills-chart__tab');
     expect(document.activeElement).toBe(tabs[1]);
     expect(tabs[1].classList.contains('skills-chart__tab--active')).toBe(true);
     // ArrowLeft from Tab 2 to Tab 1
     tabs[1].dispatchEvent(new KeyboardEvent('keydown', { key: 'ArrowLeft' }));
+    tabs = skillsChart.querySelectorAll('.skills-chart__tab');
     expect(document.activeElement).toBe(tabs[0]);
     expect(tabs[0].classList.contains('skills-chart__tab--active')).toBe(true);
   });
 
   test('should set correct progressbar ARIA attributes', () => {
+    const skillsChart = document.getElementById('skills-chart');
+    const progressBars = skillsChart.querySelectorAll('.skills-chart__progress-bar');
     progressBars.forEach((bar) => {
       expect(bar.getAttribute('role')).toBe('progressbar');
       expect(bar.getAttribute('aria-valuemin')).toBe('0');

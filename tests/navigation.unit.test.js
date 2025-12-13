@@ -50,6 +50,11 @@ describe('navigation.js', () => {
     const btnClose = document.getElementById('btnClose');
     const menuTopNav = document.getElementById('menuTopNav');
     btnOpen.click();
+    // Focus the first focusable element in menuTopNav
+    const focusable = menuTopNav.querySelectorAll('a, button, input, [tabindex]:not([tabindex="-1"])');
+    if (focusable.length) {
+      focusable[0].focus();
+    }
     // Simulate Tab key
     const event = new KeyboardEvent('keydown', { key: 'Tab' });
     menuTopNav.dispatchEvent(event);

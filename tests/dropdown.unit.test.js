@@ -8,37 +8,26 @@ describe('dropdown.js', () => {
   let dropdownTitleGroup, dropdownContent;
   beforeEach(() => {
     document.body.innerHTML = `
-      <div class="dropdown__title-group">Dropdown</div>
-      <div class="dropdown__content">
-        <a href="#">Item 1</a>
-        <a href="#">Item 2</a>
+      <div class="dropdown">
+        <div class="dropdown__title-group">Dropdown</div>
+        <div class="dropdown__content">
+          <a href="#">Item 1</a>
+          <a href="#">Item 2</a>
+        </div>
       </div>
     `;
     // Simulate CSS loaded
     document.documentElement.classList.add('css-loaded');
+    // Reset dropdownInitialized so event handlers are re-attached after DOM reset
+    window.dropdownInitialized = false;
     // Re-require the module to re-run its setup
     jest.resetModules();
-    require('../dist/js/dropdown.js');
+    require('../src/js/dropdown.js');
     dropdownTitleGroup = document.querySelector('.dropdown__title-group');
     dropdownContent = document.querySelector('.dropdown__content');
   });
 
-  // Helper to wait for ARIA attributes to be set
-  function waitForDropdownInit() {
-    return new Promise((resolve) => {
-      function check() {
-        if (dropdownTitleGroup.getAttribute('role') === 'button') {
-          resolve();
-        } else {
-          setTimeout(check, 5);
-        }
-      }
-      check();
-    });
-  }
-
-  test('should set ARIA attributes on init', async () => {
-    await waitForDropdownInit();
+  test('should set ARIA attributes on init', () => {
     expect(dropdownTitleGroup.getAttribute('role')).toBe('button');
     expect(dropdownTitleGroup.getAttribute('aria-controls')).toBe('dropdown-content');
     expect(dropdownTitleGroup.getAttribute('tabindex')).toBe('0');
@@ -48,8 +37,7 @@ describe('dropdown.js', () => {
     expect(dropdownContent.getAttribute('aria-hidden')).toBe('true');
   });
 
-  test('should toggle dropdown open/close on click', async () => {
-    await waitForDropdownInit();
+  test('should toggle dropdown open/close on click', () => {
     dropdownTitleGroup.click();
     expect(dropdownContent.classList.contains('show')).toBe(true);
     expect(dropdownContent.getAttribute('aria-hidden')).toBe('false');
@@ -64,8 +52,7 @@ describe('dropdown.js', () => {
     expect(dropdownTitleGroup.getAttribute('aria-expanded')).toBe('false');
   });
 
-  test('should handle keyboard events (Enter, Space, Escape)', async () => {
-    await waitForDropdownInit();
+  test('should handle keyboard events (Enter, Space, Escape)', () => {
     // Open with Enter
     dropdownTitleGroup.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter' }));
     expect(dropdownContent.classList.contains('show')).toBe(true);
@@ -77,8 +64,7 @@ describe('dropdown.js', () => {
     expect(dropdownContent.classList.contains('show')).toBe(true);
   });
 
-  test('should trap focus when open', async () => {
-    await waitForDropdownInit();
+  test('should trap focus when open', () => {
     dropdownTitleGroup.click();
     // Simulate tabbing into dropdown
     const firstLink = dropdownContent.querySelector('a');
