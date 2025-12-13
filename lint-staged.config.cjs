@@ -15,5 +15,10 @@
 // -------------------------------------------------------------
 // For every CSS or SCSS file staged for commit, run stylelint to check for errors and style issues.
 module.exports = {
-  '*.{css,scss}': 'stylelint',
+  // Lint and fix JS files
+  '*.{js,jsx,ts,tsx}': ['eslint --fix'],
+  // Lint CSS and SCSS files
+  '*.{css,scss}': ['stylelint --fix'],
+  // Format HTML, CSS, JS, JSON, and Markdown with Prettier
+  '*.{js,jsx,ts,tsx,css,scss,html,json,md}': ['prettier --write'],
 };
