@@ -30,7 +30,7 @@
 
     <!-- Preconnects for faster font and icon loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://ka-p.fontawesome.com" />
 
     <!-- Preload critical stylesheets -->
@@ -47,30 +47,38 @@
     <!-- Favicons and manifest -->
     <link rel="icon" type="image/x-icon" href="{{ASSET_URL}}/favicon_io/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="{{ASSET_URL}}/favicon_io/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="{{ASSET_URL}}/favicon_io/favicon.ico" />
     <link rel="manifest" href="/manifest.json" />
-    <link rel="canonical" href="{{BASIC_VERTICAL_NAVBAR_15_DAYS_OF_CSS_CANONICAL_URL}}" />
+    <meta name="theme-color" content="#500f44" />
+    <link rel="canonical" href="{{BASE_URL}}{{BASIC_VERTICAL_NAVBAR_15_DAYS_OF_CSS_CANONICAL_URL}}" />
 
     <!-- SEO and social meta tags (grouped for clarity) -->
     <meta name="description" content="{{BASIC_VERTICAL_NAVBAR_15_DAYS_OF_CSS_DESCRIPTION}}" />
     <meta name="keywords" content="{{BASIC_VERTICAL_NAVBAR_15_DAYS_OF_CSS_KEYWORDS}}" />
     <meta name="author" content="I Knit the Web" />
     <meta name="robots" content="{{ROBOTS}}" />
+    <meta name="googlebot" content="{{ROBOTS}}" />
+    <link rel="preload" as="image" href="/img/branding/logo.png" type="image/png" />
+    <link rel="preload" as="image" href="/img/branding/logo.webp" type="image/webp" />
+    <link rel="preload" as="image" href="/img/branding/logo.avif" type="image/avif" />
     <meta property="og:title" content="{{BASIC_VERTICAL_NAVBAR_15_DAYS_OF_CSS_OG_TITLE}}" />
     <meta property="og:description" content="{{BASIC_VERTICAL_NAVBAR_15_DAYS_OF_CSS_OG_DESCRIPTION}}" />
-    <meta property="og:image" content="{{BASIC_VERTICAL_NAVBAR_15_DAYS_OF_CSS_OG_IMAGE}}" />
+    <meta property="og:image" content="/img/branding/logo.png" />
     <meta property="og:url" content="{{BASIC_VERTICAL_NAVBAR_15_DAYS_OF_CSS_OG_URL}}" />
     <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_us" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="{{BASIC_VERTICAL_NAVBAR_15_DAYS_OF_CSS_TWITTER_TITLE}}" />
     <meta name="twitter:description" content="{{BASIC_VERTICAL_NAVBAR_15_DAYS_OF_CSS_TWITTER_DESCRIPTION}}" />
-    <meta name="twitter:image" content="{{BASIC_VERTICAL_NAVBAR_15_DAYS_OF_CSS_TWITTER_IMAGE}}" />
+    <meta name="twitter:image" content="/img/branding/logo.png" />
 
     <!-- Third-party monitoring/analytics: Sentry -->
     <script src="https://browser.sentry-cdn.com/7.100.1/bundle.min.js" crossorigin="anonymous"></script>
 
     <!-- Structured data for SEO -->
-    <script src="src/js/schema-json.js" defer></script>
-
+    <script type="application/ld+json">
+      {{BASIC_VERTICAL_NAVBAR_15_DAYS_OF_CSS_SCHEMA_JSON}}
+    </script>
     <!-- Third-party library: body-scroll-lock -->
     <script src="https://cdn.jsdelivr.net/npm/body-scroll-lock@4.0.0-beta.0/lib/bodyScrollLock.min.js"></script>
 
