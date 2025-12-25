@@ -9,7 +9,7 @@ describe('contactForm.js', () => {
   beforeAll(() => {
     jest.spyOn(global.console, 'error').mockImplementation((msg) => {
       if (typeof msg === 'string' && msg.includes('Could not load img')) return;
-      // ...existing code...
+
       return console.warn(msg);
     });
     // Mock HTMLImageElement loading

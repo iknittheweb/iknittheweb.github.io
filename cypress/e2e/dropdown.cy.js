@@ -41,7 +41,7 @@ describe('Dropdown UI/Interaction', () => {
     cy.get('[data-cy="dropdown-trigger"]').should('exist').click({ force: true });
     cy.wait(200);
     cy.screenshot('dropdown-trigger-clicked');
-    cy.get('.dropdown__title-group').click({ force: true });
+    cy.get('.dropdown__header').click({ force: true });
     cy.wait(200);
     cy.screenshot('dropdown-title-group-clicked');
     cy.get('[data-cy="dropdown-content"]').should('exist').invoke('addClass', 'show').and('have.class', 'show');
@@ -63,27 +63,17 @@ describe('Dropdown UI/Interaction', () => {
     cy.get('[data-cy="dropdown-content"]').should('exist').invoke('addClass', 'show').and('have.class', 'show');
     cy.wait(200);
     cy.screenshot('dropdown-content-keyboard-shown');
-    cy.get('[data-cy="dropdown-content"] a, [data-cy="dropdown-content"] button')
-      .first()
-      .should('exist')
-      .and('be.visible')
-      .focus();
+    cy.get('[data-cy="dropdown-content"] a, [data-cy="dropdown-content"] button').first().should('exist').and('be.visible').focus();
     cy.wait(200);
     cy.screenshot('dropdown-content-keyboard-first-item-focused');
     cy.focused().tab();
     cy.wait(200);
     cy.screenshot('dropdown-content-keyboard-tabbed');
-    cy.get('[data-cy="dropdown-content"] a, [data-cy="dropdown-content"] button')
-      .eq(1)
-      .should('exist')
-      .and('have.focus');
+    cy.get('[data-cy="dropdown-content"] a, [data-cy="dropdown-content"] button').eq(1).should('exist').and('have.focus');
   });
 
   it('should set ARIA attributes on init', () => {
-    cy.get('[data-cy="dropdown-trigger"]')
-      .should('have.attr', 'role', 'button')
-      .and('have.attr', 'aria-controls', 'dropdown-content')
-      .and('have.attr', 'tabindex', '0');
+    cy.get('[data-cy="dropdown-trigger"]').should('have.attr', 'role', 'button').and('have.attr', 'aria-controls', 'dropdown-content').and('have.attr', 'tabindex', '0');
     cy.screenshot('dropdown-trigger-aria-checked');
     cy.get('[data-cy="dropdown-content"]').should('have.attr', 'role', 'menu');
     cy.screenshot('dropdown-content-aria-checked');
@@ -93,30 +83,17 @@ describe('Dropdown UI/Interaction', () => {
     cy.get('[data-cy="dropdown-trigger"]').should('exist').click({ force: true });
     cy.wait(200);
     cy.screenshot('dropdown-trigger-toggle-open');
-    cy.get('[data-cy="dropdown-content"]')
-      .should('exist')
-      .invoke('addClass', 'show')
-      .and('have.class', 'show')
-      .and('have.attr', 'aria-hidden', 'false');
+    cy.get('[data-cy="dropdown-content"]').should('exist').invoke('addClass', 'show').and('have.class', 'show').and('have.attr', 'aria-hidden', 'false');
     cy.wait(200);
     cy.screenshot('dropdown-content-toggle-open');
-    cy.get('[data-cy="dropdown-trigger"]')
-      .should('exist')
-      .should('have.class', 'dropdown-open')
-      .and('have.attr', 'aria-expanded', 'true');
+    cy.get('[data-cy="dropdown-trigger"]').should('exist').should('have.class', 'dropdown-open').and('have.attr', 'aria-expanded', 'true');
     cy.screenshot('dropdown-trigger-toggle-opened');
     cy.get('[data-cy="dropdown-trigger"]').should('exist').click({ force: true });
     cy.wait(200);
     cy.screenshot('dropdown-trigger-toggle-close');
-    cy.get('[data-cy="dropdown-content"]')
-      .should('exist')
-      .and('not.have.class', 'show')
-      .and('have.attr', 'aria-hidden', 'true');
+    cy.get('[data-cy="dropdown-content"]').should('exist').and('not.have.class', 'show').and('have.attr', 'aria-hidden', 'true');
     cy.screenshot('dropdown-content-toggle-closed');
-    cy.get('[data-cy="dropdown-trigger"]')
-      .should('exist')
-      .should('not.have.class', 'dropdown-open')
-      .and('have.attr', 'aria-expanded', 'false');
+    cy.get('[data-cy="dropdown-trigger"]').should('exist').should('not.have.class', 'dropdown-open').and('have.attr', 'aria-expanded', 'false');
     cy.screenshot('dropdown-trigger-toggle-closed');
   });
 

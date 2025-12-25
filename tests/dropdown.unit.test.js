@@ -9,7 +9,7 @@ describe('dropdown.js', () => {
   beforeEach(() => {
     document.body.innerHTML = `
       <div class="dropdown">
-        <div class="dropdown__title-group">Dropdown</div>
+        <div class="dropdown__header">Dropdown</div>
         <div class="dropdown__content">
           <a href="#">Item 1</a>
           <a href="#">Item 2</a>
@@ -23,7 +23,7 @@ describe('dropdown.js', () => {
     // Re-require the module to re-run its setup
     jest.resetModules();
     require('../src/js/dropdown.js');
-    dropdownTitleGroup = document.querySelector('.dropdown__title-group');
+    dropdownTitleGroup = document.querySelector('.dropdown__header');
     dropdownContent = document.querySelector('.dropdown__content');
   });
 
