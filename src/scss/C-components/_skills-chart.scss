@@ -1,21 +1,27 @@
 @use '../A-abstracts/functions' as f;
 @use '../A-abstracts/mixins' as m;
-@use '../A-abstracts/interactive-tab' as interactiveTab;
 
 .skills-chart {
   &__header {
     background: linear-gradient(135deg, var(--primary-bg) 0%, var(--secondary-bg) 100%);
+    border: 1px solid var(--light-border);
     color: var(--light-text);
     border-radius: f.rem(8) f.rem(8) 0 0;
+    box-shadow: none;
+    font-weight: 500;
     padding-block: f.rem(16);
     text-align: center;
-    border: 1px solid var(--light-border);
+    &:hover,
+    &:focus {
+      background: linear-gradient(135deg, var(--primary-bg-mid) 0%, var(--secondary-bg-mid) 100%);
+      border-width: 3px;
+      box-shadow: 2px 2px 16px rgba(0, 0, 0, 1);
+    }
   }
 
   &__subtitle {
     color: var(--light-text); // Use same light color as title for consistency
     font-size: f.rem(15);
-    opacity: 0.85; // Slightly reduced opacity but still readable
     font-weight: 400;
   }
 
@@ -56,22 +62,13 @@
       transition: color 0.6s ease;
     }
   }
-  // When dropdown is open, rotate hand to point up (original position)
-  &__tab[data-active='true'] &__icon {
-    transform: rotate(0deg);
-  }
-
-  &__tab-text {
-    font-weight: 500;
-    letter-spacing: 0.3px;
-  }
 
   &__tab {
     border: 1px solid var(--light-border);
     padding: f.rem(12) f.rem(16);
     font-family: inherit;
     font-size: f.rem(15);
-    transition: all 0.3s ease;
+    transition: opacity 0.3s ease;
     white-space: nowrap;
     text-align: left;
     display: flex;
@@ -99,24 +96,30 @@
       background-position: right;
       border-bottom-right-radius: f.rem(8);
     }
-    &:hover {
-      background-color: var(--light-bg);
-    }
     // Show box-shadow only on hover/focus or when open
     &:hover,
     &:focus {
       box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
     }
     &[data-active='true'] {
-      background: transparent;
-      color: var(--secondary-text);
+      // opacity: 0.7;
       z-index: 2;
       box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
     }
     &[data-active='false'] {
-      color: var(--light-text);
+      // opacity: 1;
       box-shadow: none;
     }
+  }
+
+  // When dropdown is open, rotate hand to point up (original position)
+  &__tab[data-active='true'] &__icon {
+    transform: rotate(0deg);
+  }
+
+  &__tab-text {
+    font-weight: 500;
+    letter-spacing: 0.3px;
   }
 
   &__skill-group {
@@ -149,7 +152,7 @@
   }
 
   &__skill {
-    background: var(--skills-chart-bg);
+    background: var(--reduced-opacity-bg);
     padding: f.rem(16);
     border-radius: f.rem(6);
     border: 1px solid rgb(255 255 255 / 80%);
@@ -164,20 +167,20 @@
       left: 0;
       width: 3px;
       height: 100%;
-      background: var(--skills-chart-bg-gradient);
-      opacity: 0;
+      background: var(--reduced-opacity-bg-gradient);
+      // opacity: 0;
       transition: opacity 0.3s ease;
     }
 
     &:hover {
       transform: translateY(-1px);
       box-shadow: 0 4px 12px rgb(0 0 0 / 10%);
-      background: var(--skills-chart-bg-light);
+      background: var(--reduced-opacity-bg-light);
       border-color: var(--primary-bg-mid);
 
-      &::before {
-        opacity: 1;
-      }
+      // &::before {
+      //   opacity: 1;
+      // }
     }
   }
 
@@ -200,7 +203,7 @@
   &__skill-icon {
     color: var(--primary-bg-mid); // Medium purple for better contrast
     width: 1.2em;
-    opacity: 0.9;
+    // opacity: 0.9;
   }
 
   &__skill-level {
@@ -262,7 +265,7 @@
       inset: 0;
       background: linear-gradient(90deg, transparent, rgb(255 255 255 / 30%), transparent);
       animation: shimmer 2s infinite;
-      opacity: 0;
+      // opacity: 0;
 
       // Disable shimmer animation for reduced motion
       @media (prefers-reduced-motion: reduce) {
@@ -280,7 +283,7 @@
   }
 
   &__timeline {
-    background: var(--skills-chart-bg);
+    background: var(--reduced-opacity-bg);
     padding: f.rem(24);
     border-radius: f.rem(8);
     border: 1px solid rgb(255 255 255 / 60%);
@@ -366,28 +369,28 @@
 // Elegant animations
 @keyframes fade-in-up {
   from {
-    opacity: 0;
+    // opacity: 0;
     transform: translateY(f.rem(20));
   }
 
   to {
-    opacity: 1;
+    // opacity: 1;
     transform: translateY(0);
   }
 }
 
 @keyframes shimmer {
   0% {
-    opacity: 0;
+    // opacity: 0;
     transform: translateX(-100%);
   }
 
   50% {
-    opacity: 1;
+    // opacity: 1;
   }
 
   100% {
-    opacity: 0;
+    // opacity: 0;
     transform: translateX(100%);
   }
 }
@@ -419,7 +422,7 @@
   @keyframes fade-in-up {
     from,
     to {
-      opacity: 1;
+      // opacity: 1;
       transform: translateY(0);
     }
   }
