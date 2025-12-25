@@ -1,49 +1,31 @@
 Environment Setup Guide:
 
 
-📝 Local Development (.env):
-  BASE_URL=http://localhost:5500/         # Injected as {{BASE_URL}} for local testing
-  ASSET_URL=/src/img/                     # Injected as {{ASSET_URL}} for local image paths
-  CSS_FILE=styles.css                     # Injected as {{CSS_FILE}} for expanded CSS with source maps
-  ROBOTS=index,follow                     # Injected as {{ROBOTS}} for SEO (public indexing)
-  CANONICAL_URL=http://localhost:5500/    # Injected as {{CANONICAL_URL}} for local canonical URL
+📝 Local Development (.env.local):
+  base_url=http://localhost:5500/
+  css_file=styles.css                     # expanded CSS with source maps
+  robots=index,follow
+  page_url=http://localhost:5500/
 
 
-🚀 Production (.env.production):
-  BASE_URL=https://iknittheweb.com/              # {{BASE_URL}} for live site
-  ASSET_URL=https://iknittheweb.com/src/img/     # {{ASSET_URL}} for CDN or custom domain
-  CSS_FILE=styles.min.css                        # {{CSS_FILE}} for minified CSS
-  ROBOTS=index,follow                            # {{ROBOTS}} for SEO (public indexing)
-  CANONICAL_URL=https://iknittheweb.com/         # {{CANONICAL_URL}} for canonical production URL
+🚀 Custom Domain (.env.domain):
+  base_url=https://iknittheweb.com/
+  css_file=styles.min.css                 # {{css_file}} for minified CSS
+  robots=index,follow
+  page_url=https://iknittheweb.com/
 
 
-🌐 Alternate Development (.env.alt):
-  BASE_URL=http://localhost:5500/                # {{BASE_URL}} for alternate local dev
-  ASSET_URL=/src/img/                            # {{ASSET_URL}} for asset paths
-  CSS_FILE=styles.css                            # {{CSS_FILE}} for expanded CSS
-  ROBOTS=index,follow                            # {{ROBOTS}} for SEO (public indexing)
-  CANONICAL_URL=http://localhost:5500/           # {{CANONICAL_URL}} for alternate canonical URL
-
-
-To use the alternate environment, run:
-  npm run alt
-This will use .env.alt and generate the site for alternate local development or staging.
-
-New supported environment variables:
-  BASE_URL, ASSET_URL, CSS_FILE, ROBOTS, CANONICAL_URL
-
-Alternate environments:
-  .env.alt (local/staging), .env.netlify-alt (Netlify)
-
-For Netlify builds, use .env.netlify-alt and configure build settings accordingly.
-
-
+🌐 GitHub Pages (.env.gh):
+  base_url=http://iknittheweb.github.io/
+  css_file=styles.css                     # {{css_file}} for expanded CSS
+  robots=index,follow
+  page_url=http://iknittheweb.github.io/
 
 Template & Build System Notes:
 * All pages are generated from template files (e.g., src/templates/new-page.template.html).
 * Placeholders are replaced during build using environment variables and page-specific data:
     - {{TITLE}}, {{DESCRIPTION}}, {{KEYWORDS}}, {{AUTHOR}}: Set in template or page config.
-    - {{ROBOTS}}, {{CANONICAL_URL}}, {{BASE_URL}}, {{ASSET_URL}}, {{CSS_FILE}}: Injected from environment files for each build scenario.
+    - {{robots}}, {{page_url}}, {{base_url}}, {{asset_url}}, {{css_file}}: Injected from environment files for each build scenario.
     - {{OG_*}}, {{TWITTER_*}}, {{FAVICON_URL}}, {{GOOGLE_FONTS_LINK}}: Set in template or page config.
 * To create a new page:
   1. Copy and rename the template file in src/templates (e.g., new-page.template.html to about.template.html).
@@ -56,7 +38,7 @@ Template & Build System Notes:
 Best Practices:
 - Use page-specific CSS files if compiling with PurgeCSS; global CSS is optional.
 - Fill all meta tag, Open Graph, Twitter Card, and structured data placeholders for SEO and social sharing.
-- Use {{ASSET_URL}} for all asset references in templates for correct path resolution.
+- Use {{asset_url}} for all asset references in templates for correct path resolution.
 - Page-specific JS and CSS can be injected via placeholders if needed.
 
 
