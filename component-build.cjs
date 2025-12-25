@@ -5,7 +5,7 @@
 // Features:
 //   - Processes all .template.html files in src/templates/
 //   - Injects header and footer from index.html
-//   - Replaces environment variable placeholders (e.g., {{BASE_URL}}, {{ASSET_URL}})
+//   - Replaces environment variable placeholders (e.g., {{base_url}}, {{asset_url}})
 //   - Copies JS and image assets to dist/
 // Usage:
 //   - Run with npm scripts for local, alternate, or production builds
@@ -42,7 +42,7 @@ if (process.env.DOTENV_CONFIG_PATH) {
 }
 console.log(`[component-build.cjs] Using dotenv path: ${dotenvPath}`);
 require('dotenv').config({ path: dotenvPath });
-console.log(`[component-build.cjs] BASE_URL: ${process.env.BASE_URL}`);
+console.log(`[component-build.cjs] base_url: ${process.env.base_url}`);
 
 // =============================================================
 // STEP 2: Process all .template.html files in src/templates/
