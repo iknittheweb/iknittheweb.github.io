@@ -7,42 +7,44 @@ For documentation organization in SITE-ENHANCEMENTS.txt
 
 Custom comment tag colors matching our documentation legend:
 
-^ Yellow "tag": "^", "color": "#fbff00"
-- Pink "tag": "-", "color": "#ff86f3"
-* Green "tag": "*", "color": "#3CFF00"
-~ Light Green "tag": "~", "color": "#A8E6CF"
-@ Greenish Light Blue "tag": "@", "color": "#45B7D1"
-? Blue "tag": "?", "color": "#2196F3"
-, Orange "tag": ",", "color": "#FF8A65"
-= Light Blue "tag": "=", "color": "#00bbff"
-% Lavender "tag": "%", "color": "#B266FF"
-& Fuschia "tag": "&", "color": "#FF4FCB"
-# Light Red "tag": "#", "color": "#F06292"
-< White "tag": "<", "color": "#FFFFFF"
-_ Gray "tag": "_", "color": "#9E9E9E"
-! Red "tag": "!", "color": "#ff5252"
-; Purple "tag": ";", "color": "#9000ff"
-+ (plus sign) = Light gray/strikethrough "tag": "+", "color": "#c6c6c6", "strikethrough": true
+  ! Red "tag": "!", "color": "#ff5252",
+  # Light Red "tag": "#", "color": "#F06292",
+  , Orange "tag": ",", "color": "#FF8A65",
+  ^ Yellow "tag": "^", "color": "#fbff00",
+  * Green "tag": "*", "color": "#3CFF00",
+  ~ Light green "tag": "~", "color": "#A8E6CF",
+  @ greenish light blue "tag": "@", "color": "#45B7D1",
+  ? Blue "tag": "?", "color": "#3AB0FF",
+  = light blue "tag": "=", "color": "#00bbff",
+  % Lavender "tag": "%", "color": "#B266FF",
+  ; Purple "tag": ";", "color": "#9000ff",
+  & Fuschia "tag": "&", "color": "#FF4FCB",
+  - pink "tag": "-", "color": "#ff86f3",
+  _ gray "tag": "#", "color": "#9E9E9E",
+  < white "tag": "<", "color": "#FFFFFF",
+  $ Light gray/strikethrough "tag": "$", "color": "#c6c6c6", "strikethrough": true,
+  < $ (dollar sign) Light gray/strikethrough "tag": "$", "color": "#c6c6c6", "strikethrough": true,)
 
 ====================================================
 SYMBOLS ON THE KEYBOARD AND THEIR ASSOCIATED TAG colors
 
 ` (back tick)
-~ Light green "tag": "~", "color": "#A8E6CF",
-! Red "tag": "!", "color": "#ff5252",
-@ greenish light blue "tag": "@", "color": "#45B7D1",
-# Light Red "tag": "#", "color": "#F06292",
-$
-% Lavender "tag": "%", "color": "#B266FF",
-^ Yellow "tag": "^", "color": "#fbff00",
-& Fuschia "tag": "&", "color": "#FF4FCB",
-* Green "tag": "*", "color": "#3CFF00",
+  ~ Light green "tag": "~", "color": "#A8E6CF",
+  ! Red "tag": "!", "color": "#ff5252",
+  @ greenish light blue "tag": "@", "color": "#45B7D1",
+  # Light Red "tag": "#", "color": "#F06292",
+  $ Light gray/strikethrough "tag": "$", "color": "#c6c6c6", "strikethrough": true,
+  ($ (dollar sign)Light gray/strikethrough "tag": "$", "color": "#c6c6c6", "strikethrough": true,)
+  % Lavender "tag": "%", "color": "#B266FF",
+  ^ Yellow "tag": "^", "color": "#fbff00",
+  & Fuschia "tag": "&", "color": "#FF4FCB",
+  * Green "tag": "*", "color": "#3CFF00",
 (
 )
-_ gray "tag": "#", "color": "#9E9E9E",
-- pink "tag": "-", "color": "#ff86f3",
-< + (plus sign) = Light gray/strikethrough "tag": "+", "color": "#c6c6c6", "strikethrough": true,
-= light blue "tag": "NOTE", "color": "#00bbff",
+  _ gray "tag": "#", "color": "#9E9E9E",
+  - pink "tag": "-", "color": "#ff86f3",
++
+  = light blue "tag": "=", "color": "#00bbff",
 {
 }
 [
@@ -50,14 +52,14 @@ _ gray "tag": "#", "color": "#9E9E9E",
 |
 \ do not use
 :
-; Purple "tag": ";", "color": "#9000ff",
+  ; Purple "tag": ";", "color": "#9000ff",
 "
 '
-< white "tag": "<", "color": "#FFFFFF",
-, Orange "tag": ",", "color": "#FF8A65",
+  < white "tag": "<", "color": "#FFFFFF",
+  , Orange "tag": ",", "color": "#FF8A65",
 >
 .
-? Blue "tag": "?", "color": "#2196F3",
+  ? Blue "tag": "?", "color": "#3AB0FF",
 / do not use
 
 __________________________________________
