@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="Content-Security-Policy" content="{{CSP_META}}" />
+    <meta http-equiv="Content-Security-Policy" content="{{csp_meta}}" />
     <title>Description List Challenge | I Knit The Web</title>
 
     <!-- Fallback styles for no-JS environments -->
@@ -35,45 +35,51 @@
 
     <!-- Preload critical stylesheets -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" as="style" />
-    <link rel="preload" as="style" href="{{DESC_LIST_CHALLENGE_30_DAYS_OF_HTML_CSS_FILE}}" />
+    <link rel="preload" as="style" href="{{desc_list_challenge_css_file}}" />
 
     <!-- Main font and site stylesheets -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" />
-    <link rel="stylesheet" href="/dist/css/{{DESC_LIST_CHALLENGE_30_DAYS_OF_HTML_CSS_FILE}}" />
+    <link rel="stylesheet" href="/dist/css/{{desc_list_challenge_css_file}}" />
+
     <!-- FontAwesome CDN stylesheet for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Favicons and manifest -->
-    <link rel="icon" type="image/x-icon" href="{{ASSET_URL}}/favicon_io/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ASSET_URL}}/favicon_io/apple-touch-icon.png" />
-    <link rel="shortcut icon" href="{{ASSET_URL}}/favicon_io/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="{{asset_url}}favicon_io/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="{{asset_url}}favicon_io/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="{{asset_url}}favicon_io/favicon.ico" />
     <link rel="manifest" href="/manifest.json" />
     <meta name="theme-color" content="#500f44" />
-    <link rel="canonical" href="{{BASE_URL}}{{DESC_LIST_CHALLENGE_30_DAYS_OF_HTML_CANONICAL_URL}}" />
+    <link rel="canonical" href="{{base_url}}{{desc_list_challenge_page_url}}" />
+
+    <!-- Preload critical logo images for fast LCP -->
+    <link rel="preload" as="image" href="{{base_url}}{{asset_url}}branding/logo.png" type="image/png" />
+    <link rel="preload" as="image" href="{{base_url}}{{asset_url}}branding/logo.webp" type="image/webp" />
+    <link rel="preload" as="image" href="{{base_url}}{{asset_url}}branding/logo.avif" type="image/avif" />
 
     <!-- SEO and social meta tags (grouped for clarity) -->
-    <meta name="description" content="{{DESC_LIST_CHALLENGE_30_DAYS_OF_HTML_DESCRIPTION}}" />
-    <meta name="keywords" content="{{DESC_LIST_CHALLENGE_30_DAYS_OF_HTML_KEYWORDS}}" />
-    <meta name="author" content="{{SITE_AUTHOR}}" />
-    <meta name="robots" content="{{ROBOTS}}" />
-    <meta name="googlebot" content="{{ROBOTS}}" />
+    <meta name="description" content="{{desc_list_challenge_description}}" />
+    <meta name="keywords" content="{{desc_list_challenge_keywords}}" />
+    <meta name="author" content="I Knit the Web" />
+    <meta name="robots" content="{{robots}}" />
+    <meta name="googlebot" content="{{robots}}" />
     <link rel="preload" as="image" href="/img/branding/logo.png" type="image/png" />
     <link rel="preload" as="image" href="/img/branding/logo.webp" type="image/webp" />
     <link rel="preload" as="image" href="/img/branding/logo.avif" type="image/avif" />
-    <meta property="og:title" content="{{DESC_LIST_CHALLENGE_30_DAYS_OF_HTML_OG_TITLE}}" />
-    <meta property="og:description" content="{{DESC_LIST_CHALLENGE_30_DAYS_OF_HTML_OG_DESCRIPTION}}" />
+    <meta property="og:title" content="{{desc_list_challenge_title}}" />
+    <meta property="og:description" content="{{desc_list_challenge_description}}" />
     <meta property="og:image" content="/img/branding/logo.png" />
-    <meta property="og:url" content="{{DESC_LIST_CHALLENGE_30_DAYS_OF_HTML_OG_URL}}" />
+    <meta property="og:url" content="{{desc_list_challenge_page_url}}" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_us" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="{{DESC_LIST_CHALLENGE_30_DAYS_OF_HTML_TWITTER_TITLE}}" />
-    <meta name="twitter:description" content="{{DESC_LIST_CHALLENGE_30_DAYS_OF_HTML_TWITTER_DESCRIPTION}}" />
+    <meta name="twitter:title" content="{{desc_list_challenge_title}}" />
+    <meta name="twitter:description" content="{{desc_list_challenge_description}}" />
     <meta name="twitter:image" content="/img/branding/logo.png" />
 
     <!-- Structured data for SEO -->
     <script type="application/ld+json">
-      {{DESC_LIST_CHALLENGE_30_DAYS_OF_HTML_SCHEMA_JSON}}
+      {{desc_list_challenge_schema_json}}
     </script>
 
     <!-- Third-party monitoring/analytics: Sentry -->
@@ -87,7 +93,7 @@
   </head>
 
   <body>
-    <div id="page-data" data-page-title="{{DESC_LIST_CHALLENGE_30_DAYS_OF_HTML_DATA_PAGE_TITLE}}" data-nav-config="{{DESC_LIST_CHALLENGE_30_DAYS_OF_HTML_DATA_NAV_CONFIG}}" data-breadcrumb-category="{{DESC_LIST_CHALLENGE_30_DAYS_OF_HTML_DATA_BREADCRUMB_CATEGORY}}" data-breadcrumb-category-url="{{DESC_LIST_CHALLENGE_30_DAYS_OF_HTML_DATA_BREADCRUMB_CATEGORY_URL}}"></div>
+    <div id="page-data" data-page-title="{{desc_list_challenge_title}}" data-description="{{desc_list_challenge_description}}" data-keywords="{{desc_list_challenge_keywords}}" data-page-url="{{desc_list_challenge_page_url}}" data-schema-json="{{desc_list_challenge_schema_json}}" data-og-title="{{desc_list_challenge_title}}" data-nav-config="{{desc_list_challenge_data_nav_config}}" data-breadcrumb-category="{{desc_list_challenge_data_breadcrumb_category}}" data-breadcrumb-category-url="{{desc_list_challenge_data_breadcrumb_category_url}}" data-css-file="{{desc_list_challenge_css_file}}" style="display: none"></div>
 
     <!-- HEADER_PLACEHOLDER -->
 

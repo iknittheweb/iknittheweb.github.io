@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="Content-Security-Policy" content="{{CSP_META}}" />
+    <meta http-equiv="Content-Security-Policy" content="{{csp_meta}}" />
     <title>Frontend Masters Bootcamp Challenge: Calculator | I Knit The Web</title>
 
     <!-- Fallback styles for no-JS environments -->
@@ -35,61 +35,68 @@
 
     <!-- Preload critical stylesheets -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" as="style" />
-    <link rel="preload" as="style" href="/dist/css/{{CALCULATOR_FRONTEND_MASTERS_BOOTCAMP_CSS_FILE}}" />
+    <link rel="preload" as="style" href="/dist/css/{{calculator_css_file}}" />
 
     <!-- Main font and site stylesheets -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" />
-    <link rel="stylesheet" href="/dist/css/{{CALCULATOR_FRONTEND_MASTERS_BOOTCAMP_CSS_FILE}}" />
+    <link rel="stylesheet" href="/dist/css/{{calculator_css_file}}" />
+
     <!-- FontAwesome CDN stylesheet for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Favicons and manifest -->
-    <link rel="icon" type="image/x-icon" href="{{ASSET_URL}}/favicon_io/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ASSET_URL}}/favicon_io/apple-touch-icon.png" />
-    <link rel="shortcut icon" href="{{ASSET_URL}}/favicon_io/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="{{asset_url}}favicon_io/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="{{asset_url}}favicon_io/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="{{asset_url}}favicon_io/favicon.ico" />
     <link rel="manifest" href="/manifest.json" />
     <meta name="theme-color" content="#500f44" />
-    <link rel="canonical" href="{{BASE_URL}}{{CALCULATOR_FRONTEND_MASTERS_BOOTCAMP_CANONICAL_URL}}" />
+    <link rel="canonical" href="{{base_url}}{{calculator_page_url}}" />
+
+    <!-- Preload critical logo images for fast LCP -->
+    <link rel="preload" as="image" href="{{base_url}}{{asset_url}}branding/logo.png" type="image/png" />
+    <link rel="preload" as="image" href="{{base_url}}{{asset_url}}branding/logo.webp" type="image/webp" />
+    <link rel="preload" as="image" href="{{base_url}}{{asset_url}}branding/logo.avif" type="image/avif" />
 
     <!-- SEO and social meta tags (grouped for clarity) -->
-    <meta name="description" content="{{CALCULATOR_FRONTEND_MASTERS_BOOTCAMP_DESCRIPTION}}" />
-    <meta name="keywords" content="{{CALCULATOR_FRONTEND_MASTERS_BOOTCAMP_KEYWORDS}}" />
+    <meta name="description" content="{{calculator_description}}" />
+    <meta name="keywords" content="{{calculator_keywords}}" />
     <meta name="author" content="I Knit The Web" />
-    <meta name="robots" content="{{ROBOTS}}" />
-    <meta name="googlebot" content="{{ROBOTS}}" />
+    <meta name="robots" content="{{robots}}" />
+    <meta name="googlebot" content="{{robots}}" />
     <link rel="preload" as="image" href="/img/branding/logo.png" type="image/png" />
     <link rel="preload" as="image" href="/img/branding/logo.webp" type="image/webp" />
     <link rel="preload" as="image" href="/img/branding/logo.avif" type="image/avif" />
-    <meta property="og:title" content="{{CALCULATOR_FRONTEND_MASTERS_BOOTCAMP_OG_TITLE}}" />
-    <meta property="og:description" content="{{CALCULATOR_FRONTEND_MASTERS_BOOTCAMP_OG_DESCRIPTION}}" />
+    <meta property="og:title" content="{{calculator_title}}" />
+    <meta property="og:description" content="{{calculator_description}}" />
     <meta property="og:image" content="/img/branding/logo.png" />
-    <meta property="og:url" content="{{CALCULATOR_FRONTEND_MASTERS_BOOTCAMP_OG_URL}}" />
+    <meta property="og:url" content="{{calculator_page_url}}" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_us" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="{{CALCULATOR_FRONTEND_MASTERS_BOOTCAMP_TWITTER_TITLE}}" />
-    <meta name="twitter:description" content="{{CALCULATOR_FRONTEND_MASTERS_BOOTCAMP_TWITTER_DESCRIPTION}}" />
+    <meta name="twitter:title" content="{{calculator_title}}" />
+    <meta name="twitter:description" content="{{calculator_description}}" />
     <meta name="twitter:image" content="/img/branding/logo.png" />
-
-    <!-- Third-party monitoring/analytics: Sentry -->
-    <script src="https://browser.sentry-cdn.com/7.100.1/bundle.min.js" crossorigin="anonymous" defer></script>
 
     <!-- Structured data for SEO -->
     <script type="application/ld+json">
-      {{CALCULATOR_FRONTEND_MASTERS_BOOTCAMP_SCHEMA_JSON}}
+      {{calculator_schema_json}}
     </script>
+
+    <!-- Third-party monitoring/analytics: Sentry -->
+    <script src="https://browser.sentry-cdn.com/7.100.1/bundle.min.js" crossorigin="anonymous" defer></script>
 
     <!-- Third-party library: body-scroll-lock -->
     <script src="https://cdn.jsdelivr.net/npm/body-scroll-lock@4.0.0-beta.0/lib/bodyScrollLock.min.js"></script>
 
     <!-- Main app/module script -->
     <script type="module" src="src/js/script.js"></script>
+
     <!-- Calculator page-specific script -->
     <script src="/js/calculator.js" defer></script>
   </head>
 
   <body>
-    <div id="page-data" data-page-title="{{CALCULATOR_FRONTEND_MASTERS_BOOTCAMP_DATA_PAGE_TITLE}}" data-nav-config="{{CALCULATOR_FRONTEND_MASTERS_BOOTCAMP_DATA_PAGE_NAV_CONFIG}}" data-breadcrumb-category="{{CALCULATOR_FRONTEND_MASTERS_BOOTCAMP_DATA_PAGE_DATA_BREADCRUMB_CATEGORY}}" data-breadcrumb-category-url="{{CALCULATOR_FRONTEND_MASTERS_BOOTCAMP_DATA_PAGE_DATA_BREADCRUMB_CATEGORY_URL}}" style="display: none"></div>
+    <div id="page-data" data-page-title="{{calculator_title}}" data-description="{{calculator_description}}" data-keywords="{{calculator_keywords}}" data-page-url="{{calculator_page_url}}" data-schema-json="{{calculator_schema_json}}" data-og-title="{{calculator_title}}" data-nav-config="{{calculator_data_nav_config}}" data-breadcrumb-category="{{calculator_data_breadcrumb_category}}" data-breadcrumb-category-url="{{calculator_data_breadcrumb_category_url}}" data-css-file="{{calculator_css_file}}" style="display: none"></div>
 
     <!-- HEADER_PLACEHOLDER -->
 

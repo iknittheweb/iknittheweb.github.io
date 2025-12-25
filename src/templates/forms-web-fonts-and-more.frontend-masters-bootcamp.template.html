@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="Content-Security-Policy" content="{{CSP_META}}" />
+    <meta http-equiv="Content-Security-Policy" content="{{csp_meta}}" />
     <title>Forms, Web Fonts, and More | Frontend Masters Bootcamp Challenge</title>
 
     <!-- Fallback styles for no-JS environments -->
@@ -36,52 +36,56 @@
     <!-- Preload critical stylesheets -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" as="style" />
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" as="style" />
-    <link rel="preload" as="style" href="/dist/css/{{FORMS_WEB_FONTS_AND_MORE_FRONTEND_MASTERS_BOOTCAMP_CSS_FILE}}" />
+    <link rel="preload" as="style" href="/dist/css/{{forms_web_fonts_and_more_css_file}}" />
 
     <!-- Main font and site stylesheets -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" />
-    <link rel="stylesheet" href="/dist/css/{{FORMS_WEB_FONTS_AND_MORE_FRONTEND_MASTERS_BOOTCAMP_CSS_FILE}}" />
+    <link rel="stylesheet" href="/dist/css/{{forms_web_fonts_and_more_css_file}}" />
 
     <!-- FontAwesome CDN stylesheet for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Favicons and manifest -->
-    <link rel="icon" type="image/x-icon" href="{{ASSET_URL}}/favicon_io/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ASSET_URL}}/favicon_io/apple-touch-icon.png" />
-    <link rel="shortcut icon" href="{{ASSET_URL}}/favicon_io/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="{{asset_url}}favicon_io/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="{{asset_url}}favicon_io/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="{{asset_url}}favicon_io/favicon.ico" />
     <link rel="manifest" href="/manifest.json" />
     <meta name="theme-color" content="#500f44" />
-    <link rel="canonical" href="{{BASE_URL}}{{FORMS_WEB_FONTS_AND_MORE_FRONTEND_MASTERS_BOOTCAMP_CANONICAL_URL}}" />
+    <link rel="canonical" href="{{base_url}}{{forms_web_fonts_and_more_page_url}}" />
+
+    <!-- Preload critical logo images for fast LCP -->
+    <link rel="preload" as="image" href="{{base_url}}{{asset_url}}branding/logo.png" type="image/png" />
+    <link rel="preload" as="image" href="{{base_url}}{{asset_url}}branding/logo.webp" type="image/webp" />
+    <link rel="preload" as="image" href="{{base_url}}{{asset_url}}branding/logo.avif" type="image/avif" />
 
     <!-- SEO and social meta tags (grouped for clarity) -->
-    <meta name="description" content="{{FORMS_WEB_FONTS_AND_MORE_FRONTEND_MASTERS_BOOTCAMP_DESCRIPTION}}" />
-    <meta name="keywords" content="{{FORMS_WEB_FONTS_AND_MORE_FRONTEND_MASTERS_BOOTCAMP_KEYWORDS}}" />
+    <meta name="description" content="{{forms_web_fonts_and_more_description}}" />
+    <meta name="keywords" content="{{forms_web_fonts_and_more_keywords}}" />
     <meta name="author" content="I Knit The Web" />
-    <!-- robots tag intentionally omitted for best-practice control via environment only -->
-    <meta name="robots" content="{{ROBOTS}}" />
-    <meta name="googlebot" content="{{ROBOTS}}" />
+    <meta name="robots" content="{{robots}}" />
+    <meta name="googlebot" content="{{robots}}" />
     <link rel="preload" as="image" href="/img/branding/logo.png" type="image/png" />
     <link rel="preload" as="image" href="/img/branding/logo.webp" type="image/webp" />
     <link rel="preload" as="image" href="/img/branding/logo.avif" type="image/avif" />
-    <meta property="og:title" content="{{FORMS_WEB_FONTS_AND_MORE_FRONTEND_MASTERS_BOOTCAMP_OG_TITLE}}" />
-    <meta property="og:description" content="{{FORMS_WEB_FONTS_AND_MORE_FRONTEND_MASTERS_BOOTCAMP_OG_DESCRIPTION}}" />
+    <meta property="og:title" content="{{forms_web_fonts_and_more_title}}" />
+    <meta property="og:description" content="{{forms_web_fonts_and_more_description}}" />
     <meta property="og:image" content="/img/branding/logo.png" />
-    <meta property="og:url" content="{{FORMS_WEB_FONTS_AND_MORE_FRONTEND_MASTERS_BOOTCAMP_OG_URL}}" />
+    <meta property="og:url" content="{{forms_web_fonts_and_more_page_url}}" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_us" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="{{FORMS_WEB_FONTS_AND_MORE_FRONTEND_MASTERS_BOOTCAMP_TWITTER_TITLE}}" />
-    <meta name="twitter:description" content="{{FORMS_WEB_FONTS_AND_MORE_FRONTEND_MASTERS_BOOTCAMP_TWITTER_DESCRIPTION}}" />
+    <meta name="twitter:title" content="{{forms_web_fonts_and_more_title}}" />
+    <meta name="twitter:description" content="{{forms_web_fonts_and_more_description}}" />
     <meta name="twitter:image" content="/img/branding/logo.png" />
-
-    <!-- Third-party monitoring/analytics: Sentry -->
-    <script src="https://browser.sentry-cdn.com/7.100.1/bundle.min.js" crossorigin="anonymous" defer></script>
 
     <!-- Structured data for SEO -->
     <script type="application/ld+json">
-      {{FORMS_WEB_FONTS_AND_MORE_FRONTEND_MASTERS_BOOTCAMP_SCHEMA_JSON}}
+      {{forms_web_fonts_and_more_schema_json}}
     </script>
+
+    <!-- Third-party monitoring/analytics: Sentry -->
+    <script src="https://browser.sentry-cdn.com/7.100.1/bundle.min.js" crossorigin="anonymous" defer></script>
 
     <!-- Third-party library: body-scroll-lock -->
     <script src="https://cdn.jsdelivr.net/npm/body-scroll-lock@4.0.0-beta.0/lib/bodyScrollLock.min.js"></script>
@@ -91,7 +95,7 @@
   </head>
 
   <body>
-    <div id="page-data" data-page-title="{{FORMS_WEB_FONTS_AND_MORE_FRONTEND_MASTERS_BOOTCAMP_DATA_PAGE_TITLE}}" data-nav-config="{{FORMS_WEB_FONTS_AND_MORE_FRONTEND_MASTERS_BOOTCAMP_DATA_NAV_CONFIG}}" data-breadcrumb-category="{{FORMS_WEB_FONTS_AND_MORE_FRONTEND_MASTERS_BOOTCAMP_DATA_BREADCRUMB_CATEGORY}}" data-breadcrumb-category-url="{{FORMS_WEB_FONTS_AND_MORE_FRONTEND_MASTERS_BOOTCAMP_DATA_BREADCRUMB_CATEGORY_URL}}" style="display: none"></div>
+    <div id="page-data" data-page-title="{{forms_web_fonts_and_more_title}}" data-description="{{forms_web_fonts_and_more_description}}" data-keywords="{{forms_web_fonts_and_more_keywords}}" data-page-url="{{forms_web_fonts_and_more_page_url}}" data-schema-json="{{forms_web_fonts_and_more_schema_json}}" data-og-title="{{forms_web_fonts_and_more_title}}" data-nav-config="{{forms_web_fonts_and_more_data_nav_config}}" data-breadcrumb-category="{{forms_web_fonts_and_more_data_breadcrumb_category}}" data-breadcrumb-category-url="{{forms_web_fonts_and_more_data_breadcrumb_category_url}}" data-css-file="{{forms_web_fonts_and_more_css_file}}" style="display: none"></div>
 
     <!-- HEADER_PLACEHOLDER -->
 

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="Content-Security-Policy" content="{{CSP_META}}" />
+    <meta http-equiv="Content-Security-Policy" content="{{csp_meta}}" />
     <title>CSS Position Cheat Sheet | I Knit The Web</title>
 
     <!-- Fallback styles for no-JS environments -->
@@ -35,45 +35,51 @@
 
     <!-- Preload critical stylesheets -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" as="style" />
-    <link rel="preload" as="style" href="/dist/css/{{CSS_POSITION_CHEAT_SHEET_CODECADEMY_CSS_FILE}}" />
+    <link rel="preload" as="style" href="/dist/css/{{css_position_cheat_sheet_css_file}}" />
 
     <!-- Main font and site stylesheets -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" />
-    <link rel="stylesheet" href="/dist/css/{{CSS_POSITION_CHEAT_SHEET_CODECADEMY_CSS_FILE}}" />
+    <link rel="stylesheet" href="/dist/css/{{css_position_cheat_sheet_css_file}}" />
+
     <!-- FontAwesome CDN stylesheet for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Favicons and manifest -->
-    <link rel="icon" type="image/x-icon" href="{{ASSET_URL}}/favicon_io/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ASSET_URL}}/favicon_io/apple-touch-icon.png" />
-    <link rel="shortcut icon" href="{{ASSET_URL}}/favicon_io/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="{{asset_url}}favicon_io/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="{{asset_url}}favicon_io/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="{{asset_url}}favicon_io/favicon.ico" />
     <link rel="manifest" href="/manifest.json" />
     <meta name="theme-color" content="#500f44" />
-    <link rel="canonical" href="{{BASE_URL}}{{CSS_POSITION_CHEAT_SHEET_CODECADEMY_CANONICAL_URL}}" />
+    <link rel="canonical" href="{{base_url}}{{css_position_cheat_sheet_page_url}}" />
+
+    <!-- Preload critical logo images for fast LCP -->
+    <link rel="preload" as="image" href="{{base_url}}{{asset_url}}branding/logo.png" type="image/png" />
+    <link rel="preload" as="image" href="{{base_url}}{{asset_url}}branding/logo.webp" type="image/webp" />
+    <link rel="preload" as="image" href="{{base_url}}{{asset_url}}branding/logo.avif" type="image/avif" />
 
     <!-- SEO and social meta tags (grouped for clarity) -->
-    <meta name="description" content="{{CSS_POSITION_CHEAT_SHEET_CODECADEMY_DESCRIPTION}}" />
-    <meta name="keywords" content="{{CSS_POSITION_CHEAT_SHEET_CODECADEMY_KEYWORDS}}" />
-    <meta name="author" content="{{SITE_AUTHOR}}" />
-    <meta name="robots" content="{{ROBOTS}}" />
-    <meta name="googlebot" content="{{ROBOTS}}" />
+    <meta name="description" content="{{css_position_cheat_sheet_description}}" />
+    <meta name="keywords" content="{{css_position_cheat_sheet_keywords}}" />
+    <meta name="author" content="I Knit the Web" />
+    <meta name="robots" content="{{robots}}" />
+    <meta name="googlebot" content="{{robots}}" />
     <link rel="preload" as="image" href="/img/branding/logo.png" type="image/png" />
     <link rel="preload" as="image" href="/img/branding/logo.webp" type="image/webp" />
     <link rel="preload" as="image" href="/img/branding/logo.avif" type="image/avif" />
-    <meta property="og:title" content="{{CSS_POSITION_CHEAT_SHEET_CODECADEMY_OG_TITLE}}" />
-    <meta property="og:description" content="{{CSS_POSITION_CHEAT_SHEET_CODECADEMY_OG_DESCRIPTION}}" />
+    <meta property="og:title" content="{{css_position_cheat_sheet_title}}" />
+    <meta property="og:description" content="{{css_position_cheat_sheet_description}}" />
     <meta property="og:image" content="/img/branding/logo.png" />
-    <meta property="og:url" content="{{CSS_POSITION_CHEAT_SHEET_CODECADEMY_OG_URL}}" />
+    <meta property="og:url" content="{{css_position_cheat_sheet_page_url}}" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_us" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="{{CSS_POSITION_CHEAT_SHEET_CODECADEMY_TWITTER_TITLE}}" />
-    <meta name="twitter:description" content="{{CSS_POSITION_CHEAT_SHEET_CODECADEMY_TWITTER_DESCRIPTION}}" />
+    <meta name="twitter:title" content="{{css_position_cheat_sheet_title}}" />
+    <meta name="twitter:description" content="{{css_position_cheat_sheet_description}}" />
     <meta name="twitter:image" content="/img/branding/logo.png" />
 
     <!-- Structured data for SEO -->
     <script type="application/ld+json">
-      {{CSS_POSITION_CHEAT_SHEET_CODECADEMY_SCHEMA_JSON}}
+      {{css_position_cheat_sheet_schema_json}}
     </script>
 
     <!-- Third-party monitoring/analytics: Sentry -->
@@ -87,7 +93,7 @@
   </head>
 
   <body>
-    <div id="page-data" data-page-title="{{CSS_POSITION_CHEAT_SHEET_CODECADEMY_DATA_PAGE_TITLE}}" data-nav-config="{{CSS_POSITION_CHEAT_SHEET_CODECADEMY_DATA_NAV_CONFIG}}" data-breadcrumb-category="{{CSS_POSITION_CHEAT_SHEET_CODECADEMY_DATA_BREADCRUMB_CATEGORY}}" data-breadcrumb-category-url="{{CSS_POSITION_CHEAT_SHEET_CODECADEMY_DATA_BREADCRUMB_CATEGORY_URL}}" style="display: none"></div>
+    <div id="page-data" data-page-title="{{css_position_cheat_sheet_title}}" data-description="{{css_position_cheat_sheet_description}}" data-keywords="{{css_position_cheat_sheet_keywords}}" data-page-url="{{css_position_cheat_sheet_page_url}}" data-schema-json="{{css_position_cheat_sheet_schema_json}}" data-og-title="{{css_position_cheat_sheet_title}}" data-nav-config="{{css_position_cheat_sheet_data_nav_config}}" data-breadcrumb-category="{{css_position_cheat_sheet_data_breadcrumb_category}}" data-breadcrumb-category-url="{{css_position_cheat_sheet_data_breadcrumb_category_url}}" data-css-file="{{css_position_cheat_sheet_css_file}}" style="display: none"></div>
 
     <!-- HEADER_PLACEHOLDER -->
     <main class="css-position-cheat-sheet-page" id="css-position_main-content" aria-labelledby="cheat-sheet-title" role="main" tabindex="-1">
