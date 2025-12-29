@@ -96,8 +96,11 @@
   margin-top: 2rem;
 }
 .qrpage__attribution a {
-  color: hsl(318, 79%, 42%);
+  color: hsl(318, 78%, 29%);
+  text-decoration: underline; /* underline makes link visually distinct */
 }
-.qrpage__attribution a:hover {
-  text-decoration: underline;
+.qrpage__attribution a:hover,
+.qrpage__attribution a:focus {
+  color: #d61a3c; /* color change on hover/focus for interaction feedback */
+  outline: 2px solid #d61a3c; /* visible focus outline for keyboard users */
 }
