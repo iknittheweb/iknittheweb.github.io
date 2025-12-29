@@ -4,6 +4,8 @@
 /**
  * @jest-environment jsdom
  */
+import { initializeDropdown } from '../src/js/dropdown.js';
+
 describe('dropdown.js', () => {
   let dropdownTitleGroup, dropdownContent;
   beforeEach(() => {
@@ -16,13 +18,10 @@ describe('dropdown.js', () => {
         </div>
       </div>
     `;
-    // Simulate CSS loaded
     document.documentElement.classList.add('css-loaded');
-    // Reset dropdownInitialized so event handlers are re-attached after DOM reset
     window.dropdownInitialized = false;
-    // Re-require the module to re-run its setup
     jest.resetModules();
-    require('../src/js/dropdown.js');
+    initializeDropdown();
     dropdownTitleGroup = document.querySelector('.dropdown__header');
     dropdownContent = document.querySelector('.dropdown__content');
   });
