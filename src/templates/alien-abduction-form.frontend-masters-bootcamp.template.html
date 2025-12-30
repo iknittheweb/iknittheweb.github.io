@@ -34,17 +34,33 @@
     <link rel="preconnect" href="https://ka-p.fontawesome.com" />
 
     <!-- Preload critical stylesheets -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" as="style" />
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" as="style" />
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap"
+      as="style"
+    />
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap"
+      as="style"
+    />
     <link rel="preload" as="style" href="/dist/css/{{alien_abduction_form_css_file}}" />
 
     <!-- Main font and site stylesheets -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap"
+    />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" />
     <link rel="stylesheet" href="/dist/css/{{alien_abduction_form_css_file}}" />
 
     <!-- FontAwesome CDN stylesheet for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
     <!-- Favicons and manifest -->
     <link rel="icon" type="image/x-icon" href="{{asset_url}}favicon_io/favicon.ico" />
@@ -95,7 +111,20 @@
   </head>
 
   <body>
-    <div id="page-data" data-page-title="{{alien_abduction_form_title}}" data-description="{{alien_abduction_form_description}}" data-keywords="{{alien_abduction_form_keywords}}" data-page-url="{{alien_abduction_form_page_url}}" data-schema-json="{{alien_abduction_form_schema_json}}" data-og-title="{{alien_abduction_form_title}}" data-nav-config="{{alien_abduction_form_data_nav_config}}" data-breadcrumb-category="{{alien_abduction_form_data_breadcrumb_category}}" data-breadcrumb-category-url="{{alien_abduction_form_data_breadcrumb_category_url}}" data-css-file="{{alien_abduction_form_css_file}}" style="display: none"></div>
+    <div
+      id="page-data"
+      data-page-title="{{alien_abduction_form_title}}"
+      data-description="{{alien_abduction_form_description}}"
+      data-keywords="{{alien_abduction_form_keywords}}"
+      data-page-url="{{alien_abduction_form_page_url}}"
+      data-schema-json="{{alien_abduction_form_schema_json}}"
+      data-og-title="{{alien_abduction_form_title}}"
+      data-nav-config="{{alien_abduction_form_data_nav_config}}"
+      data-breadcrumb-category="{{alien_abduction_form_data_breadcrumb_category}}"
+      data-breadcrumb-category-url="{{alien_abduction_form_data_breadcrumb_category_url}}"
+      data-css-file="{{alien_abduction_form_css_file}}"
+      style="display: none"
+    ></div>
 
     <!-- HEADER_PLACEHOLDER -->
 
@@ -103,21 +132,28 @@
       <article class="alien-form-page__wrapper">
         <div class="alien-form-page__hero">
           <h1 class="page-heading" id="alien-title">Sign Up for an Alien Abduction!</h1>
-          <h2 class="page-subheading"
-            >A
-            <a href="https://frontendmasters.com/bootcamp/" target="_blank" title="Opens in a new window">Frontend Masters Bootcamp <span class="sr-only"> (opens in a new window)</span></a>
+          <h2 class="page-subheading">
+            A
+            <a href="https://frontendmasters.com/bootcamp/" target="_blank" title="Opens in a new window">
+              Frontend Masters Bootcamp
+              <span class="sr-only">(opens in a new window)</span>
+            </a>
             Project
           </h2>
           <p>Ready for a close encounter? Fill out the form below to book your abduction experience.</p>
         </div>
-        <form class="flex" action="https://e3vwdl4bpd.execute-api.us-west-2.amazonaws.com/default/API2SES" method="post">
+        <form
+          class="flex"
+          action="https://e3vwdl4bpd.execute-api.us-west-2.amazonaws.com/default/API2SES"
+          method="post"
+        >
           <div class="flex">
             <!-- CONTACT INFO -->
             <div class="flex-left">
               <input type="hidden" name="send_to" value="idlehands1969@gmail.com" />
               <fieldset>
                 <legend>Your contact information</legend>
-                <label for="name">Your name </label>
+                <label for="name">Your name</label>
                 <input type="text" id="name" name="name" autofocus required />
                 <label for="phone">Phone number</label>
                 <input type="tel" id="phone" name="phone" placeholder="Don't forget the area code!" />
@@ -128,7 +164,7 @@
             <!-- ABDUCTION INFO -->
             <div class="flex-right">
               <fieldset class="detailStuff">
-                <legend>About your abduction </legend>
+                <legend>About your abduction</legend>
                 <div class="abtype flex">
                   <div class="flex-left">
                     <label for="date">Requested date</label>
@@ -168,7 +204,10 @@
                     </select>
                     <label for="comments">Special requests:</label>
                     <textarea id="comments" name="comments" placeholder="Tell me everything"></textarea>
-                    <label> <input type="checkbox" id="subscribe" name="subscribe" value="subscribe" />Add me to your email list </label>
+                    <label>
+                      <input type="checkbox" id="subscribe" name="subscribe" value="subscribe" />
+                      Add me to your email list
+                    </label>
                     <button type="submit">Order your abduction experience!</button>
                   </div>
                 </div>

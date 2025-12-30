@@ -78,7 +78,10 @@ fs.readdirSync(srcDir).forEach((file) => {
     let html = template(context);
 
     // Remove template warning and workflow comments from the output
-    html = html.replace(/<!--\s*IMPORTANT: This is a TEMPLATE file![\s\S]*?DO NOT edit the generated \*\.html file directly[\s\S]*?-->/g, '');
+    html = html.replace(
+      /<!--\s*IMPORTANT: This is a TEMPLATE file![\s\S]*?DO NOT edit the generated \*\.html file directly[\s\S]*?-->/g,
+      ''
+    );
     html = html.replace(/<!--\s*-{2,}\s*BEGINNER-FRIENDLY EXPLANATORY COMMENTS[\s\S]*?-{2,}\s*-->/g, '');
 
     // Inject header and footer

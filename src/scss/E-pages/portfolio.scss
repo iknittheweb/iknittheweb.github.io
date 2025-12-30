@@ -105,11 +105,7 @@ section.portfolio__intro::after {
   inset: 0;
   z-index: 2;
   pointer-events: none;
-  background: repeating-linear-gradient(
-    120deg,
-    rgb(255 255 255 / 7%) 0 2px,
-    transparent 2px 24px
-  );
+  background: repeating-linear-gradient(120deg, rgb(255 255 255 / 7%) 0 2px, transparent 2px 24px);
   opacity: 0.7;
   animation: hero-sparkle 24s linear infinite;
 }

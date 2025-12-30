@@ -34,15 +34,27 @@
     <link rel="preconnect" href="https://ka-p.fontawesome.com" />
 
     <!-- Preload critical stylesheets -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" as="style" />
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap"
+      as="style"
+    />
     <link rel="preload" as="style" href="/dist/css/{{semantic_navbar_markup_css_file}}" />
 
     <!-- Main font and site stylesheets -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap"
+    />
     <link rel="stylesheet" href="/dist/css/{{semantic_navbar_markup_css_file}}" />
 
     <!-- FontAwesome CDN stylesheet for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
     <!-- Favicons and manifest -->
     <link rel="icon" type="image/x-icon" href="{{asset_url}}favicon_io/favicon.ico" />
@@ -93,47 +105,80 @@
   </head>
 
   <body>
-    <div id="page-data" data-page-title="{{semantic_navbar_markup_title}}" data-description="{{semantic_navbar_markup_description}}" data-keywords="{{semantic_navbar_markup_keywords}}" data-page-url="{{semantic_navbar_markup_page_url}}" data-schema-json="{{semantic_navbar_markup_schema_json}}" data-og-title="{{semantic_navbar_markup_title}}" data-nav-config="{{semantic_navbar_markup_data_nav_config}}" data-breadcrumb-category="{{semantic_navbar_markup_data_breadcrumb_category}}" data-breadcrumb-category-url="{{semantic_navbar_markup_data_breadcrumb_category_url}}" data-css-file="{{semantic_navbar_markup_css_file}}" style="display: none"></div>
+    <div
+      id="page-data"
+      data-page-title="{{semantic_navbar_markup_title}}"
+      data-description="{{semantic_navbar_markup_description}}"
+      data-keywords="{{semantic_navbar_markup_keywords}}"
+      data-page-url="{{semantic_navbar_markup_page_url}}"
+      data-schema-json="{{semantic_navbar_markup_schema_json}}"
+      data-og-title="{{semantic_navbar_markup_title}}"
+      data-nav-config="{{semantic_navbar_markup_data_nav_config}}"
+      data-breadcrumb-category="{{semantic_navbar_markup_data_breadcrumb_category}}"
+      data-breadcrumb-category-url="{{semantic_navbar_markup_data_breadcrumb_category_url}}"
+      data-css-file="{{semantic_navbar_markup_css_file}}"
+      style="display: none"
+    ></div>
 
     <!-- HEADER_PLACEHOLDER -->
 
-    <main class="semantic-navbar-page" id="semantic_main-content" aria-labelledby="semantic-navbar-title" role="main" tabindex="-1">
+    <main
+      class="semantic-navbar-page"
+      id="semantic_main-content"
+      aria-labelledby="semantic-navbar-title"
+      role="main"
+      tabindex="-1"
+    >
       <div class="page-wrapper">
         <h1 class="page-heading" id="semantic-navbar-title">Semantic Navbar Markup Challenge</h1>
-        <h2 class="page-subheading"
-          >A
+        <h2 class="page-subheading">
+          A
           <a href="https://jen4web.gumroad.com/l/30daysofhtml">15 Days of CSS</a>
-          Project</h2
-        >
+          Project
+        </h2>
         <article class="semantic-navbar">
           <h2 class="semantic-navbar__title">
-            <a class="semantic-navbar__title-link" href="https://informatics.indiana.edu/index.html" target="_blank" title="Opens in a new window">IU Luddy School of Informatics, Computing, and Engineering Department of Informatics <span class="sr-only"> (opens in a new window)</span></a>
+            <a
+              class="semantic-navbar__title-link"
+              href="https://informatics.indiana.edu/index.html"
+              target="_blank"
+              title="Opens in a new window"
+            >
+              IU Luddy School of Informatics, Computing, and Engineering Department of Informatics
+              <span class="sr-only">(opens in a new window)</span>
+            </a>
           </h2>
           <nav class="semantic-navbar__nav">
             <ul class="semantic-navbar__list">
               <li class="semantic-navbar__item">
-                <a class="semantic-navbar__link" href="https://informatics.indiana.edu/about/index.html"> About </a>
+                <a class="semantic-navbar__link" href="https://informatics.indiana.edu/about/index.html">About</a>
               </li>
               <li class="semantic-navbar__item">
-                <a class="semantic-navbar__link" href="https://informatics.indiana.edu/apply/index.html"> How to Apply </a>
+                <a class="semantic-navbar__link" href="https://informatics.indiana.edu/apply/index.html">
+                  How to Apply
+                </a>
               </li>
               <li class="semantic-navbar__item">
-                <a class="semantic-navbar__link" href="https://informatics.indiana.edu/programs/index.html"> Programs </a>
+                <a class="semantic-navbar__link" href="https://informatics.indiana.edu/programs/index.html">Programs</a>
               </li>
               <li class="semantic-navbar__item">
-                <a class="semantic-navbar__link" href="https://informatics.indiana.edu/courses/index.html"> Courses </a>
+                <a class="semantic-navbar__link" href="https://informatics.indiana.edu/courses/index.html">Courses</a>
               </li>
               <li class="semantic-navbar__item">
-                <a class="semantic-navbar__link" href="https://informatics.indiana.edu/career-prep/index.html"> Career Prep </a>
+                <a class="semantic-navbar__link" href="https://informatics.indiana.edu/career-prep/index.html">
+                  Career Prep
+                </a>
               </li>
               <li class="semantic-navbar__item">
-                <a class="semantic-navbar__link" href="https://informatics.indiana.edu/research/index.html"> Research </a>
+                <a class="semantic-navbar__link" href="https://informatics.indiana.edu/research/index.html">Research</a>
               </li>
               <li class="semantic-navbar__item">
-                <a class="semantic-navbar__link" href="https://informatics.indiana.edu/faculty-directory/index.html"> Faculty Directory </a>
+                <a class="semantic-navbar__link" href="https://informatics.indiana.edu/faculty-directory/index.html">
+                  Faculty Directory
+                </a>
               </li>
               <li class="semantic-navbar__item">
-                <a class="semantic-navbar__link" href="https://informatics.indiana.edu/contact/index.html"> Contact </a>
+                <a class="semantic-navbar__link" href="https://informatics.indiana.edu/contact/index.html">Contact</a>
               </li>
             </ul>
           </nav>

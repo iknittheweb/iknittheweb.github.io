@@ -34,15 +34,27 @@
     <link rel="preconnect" href="https://ka-p.fontawesome.com" />
 
     <!-- Preload critical stylesheets -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" as="style" />
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap"
+      as="style"
+    />
     <link rel="preload" as="style" href="/dist/css/{{multi_level_navbar_css_file}}" />
 
     <!-- Main font and site stylesheets -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap"
+    />
     <link rel="stylesheet" href="/dist/css/{{multi_level_navbar_css_file}}" />
 
     <!-- FontAwesome CDN stylesheet for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
     <!-- Favicons and manifest -->
     <link rel="icon" type="image/x-icon" href="{{asset_url}}favicon_io/favicon.ico" />
@@ -93,44 +105,120 @@
   </head>
 
   <body>
-    <div id="page-data" data-page-title="{{multi_level_navbar_title}}" data-description="{{multi_level_navbar_description}}" data-keywords="{{multi_level_navbar_keywords}}" data-page-url="{{multi_level_navbar_page_url}}" data-schema-json="{{multi_level_navbar_schema_json}}" data-og-title="{{multi_level_navbar_title}}" data-nav-config="{{multi_level_navbar_data_nav_config}}" data-breadcrumb-category="{{multi_level_navbar_data_breadcrumb_category}}" data-breadcrumb-category-url="{{multi_level_navbar_data_breadcrumb_category_url}}" data-css-file="{{multi_level_navbar_css_file}}" style="display: none"></div>
+    <div
+      id="page-data"
+      data-page-title="{{multi_level_navbar_title}}"
+      data-description="{{multi_level_navbar_description}}"
+      data-keywords="{{multi_level_navbar_keywords}}"
+      data-page-url="{{multi_level_navbar_page_url}}"
+      data-schema-json="{{multi_level_navbar_schema_json}}"
+      data-og-title="{{multi_level_navbar_title}}"
+      data-nav-config="{{multi_level_navbar_data_nav_config}}"
+      data-breadcrumb-category="{{multi_level_navbar_data_breadcrumb_category}}"
+      data-breadcrumb-category-url="{{multi_level_navbar_data_breadcrumb_category_url}}"
+      data-css-file="{{multi_level_navbar_css_file}}"
+      style="display: none"
+    ></div>
 
     <!-- HEADER_PLACEHOLDER -->
 
-    <main class="multi-level-navbar" id="multi-level-navbar_main-content" aria-labelledby="multi-navbar-title" role="main" tabindex="-1">
+    <main
+      class="multi-level-navbar"
+      id="multi-level-navbar_main-content"
+      aria-labelledby="multi-navbar-title"
+      role="main"
+      tabindex="-1"
+    >
       <div class="page-wrapper">
         <h1 class="page-heading" id="multi-navbar-title">Multi-Level Navbar Challenge</h1>
-        <h2
-          >A
-          <a href="https://jen4web.gumroad.com/l/30daysofhtml" target="_blank" title="Opens in a new window">15 Days of CSS <span class="sr-only"> (opens in a new window)</span></a>
-          Project</h2
-        >
+        <h2>
+          A
+          <a href="https://jen4web.gumroad.com/l/30daysofhtml" target="_blank" title="Opens in a new window">
+            15 Days of CSS
+            <span class="sr-only">(opens in a new window)</span>
+          </a>
+          Project
+        </h2>
         <article>
           <h1 class="multi-level-navbar__title">Phyllum Mollusca</h1>
           <nav class="multi-level-navbar multi-level-nav" aria-label="Multi-level navigation">
             <ul class="multi-level-navbar__list" data-cy="multi-navbar-list">
               <li class="multi-level-navbar__item multi-level-navbar__item--home">
-                <a href="#" class="multi-level-navbar__link" data-cy="multi-navbar-home" aria-haspopup="true" aria-expanded="false" aria-controls="multi-navbar-home-submenu">Home</a>
-                <ul class="multi-level-navbar__sublist" id="multi-navbar-home-submenu" role="menu" aria-label="Home submenu">
-                  <li class="multi-level-navbar__subitem"><a href="#" class="multi-level-navbar__sublink">Octopus</a></li>
+                <a
+                  href="#"
+                  class="multi-level-navbar__link"
+                  data-cy="multi-navbar-home"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  aria-controls="multi-navbar-home-submenu"
+                >
+                  Home
+                </a>
+                <ul
+                  class="multi-level-navbar__sublist"
+                  id="multi-navbar-home-submenu"
+                  role="menu"
+                  aria-label="Home submenu"
+                >
+                  <li class="multi-level-navbar__subitem">
+                    <a href="#" class="multi-level-navbar__sublink">Octopus</a>
+                  </li>
                   <li class="multi-level-navbar__subitem"><a href="#" class="multi-level-navbar__sublink">Squid</a></li>
-                  <li class="multi-level-navbar__subitem"><a href="#" class="multi-level-navbar__sublink">Cuttlefish</a></li>
+                  <li class="multi-level-navbar__subitem">
+                    <a href="#" class="multi-level-navbar__sublink">Cuttlefish</a>
+                  </li>
                 </ul>
               </li>
               <li class="multi-level-navbar__item multi-level-navbar__item--gastropods">
-                <a href="#" class="multi-level-navbar__link" data-cy="multi-navbar-gastropods" aria-haspopup="true" aria-expanded="false" aria-controls="multi-navbar-gastropods-submenu">Gastropods</a>
-                <ul class="multi-level-navbar__sublist" id="multi-navbar-gastropods-submenu" role="menu" aria-label="Gastropods submenu">
-                  <li class="multi-level-navbar__subitem"><a href="#" class="multi-level-navbar__sublink">Snails</a></li>
+                <a
+                  href="#"
+                  class="multi-level-navbar__link"
+                  data-cy="multi-navbar-gastropods"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  aria-controls="multi-navbar-gastropods-submenu"
+                >
+                  Gastropods
+                </a>
+                <ul
+                  class="multi-level-navbar__sublist"
+                  id="multi-navbar-gastropods-submenu"
+                  role="menu"
+                  aria-label="Gastropods submenu"
+                >
+                  <li class="multi-level-navbar__subitem">
+                    <a href="#" class="multi-level-navbar__sublink">Snails</a>
+                  </li>
                   <li class="multi-level-navbar__subitem"><a href="#" class="multi-level-navbar__sublink">Slugs</a></li>
                 </ul>
               </li>
               <li class="multi-level-navbar__item multi-level-navbar__item--bivalvia">
-                <a href="#" class="multi-level-navbar__link" data-cy="multi-navbar-bivalvia" aria-haspopup="true" aria-expanded="false" aria-controls="multi-navbar-bivalvia-submenu">Bivalvia</a>
-                <ul class="multi-level-navbar__sublist" id="multi-navbar-bivalvia-submenu" role="menu" aria-label="Bivalvia submenu">
+                <a
+                  href="#"
+                  class="multi-level-navbar__link"
+                  data-cy="multi-navbar-bivalvia"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  aria-controls="multi-navbar-bivalvia-submenu"
+                >
+                  Bivalvia
+                </a>
+                <ul
+                  class="multi-level-navbar__sublist"
+                  id="multi-navbar-bivalvia-submenu"
+                  role="menu"
+                  aria-label="Bivalvia submenu"
+                >
                   <li class="multi-level-navbar__subitem"><a href="#" class="multi-level-navbar__sublink">Clams</a></li>
-                  <li class="multi-level-navbar__subitem"><a href="#" class="multi-level-navbar__sublink">Oysters</a></li>
-                  <li class="multi-level-navbar__subitem"><a href="#" class="multi-level-navbar__sublink">Mussels</a></li>
-                  <li class="multi-level-navbar__subitem"><a href="#" class="multi-level-navbar__sublink">Scallops</a></li>
+                  <li class="multi-level-navbar__subitem">
+                    <a href="#" class="multi-level-navbar__sublink">Oysters</a>
+                  </li>
+                  <li class="multi-level-navbar__subitem">
+                    <a href="#" class="multi-level-navbar__sublink">Mussels</a>
+                  </li>
+                  <li class="multi-level-navbar__subitem">
+                    <a href="#" class="multi-level-navbar__sublink">Scallops</a>
+                  </li>
                 </ul>
               </li>
             </ul>

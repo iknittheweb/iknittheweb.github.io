@@ -19,11 +19,7 @@
 
 // BEM: .alien-form-page__hero
 .alien-form-page__hero {
-  background: linear-gradient(
-    135deg,
-    var(--alien-primary-bg) 0%,
-    var(--alien-secondary-bg) 100%
-  );
+  background: linear-gradient(135deg, var(--alien-primary-bg) 0%, var(--alien-secondary-bg) 100%);
   color: var(--alien-text-light);
   padding-block: a.rem(60);
   text-align: center;
@@ -41,16 +37,8 @@
     position: absolute;
     inset: 0;
     background-image:
-      radial-gradient(
-        circle at 20% 20%,
-        var(--alien-accent) 1px,
-        transparent 1px
-      ),
-      radial-gradient(
-        circle at 80% 80%,
-        var(--alien-accent-secondary) 1px,
-        transparent 1px
-      );
+      radial-gradient(circle at 20% 20%, var(--alien-accent) 1px, transparent 1px),
+      radial-gradient(circle at 80% 80%, var(--alien-accent-secondary) 1px, transparent 1px);
     background-size:
       50px 50px,
       30px 30px;

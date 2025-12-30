@@ -35,7 +35,9 @@ async function purgeAndReplace(file) {
     htmlFiles = [path.join(__dirname, 'index.html')];
   } else {
     const allFiles = fs.readdirSync(__dirname);
-    htmlFiles = allFiles.filter((f) => f.startsWith(base + '.') && f.endsWith('.html')).map((f) => path.join(__dirname, f));
+    htmlFiles = allFiles
+      .filter((f) => f.startsWith(base + '.') && f.endsWith('.html'))
+      .map((f) => path.join(__dirname, f));
   }
   const allExist = htmlFiles.every((f) => fs.existsSync(f));
   if (allExist) {

@@ -1,0 +1,9 @@
+title: "iknittheweb"
+theme: jekyll-theme-primer
+
+exclude:
+  - copilot-chat-logs
+  - node_modules
+  - vendor
+  - Gemfile
+  - Gemfile.lock
